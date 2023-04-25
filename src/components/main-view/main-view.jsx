@@ -1,30 +1,44 @@
 import { useState, useEffect } from "react";
+import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([]);
 
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedToken = localStorage.getItem("token");
+    const [user, setUser] = useState(storedUser ? storedUser : null);
+    const [token, setToken] = useState(storedToken ? storedToken : null);
+    const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        fetch("https://myflixapplication.herokuapp.com/movies")
-            .then((res) => res.json())
-            .then((data) => {
-                const moviesFromApi = data.map((doc) => {
-                    return {
-                        id: doc._id,
-                        title: doc.Title,
-                        image: doc.ImagePath,
-                        director: doc.Director.Name,
-                        genre: doc.Genre.Name,
-                        description: doc.Description
-                    };
-                });
+        if (!token) {
+            return;
+        }
 
-                setMovies(moviesFromApi);
+        fetch("https://myflixapplication.herokuapp.com/movies", {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then((response) => response.json())
+            .then((movies) => {
+                setMovies(movies);
             });
-    }, []);
+    }, [token]);
+
+    if (!user) {
+        return (
+            <>
+                <LoginView
+                    onLoggedIn={(user, token) => {
+                        setUser(user)
+                        setToken(token)
+                    }} />
+                <SignupView />
+            </>
+        );
+    }
 
     if (selectedMovie) {
         return (
@@ -53,6 +67,7 @@ export const MainView = () => {
                     />
                 );
             })}
+            <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
         </div>
     );
 }
