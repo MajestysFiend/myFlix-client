@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button, Form } from "react-bootstrap";
 
 const showPassword = () => {
     var passwordInput = document.getElementById("passwordInput2");
@@ -43,52 +44,57 @@ export const SignupView = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>Sign Up</h1>
-            <label>
-                Username:
-                <input
+        <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="setUsername">
+            <Form.Label>Username</Form.Label>
+                <Form.Control
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
+                    placeholder="Username"
                     minlength="4"
                 />
-            </label><br /><br />
-            <label>
-                Password:
-                <input
+            </Form.Group>
+            <Form.Group controlId="setPassword">
+            <Form.Label>Password</Form.Label>
+                <Form.Control
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     id="passwordInput2"
                     autocomplete="new-password"
+                    placeholder="Password"
                     required
                     minlength="4"
                 />
-            </label>
-            <input type="checkbox" onClick={showPassword} />Show Password<br /><br />
-            <label>
-                Email:
-                <input
+                </Form.Group>
+            <Form.Check
+                type="switch"
+                label="Show Password"
+                onClick={showPassword} /><br/>
+            <Form.Group controlId="setEmail">
+            <Form.Label>Email</Form.Label>
+                <Form.Control
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     autocomplete="email"
+                    placeholder="Email"
                     required
                 />
-            </label><br /><br />
-            <label>
-                Birthday:
-                <input
+            </Form.Group>
+            <Form.Group controlId="setBirthday">
+            <Form.Label>Birthday</Form.Label>
+                <Form.Control
                     type="date"
                     value={birthday}
                     onChange={(e) => setBirthday(e.target.value)}
                     autocomplete="bday"
                     required
                 />
-            </label><br /><br />
-            <button type="submit">Submit</button>
-        </form>
+            </Form.Group ><br/>
+            <Button variant="primary" type="submit">Submit</Button>
+        </Form>
     )
 }

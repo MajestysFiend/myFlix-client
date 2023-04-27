@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button, Form } from "react-bootstrap";
 
 const showPassword = () => {
     var passwordInput = document.getElementById("passwordInput1");
@@ -42,32 +43,39 @@ export const LoginView = ({ onLoggedIn }) => {
 
     return (
 
-        <form onSubmit={handleSubmit}>
-            <h1>Log in</h1>
-            <label>
-                Username: <input
+        <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="forUsername">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     minlength="4"
                     autocomplete="username"
+                    placeholder="Username"
                     required />
+            </Form.Group>
 
-            </label><br /><br />
-            <label>
-                Password: <input
+            <Form.Group controlId="forPassword">
+                <Form.Label>Password</Form.Label>
+            <Form.Control           
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     minlength="4"
                     id="passwordInput1"
+                    placeholder="Password"
                     required />
+            </Form.Group>
 
-            </label>
-            <input type="checkbox" onClick={showPassword} />Show Password<br /><br />
-            <button type="submit">
+            <Form.Check
+                type="switch"
+                label="Show Password"
+                onClick={showPassword} /><br />
+
+            <Button variant="primary" type="submit">
                 Submit
-            </button>
-        </form>
+            </Button>
+        </Form>
     );
 };
