@@ -1,5 +1,23 @@
-$color: steelblue;
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(45deg, #515aaa, #000000, #75a3df);
+    background-size: 600% 600%;
+    animation: animatedGradient 15s infinite linear;
+}
 
-.my-flix {
-    color: $color;
+@keyframes animatedGradient {
+    0% {
+        background-position: 0 85%;
+    }
+
+    50% {
+        background-position: 100% 20%;
+    }
+
+    100% {
+        background-position: 0 85%;
+    }
 }
