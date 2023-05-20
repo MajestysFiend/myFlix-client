@@ -2,9 +2,9 @@ import { Col } from "react-bootstrap";
 import dayjs from "dayjs";
 
 
-export const ProfileView = ({ user }) => {
+export const ProfileView = ({ user, favoriteMovieList }) => {
 
-    const birthday = dayjs( user.Birthday ).format("MM/DD/YYYY")
+    const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");    
 
     return (
         <div className="profile-container">
@@ -17,9 +17,7 @@ export const ProfileView = ({ user }) => {
                 <p className="label">Email</p>
                 <span className="profile-info">{user.Email}</span><br />
                 <h2><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
-                <div className="favorite-movies">
-                    
-                </div>
+                
             </Col>
         </div>
     )

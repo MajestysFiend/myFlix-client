@@ -12024,7 +12024,8 @@ label {
 }
 
 h1, .h1 {
-  margin-bottom: 5%;
+  margin: 5%;
+  font-size: 50px;
 }
 
 button:hover {

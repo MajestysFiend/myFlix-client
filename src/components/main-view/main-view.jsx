@@ -7,7 +7,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProfileView } from "../profile-view/profile-view";
 
@@ -19,6 +19,10 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
     //const [selectedMovie, setSelectedMovie] = useState(null);
+
+    if (user) {
+        let favoriteMovieList = movies.filter(m => user.FavoriteMovies.includes(m._id));
+    }
 
     useEffect(() => {
         if (!token) {
@@ -43,104 +47,106 @@ export const MainView = () => {
                 }}
             />
             <Row className="justify-content-center customHeight">
-                    <Routes>
-                        <Route
-                            path="/login"
-                            element={
-                                <>
-                                    {user ? (<Navigate to="/" />) : (
-                                        <Col md={5} className="my-auto">
-                                            <motion.div
-                                                animate={{ scale: 1 }}
-                                                initial={{ scale: 0 }}
-                                                transition={{ type: "tween", duration: .5 }}>
-                                                <LoginView
-                                                    onLoggedIn={(user, token) => {
-                                                        setUser(user)
-                                                        setToken(token)
-                                                    }} />
-                                            </motion.div>
-                                        </Col>
-                                    )}
-                                </>
-                            }
-                        />
-                        <Route
-                            path="/signup"
-                            element={
-                                <>
-                                    {user ? (
-                                        <Navigate to="/" />) : (
-                                        <Col md={5} className="my-auto">
-                                            <motion.div
-                                                animate={{ scale: 1 }}
-                                                initial={{ scale: 0 }}
-                                                transition={{ type: "tween", duration: .5 }}>
-                                                <SignupView />
-                                            </motion.div>
-                                        </Col>
-                                    )}
-                                </>
-                            }
-                        />
-                        <Route
-                            path="/"
-                            element={
-                                <>
-                                    {!user ? (
-                                        <Navigate to="/login" replace />
-                                    ) : (
-                                        <>
-                                            <Row className="justify-content-center">
-                                                {movies.map((movie) => {
-                                                    return (
+                <Routes>
+                    <Route
+                        path="/login"
+                        element={
+                            <>
+                                {user ? (<Navigate to="/" />) : (
+                                    <Col md={5} className="my-auto">
+                                        <motion.div
+                                            animate={{ scale: 1 }}
+                                            initial={{ scale: 0 }}
+                                            transition={{ type: "tween", duration: .5 }}>
+                                            <LoginView
+                                                onLoggedIn={(user, token) => {
+                                                    setUser(user)
+                                                    setToken(token)
+                                                }} />
+                                        </motion.div>
+                                    </Col>
+                                )}
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/signup"
+                        element={
+                            <>
+                                {user ? (
+                                    <Navigate to="/" />) : (
+                                    <Col md={5} className="my-auto">
+                                        <motion.div
+                                            animate={{ scale: 1 }}
+                                            initial={{ scale: 0 }}
+                                            transition={{ type: "tween", duration: .5 }}>
+                                            <SignupView />
+                                        </motion.div>
+                                    </Col>
+                                )}
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <>
+                                        <Row className="justify-content-center">
+                                            {movies.map((movie) => {
+                                                return (
 
-                                                        <Col className="mb-4" key={movie._id} md={3}>
-                                                            <MovieCard movie={movie} />
-                                                        </Col>
+                                                    <Col className="mb-4" key={movie._id} md={3}>
+                                                        <MovieCard movie={movie} />
+                                                    </Col>
 
-                                                    );
-                                                })}
-                                            </Row>
-                                        </>
-                                    )}
-                                </>
-                            }
-                        />
-                        <Route
-                            path="/movies/:movieId"
-                            element={
-                                <>
-                                    {!user ? (
-                                        <Navigate to="/login" replace />
-                                    ) : movies.length === 0 ? (
-                                        <Col>The list is empty!</Col>
-                                    ) : (
-                                        <Col md={8}>
-                                            <motion.div
-                                                animate={{ scale: 1 }}
-                                                initial={{ scale: 0 }}
-                                                transition={{ type: "tween", duration: .5 }}>
-                                                <MovieView movies={movies} />
-                                            </motion.div>
-                                        </Col>
-                                    )}
-                                </>
-                            }
-                        />
-                        <Route
-                            path="/profile"
-                            element={
-                                <>
-                                    {!user ? (<Navigate to="/login" replace />) :
-                                        <Row>
-                                            <ProfileView user={user} />
-                                        </Row>}
-                                </>
-                            }
-                        />
+                                                );
+                                            })}
+                                        </Row>
+                                    </>
+                                )}
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/movies/:movieId"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : movies.length === 0 ? (
+                                    <Col>The list is empty!</Col>
+                                ) : (
+                                    <Col md={8}>
+                                        <motion.div
+                                            animate={{ scale: 1 }}
+                                            initial={{ scale: 0 }}
+                                            transition={{ type: "tween", duration: .5 }}>
+                                            <MovieView movies={movies} />
+                                        </motion.div>
+                                    </Col>
+                                )}
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/profile"
+                        element={
+                            <>
+                                {!user ? (<Navigate to="/login" replace />) :
+                                    <Row>
+                                        <ProfileView
+                                            user={user}
+                                        />
+                                    </Row>}
+                            </>
+                        }
+                    />
 
-                    </Routes>
+                </Routes>
             </Row>
         </BrowserRouter>
 
