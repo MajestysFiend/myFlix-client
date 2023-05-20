@@ -1,5 +1,8 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const showPassword = () => {
     var passwordInput = document.getElementById("passwordInput2");
@@ -44,57 +47,75 @@ export const SignupView = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="setUsername">
-            <Form.Label>Username</Form.Label>
-                <Form.Control
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                    placeholder="Username"
-                    minlength="4"
-                />
-            </Form.Group>
-            <Form.Group controlId="setPassword">
-            <Form.Label>Password</Form.Label>
-                <Form.Control
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    id="passwordInput2"
-                    autocomplete="new-password"
-                    placeholder="Password"
-                    required
-                    minlength="4"
-                />
+        <motion.div className="signup-container"
+            animate={{ scale: 1 }}
+            initial={{ scale: 0 }}
+            transition={{ type: "tween", duration: .5 }}>
+            <div className="text-center">
+                <h1><span className="my">my</span><span className="flix">Flix</span></h1>
+                <h2><span className="my">Sign</span><span className="flix">up</span></h2>
+            </div>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="setUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        placeholder="Username"
+                        minlength="4"
+                    />
                 </Form.Group>
-            <Form.Check
-                type="switch"
-                label="Show Password"
-                onClick={showPassword} /><br/>
-            <Form.Group controlId="setEmail">
-            <Form.Label>Email</Form.Label>
-                <Form.Control
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    autocomplete="email"
-                    placeholder="Email"
-                    required
-                />
-            </Form.Group>
-            <Form.Group controlId="setBirthday">
-            <Form.Label>Birthday</Form.Label>
-                <Form.Control
-                    type="date"
-                    value={birthday}
-                    onChange={(e) => setBirthday(e.target.value)}
-                    autocomplete="bday"
-                    required
-                />
-            </Form.Group ><br/>
-            <Button variant="primary" type="submit">Submit</Button>
-        </Form>
+                <Form.Group controlId="setPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        id="passwordInput2"
+                        autocomplete="new-password"
+                        placeholder="Password"
+                        required
+                        minlength="4"
+                    />
+                </Form.Group>
+                <Form.Check
+                    type="switch"
+                    label="Show Password"
+                    onClick={showPassword} /><br />
+                <Form.Group controlId="setEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        autocomplete="email"
+                        placeholder="Email"
+                        required
+                    />
+                </Form.Group>
+                <Form.Group controlId="setBirthday">
+                    <Form.Label>Birthday</Form.Label>
+                    <Form.Control
+                        type="date"
+                        value={birthday}
+                        onChange={(e) => setBirthday(e.target.value)}
+                        autocomplete="bday"
+                        required
+                    />
+                </Form.Group ><br />
+                <div className="text-center">
+                    <Button variant="primary" type="submit">Sign Me Up!</Button>
+                </div>
+            </Form>
+            <div className="text-center"><br /><br />
+                <small>Already a member? </small>
+                <Link to="/login">
+                    <Button variant="primary">Log in Now!</Button>
+                </Link>
+            </div>
+        </motion.div>
+
     )
 }

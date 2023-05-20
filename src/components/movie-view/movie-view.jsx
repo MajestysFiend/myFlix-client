@@ -1,32 +1,47 @@
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import "./movie-view.scss"
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies }) => {
+    const { movieId } = useParams();
+
+    const movie = movies.find((m) => m._id === movieId);
+
     return (
-        <div>
-            <div>
-                <img src={movie.ImagePath} alt={movie.Title + " Cover Image"} style={{width: "100%"}} />
-            </div>
-            <div>
-                <small>Cover art provided by <a href={movie.ImagePath}>Wikipedia</a></small>
-            </div>
-            <div>
-                <span>Title: </span>
-                <span>{movie.Title}</span>
-            </div>
-            <div>
-                <span>Director: </span>
-                <span>{movie.Director.Name}</span>
-            </div>
-            <div>
-                <span>Genre: </span>
-                <span>{movie.Genre.Name}</span>
-            </div>
-            <div>
-                <span>Description: </span>
-                <span>{movie.Description}</span>
-            </div>
-            <button onClick={onBackClick} className="back-button">Back</button>
+        <div className="movieview-container">
+            <Row>
+                <Col>
+                    <img src={movie.ImagePath} alt={movie.Title + " Cover Image"} style={{ width: "100%" }} />
+                    <div className="text-center"><small className="picture-reference">Cover art provided by <a href={movie.ImagePath} className="picture-link">Wikipedia</a></small></div>
+                </Col>
+                <Col>
+                    <div>
+                        <span className="moviecard-title">{movie.Title}</span>
+                    </div>
+                    <div>
+                        <p className="label">Director</p>
+                        <span className="moviecard-director">{movie.Director.Name}</span>
+                    </div>
+                    <div>
+                        <p className="label">Genre</p>
+                        <span className="moviecard-genre">{movie.Genre.Name}</span>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <div className="text-center description">
+                    <span className="movie-description align-items-center">{movie.Description}</span><br />
+                </div>
+                <div className="text-center">
+                    <Link to={`/`}>
+                        <Button className="back-button">Back</Button>
+                    </Link>
+                </div>
+            </Row>
         </div>
     );
 };

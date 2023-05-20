@@ -2926,7 +2926,6 @@ $parcel$ReactRefreshHelpers$98a3.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
 var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
 var _container = require("react-bootstrap/Container");
@@ -2934,17 +2933,14 @@ var _containerDefault = parcelHelpers.interopDefault(_container);
 var _indexScss = require("./index.scss");
 const MyFlixApplication = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-        style: {
-            border: "1px solid red"
-        },
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 10,
-            columnNumber: 13
+            lineNumber: 9,
+            columnNumber: 17
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 9,
+        lineNumber: 8,
         columnNumber: 9
     }, undefined);
 };
@@ -2955,7 +2951,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyFlixApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 20,
+    lineNumber: 19,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2966,7 +2962,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","bootstrap/dist/css/bootstrap.min.css":"i5LP7"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("132337f425babcdf");
 
@@ -27162,15 +27158,20 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MainView", ()=>MainView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _navigationBar = require("../navigation-bar/navigation-bar");
 var _react = require("react");
 var _loginView = require("../login-view/login-view");
+var _signupView = require("../signup-view/signup-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
-var _signupView = require("../signup-view/signup-view");
+var _reactBootstrap = require("react-bootstrap");
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
+var _framerMotion = require("framer-motion");
+var _reactRouterDom = require("react-router-dom");
+var _profileView = require("../profile-view/profile-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27179,7 +27180,7 @@ const MainView = ()=>{
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     const [movies, setMovies] = (0, _react.useState)([]);
-    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    //const [selectedMovie, setSelectedMovie] = useState(null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
         fetch("https://myflixapplication.herokuapp.com/movies", {
@@ -27192,119 +27193,177 @@ const MainView = ()=>{
     }, [
         token
     ]);
-    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-        className: "justify-content-md-center",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-            md: 6,
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
-                    onLoggedIn: (user, token)=>{
-                        setUser(user);
-                        setToken(token);
-                    }
-                }, void 0, false, {
-                    fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 37,
-                    columnNumber: 21
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
-                    fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 42,
-                    columnNumber: 21
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 36,
-            columnNumber: 17
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 35,
-        columnNumber: 13
-    }, undefined);
-    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-        className: "justify-content-md-center",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-            md: 8,
-            style: {
-                border: "1px solid black"
-            },
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-                movie: selectedMovie,
-                onBackClick: ()=>{
-                    setSelectedMovie(null);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navigationBar.NavigationBar), {
+                user: user,
+                onLoggedOut: ()=>{
+                    setUser(null);
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 53,
-                columnNumber: 21
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 52,
-            columnNumber: 17
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 51,
-        columnNumber: 13
-    }, undefined);
-    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "The movie list is empty"
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 64,
-        columnNumber: 16
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-        className: "justify-content-md-center",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [
-                movies.map((movie)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                        md: 3,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                            movie: movie,
-                            onMovieClick: (newSelectedMovie)=>{
-                                setSelectedMovie(newSelectedMovie);
-                            }
+                lineNumber: 39,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                className: "justify-content-center customHeight",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/login",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/"
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    md: 5,
+                                    className: "my-auto",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+                                        animate: {
+                                            scale: 1
+                                        },
+                                        initial: {
+                                            scale: 0
+                                        },
+                                        transition: {
+                                            type: "tween",
+                                            duration: .5
+                                        },
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+                                            onLoggedIn: (user, token)=>{
+                                                setUser(user);
+                                                setToken(token);
+                                            }
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0)
+                            }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 74,
-                            columnNumber: 29
+                            lineNumber: 47,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/signup",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/"
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    md: 5,
+                                    className: "my-auto",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+                                        animate: {
+                                            scale: 1
+                                        },
+                                        initial: {
+                                            scale: 0
+                                        },
+                                        transition: {
+                                            type: "tween",
+                                            duration: .5
+                                        },
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 68,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                        className: "justify-content-center",
+                                        children: movies.map((movie)=>{
+                                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                                className: "mb-4",
+                                                md: 3,
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                                    movie: movie
+                                                }, void 0, false, void 0, void 0)
+                                            }, movie._id, false, void 0, void 0);
+                                        })
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 86,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/movies/:movieId",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, void 0, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    children: "The list is empty!"
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    md: 8,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+                                        animate: {
+                                            scale: 1
+                                        },
+                                        initial: {
+                                            scale: 0
+                                        },
+                                        transition: {
+                                            type: "tween",
+                                            duration: .5
+                                        },
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+                                            movies: movies
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 110,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/profile",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
+                                        user: user
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 131,
+                            columnNumber: 25
                         }, undefined)
-                    }, movie._id, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 73,
-                        columnNumber: 25
-                    }, undefined);
-                }),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        setUser(null);
-                        setToken(null);
-                        localStorage.clear();
-                    },
-                    children: "Logout"
-                }, void 0, false, {
+                    ]
+                }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 84,
-                    columnNumber: 17
+                    lineNumber: 46,
+                    columnNumber: 21
                 }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 69,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
+            }, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 45,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 68,
+        lineNumber: 38,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "9wJBvfUyU2IigbyWC+M5y3EH9h4=");
+_s(MainView, "vrQobkEX5jhNcI69dtstaSSmWyg=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27314,7 +27373,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"64njc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap":"3AD9A","framer-motion":"5bZBB","react-router-dom":"9xmpe","../signup-view/signup-view":"4OGiN","../movie-card/movie-card":"bwuIu","../navigation-bar/navigation-bar":"bsPVM","../profile-view/profile-view":"2vVqf"}],"64njc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27477,73 +27536,224 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"4d70cdab619bcb6f":"iW7ej"}],"bwuIu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"4d70cdab619bcb6f":"iW7ej"}],"ggaUx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$67b2.prelude(module);
+$parcel$ReactRefreshHelpers$e9f6.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouter = require("react-router");
+var _reactRouterDom = require("react-router-dom");
+var _movieViewScss = require("./movie-view.scss");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
-const MovieCard = ({ movie , onMovieClick  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-        onClick: ()=>onMovieClick(movie),
-        className: "h-100",
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _s = $RefreshSig$();
+const MovieView = ({ movies  })=>{
+    _s();
+    const { movieId  } = (0, _reactRouter.useParams)();
+    const movie = movies.find((m)=>m._id === movieId);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "movieview-container",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
-                variant: "top",
-                src: movie.ImagePath
-            }, void 0, false, {
-                fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
-                        children: movie.Title
-                    }, void 0, false, {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 9,
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: movie.ImagePath,
+                                alt: movie.Title + " Cover Image",
+                                style: {
+                                    width: "100%"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 18,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "text-center",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                                    className: "picture-reference",
+                                    children: [
+                                        "Cover art provided by ",
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            href: movie.ImagePath,
+                                            className: "picture-link",
+                                            children: "Wikipedia"
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 19,
+                                            columnNumber: 109
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 19,
+                                    columnNumber: 50
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 19,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 17,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
-                        children: movie.Director.Name
-                    }, void 0, false, {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 10,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                        onClick: ()=>onMovieClick(movie),
-                        variant: "link",
-                        children: "Open"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 11,
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "moviecard-title",
+                                    children: movie.Title
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 23,
+                                    columnNumber: 25
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 22,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "label",
+                                        children: "Director"
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 26,
+                                        columnNumber: 25
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "moviecard-director",
+                                        children: movie.Director.Name
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 27,
+                                        columnNumber: 25
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 25,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "label",
+                                        children: "Genre"
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 30,
+                                        columnNumber: 25
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "moviecard-genre",
+                                        children: movie.Genre.Name
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 31,
+                                        columnNumber: 25
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 29,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 21,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 8,
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "text-center description",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "movie-description align-items-center",
+                                children: movie.Description
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 37,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 37,
+                                columnNumber: 102
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 36,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "text-center",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                className: "back-button",
+                                children: "Back"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 41,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 40,
+                            columnNumber: 21
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 39,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 35,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/components/movie-card/movie-card.jsx",
-        lineNumber: 6,
+        fileName: "src/components/movie-view/movie-view.jsx",
+        lineNumber: 15,
         columnNumber: 9
     }, undefined);
 };
-_c = MovieCard;
-MovieCard.propTypes = {
+_s(MovieView, "e2L2DPdRH1AShA7yIOCsYRlzvlI=", false, function() {
+    return [
+        (0, _reactRouter.useParams)
+    ];
+});
+_c = MovieView;
+MovieView.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
         Title: (0, _propTypesDefault.default).string.isRequired,
         Director: (0, _propTypesDefault.default).string.isRequired,
@@ -27551,17 +27761,17 @@ MovieCard.propTypes = {
         Description: (0, _propTypesDefault.default).string.isRequired,
         Genre: (0, _propTypesDefault.default).string.isRequired
     }).isRequired,
-    onMovieClick: (0, _propTypesDefault.default).func.isRequired
+    onBackClick: (0, _propTypesDefault.default).func.isRequired
 };
 var _c;
-$RefreshReg$(_c, "MovieCard");
+$RefreshReg$(_c, "MovieView");
 
-  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","prop-types":"7wKI2","react-bootstrap":"3AD9A"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","prop-types":"7wKI2","./movie-view.scss":"jnlR5","react-bootstrap":"3AD9A","react-router":"dbWyW","react-router-dom":"9xmpe","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -28308,7 +28518,7 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"8ad7cf7740821667":"jZTZJ","fa91b886b5662578":"fqKuf"}],"3AD9A":[function(require,module,exports) {
+},{"8ad7cf7740821667":"jZTZJ","fa91b886b5662578":"fqKuf"}],"jnlR5":[function() {},{}],"3AD9A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
@@ -40966,187 +41176,5206 @@ const Tooltip = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , placement ="right"
 Tooltip.displayName = "Tooltip";
 exports.default = Tooltip;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./helpers":"gotcT","./getInitialPopperStyles":"c8j3Q","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"ggaUx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e9f6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./helpers":"gotcT","./getInitialPopperStyles":"c8j3Q","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dbWyW":[function(require,module,exports) {
+/**
+ * React Router v6.11.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieView", ()=>MovieView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _movieViewScss = require("./movie-view.scss");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-const MovieView = ({ movie , onBackClick  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.ImagePath,
-                    alt: movie.Title + " Cover Image",
-                    style: {
-                        width: "100%"
-                    }
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 8,
-                    columnNumber: 17
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
-                    children: [
-                        "Cover art provided by ",
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            href: movie.ImagePath,
-                            children: "Wikipedia"
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 11,
-                            columnNumber: 46
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 11,
-                    columnNumber: 17
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Title: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 14,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.Title
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 15,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 13,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Director: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 18,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.Director.Name
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 19,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 17,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Genre: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 22,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.Genre.Name
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 23,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 21,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Description: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 26,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.Description
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 27,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 25,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: onBackClick,
-                className: "back-button",
-                children: "Back"
-            }, void 0, false, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 29,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/movie-view/movie-view.jsx",
-        lineNumber: 6,
-        columnNumber: 9
-    }, undefined);
-};
-_c = MovieView;
-MovieView.propTypes = {
-    movie: (0, _propTypesDefault.default).shape({
-        Title: (0, _propTypesDefault.default).string.isRequired,
-        Director: (0, _propTypesDefault.default).string.isRequired,
-        ImagePath: (0, _propTypesDefault.default).string.isRequired,
-        Description: (0, _propTypesDefault.default).string.isRequired,
-        Genre: (0, _propTypesDefault.default).string.isRequired
-    }).isRequired,
-    onBackClick: (0, _propTypesDefault.default).func.isRequired
-};
-var _c;
-$RefreshReg$(_c, "MovieView");
-
-  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+parcelHelpers.export(exports, "AbortedDeferredError", ()=>(0, _router.AbortedDeferredError));
+parcelHelpers.export(exports, "NavigationType", ()=>(0, _router.Action));
+parcelHelpers.export(exports, "createPath", ()=>(0, _router.createPath));
+parcelHelpers.export(exports, "defer", ()=>(0, _router.defer));
+parcelHelpers.export(exports, "generatePath", ()=>(0, _router.generatePath));
+parcelHelpers.export(exports, "isRouteErrorResponse", ()=>(0, _router.isRouteErrorResponse));
+parcelHelpers.export(exports, "json", ()=>(0, _router.json));
+parcelHelpers.export(exports, "matchPath", ()=>(0, _router.matchPath));
+parcelHelpers.export(exports, "matchRoutes", ()=>(0, _router.matchRoutes));
+parcelHelpers.export(exports, "parsePath", ()=>(0, _router.parsePath));
+parcelHelpers.export(exports, "redirect", ()=>(0, _router.redirect));
+parcelHelpers.export(exports, "resolvePath", ()=>(0, _router.resolvePath));
+parcelHelpers.export(exports, "Await", ()=>Await);
+parcelHelpers.export(exports, "MemoryRouter", ()=>MemoryRouter);
+parcelHelpers.export(exports, "Navigate", ()=>Navigate);
+parcelHelpers.export(exports, "Outlet", ()=>Outlet);
+parcelHelpers.export(exports, "Route", ()=>Route);
+parcelHelpers.export(exports, "Router", ()=>Router);
+parcelHelpers.export(exports, "RouterProvider", ()=>RouterProvider);
+parcelHelpers.export(exports, "Routes", ()=>Routes);
+parcelHelpers.export(exports, "UNSAFE_DataRouterContext", ()=>DataRouterContext);
+parcelHelpers.export(exports, "UNSAFE_DataRouterStateContext", ()=>DataRouterStateContext);
+parcelHelpers.export(exports, "UNSAFE_LocationContext", ()=>LocationContext);
+parcelHelpers.export(exports, "UNSAFE_NavigationContext", ()=>NavigationContext);
+parcelHelpers.export(exports, "UNSAFE_RouteContext", ()=>RouteContext);
+parcelHelpers.export(exports, "UNSAFE_mapRouteProperties", ()=>mapRouteProperties);
+parcelHelpers.export(exports, "UNSAFE_useRouteId", ()=>useRouteId);
+parcelHelpers.export(exports, "UNSAFE_useRoutesImpl", ()=>useRoutesImpl);
+parcelHelpers.export(exports, "createMemoryRouter", ()=>createMemoryRouter);
+parcelHelpers.export(exports, "createRoutesFromChildren", ()=>createRoutesFromChildren);
+parcelHelpers.export(exports, "createRoutesFromElements", ()=>createRoutesFromChildren);
+parcelHelpers.export(exports, "renderMatches", ()=>renderMatches);
+parcelHelpers.export(exports, "unstable_useBlocker", ()=>useBlocker);
+parcelHelpers.export(exports, "useActionData", ()=>useActionData);
+parcelHelpers.export(exports, "useAsyncError", ()=>useAsyncError);
+parcelHelpers.export(exports, "useAsyncValue", ()=>useAsyncValue);
+parcelHelpers.export(exports, "useHref", ()=>useHref);
+parcelHelpers.export(exports, "useInRouterContext", ()=>useInRouterContext);
+parcelHelpers.export(exports, "useLoaderData", ()=>useLoaderData);
+parcelHelpers.export(exports, "useLocation", ()=>useLocation);
+parcelHelpers.export(exports, "useMatch", ()=>useMatch);
+parcelHelpers.export(exports, "useMatches", ()=>useMatches);
+parcelHelpers.export(exports, "useNavigate", ()=>useNavigate);
+parcelHelpers.export(exports, "useNavigation", ()=>useNavigation);
+parcelHelpers.export(exports, "useNavigationType", ()=>useNavigationType);
+parcelHelpers.export(exports, "useOutlet", ()=>useOutlet);
+parcelHelpers.export(exports, "useOutletContext", ()=>useOutletContext);
+parcelHelpers.export(exports, "useParams", ()=>useParams);
+parcelHelpers.export(exports, "useResolvedPath", ()=>useResolvedPath);
+parcelHelpers.export(exports, "useRevalidator", ()=>useRevalidator);
+parcelHelpers.export(exports, "useRouteError", ()=>useRouteError);
+parcelHelpers.export(exports, "useRouteLoaderData", ()=>useRouteLoaderData);
+parcelHelpers.export(exports, "useRoutes", ()=>useRoutes);
+var _react = require("react");
+var _router = require("@remix-run/router");
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","prop-types":"7wKI2","./movie-view.scss":"jnlR5"}],"jnlR5":[function() {},{}],"9YtA0":[function(require,module,exports) {
+const DataRouterContext = /*#__PURE__*/ _react.createContext(null);
+DataRouterContext.displayName = "DataRouter";
+const DataRouterStateContext = /*#__PURE__*/ _react.createContext(null);
+DataRouterStateContext.displayName = "DataRouterState";
+const AwaitContext = /*#__PURE__*/ _react.createContext(null);
+AwaitContext.displayName = "Await";
+const NavigationContext = /*#__PURE__*/ _react.createContext(null);
+NavigationContext.displayName = "Navigation";
+const LocationContext = /*#__PURE__*/ _react.createContext(null);
+LocationContext.displayName = "Location";
+const RouteContext = /*#__PURE__*/ _react.createContext({
+    outlet: null,
+    matches: []
+});
+RouteContext.displayName = "Route";
+const RouteErrorContext = /*#__PURE__*/ _react.createContext(null);
+RouteErrorContext.displayName = "RouteError";
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/hooks/use-href
+ */ function useHref(to, _temp) {
+    let { relative  } = _temp === void 0 ? {} : _temp;
+    !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useHref() may be used only in the context of a <Router> component.");
+    let { basename , navigator  } = _react.useContext(NavigationContext);
+    let { hash , pathname , search  } = useResolvedPath(to, {
+        relative
+    });
+    let joinedPathname = pathname; // If we're operating within a basename, prepend it to the pathname prior
+    // to creating the href.  If this is a root navigation, then just use the raw
+    // basename which allows the basename to have full control over the presence
+    // of a trailing slash on root links
+    if (basename !== "/") joinedPathname = pathname === "/" ? basename : (0, _router.joinPaths)([
+        basename,
+        pathname
+    ]);
+    return navigator.createHref({
+        pathname: joinedPathname,
+        search,
+        hash
+    });
+}
+/**
+ * Returns true if this component is a descendant of a <Router>.
+ *
+ * @see https://reactrouter.com/hooks/use-in-router-context
+ */ function useInRouterContext() {
+    return _react.useContext(LocationContext) != null;
+}
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/hooks/use-location
+ */ function useLocation() {
+    !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useLocation() may be used only in the context of a <Router> component.");
+    return _react.useContext(LocationContext).location;
+}
+/**
+ * Returns the current navigation action which describes how the router came to
+ * the current location, either by a pop, push, or replace on the history stack.
+ *
+ * @see https://reactrouter.com/hooks/use-navigation-type
+ */ function useNavigationType() {
+    return _react.useContext(LocationContext).navigationType;
+}
+/**
+ * Returns a PathMatch object if the given pattern matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * <NavLink>.
+ *
+ * @see https://reactrouter.com/hooks/use-match
+ */ function useMatch(pattern) {
+    !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useMatch() may be used only in the context of a <Router> component.");
+    let { pathname  } = useLocation();
+    return _react.useMemo(()=>(0, _router.matchPath)(pattern, pathname), [
+        pathname,
+        pattern
+    ]);
+}
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */ const navigateEffectWarning = "You should call navigate() in a React.useEffect(), not when your component is first rendered."; // Mute warnings for calls to useNavigate in SSR environments
+function useIsomorphicLayoutEffect(cb) {
+    let isStatic = _react.useContext(NavigationContext).static;
+    if (!isStatic) // We should be able to get rid of this once react 18.3 is released
+    // See: https://github.com/facebook/react/pull/26395
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    _react.useLayoutEffect(cb);
+}
+/**
+ * Returns an imperative method for changing the location. Used by <Link>s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/hooks/use-navigate
+ */ function useNavigate() {
+    let isDataRouter = _react.useContext(DataRouterContext) != null; // Conditional usage is OK here because the usage of a data router is static
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return isDataRouter ? useNavigateStable() : useNavigateUnstable();
+}
+function useNavigateUnstable() {
+    !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useNavigate() may be used only in the context of a <Router> component.");
+    let { basename , navigator  } = _react.useContext(NavigationContext);
+    let { matches  } = _react.useContext(RouteContext);
+    let { pathname: locationPathname  } = useLocation();
+    let routePathnamesJson = JSON.stringify((0, _router.UNSAFE_getPathContributingMatches)(matches).map((match)=>match.pathnameBase));
+    let activeRef = _react.useRef(false);
+    useIsomorphicLayoutEffect(()=>{
+        activeRef.current = true;
+    });
+    let navigate = _react.useCallback(function(to, options) {
+        if (options === void 0) options = {};
+        (0, _router.UNSAFE_warning)(activeRef.current, navigateEffectWarning); // Short circuit here since if this happens on first render the navigate
+        // is useless because we haven't wired up our history listener yet
+        if (!activeRef.current) return;
+        if (typeof to === "number") {
+            navigator.go(to);
+            return;
+        }
+        let path = (0, _router.resolveTo)(to, JSON.parse(routePathnamesJson), locationPathname, options.relative === "path"); // If we're operating within a basename, prepend it to the pathname prior
+        // to handing off to history.  If this is a root navigation, then we
+        // navigate to the raw basename which allows the basename to have full
+        // control over the presence of a trailing slash on root links
+        if (basename !== "/") path.pathname = path.pathname === "/" ? basename : (0, _router.joinPaths)([
+            basename,
+            path.pathname
+        ]);
+        (!!options.replace ? navigator.replace : navigator.push)(path, options.state, options);
+    }, [
+        basename,
+        navigator,
+        routePathnamesJson,
+        locationPathname
+    ]);
+    return navigate;
+}
+const OutletContext = /*#__PURE__*/ _react.createContext(null);
+/**
+ * Returns the context (if provided) for the child route at this level of the route
+ * hierarchy.
+ * @see https://reactrouter.com/hooks/use-outlet-context
+ */ function useOutletContext() {
+    return _react.useContext(OutletContext);
+}
+/**
+ * Returns the element for the child route at this level of the route
+ * hierarchy. Used internally by <Outlet> to render child routes.
+ *
+ * @see https://reactrouter.com/hooks/use-outlet
+ */ function useOutlet(context) {
+    let outlet = _react.useContext(RouteContext).outlet;
+    if (outlet) return /*#__PURE__*/ _react.createElement(OutletContext.Provider, {
+        value: context
+    }, outlet);
+    return outlet;
+}
+/**
+ * Returns an object of key/value pairs of the dynamic params from the current
+ * URL that were matched by the route path.
+ *
+ * @see https://reactrouter.com/hooks/use-params
+ */ function useParams() {
+    let { matches  } = _react.useContext(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
+}
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/hooks/use-resolved-path
+ */ function useResolvedPath(to, _temp2) {
+    let { relative  } = _temp2 === void 0 ? {} : _temp2;
+    let { matches  } = _react.useContext(RouteContext);
+    let { pathname: locationPathname  } = useLocation();
+    let routePathnamesJson = JSON.stringify((0, _router.UNSAFE_getPathContributingMatches)(matches).map((match)=>match.pathnameBase));
+    return _react.useMemo(()=>(0, _router.resolveTo)(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [
+        to,
+        routePathnamesJson,
+        locationPathname,
+        relative
+    ]);
+}
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an <Outlet> to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/hooks/use-routes
+ */ function useRoutes(routes, locationArg) {
+    return useRoutesImpl(routes, locationArg);
+} // Internal implementation with accept optional param for RouterProvider usage
+function useRoutesImpl(routes, locationArg, dataRouterState) {
+    !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useRoutes() may be used only in the context of a <Router> component.");
+    let { navigator  } = _react.useContext(NavigationContext);
+    let { matches: parentMatches  } = _react.useContext(RouteContext);
+    let routeMatch = parentMatches[parentMatches.length - 1];
+    let parentParams = routeMatch ? routeMatch.params : {};
+    let parentPathname = routeMatch ? routeMatch.pathname : "/";
+    let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+    let parentRoute = routeMatch && routeMatch.route;
+    {
+        // You won't get a warning about 2 different <Routes> under a <Route>
+        // without a trailing *, but this is a best-effort warning anyway since we
+        // cannot even give the warning unless they land at the parent route.
+        //
+        // Example:
+        //
+        // <Routes>
+        //   {/* This route path MUST end with /* because otherwise
+        //       it will never match /blog/post/123 */}
+        //   <Route path="blog" element={<Blog />} />
+        //   <Route path="blog/feed" element={<BlogFeed />} />
+        // </Routes>
+        //
+        // function Blog() {
+        //   return (
+        //     <Routes>
+        //       <Route path="post/:id" element={<Post />} />
+        //     </Routes>
+        //   );
+        // }
+        let parentPath = parentRoute && parentRoute.path || "";
+        warningOnce(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ('"' + parentPathname + '" (under <Route path="' + parentPath + '">) but the ') + 'parent route path has no trailing "*". This means if you navigate ' + "deeper, the parent won't match anymore and therefore the child " + "routes will never render.\n\n" + ('Please change the parent <Route path="' + parentPath + '"> to <Route ') + ('path="' + (parentPath === "/" ? "*" : parentPath + "/*") + '">.'));
+    }
+    let locationFromContext = useLocation();
+    let location;
+    if (locationArg) {
+        var _parsedLocationArg$pa;
+        let parsedLocationArg = typeof locationArg === "string" ? (0, _router.parsePath)(locationArg) : locationArg;
+        !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) && (0, _router.UNSAFE_invariant)(false, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, the location pathname must begin with the portion of the URL pathname that was " + ('matched by all parent routes. The current pathname base is "' + parentPathnameBase + '" ') + ('but pathname "' + parsedLocationArg.pathname + '" was given in the `location` prop.'));
+        location = parsedLocationArg;
+    } else location = locationFromContext;
+    let pathname = location.pathname || "/";
+    let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+    let matches = (0, _router.matchRoutes)(routes, {
+        pathname: remainingPathname
+    });
+    (0, _router.UNSAFE_warning)(parentRoute || matches != null, 'No routes matched location "' + location.pathname + location.search + location.hash + '" ');
+    (0, _router.UNSAFE_warning)(matches == null || matches[matches.length - 1].route.element !== undefined || matches[matches.length - 1].route.Component !== undefined, 'Matched leaf route at location "' + location.pathname + location.search + location.hash + '" ' + "does not have an element or Component. This means it will render an <Outlet /> with a " + 'null value by default resulting in an "empty" page.');
+    let renderedMatches = _renderMatches(matches && matches.map((match)=>Object.assign({}, match, {
+            params: Object.assign({}, parentParams, match.params),
+            pathname: (0, _router.joinPaths)([
+                parentPathnameBase,
+                navigator.encodeLocation ? navigator.encodeLocation(match.pathname).pathname : match.pathname
+            ]),
+            pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : (0, _router.joinPaths)([
+                parentPathnameBase,
+                navigator.encodeLocation ? navigator.encodeLocation(match.pathnameBase).pathname : match.pathnameBase
+            ])
+        })), parentMatches, dataRouterState); // When a user passes in a `locationArg`, the associated routes need to
+    // be wrapped in a new `LocationContext.Provider` in order for `useLocation`
+    // to use the scoped location instead of the global location.
+    if (locationArg && renderedMatches) return /*#__PURE__*/ _react.createElement(LocationContext.Provider, {
+        value: {
+            location: _extends({
+                pathname: "/",
+                search: "",
+                hash: "",
+                state: null,
+                key: "default"
+            }, location),
+            navigationType: (0, _router.Action).Pop
+        }
+    }, renderedMatches);
+    return renderedMatches;
+}
+function DefaultErrorComponent() {
+    let error = useRouteError();
+    let message = (0, _router.isRouteErrorResponse)(error) ? error.status + " " + error.statusText : error instanceof Error ? error.message : JSON.stringify(error);
+    let stack = error instanceof Error ? error.stack : null;
+    let lightgrey = "rgba(200,200,200, 0.5)";
+    let preStyles = {
+        padding: "0.5rem",
+        backgroundColor: lightgrey
+    };
+    let codeStyles = {
+        padding: "2px 4px",
+        backgroundColor: lightgrey
+    };
+    let devInfo = null;
+    console.error("Error handled by React Router default ErrorBoundary:", error);
+    devInfo = /*#__PURE__*/ _react.createElement(_react.Fragment, null, /*#__PURE__*/ _react.createElement("p", null, "\uD83D\uDCBF Hey developer \uD83D\uDC4B"), /*#__PURE__*/ _react.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /*#__PURE__*/ _react.createElement("code", {
+        style: codeStyles
+    }, "ErrorBoundary"), " or", " ", /*#__PURE__*/ _react.createElement("code", {
+        style: codeStyles
+    }, "errorElement"), " prop on your route."));
+    return /*#__PURE__*/ _react.createElement(_react.Fragment, null, /*#__PURE__*/ _react.createElement("h2", null, "Unexpected Application Error!"), /*#__PURE__*/ _react.createElement("h3", {
+        style: {
+            fontStyle: "italic"
+        }
+    }, message), stack ? /*#__PURE__*/ _react.createElement("pre", {
+        style: preStyles
+    }, stack) : null, devInfo);
+}
+const defaultErrorElement = /*#__PURE__*/ _react.createElement(DefaultErrorComponent, null);
+class RenderErrorBoundary extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            location: props.location,
+            revalidation: props.revalidation,
+            error: props.error
+        };
+    }
+    static getDerivedStateFromError(error) {
+        return {
+            error: error
+        };
+    }
+    static getDerivedStateFromProps(props, state) {
+        // When we get into an error state, the user will likely click "back" to the
+        // previous page that didn't have an error. Because this wraps the entire
+        // application, that will have no effect--the error page continues to display.
+        // This gives us a mechanism to recover from the error when the location changes.
+        //
+        // Whether we're in an error state or not, we update the location in state
+        // so that when we are in an error state, it gets reset when a new location
+        // comes in and the user recovers from the error.
+        if (state.location !== props.location || state.revalidation !== "idle" && props.revalidation === "idle") return {
+            error: props.error,
+            location: props.location,
+            revalidation: props.revalidation
+        };
+         // If we're not changing locations, preserve the location but still surface
+        // any new errors that may come through. We retain the existing error, we do
+        // this because the error provided from the app state may be cleared without
+        // the location changing.
+        return {
+            error: props.error || state.error,
+            location: state.location,
+            revalidation: props.revalidation || state.revalidation
+        };
+    }
+    componentDidCatch(error, errorInfo) {
+        console.error("React Router caught the following error during render", error, errorInfo);
+    }
+    render() {
+        return this.state.error ? /*#__PURE__*/ _react.createElement(RouteContext.Provider, {
+            value: this.props.routeContext
+        }, /*#__PURE__*/ _react.createElement(RouteErrorContext.Provider, {
+            value: this.state.error,
+            children: this.props.component
+        })) : this.props.children;
+    }
+}
+function RenderedRoute(_ref) {
+    let { routeContext , match , children  } = _ref;
+    let dataRouterContext = _react.useContext(DataRouterContext); // Track how deep we got in our render pass to emulate SSR componentDidCatch
+    // in a DataStaticRouter
+    if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match.route.errorElement || match.route.ErrorBoundary)) dataRouterContext.staticContext._deepestRenderedBoundaryId = match.route.id;
+    return /*#__PURE__*/ _react.createElement(RouteContext.Provider, {
+        value: routeContext
+    }, children);
+}
+function _renderMatches(matches, parentMatches, dataRouterState) {
+    var _dataRouterState2;
+    if (parentMatches === void 0) parentMatches = [];
+    if (dataRouterState === void 0) dataRouterState = null;
+    if (matches == null) {
+        var _dataRouterState;
+        if ((_dataRouterState = dataRouterState) != null && _dataRouterState.errors) // Don't bail if we have data router errors so we can render them in the
+        // boundary.  Use the pre-matched (or shimmed) matches
+        matches = dataRouterState.matches;
+        else return null;
+    }
+    let renderedMatches = matches; // If we have data errors, trim matches to the highest error boundary
+    let errors = (_dataRouterState2 = dataRouterState) == null ? void 0 : _dataRouterState2.errors;
+    if (errors != null) {
+        let errorIndex = renderedMatches.findIndex((m)=>m.route.id && (errors == null ? void 0 : errors[m.route.id]));
+        !(errorIndex >= 0) && (0, _router.UNSAFE_invariant)(false, "Could not find a matching route for errors on route IDs: " + Object.keys(errors).join(","));
+        renderedMatches = renderedMatches.slice(0, Math.min(renderedMatches.length, errorIndex + 1));
+    }
+    return renderedMatches.reduceRight((outlet, match, index)=>{
+        let error = match.route.id ? errors == null ? void 0 : errors[match.route.id] : null; // Only data routers handle errors
+        let errorElement = null;
+        if (dataRouterState) errorElement = match.route.errorElement || defaultErrorElement;
+        let matches = parentMatches.concat(renderedMatches.slice(0, index + 1));
+        let getChildren = ()=>{
+            let children;
+            if (error) children = errorElement;
+            else if (match.route.element) children = match.route.element;
+            else children = outlet;
+            return /*#__PURE__*/ _react.createElement(RenderedRoute, {
+                match: match,
+                routeContext: {
+                    outlet,
+                    matches
+                },
+                children: children
+            });
+        }; // Only wrap in an error boundary within data router usages when we have an
+        // ErrorBoundary/errorElement on this route.  Otherwise let it bubble up to
+        // an ancestor ErrorBoundary/errorElement
+        return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /*#__PURE__*/ _react.createElement(RenderErrorBoundary, {
+            location: dataRouterState.location,
+            revalidation: dataRouterState.revalidation,
+            component: errorElement,
+            error: error,
+            children: getChildren(),
+            routeContext: {
+                outlet: null,
+                matches
+            }
+        }) : getChildren();
+    }, null);
+}
+var DataRouterHook;
+(function(DataRouterHook) {
+    DataRouterHook["UseBlocker"] = "useBlocker";
+    DataRouterHook["UseRevalidator"] = "useRevalidator";
+    DataRouterHook["UseNavigateStable"] = "useNavigate";
+})(DataRouterHook || (DataRouterHook = {}));
+var DataRouterStateHook;
+(function(DataRouterStateHook) {
+    DataRouterStateHook["UseBlocker"] = "useBlocker";
+    DataRouterStateHook["UseLoaderData"] = "useLoaderData";
+    DataRouterStateHook["UseActionData"] = "useActionData";
+    DataRouterStateHook["UseRouteError"] = "useRouteError";
+    DataRouterStateHook["UseNavigation"] = "useNavigation";
+    DataRouterStateHook["UseRouteLoaderData"] = "useRouteLoaderData";
+    DataRouterStateHook["UseMatches"] = "useMatches";
+    DataRouterStateHook["UseRevalidator"] = "useRevalidator";
+    DataRouterStateHook["UseNavigateStable"] = "useNavigate";
+    DataRouterStateHook["UseRouteId"] = "useRouteId";
+})(DataRouterStateHook || (DataRouterStateHook = {}));
+function getDataRouterConsoleError(hookName) {
+    return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+function useDataRouterContext(hookName) {
+    let ctx = _react.useContext(DataRouterContext);
+    !ctx && (0, _router.UNSAFE_invariant)(false, getDataRouterConsoleError(hookName));
+    return ctx;
+}
+function useDataRouterState(hookName) {
+    let state = _react.useContext(DataRouterStateContext);
+    !state && (0, _router.UNSAFE_invariant)(false, getDataRouterConsoleError(hookName));
+    return state;
+}
+function useRouteContext(hookName) {
+    let route = _react.useContext(RouteContext);
+    !route && (0, _router.UNSAFE_invariant)(false, getDataRouterConsoleError(hookName));
+    return route;
+} // Internal version with hookName-aware debugging
+function useCurrentRouteId(hookName) {
+    let route = useRouteContext(hookName);
+    let thisRoute = route.matches[route.matches.length - 1];
+    !thisRoute.route.id && (0, _router.UNSAFE_invariant)(false, hookName + ' can only be used on routes that contain a unique "id"');
+    return thisRoute.route.id;
+}
+/**
+ * Returns the ID for the nearest contextual route
+ */ function useRouteId() {
+    return useCurrentRouteId(DataRouterStateHook.UseRouteId);
+}
+/**
+ * Returns the current navigation, defaulting to an "idle" navigation when
+ * no navigation is in progress
+ */ function useNavigation() {
+    let state = useDataRouterState(DataRouterStateHook.UseNavigation);
+    return state.navigation;
+}
+/**
+ * Returns a revalidate function for manually triggering revalidation, as well
+ * as the current state of any manual revalidations
+ */ function useRevalidator() {
+    let dataRouterContext = useDataRouterContext(DataRouterHook.UseRevalidator);
+    let state = useDataRouterState(DataRouterStateHook.UseRevalidator);
+    return {
+        revalidate: dataRouterContext.router.revalidate,
+        state: state.revalidation
+    };
+}
+/**
+ * Returns the active route matches, useful for accessing loaderData for
+ * parent/child routes or the route "handle" property
+ */ function useMatches() {
+    let { matches , loaderData  } = useDataRouterState(DataRouterStateHook.UseMatches);
+    return _react.useMemo(()=>matches.map((match)=>{
+            let { pathname , params  } = match; // Note: This structure matches that created by createUseMatchesMatch
+            // in the @remix-run/router , so if you change this please also change
+            // that :)  Eventually we'll DRY this up
+            return {
+                id: match.route.id,
+                pathname,
+                params,
+                data: loaderData[match.route.id],
+                handle: match.route.handle
+            };
+        }), [
+        matches,
+        loaderData
+    ]);
+}
+/**
+ * Returns the loader data for the nearest ancestor Route loader
+ */ function useLoaderData() {
+    let state = useDataRouterState(DataRouterStateHook.UseLoaderData);
+    let routeId = useCurrentRouteId(DataRouterStateHook.UseLoaderData);
+    if (state.errors && state.errors[routeId] != null) {
+        console.error("You cannot `useLoaderData` in an errorElement (routeId: " + routeId + ")");
+        return undefined;
+    }
+    return state.loaderData[routeId];
+}
+/**
+ * Returns the loaderData for the given routeId
+ */ function useRouteLoaderData(routeId) {
+    let state = useDataRouterState(DataRouterStateHook.UseRouteLoaderData);
+    return state.loaderData[routeId];
+}
+/**
+ * Returns the action data for the nearest ancestor Route action
+ */ function useActionData() {
+    let state = useDataRouterState(DataRouterStateHook.UseActionData);
+    let route = _react.useContext(RouteContext);
+    !route && (0, _router.UNSAFE_invariant)(false, "useActionData must be used inside a RouteContext");
+    return Object.values((state == null ? void 0 : state.actionData) || {})[0];
+}
+/**
+ * Returns the nearest ancestor Route error, which could be a loader/action
+ * error or a render error.  This is intended to be called from your
+ * ErrorBoundary/errorElement to display a proper error message.
+ */ function useRouteError() {
+    var _state$errors;
+    let error = _react.useContext(RouteErrorContext);
+    let state = useDataRouterState(DataRouterStateHook.UseRouteError);
+    let routeId = useCurrentRouteId(DataRouterStateHook.UseRouteError); // If this was a render error, we put it in a RouteError context inside
+    // of RenderErrorBoundary
+    if (error) return error;
+     // Otherwise look for errors from our data router state
+    return (_state$errors = state.errors) == null ? void 0 : _state$errors[routeId];
+}
+/**
+ * Returns the happy-path data from the nearest ancestor <Await /> value
+ */ function useAsyncValue() {
+    let value = _react.useContext(AwaitContext);
+    return value == null ? void 0 : value._data;
+}
+/**
+ * Returns the error from the nearest ancestor <Await /> value
+ */ function useAsyncError() {
+    let value = _react.useContext(AwaitContext);
+    return value == null ? void 0 : value._error;
+}
+let blockerId = 0;
+/**
+ * Allow the application to block navigations within the SPA and present the
+ * user a confirmation dialog to confirm the navigation.  Mostly used to avoid
+ * using half-filled form data.  This does not handle hard-reloads or
+ * cross-origin navigations.
+ */ function useBlocker(shouldBlock) {
+    let { router  } = useDataRouterContext(DataRouterHook.UseBlocker);
+    let state = useDataRouterState(DataRouterStateHook.UseBlocker);
+    let [blockerKey] = _react.useState(()=>String(++blockerId));
+    let blockerFunction = _react.useCallback((args)=>{
+        return typeof shouldBlock === "function" ? !!shouldBlock(args) : !!shouldBlock;
+    }, [
+        shouldBlock
+    ]);
+    let blocker = router.getBlocker(blockerKey, blockerFunction); // Cleanup on unmount
+    _react.useEffect(()=>()=>router.deleteBlocker(blockerKey), [
+        router,
+        blockerKey
+    ]); // Prefer the blocker from state since DataRouterContext is memoized so this
+    // ensures we update on blocker state updates
+    return state.blockers.get(blockerKey) || blocker;
+}
+/**
+ * Stable version of useNavigate that is used when we are in the context of
+ * a RouterProvider.
+ */ function useNavigateStable() {
+    let { router  } = useDataRouterContext(DataRouterHook.UseNavigateStable);
+    let id = useCurrentRouteId(DataRouterStateHook.UseNavigateStable);
+    let activeRef = _react.useRef(false);
+    useIsomorphicLayoutEffect(()=>{
+        activeRef.current = true;
+    });
+    let navigate = _react.useCallback(function(to, options) {
+        if (options === void 0) options = {};
+        (0, _router.UNSAFE_warning)(activeRef.current, navigateEffectWarning); // Short circuit here since if this happens on first render the navigate
+        // is useless because we haven't wired up our router subscriber yet
+        if (!activeRef.current) return;
+        if (typeof to === "number") router.navigate(to);
+        else router.navigate(to, _extends({
+            fromRouteId: id
+        }, options));
+    }, [
+        router,
+        id
+    ]);
+    return navigate;
+}
+const alreadyWarned = {};
+function warningOnce(key, cond, message) {
+    if (!cond && !alreadyWarned[key]) {
+        alreadyWarned[key] = true;
+        (0, _router.UNSAFE_warning)(false, message);
+    }
+}
+/**
+ * Given a Remix Router instance, render the appropriate UI
+ */ function RouterProvider(_ref) {
+    let { fallbackElement , router  } = _ref;
+    // Need to use a layout effect here so we are subscribed early enough to
+    // pick up on any render-driven redirects/navigations (useEffect/<Navigate>)
+    let [state, setState] = _react.useState(router.state);
+    _react.useLayoutEffect(()=>router.subscribe(setState), [
+        router,
+        setState
+    ]);
+    let navigator = _react.useMemo(()=>{
+        return {
+            createHref: router.createHref,
+            encodeLocation: router.encodeLocation,
+            go: (n)=>router.navigate(n),
+            push: (to, state, opts)=>router.navigate(to, {
+                    state,
+                    preventScrollReset: opts == null ? void 0 : opts.preventScrollReset
+                }),
+            replace: (to, state, opts)=>router.navigate(to, {
+                    replace: true,
+                    state,
+                    preventScrollReset: opts == null ? void 0 : opts.preventScrollReset
+                })
+        };
+    }, [
+        router
+    ]);
+    let basename = router.basename || "/";
+    let dataRouterContext = _react.useMemo(()=>({
+            router,
+            navigator,
+            static: false,
+            basename
+        }), [
+        router,
+        navigator,
+        basename
+    ]); // The fragment and {null} here are important!  We need them to keep React 18's
+    // useId happy when we are server-rendering since we may have a <script> here
+    // containing the hydrated server-side staticContext (from StaticRouterProvider).
+    // useId relies on the component tree structure to generate deterministic id's
+    // so we need to ensure it remains the same on the client even though
+    // we don't need the <script> tag
+    return /*#__PURE__*/ _react.createElement(_react.Fragment, null, /*#__PURE__*/ _react.createElement(DataRouterContext.Provider, {
+        value: dataRouterContext
+    }, /*#__PURE__*/ _react.createElement(DataRouterStateContext.Provider, {
+        value: state
+    }, /*#__PURE__*/ _react.createElement(Router, {
+        basename: router.basename,
+        location: router.state.location,
+        navigationType: router.state.historyAction,
+        navigator: navigator
+    }, router.state.initialized ? /*#__PURE__*/ _react.createElement(DataRoutes, {
+        routes: router.routes,
+        state: state
+    }) : fallbackElement))), null);
+}
+function DataRoutes(_ref2) {
+    let { routes , state  } = _ref2;
+    return useRoutesImpl(routes, undefined, state);
+}
+/**
+ * A <Router> that stores all entries in memory.
+ *
+ * @see https://reactrouter.com/router-components/memory-router
+ */ function MemoryRouter(_ref3) {
+    let { basename , children , initialEntries , initialIndex  } = _ref3;
+    let historyRef = _react.useRef();
+    if (historyRef.current == null) historyRef.current = (0, _router.createMemoryHistory)({
+        initialEntries,
+        initialIndex,
+        v5Compat: true
+    });
+    let history = historyRef.current;
+    let [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement(Router, {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+/**
+ * Changes the current location.
+ *
+ * Note: This API is mostly useful in React.Component subclasses that are not
+ * able to use hooks. In functional components, we recommend you use the
+ * `useNavigate` hook instead.
+ *
+ * @see https://reactrouter.com/components/navigate
+ */ function Navigate(_ref4) {
+    let { to , replace , state , relative  } = _ref4;
+    !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // the router loaded. We can help them understand how to avoid that.
+    "<Navigate> may be used only in the context of a <Router> component.");
+    (0, _router.UNSAFE_warning)(!_react.useContext(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.");
+    let dataRouterState = _react.useContext(DataRouterStateContext);
+    let navigate = useNavigate();
+    _react.useEffect(()=>{
+        // Avoid kicking off multiple navigations if we're in the middle of a
+        // data-router navigation, since components get re-rendered when we enter
+        // a submitting/loading state
+        if (dataRouterState && dataRouterState.navigation.state !== "idle") return;
+        navigate(to, {
+            replace,
+            state,
+            relative
+        });
+    });
+    return null;
+}
+/**
+ * Renders the child route's element, if there is one.
+ *
+ * @see https://reactrouter.com/components/outlet
+ */ function Outlet(props) {
+    return useOutlet(props.context);
+}
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/components/route
+ */ function Route(_props) {
+    (0, _router.UNSAFE_invariant)(false, "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.");
+}
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a <Router> directly. Instead, you'll render a
+ * router that is more specific to your environment such as a <BrowserRouter>
+ * in web browsers or a <StaticRouter> for server rendering.
+ *
+ * @see https://reactrouter.com/router-components/router
+ */ function Router(_ref5) {
+    let { basename: basenameProp = "/" , children =null , location: locationProp , navigationType =(0, _router.Action).Pop , navigator , static: staticProp = false  } = _ref5;
+    !!useInRouterContext() && (0, _router.UNSAFE_invariant)(false, "You cannot render a <Router> inside another <Router>. You should never have more than one in your app."); // Preserve trailing slashes on basename, so we can let the user control
+    // the enforcement of trailing slashes throughout the app
+    let basename = basenameProp.replace(/^\/*/, "/");
+    let navigationContext = _react.useMemo(()=>({
+            basename,
+            navigator,
+            static: staticProp
+        }), [
+        basename,
+        navigator,
+        staticProp
+    ]);
+    if (typeof locationProp === "string") locationProp = (0, _router.parsePath)(locationProp);
+    let { pathname ="/" , search ="" , hash ="" , state =null , key ="default"  } = locationProp;
+    let locationContext = _react.useMemo(()=>{
+        let trailingPathname = (0, _router.stripBasename)(pathname, basename);
+        if (trailingPathname == null) return null;
+        return {
+            location: {
+                pathname: trailingPathname,
+                search,
+                hash,
+                state,
+                key
+            },
+            navigationType
+        };
+    }, [
+        basename,
+        pathname,
+        search,
+        hash,
+        state,
+        key,
+        navigationType
+    ]);
+    (0, _router.UNSAFE_warning)(locationContext != null, '<Router basename="' + basename + '"> is not able to match the URL ' + ('"' + pathname + search + hash + '" because it does not start with the ') + "basename, so the <Router> won't render anything.");
+    if (locationContext == null) return null;
+    return /*#__PURE__*/ _react.createElement(NavigationContext.Provider, {
+        value: navigationContext
+    }, /*#__PURE__*/ _react.createElement(LocationContext.Provider, {
+        children: children,
+        value: locationContext
+    }));
+}
+/**
+ * A container for a nested tree of <Route> elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/components/routes
+ */ function Routes(_ref6) {
+    let { children , location  } = _ref6;
+    return useRoutes(createRoutesFromChildren(children), location);
+}
+/**
+ * Component to use for rendering lazily loaded data from returning defer()
+ * in a loader function
+ */ function Await(_ref7) {
+    let { children , errorElement , resolve  } = _ref7;
+    return /*#__PURE__*/ _react.createElement(AwaitErrorBoundary, {
+        resolve: resolve,
+        errorElement: errorElement
+    }, /*#__PURE__*/ _react.createElement(ResolveAwait, null, children));
+}
+var AwaitRenderStatus;
+(function(AwaitRenderStatus) {
+    AwaitRenderStatus[AwaitRenderStatus["pending"] = 0] = "pending";
+    AwaitRenderStatus[AwaitRenderStatus["success"] = 1] = "success";
+    AwaitRenderStatus[AwaitRenderStatus["error"] = 2] = "error";
+})(AwaitRenderStatus || (AwaitRenderStatus = {}));
+const neverSettledPromise = new Promise(()=>{});
+class AwaitErrorBoundary extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            error: null
+        };
+    }
+    static getDerivedStateFromError(error) {
+        return {
+            error
+        };
+    }
+    componentDidCatch(error, errorInfo) {
+        console.error("<Await> caught the following error during render", error, errorInfo);
+    }
+    render() {
+        let { children , errorElement , resolve  } = this.props;
+        let promise = null;
+        let status = AwaitRenderStatus.pending;
+        if (!(resolve instanceof Promise)) {
+            // Didn't get a promise - provide as a resolved promise
+            status = AwaitRenderStatus.success;
+            promise = Promise.resolve();
+            Object.defineProperty(promise, "_tracked", {
+                get: ()=>true
+            });
+            Object.defineProperty(promise, "_data", {
+                get: ()=>resolve
+            });
+        } else if (this.state.error) {
+            // Caught a render error, provide it as a rejected promise
+            status = AwaitRenderStatus.error;
+            let renderError = this.state.error;
+            promise = Promise.reject().catch(()=>{}); // Avoid unhandled rejection warnings
+            Object.defineProperty(promise, "_tracked", {
+                get: ()=>true
+            });
+            Object.defineProperty(promise, "_error", {
+                get: ()=>renderError
+            });
+        } else if (resolve._tracked) {
+            // Already tracked promise - check contents
+            promise = resolve;
+            status = promise._error !== undefined ? AwaitRenderStatus.error : promise._data !== undefined ? AwaitRenderStatus.success : AwaitRenderStatus.pending;
+        } else {
+            // Raw (untracked) promise - track it
+            status = AwaitRenderStatus.pending;
+            Object.defineProperty(resolve, "_tracked", {
+                get: ()=>true
+            });
+            promise = resolve.then((data)=>Object.defineProperty(resolve, "_data", {
+                    get: ()=>data
+                }), (error)=>Object.defineProperty(resolve, "_error", {
+                    get: ()=>error
+                }));
+        }
+        if (status === AwaitRenderStatus.error && promise._error instanceof (0, _router.AbortedDeferredError)) // Freeze the UI by throwing a never resolved promise
+        throw neverSettledPromise;
+        if (status === AwaitRenderStatus.error && !errorElement) // No errorElement, throw to the nearest route-level error boundary
+        throw promise._error;
+        if (status === AwaitRenderStatus.error) // Render via our errorElement
+        return /*#__PURE__*/ _react.createElement(AwaitContext.Provider, {
+            value: promise,
+            children: errorElement
+        });
+        if (status === AwaitRenderStatus.success) // Render children with resolved value
+        return /*#__PURE__*/ _react.createElement(AwaitContext.Provider, {
+            value: promise,
+            children: children
+        });
+         // Throw to the suspense boundary
+        throw promise;
+    }
+}
+/**
+ * @private
+ * Indirection to leverage useAsyncValue for a render-prop API on <Await>
+ */ function ResolveAwait(_ref8) {
+    let { children  } = _ref8;
+    let data = useAsyncValue();
+    let toRender = typeof children === "function" ? children(data) : children;
+    return /*#__PURE__*/ _react.createElement(_react.Fragment, null, toRender);
+} ///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/utils/create-routes-from-children
+ */ function createRoutesFromChildren(children, parentPath) {
+    if (parentPath === void 0) parentPath = [];
+    let routes = [];
+    _react.Children.forEach(children, (element, index)=>{
+        if (!/*#__PURE__*/ _react.isValidElement(element)) // Ignore non-elements. This allows people to more easily inline
+        // conditionals in their route config.
+        return;
+        let treePath = [
+            ...parentPath,
+            index
+        ];
+        if (element.type === _react.Fragment) {
+            // Transparently support React.Fragment and its children.
+            routes.push.apply(routes, createRoutesFromChildren(element.props.children, treePath));
+            return;
+        }
+        !(element.type === Route) && (0, _router.UNSAFE_invariant)(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>");
+        !(!element.props.index || !element.props.children) && (0, _router.UNSAFE_invariant)(false, "An index route cannot have child routes.");
+        let route = {
+            id: element.props.id || treePath.join("-"),
+            caseSensitive: element.props.caseSensitive,
+            element: element.props.element,
+            Component: element.props.Component,
+            index: element.props.index,
+            path: element.props.path,
+            loader: element.props.loader,
+            action: element.props.action,
+            errorElement: element.props.errorElement,
+            ErrorBoundary: element.props.ErrorBoundary,
+            hasErrorBoundary: element.props.ErrorBoundary != null || element.props.errorElement != null,
+            shouldRevalidate: element.props.shouldRevalidate,
+            handle: element.props.handle,
+            lazy: element.props.lazy
+        };
+        if (element.props.children) route.children = createRoutesFromChildren(element.props.children, treePath);
+        routes.push(route);
+    });
+    return routes;
+}
+/**
+ * Renders the result of `matchRoutes()` into a React element.
+ */ function renderMatches(matches) {
+    return _renderMatches(matches);
+}
+function mapRouteProperties(route) {
+    let updates = {
+        // Note: this check also occurs in createRoutesFromChildren so update
+        // there if you change this -- please and thank you!
+        hasErrorBoundary: route.ErrorBoundary != null || route.errorElement != null
+    };
+    if (route.Component) {
+        if (route.element) (0, _router.UNSAFE_warning)(false, "You should not include both `Component` and `element` on your route - `Component` will be used.");
+        Object.assign(updates, {
+            element: /*#__PURE__*/ _react.createElement(route.Component),
+            Component: undefined
+        });
+    }
+    if (route.ErrorBoundary) {
+        if (route.errorElement) (0, _router.UNSAFE_warning)(false, "You should not include both `ErrorBoundary` and `errorElement` on your route - `ErrorBoundary` will be used.");
+        Object.assign(updates, {
+            errorElement: /*#__PURE__*/ _react.createElement(route.ErrorBoundary),
+            ErrorBoundary: undefined
+        });
+    }
+    return updates;
+}
+function createMemoryRouter(routes, opts) {
+    return (0, _router.createRouter)({
+        basename: opts == null ? void 0 : opts.basename,
+        future: _extends({}, opts == null ? void 0 : opts.future, {
+            v7_prependBasename: true
+        }),
+        history: (0, _router.createMemoryHistory)({
+            initialEntries: opts == null ? void 0 : opts.initialEntries,
+            initialIndex: opts == null ? void 0 : opts.initialIndex
+        }),
+        hydrationData: opts == null ? void 0 : opts.hydrationData,
+        routes,
+        mapRouteProperties
+    }).initialize();
+} ///////////////////////////////////////////////////////////////////////////////
+
+},{"react":"21dqq","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5ncDG":[function(require,module,exports) {
+/**
+ * @remix-run/router v1.6.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AbortedDeferredError", ()=>AbortedDeferredError);
+parcelHelpers.export(exports, "Action", ()=>Action);
+parcelHelpers.export(exports, "ErrorResponse", ()=>ErrorResponse);
+parcelHelpers.export(exports, "IDLE_BLOCKER", ()=>IDLE_BLOCKER);
+parcelHelpers.export(exports, "IDLE_FETCHER", ()=>IDLE_FETCHER);
+parcelHelpers.export(exports, "IDLE_NAVIGATION", ()=>IDLE_NAVIGATION);
+parcelHelpers.export(exports, "UNSAFE_DEFERRED_SYMBOL", ()=>UNSAFE_DEFERRED_SYMBOL);
+parcelHelpers.export(exports, "UNSAFE_DeferredData", ()=>DeferredData);
+parcelHelpers.export(exports, "UNSAFE_convertRoutesToDataRoutes", ()=>convertRoutesToDataRoutes);
+parcelHelpers.export(exports, "UNSAFE_getPathContributingMatches", ()=>getPathContributingMatches);
+parcelHelpers.export(exports, "UNSAFE_invariant", ()=>invariant);
+parcelHelpers.export(exports, "UNSAFE_warning", ()=>warning);
+parcelHelpers.export(exports, "createBrowserHistory", ()=>createBrowserHistory);
+parcelHelpers.export(exports, "createHashHistory", ()=>createHashHistory);
+parcelHelpers.export(exports, "createMemoryHistory", ()=>createMemoryHistory);
+parcelHelpers.export(exports, "createPath", ()=>createPath);
+parcelHelpers.export(exports, "createRouter", ()=>createRouter);
+parcelHelpers.export(exports, "createStaticHandler", ()=>createStaticHandler);
+parcelHelpers.export(exports, "defer", ()=>defer);
+parcelHelpers.export(exports, "generatePath", ()=>generatePath);
+parcelHelpers.export(exports, "getStaticContextFromError", ()=>getStaticContextFromError);
+parcelHelpers.export(exports, "getToPathname", ()=>getToPathname);
+parcelHelpers.export(exports, "isDeferredData", ()=>isDeferredData);
+parcelHelpers.export(exports, "isRouteErrorResponse", ()=>isRouteErrorResponse);
+parcelHelpers.export(exports, "joinPaths", ()=>joinPaths);
+parcelHelpers.export(exports, "json", ()=>json);
+parcelHelpers.export(exports, "matchPath", ()=>matchPath);
+parcelHelpers.export(exports, "matchRoutes", ()=>matchRoutes);
+parcelHelpers.export(exports, "normalizePathname", ()=>normalizePathname);
+parcelHelpers.export(exports, "parsePath", ()=>parsePath);
+parcelHelpers.export(exports, "redirect", ()=>redirect);
+parcelHelpers.export(exports, "resolvePath", ()=>resolvePath);
+parcelHelpers.export(exports, "resolveTo", ()=>resolveTo);
+parcelHelpers.export(exports, "stripBasename", ()=>stripBasename);
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+////////////////////////////////////////////////////////////////////////////////
+//#region Types and Constants
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Actions represent the type of change to a location value.
+ */ var Action;
+(function(Action) {
+    /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
+   */ Action["Pop"] = "POP";
+    /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
+   */ Action["Push"] = "PUSH";
+    /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
+   */ Action["Replace"] = "REPLACE";
+})(Action || (Action = {}));
+const PopStateEventType = "popstate";
+/**
+ * Memory history stores the current location in memory. It is designed for use
+ * in stateful non-browser environments like tests and React Native.
+ */ function createMemoryHistory(options) {
+    if (options === void 0) options = {};
+    let { initialEntries =[
+        "/"
+    ] , initialIndex , v5Compat =false  } = options;
+    let entries; // Declare so we can access from createMemoryLocation
+    entries = initialEntries.map((entry, index)=>createMemoryLocation(entry, typeof entry === "string" ? null : entry.state, index === 0 ? "default" : undefined));
+    let index = clampIndex(initialIndex == null ? entries.length - 1 : initialIndex);
+    let action = Action.Pop;
+    let listener = null;
+    function clampIndex(n) {
+        return Math.min(Math.max(n, 0), entries.length - 1);
+    }
+    function getCurrentLocation() {
+        return entries[index];
+    }
+    function createMemoryLocation(to, state, key) {
+        if (state === void 0) state = null;
+        let location = createLocation(entries ? getCurrentLocation().pathname : "/", to, state, key);
+        warning(location.pathname.charAt(0) === "/", "relative pathnames are not supported in memory history: " + JSON.stringify(to));
+        return location;
+    }
+    function createHref(to) {
+        return typeof to === "string" ? to : createPath(to);
+    }
+    let history = {
+        get index () {
+            return index;
+        },
+        get action () {
+            return action;
+        },
+        get location () {
+            return getCurrentLocation();
+        },
+        createHref,
+        createURL (to) {
+            return new URL(createHref(to), "http://localhost");
+        },
+        encodeLocation (to) {
+            let path = typeof to === "string" ? parsePath(to) : to;
+            return {
+                pathname: path.pathname || "",
+                search: path.search || "",
+                hash: path.hash || ""
+            };
+        },
+        push (to, state) {
+            action = Action.Push;
+            let nextLocation = createMemoryLocation(to, state);
+            index += 1;
+            entries.splice(index, entries.length, nextLocation);
+            if (v5Compat && listener) listener({
+                action,
+                location: nextLocation,
+                delta: 1
+            });
+        },
+        replace (to, state) {
+            action = Action.Replace;
+            let nextLocation = createMemoryLocation(to, state);
+            entries[index] = nextLocation;
+            if (v5Compat && listener) listener({
+                action,
+                location: nextLocation,
+                delta: 0
+            });
+        },
+        go (delta) {
+            action = Action.Pop;
+            let nextIndex = clampIndex(index + delta);
+            let nextLocation = entries[nextIndex];
+            index = nextIndex;
+            if (listener) listener({
+                action,
+                location: nextLocation,
+                delta
+            });
+        },
+        listen (fn) {
+            listener = fn;
+            return ()=>{
+                listener = null;
+            };
+        }
+    };
+    return history;
+}
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+ */ function createBrowserHistory(options) {
+    if (options === void 0) options = {};
+    function createBrowserLocation(window1, globalHistory) {
+        let { pathname , search , hash  } = window1.location;
+        return createLocation("", {
+            pathname,
+            search,
+            hash
+        }, globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+    }
+    function createBrowserHref(window1, to) {
+        return typeof to === "string" ? to : createPath(to);
+    }
+    return getUrlBasedHistory(createBrowserLocation, createBrowserHref, null, options);
+}
+/**
+ * Hash history stores the location in window.location.hash. This makes it ideal
+ * for situations where you don't want to send the location to the server for
+ * some reason, either because you do cannot configure it or the URL space is
+ * reserved for something else.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
+ */ function createHashHistory(options) {
+    if (options === void 0) options = {};
+    function createHashLocation(window1, globalHistory) {
+        let { pathname ="/" , search ="" , hash =""  } = parsePath(window1.location.hash.substr(1));
+        return createLocation("", {
+            pathname,
+            search,
+            hash
+        }, globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+    }
+    function createHashHref(window1, to) {
+        let base = window1.document.querySelector("base");
+        let href = "";
+        if (base && base.getAttribute("href")) {
+            let url = window1.location.href;
+            let hashIndex = url.indexOf("#");
+            href = hashIndex === -1 ? url : url.slice(0, hashIndex);
+        }
+        return href + "#" + (typeof to === "string" ? to : createPath(to));
+    }
+    function validateHashLocation(location, to) {
+        warning(location.pathname.charAt(0) === "/", "relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")");
+    }
+    return getUrlBasedHistory(createHashLocation, createHashHref, validateHashLocation, options);
+}
+function invariant(value, message) {
+    if (value === false || value === null || typeof value === "undefined") throw new Error(message);
+}
+function warning(cond, message) {
+    if (!cond) {
+        // eslint-disable-next-line no-console
+        if (typeof console !== "undefined") console.warn(message);
+        try {
+            // Welcome to debugging history!
+            //
+            // This error is thrown as a convenience so you can more easily
+            // find the source for a warning that appears in the console by
+            // enabling "pause on exceptions" in your JavaScript debugger.
+            throw new Error(message); // eslint-disable-next-line no-empty
+        } catch (e) {}
+    }
+}
+function createKey() {
+    return Math.random().toString(36).substr(2, 8);
+}
+/**
+ * For browser-based histories, we combine the state and key into an object
+ */ function getHistoryState(location, index) {
+    return {
+        usr: location.state,
+        key: location.key,
+        idx: index
+    };
+}
+/**
+ * Creates a Location object with a unique key from the given Path
+ */ function createLocation(current, to, state, key) {
+    if (state === void 0) state = null;
+    let location = _extends({
+        pathname: typeof current === "string" ? current : current.pathname,
+        search: "",
+        hash: ""
+    }, typeof to === "string" ? parsePath(to) : to, {
+        state,
+        // TODO: This could be cleaned up.  push/replace should probably just take
+        // full Locations now and avoid the need to run through this flow at all
+        // But that's a pretty big refactor to the current test suite so going to
+        // keep as is for the time being and just let any incoming keys take precedence
+        key: to && to.key || key || createKey()
+    });
+    return location;
+}
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ */ function createPath(_ref) {
+    let { pathname ="/" , search ="" , hash =""  } = _ref;
+    if (search && search !== "?") pathname += search.charAt(0) === "?" ? search : "?" + search;
+    if (hash && hash !== "#") pathname += hash.charAt(0) === "#" ? hash : "#" + hash;
+    return pathname;
+}
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ */ function parsePath(path) {
+    let parsedPath = {};
+    if (path) {
+        let hashIndex = path.indexOf("#");
+        if (hashIndex >= 0) {
+            parsedPath.hash = path.substr(hashIndex);
+            path = path.substr(0, hashIndex);
+        }
+        let searchIndex = path.indexOf("?");
+        if (searchIndex >= 0) {
+            parsedPath.search = path.substr(searchIndex);
+            path = path.substr(0, searchIndex);
+        }
+        if (path) parsedPath.pathname = path;
+    }
+    return parsedPath;
+}
+function getUrlBasedHistory(getLocation, createHref, validateLocation, options) {
+    if (options === void 0) options = {};
+    let { window: window1 = document.defaultView , v5Compat =false  } = options;
+    let globalHistory = window1.history;
+    let action = Action.Pop;
+    let listener = null;
+    let index = getIndex(); // Index should only be null when we initialize. If not, it's because the
+    // user called history.pushState or history.replaceState directly, in which
+    // case we should log a warning as it will result in bugs.
+    if (index == null) {
+        index = 0;
+        globalHistory.replaceState(_extends({}, globalHistory.state, {
+            idx: index
+        }), "");
+    }
+    function getIndex() {
+        let state = globalHistory.state || {
+            idx: null
+        };
+        return state.idx;
+    }
+    function handlePop() {
+        action = Action.Pop;
+        let nextIndex = getIndex();
+        let delta = nextIndex == null ? null : nextIndex - index;
+        index = nextIndex;
+        if (listener) listener({
+            action,
+            location: history.location,
+            delta
+        });
+    }
+    function push(to, state) {
+        action = Action.Push;
+        let location = createLocation(history.location, to, state);
+        if (validateLocation) validateLocation(location, to);
+        index = getIndex() + 1;
+        let historyState = getHistoryState(location, index);
+        let url = history.createHref(location); // try...catch because iOS limits us to 100 pushState calls :/
+        try {
+            globalHistory.pushState(historyState, "", url);
+        } catch (error) {
+            // They are going to lose state here, but there is no real
+            // way to warn them about it since the page will refresh...
+            window1.location.assign(url);
+        }
+        if (v5Compat && listener) listener({
+            action,
+            location: history.location,
+            delta: 1
+        });
+    }
+    function replace(to, state) {
+        action = Action.Replace;
+        let location = createLocation(history.location, to, state);
+        if (validateLocation) validateLocation(location, to);
+        index = getIndex();
+        let historyState = getHistoryState(location, index);
+        let url = history.createHref(location);
+        globalHistory.replaceState(historyState, "", url);
+        if (v5Compat && listener) listener({
+            action,
+            location: history.location,
+            delta: 0
+        });
+    }
+    function createURL(to) {
+        // window.location.origin is "null" (the literal string value) in Firefox
+        // under certain conditions, notably when serving from a local HTML file
+        // See https://bugzilla.mozilla.org/show_bug.cgi?id=878297
+        let base = window1.location.origin !== "null" ? window1.location.origin : window1.location.href;
+        let href = typeof to === "string" ? to : createPath(to);
+        invariant(base, "No window.location.(origin|href) available to create URL for href: " + href);
+        return new URL(href, base);
+    }
+    let history = {
+        get action () {
+            return action;
+        },
+        get location () {
+            return getLocation(window1, globalHistory);
+        },
+        listen (fn) {
+            if (listener) throw new Error("A history only accepts one active listener");
+            window1.addEventListener(PopStateEventType, handlePop);
+            listener = fn;
+            return ()=>{
+                window1.removeEventListener(PopStateEventType, handlePop);
+                listener = null;
+            };
+        },
+        createHref (to) {
+            return createHref(window1, to);
+        },
+        createURL,
+        encodeLocation (to) {
+            // Encode a Location the same way window.location would
+            let url = createURL(to);
+            return {
+                pathname: url.pathname,
+                search: url.search,
+                hash: url.hash
+            };
+        },
+        push,
+        replace,
+        go (n) {
+            return globalHistory.go(n);
+        }
+    };
+    return history;
+} //#endregion
+var ResultType;
+(function(ResultType) {
+    ResultType["data"] = "data";
+    ResultType["deferred"] = "deferred";
+    ResultType["redirect"] = "redirect";
+    ResultType["error"] = "error";
+})(ResultType || (ResultType = {}));
+const immutableRouteKeys = new Set([
+    "lazy",
+    "caseSensitive",
+    "path",
+    "id",
+    "index",
+    "children"
+]);
+function isIndexRoute(route) {
+    return route.index === true;
+} // Walk the route tree generating unique IDs where necessary so we are working
+// solely with AgnosticDataRouteObject's within the Router
+function convertRoutesToDataRoutes(routes, mapRouteProperties, parentPath, manifest) {
+    if (parentPath === void 0) parentPath = [];
+    if (manifest === void 0) manifest = {};
+    return routes.map((route, index)=>{
+        let treePath = [
+            ...parentPath,
+            index
+        ];
+        let id = typeof route.id === "string" ? route.id : treePath.join("-");
+        invariant(route.index !== true || !route.children, "Cannot specify children on an index route");
+        invariant(!manifest[id], 'Found a route id collision on id "' + id + '".  Route ' + "id's must be globally unique within Data Router usages");
+        if (isIndexRoute(route)) {
+            let indexRoute = _extends({}, route, mapRouteProperties(route), {
+                id
+            });
+            manifest[id] = indexRoute;
+            return indexRoute;
+        } else {
+            let pathOrLayoutRoute = _extends({}, route, mapRouteProperties(route), {
+                id,
+                children: undefined
+            });
+            manifest[id] = pathOrLayoutRoute;
+            if (route.children) pathOrLayoutRoute.children = convertRoutesToDataRoutes(route.children, mapRouteProperties, treePath, manifest);
+            return pathOrLayoutRoute;
+        }
+    });
+}
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/utils/match-routes
+ */ function matchRoutes(routes, locationArg, basename) {
+    if (basename === void 0) basename = "/";
+    let location = typeof locationArg === "string" ? parsePath(locationArg) : locationArg;
+    let pathname = stripBasename(location.pathname || "/", basename);
+    if (pathname == null) return null;
+    let branches = flattenRoutes(routes);
+    rankRouteBranches(branches);
+    let matches = null;
+    for(let i = 0; matches == null && i < branches.length; ++i)matches = matchRouteBranch(branches[i], // or from router.navigate, but we want to match against the unencoded
+    // paths in the route definitions.  Memory router locations won't be
+    // encoded here but there also shouldn't be anything to decode so this
+    // should be a safe operation.  This avoids needing matchRoutes to be
+    // history-aware.
+    safelyDecodeURI(pathname));
+    return matches;
+}
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+    if (branches === void 0) branches = [];
+    if (parentsMeta === void 0) parentsMeta = [];
+    if (parentPath === void 0) parentPath = "";
+    let flattenRoute = (route, index, relativePath)=>{
+        let meta = {
+            relativePath: relativePath === undefined ? route.path || "" : relativePath,
+            caseSensitive: route.caseSensitive === true,
+            childrenIndex: index,
+            route
+        };
+        if (meta.relativePath.startsWith("/")) {
+            invariant(meta.relativePath.startsWith(parentPath), 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes.");
+            meta.relativePath = meta.relativePath.slice(parentPath.length);
+        }
+        let path = joinPaths([
+            parentPath,
+            meta.relativePath
+        ]);
+        let routesMeta = parentsMeta.concat(meta); // Add the children before adding this route to the array so we traverse the
+        // route tree depth-first and child routes appear before their parents in
+        // the "flattened" version.
+        if (route.children && route.children.length > 0) {
+            invariant(// @ts-expect-error
+            route.index !== true, "Index routes must not have child routes. Please remove " + ('all child routes from route path "' + path + '".'));
+            flattenRoutes(route.children, branches, routesMeta, path);
+        } // Routes without a path shouldn't ever match by themselves unless they are
+        // index routes, so don't add them to the list of possible branches.
+        if (route.path == null && !route.index) return;
+        branches.push({
+            path,
+            score: computeScore(path, route.index),
+            routesMeta
+        });
+    };
+    routes.forEach((route, index)=>{
+        var _route$path;
+        // coarse-grain check for optional params
+        if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?"))) flattenRoute(route, index);
+        else for (let exploded of explodeOptionalSegments(route.path))flattenRoute(route, index, exploded);
+    });
+    return branches;
+}
+/**
+ * Computes all combinations of optional path segments for a given path,
+ * excluding combinations that are ambiguous and of lower priority.
+ *
+ * For example, `/one/:two?/three/:four?/:five?` explodes to:
+ * - `/one/three`
+ * - `/one/:two/three`
+ * - `/one/three/:four`
+ * - `/one/three/:five`
+ * - `/one/:two/three/:four`
+ * - `/one/:two/three/:five`
+ * - `/one/three/:four/:five`
+ * - `/one/:two/three/:four/:five`
+ */ function explodeOptionalSegments(path) {
+    let segments = path.split("/");
+    if (segments.length === 0) return [];
+    let [first, ...rest] = segments; // Optional path segments are denoted by a trailing `?`
+    let isOptional = first.endsWith("?"); // Compute the corresponding required segment: `foo?` -> `foo`
+    let required = first.replace(/\?$/, "");
+    if (rest.length === 0) // Intepret empty string as omitting an optional segment
+    // `["one", "", "three"]` corresponds to omitting `:two` from `/one/:two?/three` -> `/one/three`
+    return isOptional ? [
+        required,
+        ""
+    ] : [
+        required
+    ];
+    let restExploded = explodeOptionalSegments(rest.join("/"));
+    let result = []; // All child paths with the prefix.  Do this for all children before the
+    // optional version for all children so we get consistent ordering where the
+    // parent optional aspect is preferred as required.  Otherwise, we can get
+    // child sections interspersed where deeper optional segments are higher than
+    // parent optional segments, where for example, /:two would explodes _earlier_
+    // then /:one.  By always including the parent as required _for all children_
+    // first, we avoid this issue
+    result.push(...restExploded.map((subpath)=>subpath === "" ? required : [
+            required,
+            subpath
+        ].join("/"))); // Then if this is an optional value, add all child versions without
+    if (isOptional) result.push(...restExploded);
+     // for absolute paths, ensure `/` instead of empty segment
+    return result.map((exploded)=>path.startsWith("/") && exploded === "" ? "/" : exploded);
+}
+function rankRouteBranches(branches) {
+    branches.sort((a, b)=>a.score !== b.score ? b.score - a.score // Higher score first
+         : compareIndexes(a.routesMeta.map((meta)=>meta.childrenIndex), b.routesMeta.map((meta)=>meta.childrenIndex)));
+}
+const paramRe = /^:\w+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = -2;
+const isSplat = (s)=>s === "*";
+function computeScore(path, index) {
+    let segments = path.split("/");
+    let initialScore = segments.length;
+    if (segments.some(isSplat)) initialScore += splatPenalty;
+    if (index) initialScore += indexRouteValue;
+    return segments.filter((s)=>!isSplat(s)).reduce((score, segment)=>score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+function compareIndexes(a, b) {
+    let siblings = a.length === b.length && a.slice(0, -1).every((n, i)=>n === b[i]);
+    return siblings ? // first. This allows people to have fine-grained control over the matching
+    // behavior by simply putting routes with identical paths in the order they
+    // want them tried.
+    a[a.length - 1] - b[b.length - 1] : // so they sort equally.
+    0;
+}
+function matchRouteBranch(branch, pathname) {
+    let { routesMeta  } = branch;
+    let matchedParams = {};
+    let matchedPathname = "/";
+    let matches = [];
+    for(let i = 0; i < routesMeta.length; ++i){
+        let meta = routesMeta[i];
+        let end = i === routesMeta.length - 1;
+        let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+        let match = matchPath({
+            path: meta.relativePath,
+            caseSensitive: meta.caseSensitive,
+            end
+        }, remainingPathname);
+        if (!match) return null;
+        Object.assign(matchedParams, match.params);
+        let route = meta.route;
+        matches.push({
+            // TODO: Can this as be avoided?
+            params: matchedParams,
+            pathname: joinPaths([
+                matchedPathname,
+                match.pathname
+            ]),
+            pathnameBase: normalizePathname(joinPaths([
+                matchedPathname,
+                match.pathnameBase
+            ])),
+            route
+        });
+        if (match.pathnameBase !== "/") matchedPathname = joinPaths([
+            matchedPathname,
+            match.pathnameBase
+        ]);
+    }
+    return matches;
+}
+/**
+ * Returns a path with params interpolated.
+ *
+ * @see https://reactrouter.com/utils/generate-path
+ */ function generatePath(originalPath, params) {
+    if (params === void 0) params = {};
+    let path = originalPath;
+    if (path.endsWith("*") && path !== "*" && !path.endsWith("/*")) {
+        warning(false, 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
+        path = path.replace(/\*$/, "/*");
+    } // ensure `/` is added at the beginning if the path is absolute
+    const prefix = path.startsWith("/") ? "/" : "";
+    const segments = path.split(/\/+/).map((segment, index, array)=>{
+        const isLastSegment = index === array.length - 1; // only apply the splat if it's the last segment
+        if (isLastSegment && segment === "*") {
+            const star = "*";
+            const starParam = params[star]; // Apply the splat
+            return starParam;
+        }
+        const keyMatch = segment.match(/^:(\w+)(\??)$/);
+        if (keyMatch) {
+            const [, key, optional] = keyMatch;
+            let param = params[key];
+            if (optional === "?") return param == null ? "" : param;
+            if (param == null) invariant(false, 'Missing ":' + key + '" param');
+            return param;
+        } // Remove any optional markers from optional static segments
+        return segment.replace(/\?$/g, "");
+    }) // Remove empty segments
+    .filter((segment)=>!!segment);
+    return prefix + segments.join("/");
+}
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/utils/match-path
+ */ function matchPath(pattern, pathname) {
+    if (typeof pattern === "string") pattern = {
+        path: pattern,
+        caseSensitive: false,
+        end: true
+    };
+    let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+    let match = pathname.match(matcher);
+    if (!match) return null;
+    let matchedPathname = match[0];
+    let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+    let captureGroups = match.slice(1);
+    let params = paramNames.reduce((memo, paramName, index)=>{
+        // We need to compute the pathnameBase here using the raw splat value
+        // instead of using params["*"] later because it will be decoded then
+        if (paramName === "*") {
+            let splatValue = captureGroups[index] || "";
+            pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+        }
+        memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+        return memo;
+    }, {});
+    return {
+        params,
+        pathname: matchedPathname,
+        pathnameBase,
+        pattern
+    };
+}
+function compilePath(path, caseSensitive, end) {
+    if (caseSensitive === void 0) caseSensitive = false;
+    if (end === void 0) end = true;
+    warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
+    let paramNames = [];
+    let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+    .replace(/^\/*/, "/") // Make sure it has a leading /
+    .replace(/[\\.*+^$?{}|()[\]]/g, "\\$&") // Escape special regex chars
+    .replace(/\/:(\w+)/g, (_, paramName)=>{
+        paramNames.push(paramName);
+        return "/([^\\/]+)";
+    });
+    if (path.endsWith("*")) {
+        paramNames.push("*");
+        regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+         : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+    } else if (end) // When matching to the end, ignore trailing slashes
+    regexpSource += "\\/*$";
+    else if (path !== "" && path !== "/") // If our path is non-empty and contains anything beyond an initial slash,
+    // then we have _some_ form of path in our regex so we should expect to
+    // match only if we find the end of this path segment.  Look for an optional
+    // non-captured trailing slash (to match a portion of the URL) or the end
+    // of the path (if we've matched to the end).  We used to do this with a
+    // word boundary but that gives false positives on routes like
+    // /user-preferences since `-` counts as a word boundary.
+    regexpSource += "(?:(?=\\/|$))";
+    let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+    return [
+        matcher,
+        paramNames
+    ];
+}
+function safelyDecodeURI(value) {
+    try {
+        return decodeURI(value);
+    } catch (error) {
+        warning(false, 'The URL path "' + value + '" could not be decoded because it is is a ' + "malformed URL segment. This is probably due to a bad percent " + ("encoding (" + error + ")."));
+        return value;
+    }
+}
+function safelyDecodeURIComponent(value, paramName) {
+    try {
+        return decodeURIComponent(value);
+    } catch (error) {
+        warning(false, 'The value for the URL param "' + paramName + '" will not be decoded because' + (' the string "' + value + '" is a malformed URL segment. This is probably') + (" due to a bad percent encoding (" + error + ")."));
+        return value;
+    }
+}
+/**
+ * @private
+ */ function stripBasename(pathname, basename) {
+    if (basename === "/") return pathname;
+    if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) return null;
+     // We want to leave trailing slash behavior in the user's control, so if they
+    // specify a basename with a trailing slash, we should support it
+    let startIndex = basename.endsWith("/") ? basename.length - 1 : basename.length;
+    let nextChar = pathname.charAt(startIndex);
+    if (nextChar && nextChar !== "/") // pathname does not start with basename/
+    return null;
+    return pathname.slice(startIndex) || "/";
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/utils/resolve-path
+ */ function resolvePath(to, fromPathname) {
+    if (fromPathname === void 0) fromPathname = "/";
+    let { pathname: toPathname , search ="" , hash =""  } = typeof to === "string" ? parsePath(to) : to;
+    let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+    return {
+        pathname,
+        search: normalizeSearch(search),
+        hash: normalizeHash(hash)
+    };
+}
+function resolvePathname(relativePath, fromPathname) {
+    let segments = fromPathname.replace(/\/+$/, "").split("/");
+    let relativeSegments = relativePath.split("/");
+    relativeSegments.forEach((segment)=>{
+        if (segment === "..") // Keep the root "" segment so the pathname starts at /
+        {
+            if (segments.length > 1) segments.pop();
+        } else if (segment !== ".") segments.push(segment);
+    });
+    return segments.length > 1 ? segments.join("/") : "/";
+}
+function getInvalidPathError(char, field, dest, path) {
+    return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + 'a string in <Link to="..."> and the router will parse it for you.';
+}
+/**
+ * @private
+ *
+ * When processing relative navigation we want to ignore ancestor routes that
+ * do not contribute to the path, such that index/pathless layout routes don't
+ * interfere.
+ *
+ * For example, when moving a route element into an index route and/or a
+ * pathless layout route, relative link behavior contained within should stay
+ * the same.  Both of the following examples should link back to the root:
+ *
+ *   <Route path="/">
+ *     <Route path="accounts" element={<Link to=".."}>
+ *   </Route>
+ *
+ *   <Route path="/">
+ *     <Route path="accounts">
+ *       <Route element={<AccountsLayout />}>       // <-- Does not contribute
+ *         <Route index element={<Link to=".."} />  // <-- Does not contribute
+ *       </Route
+ *     </Route>
+ *   </Route>
+ */ function getPathContributingMatches(matches) {
+    return matches.filter((match, index)=>index === 0 || match.route.path && match.route.path.length > 0);
+}
+/**
+ * @private
+ */ function resolveTo(toArg, routePathnames, locationPathname, isPathRelative) {
+    if (isPathRelative === void 0) isPathRelative = false;
+    let to;
+    if (typeof toArg === "string") to = parsePath(toArg);
+    else {
+        to = _extends({}, toArg);
+        invariant(!to.pathname || !to.pathname.includes("?"), getInvalidPathError("?", "pathname", "search", to));
+        invariant(!to.pathname || !to.pathname.includes("#"), getInvalidPathError("#", "pathname", "hash", to));
+        invariant(!to.search || !to.search.includes("#"), getInvalidPathError("#", "search", "hash", to));
+    }
+    let isEmptyPath = toArg === "" || to.pathname === "";
+    let toPathname = isEmptyPath ? "/" : to.pathname;
+    let from; // Routing is relative to the current pathname if explicitly requested.
+    //
+    // If a pathname is explicitly provided in `to`, it should be relative to the
+    // route context. This is explained in `Note on `<Link to>` values` in our
+    // migration guide from v5 as a means of disambiguation between `to` values
+    // that begin with `/` and those that do not. However, this is problematic for
+    // `to` values that do not provide a pathname. `to` can simply be a search or
+    // hash string, in which case we should assume that the navigation is relative
+    // to the current location's pathname and *not* the route pathname.
+    if (isPathRelative || toPathname == null) from = locationPathname;
+    else {
+        let routePathnameIndex = routePathnames.length - 1;
+        if (toPathname.startsWith("..")) {
+            let toSegments = toPathname.split("/"); // Each leading .. segment means "go up one route" instead of "go up one
+            // URL segment".  This is a key difference from how <a href> works and a
+            // major reason we call this a "to" value instead of a "href".
+            while(toSegments[0] === ".."){
+                toSegments.shift();
+                routePathnameIndex -= 1;
+            }
+            to.pathname = toSegments.join("/");
+        } // If there are more ".." segments than parent routes, resolve relative to
+        // the root / URL.
+        from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+    }
+    let path = resolvePath(to, from); // Ensure the pathname has a trailing slash if the original "to" had one
+    let hasExplicitTrailingSlash = toPathname && toPathname !== "/" && toPathname.endsWith("/"); // Or if this was a link to the current path which has a trailing slash
+    let hasCurrentTrailingSlash = (isEmptyPath || toPathname === ".") && locationPathname.endsWith("/");
+    if (!path.pathname.endsWith("/") && (hasExplicitTrailingSlash || hasCurrentTrailingSlash)) path.pathname += "/";
+    return path;
+}
+/**
+ * @private
+ */ function getToPathname(to) {
+    // Empty strings should be treated the same as / paths
+    return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? parsePath(to).pathname : to.pathname;
+}
+/**
+ * @private
+ */ const joinPaths = (paths)=>paths.join("/").replace(/\/\/+/g, "/");
+/**
+ * @private
+ */ const normalizePathname = (pathname)=>pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+/**
+ * @private
+ */ const normalizeSearch = (search)=>!search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+/**
+ * @private
+ */ const normalizeHash = (hash)=>!hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+/**
+ * This is a shortcut for creating `application/json` responses. Converts `data`
+ * to JSON and sets the `Content-Type` header.
+ */ const json = function json(data, init) {
+    if (init === void 0) init = {};
+    let responseInit = typeof init === "number" ? {
+        status: init
+    } : init;
+    let headers = new Headers(responseInit.headers);
+    if (!headers.has("Content-Type")) headers.set("Content-Type", "application/json; charset=utf-8");
+    return new Response(JSON.stringify(data), _extends({}, responseInit, {
+        headers
+    }));
+};
+class AbortedDeferredError extends Error {
+}
+class DeferredData {
+    constructor(data, responseInit){
+        this.pendingKeysSet = new Set();
+        this.subscribers = new Set();
+        this.deferredKeys = [];
+        invariant(data && typeof data === "object" && !Array.isArray(data), "defer() only accepts plain objects"); // Set up an AbortController + Promise we can race against to exit early
+        // cancellation
+        let reject;
+        this.abortPromise = new Promise((_, r)=>reject = r);
+        this.controller = new AbortController();
+        let onAbort = ()=>reject(new AbortedDeferredError("Deferred data aborted"));
+        this.unlistenAbortSignal = ()=>this.controller.signal.removeEventListener("abort", onAbort);
+        this.controller.signal.addEventListener("abort", onAbort);
+        this.data = Object.entries(data).reduce((acc, _ref)=>{
+            let [key, value] = _ref;
+            return Object.assign(acc, {
+                [key]: this.trackPromise(key, value)
+            });
+        }, {});
+        if (this.done) // All incoming values were resolved
+        this.unlistenAbortSignal();
+        this.init = responseInit;
+    }
+    trackPromise(key, value) {
+        if (!(value instanceof Promise)) return value;
+        this.deferredKeys.push(key);
+        this.pendingKeysSet.add(key); // We store a little wrapper promise that will be extended with
+        // _data/_error props upon resolve/reject
+        let promise = Promise.race([
+            value,
+            this.abortPromise
+        ]).then((data)=>this.onSettle(promise, key, null, data), (error)=>this.onSettle(promise, key, error)); // Register rejection listeners to avoid uncaught promise rejections on
+        // errors or aborted deferred values
+        promise.catch(()=>{});
+        Object.defineProperty(promise, "_tracked", {
+            get: ()=>true
+        });
+        return promise;
+    }
+    onSettle(promise, key, error, data) {
+        if (this.controller.signal.aborted && error instanceof AbortedDeferredError) {
+            this.unlistenAbortSignal();
+            Object.defineProperty(promise, "_error", {
+                get: ()=>error
+            });
+            return Promise.reject(error);
+        }
+        this.pendingKeysSet.delete(key);
+        if (this.done) // Nothing left to abort!
+        this.unlistenAbortSignal();
+        if (error) {
+            Object.defineProperty(promise, "_error", {
+                get: ()=>error
+            });
+            this.emit(false, key);
+            return Promise.reject(error);
+        }
+        Object.defineProperty(promise, "_data", {
+            get: ()=>data
+        });
+        this.emit(false, key);
+        return data;
+    }
+    emit(aborted, settledKey) {
+        this.subscribers.forEach((subscriber)=>subscriber(aborted, settledKey));
+    }
+    subscribe(fn) {
+        this.subscribers.add(fn);
+        return ()=>this.subscribers.delete(fn);
+    }
+    cancel() {
+        this.controller.abort();
+        this.pendingKeysSet.forEach((v, k)=>this.pendingKeysSet.delete(k));
+        this.emit(true);
+    }
+    async resolveData(signal) {
+        let aborted = false;
+        if (!this.done) {
+            let onAbort = ()=>this.cancel();
+            signal.addEventListener("abort", onAbort);
+            aborted = await new Promise((resolve)=>{
+                this.subscribe((aborted)=>{
+                    signal.removeEventListener("abort", onAbort);
+                    if (aborted || this.done) resolve(aborted);
+                });
+            });
+        }
+        return aborted;
+    }
+    get done() {
+        return this.pendingKeysSet.size === 0;
+    }
+    get unwrappedData() {
+        invariant(this.data !== null && this.done, "Can only unwrap data on initialized and settled deferreds");
+        return Object.entries(this.data).reduce((acc, _ref2)=>{
+            let [key, value] = _ref2;
+            return Object.assign(acc, {
+                [key]: unwrapTrackedPromise(value)
+            });
+        }, {});
+    }
+    get pendingKeys() {
+        return Array.from(this.pendingKeysSet);
+    }
+}
+function isTrackedPromise(value) {
+    return value instanceof Promise && value._tracked === true;
+}
+function unwrapTrackedPromise(value) {
+    if (!isTrackedPromise(value)) return value;
+    if (value._error) throw value._error;
+    return value._data;
+}
+const defer = function defer(data, init) {
+    if (init === void 0) init = {};
+    let responseInit = typeof init === "number" ? {
+        status: init
+    } : init;
+    return new DeferredData(data, responseInit);
+};
+/**
+ * A redirect response. Sets the status code and the `Location` header.
+ * Defaults to "302 Found".
+ */ const redirect = function redirect(url, init) {
+    if (init === void 0) init = 302;
+    let responseInit = init;
+    if (typeof responseInit === "number") responseInit = {
+        status: responseInit
+    };
+    else if (typeof responseInit.status === "undefined") responseInit.status = 302;
+    let headers = new Headers(responseInit.headers);
+    headers.set("Location", url);
+    return new Response(null, _extends({}, responseInit, {
+        headers
+    }));
+};
+/**
+ * @private
+ * Utility class we use to hold auto-unwrapped 4xx/5xx Response bodies
+ */ class ErrorResponse {
+    constructor(status, statusText, data, internal){
+        if (internal === void 0) internal = false;
+        this.status = status;
+        this.statusText = statusText || "";
+        this.internal = internal;
+        if (data instanceof Error) {
+            this.data = data.toString();
+            this.error = data;
+        } else this.data = data;
+    }
+}
+/**
+ * Check if the given error is an ErrorResponse generated from a 4xx/5xx
+ * Response thrown from an action/loader
+ */ function isRouteErrorResponse(error) {
+    return error != null && typeof error.status === "number" && typeof error.statusText === "string" && typeof error.internal === "boolean" && "data" in error;
+}
+const validMutationMethodsArr = [
+    "post",
+    "put",
+    "patch",
+    "delete"
+];
+const validMutationMethods = new Set(validMutationMethodsArr);
+const validRequestMethodsArr = [
+    "get",
+    ...validMutationMethodsArr
+];
+const validRequestMethods = new Set(validRequestMethodsArr);
+const redirectStatusCodes = new Set([
+    301,
+    302,
+    303,
+    307,
+    308
+]);
+const redirectPreserveMethodStatusCodes = new Set([
+    307,
+    308
+]);
+const IDLE_NAVIGATION = {
+    state: "idle",
+    location: undefined,
+    formMethod: undefined,
+    formAction: undefined,
+    formEncType: undefined,
+    formData: undefined
+};
+const IDLE_FETCHER = {
+    state: "idle",
+    data: undefined,
+    formMethod: undefined,
+    formAction: undefined,
+    formEncType: undefined,
+    formData: undefined
+};
+const IDLE_BLOCKER = {
+    state: "unblocked",
+    proceed: undefined,
+    reset: undefined,
+    location: undefined
+};
+const ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+const isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
+const isServer = !isBrowser;
+const defaultMapRouteProperties = (route)=>({
+        hasErrorBoundary: Boolean(route.hasErrorBoundary)
+    }); //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region createRouter
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Create a router and listen to history POP navigations
+ */ function createRouter(init) {
+    invariant(init.routes.length > 0, "You must provide a non-empty routes array to createRouter");
+    let mapRouteProperties;
+    if (init.mapRouteProperties) mapRouteProperties = init.mapRouteProperties;
+    else if (init.detectErrorBoundary) {
+        // If they are still using the deprecated version, wrap it with the new API
+        let detectErrorBoundary = init.detectErrorBoundary;
+        mapRouteProperties = (route)=>({
+                hasErrorBoundary: detectErrorBoundary(route)
+            });
+    } else mapRouteProperties = defaultMapRouteProperties;
+     // Routes keyed by ID
+    let manifest = {}; // Routes in tree format for matching
+    let dataRoutes = convertRoutesToDataRoutes(init.routes, mapRouteProperties, undefined, manifest);
+    let inFlightDataRoutes;
+    let basename = init.basename || "/"; // Config driven behavior flags
+    let future = _extends({
+        v7_normalizeFormMethod: false,
+        v7_prependBasename: false
+    }, init.future); // Cleanup function for history
+    let unlistenHistory = null; // Externally-provided functions to call on all state changes
+    let subscribers = new Set(); // Externally-provided object to hold scroll restoration locations during routing
+    let savedScrollPositions = null; // Externally-provided function to get scroll restoration keys
+    let getScrollRestorationKey = null; // Externally-provided function to get current scroll position
+    let getScrollPosition = null; // One-time flag to control the initial hydration scroll restoration.  Because
+    // we don't get the saved positions from <ScrollRestoration /> until _after_
+    // the initial render, we need to manually trigger a separate updateState to
+    // send along the restoreScrollPosition
+    // Set to true if we have `hydrationData` since we assume we were SSR'd and that
+    // SSR did the initial scroll restoration.
+    let initialScrollRestored = init.hydrationData != null;
+    let initialMatches = matchRoutes(dataRoutes, init.history.location, basename);
+    let initialErrors = null;
+    if (initialMatches == null) {
+        // If we do not match a user-provided-route, fall back to the root
+        // to allow the error boundary to take over
+        let error = getInternalRouterError(404, {
+            pathname: init.history.location.pathname
+        });
+        let { matches , route  } = getShortCircuitMatches(dataRoutes);
+        initialMatches = matches;
+        initialErrors = {
+            [route.id]: error
+        };
+    }
+    let initialized = // functions around still then we'll need to run them in initialize()
+    !initialMatches.some((m)=>m.route.lazy) && (!initialMatches.some((m)=>m.route.loader) || init.hydrationData != null);
+    let router;
+    let state = {
+        historyAction: init.history.action,
+        location: init.history.location,
+        matches: initialMatches,
+        initialized,
+        navigation: IDLE_NAVIGATION,
+        // Don't restore on initial updateState() if we were SSR'd
+        restoreScrollPosition: init.hydrationData != null ? false : null,
+        preventScrollReset: false,
+        revalidation: "idle",
+        loaderData: init.hydrationData && init.hydrationData.loaderData || {},
+        actionData: init.hydrationData && init.hydrationData.actionData || null,
+        errors: init.hydrationData && init.hydrationData.errors || initialErrors,
+        fetchers: new Map(),
+        blockers: new Map()
+    }; // -- Stateful internal variables to manage navigations --
+    // Current navigation in progress (to be committed in completeNavigation)
+    let pendingAction = Action.Pop; // Should the current navigation prevent the scroll reset if scroll cannot
+    // be restored?
+    let pendingPreventScrollReset = false; // AbortController for the active navigation
+    let pendingNavigationController; // We use this to avoid touching history in completeNavigation if a
+    // revalidation is entirely uninterrupted
+    let isUninterruptedRevalidation = false; // Use this internal flag to force revalidation of all loaders:
+    //  - submissions (completed or interrupted)
+    //  - useRevalidator()
+    //  - X-Remix-Revalidate (from redirect)
+    let isRevalidationRequired = false; // Use this internal array to capture routes that require revalidation due
+    // to a cancelled deferred on action submission
+    let cancelledDeferredRoutes = []; // Use this internal array to capture fetcher loads that were cancelled by an
+    // action navigation and require revalidation
+    let cancelledFetcherLoads = []; // AbortControllers for any in-flight fetchers
+    let fetchControllers = new Map(); // Track loads based on the order in which they started
+    let incrementingLoadId = 0; // Track the outstanding pending navigation data load to be compared against
+    // the globally incrementing load when a fetcher load lands after a completed
+    // navigation
+    let pendingNavigationLoadId = -1; // Fetchers that triggered data reloads as a result of their actions
+    let fetchReloadIds = new Map(); // Fetchers that triggered redirect navigations
+    let fetchRedirectIds = new Set(); // Most recent href/match for fetcher.load calls for fetchers
+    let fetchLoadMatches = new Map(); // Store DeferredData instances for active route matches.  When a
+    // route loader returns defer() we stick one in here.  Then, when a nested
+    // promise resolves we update loaderData.  If a new navigation starts we
+    // cancel active deferreds for eliminated routes.
+    let activeDeferreds = new Map(); // Store blocker functions in a separate Map outside of router state since
+    // we don't need to update UI state if they change
+    let blockerFunctions = new Map(); // Flag to ignore the next history update, so we can revert the URL change on
+    // a POP navigation that was blocked by the user without touching router state
+    let ignoreNextHistoryUpdate = false; // Initialize the router, all side effects should be kicked off from here.
+    // Implemented as a Fluent API for ease of:
+    //   let router = createRouter(init).initialize();
+    function initialize() {
+        // If history informs us of a POP navigation, start the navigation but do not update
+        // state.  We'll update our own state once the navigation completes
+        unlistenHistory = init.history.listen((_ref)=>{
+            let { action: historyAction , location , delta  } = _ref;
+            // Ignore this event if it was just us resetting the URL from a
+            // blocked POP navigation
+            if (ignoreNextHistoryUpdate) {
+                ignoreNextHistoryUpdate = false;
+                return;
+            }
+            warning(blockerFunctions.size === 0 || delta != null, "You are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.");
+            let blockerKey = shouldBlockNavigation({
+                currentLocation: state.location,
+                nextLocation: location,
+                historyAction
+            });
+            if (blockerKey && delta != null) {
+                // Restore the URL to match the current UI, but don't update router state
+                ignoreNextHistoryUpdate = true;
+                init.history.go(delta * -1); // Put the blocker into a blocked state
+                updateBlocker(blockerKey, {
+                    state: "blocked",
+                    location,
+                    proceed () {
+                        updateBlocker(blockerKey, {
+                            state: "proceeding",
+                            proceed: undefined,
+                            reset: undefined,
+                            location
+                        }); // Re-do the same POP navigation we just blocked
+                        init.history.go(delta);
+                    },
+                    reset () {
+                        deleteBlocker(blockerKey);
+                        updateState({
+                            blockers: new Map(router.state.blockers)
+                        });
+                    }
+                });
+                return;
+            }
+            return startNavigation(historyAction, location);
+        }); // Kick off initial data load if needed.  Use Pop to avoid modifying history
+        // Note we don't do any handling of lazy here.  For SPA's it'll get handled
+        // in the normal navigation flow.  For SSR it's expected that lazy modules are
+        // resolved prior to router creation since we can't go into a fallbackElement
+        // UI for SSR'd apps
+        if (!state.initialized) startNavigation(Action.Pop, state.location);
+        return router;
+    } // Clean up a router and it's side effects
+    function dispose() {
+        if (unlistenHistory) unlistenHistory();
+        subscribers.clear();
+        pendingNavigationController && pendingNavigationController.abort();
+        state.fetchers.forEach((_, key)=>deleteFetcher(key));
+        state.blockers.forEach((_, key)=>deleteBlocker(key));
+    } // Subscribe to state updates for the router
+    function subscribe(fn) {
+        subscribers.add(fn);
+        return ()=>subscribers.delete(fn);
+    } // Update our state and notify the calling context of the change
+    function updateState(newState) {
+        state = _extends({}, state, newState);
+        subscribers.forEach((subscriber)=>subscriber(state));
+    } // Complete a navigation returning the state.navigation back to the IDLE_NAVIGATION
+    // and setting state.[historyAction/location/matches] to the new route.
+    // - Location is a required param
+    // - Navigation will always be set to IDLE_NAVIGATION
+    // - Can pass any other state in newState
+    function completeNavigation(location, newState) {
+        var _location$state, _location$state2;
+        // Deduce if we're in a loading/actionReload state:
+        // - We have committed actionData in the store
+        // - The current navigation was a mutation submission
+        // - We're past the submitting state and into the loading state
+        // - The location being loaded is not the result of a redirect
+        let isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location.state) == null ? void 0 : _location$state._isRedirect) !== true;
+        let actionData;
+        if (newState.actionData) {
+            if (Object.keys(newState.actionData).length > 0) actionData = newState.actionData;
+            else // Empty actionData -> clear prior actionData due to an action error
+            actionData = null;
+        } else if (isActionReload) // Keep the current data if we're wrapping up the action reload
+        actionData = state.actionData;
+        else // Clear actionData on any other completed navigations
+        actionData = null;
+         // Always preserve any existing loaderData from re-used routes
+        let loaderData = newState.loaderData ? mergeLoaderData(state.loaderData, newState.loaderData, newState.matches || [], newState.errors) : state.loaderData; // On a successful navigation we can assume we got through all blockers
+        // so we can start fresh
+        for (let [key] of blockerFunctions)deleteBlocker(key);
+         // Always respect the user flag.  Otherwise don't reset on mutation
+        // submission navigations unless they redirect
+        let preventScrollReset = pendingPreventScrollReset === true || state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && ((_location$state2 = location.state) == null ? void 0 : _location$state2._isRedirect) !== true;
+        if (inFlightDataRoutes) {
+            dataRoutes = inFlightDataRoutes;
+            inFlightDataRoutes = undefined;
+        }
+        updateState(_extends({}, newState, {
+            actionData,
+            loaderData,
+            historyAction: pendingAction,
+            location,
+            initialized: true,
+            navigation: IDLE_NAVIGATION,
+            revalidation: "idle",
+            restoreScrollPosition: getSavedScrollPosition(location, newState.matches || state.matches),
+            preventScrollReset,
+            blockers: new Map(state.blockers)
+        }));
+        if (isUninterruptedRevalidation) ;
+        else if (pendingAction === Action.Pop) ;
+        else if (pendingAction === Action.Push) init.history.push(location, location.state);
+        else if (pendingAction === Action.Replace) init.history.replace(location, location.state);
+         // Reset stateful navigation vars
+        pendingAction = Action.Pop;
+        pendingPreventScrollReset = false;
+        isUninterruptedRevalidation = false;
+        isRevalidationRequired = false;
+        cancelledDeferredRoutes = [];
+        cancelledFetcherLoads = [];
+    } // Trigger a navigation event, which can either be a numerical POP or a PUSH
+    // replace with an optional submission
+    async function navigate(to, opts) {
+        if (typeof to === "number") {
+            init.history.go(to);
+            return;
+        }
+        let normalizedPath = normalizeTo(state.location, state.matches, basename, future.v7_prependBasename, to, opts == null ? void 0 : opts.fromRouteId, opts == null ? void 0 : opts.relative);
+        let { path , submission , error  } = normalizeNavigateOptions(future.v7_normalizeFormMethod, false, normalizedPath, opts);
+        let currentLocation = state.location;
+        let nextLocation = createLocation(state.location, path, opts && opts.state); // When using navigate as a PUSH/REPLACE we aren't reading an already-encoded
+        // URL from window.location, so we need to encode it here so the behavior
+        // remains the same as POP and non-data-router usages.  new URL() does all
+        // the same encoding we'd get from a history.pushState/window.location read
+        // without having to touch history
+        nextLocation = _extends({}, nextLocation, init.history.encodeLocation(nextLocation));
+        let userReplace = opts && opts.replace != null ? opts.replace : undefined;
+        let historyAction = Action.Push;
+        if (userReplace === true) historyAction = Action.Replace;
+        else if (userReplace === false) ;
+        else if (submission != null && isMutationMethod(submission.formMethod) && submission.formAction === state.location.pathname + state.location.search) // By default on submissions to the current location we REPLACE so that
+        // users don't have to double-click the back button to get to the prior
+        // location.  If the user redirects to a different location from the
+        // action/loader this will be ignored and the redirect will be a PUSH
+        historyAction = Action.Replace;
+        let preventScrollReset = opts && "preventScrollReset" in opts ? opts.preventScrollReset === true : undefined;
+        let blockerKey = shouldBlockNavigation({
+            currentLocation,
+            nextLocation,
+            historyAction
+        });
+        if (blockerKey) {
+            // Put the blocker into a blocked state
+            updateBlocker(blockerKey, {
+                state: "blocked",
+                location: nextLocation,
+                proceed () {
+                    updateBlocker(blockerKey, {
+                        state: "proceeding",
+                        proceed: undefined,
+                        reset: undefined,
+                        location: nextLocation
+                    }); // Send the same navigation through
+                    navigate(to, opts);
+                },
+                reset () {
+                    deleteBlocker(blockerKey);
+                    updateState({
+                        blockers: new Map(state.blockers)
+                    });
+                }
+            });
+            return;
+        }
+        return await startNavigation(historyAction, nextLocation, {
+            submission,
+            // Send through the formData serialization error if we have one so we can
+            // render at the right error boundary after we match routes
+            pendingError: error,
+            preventScrollReset,
+            replace: opts && opts.replace
+        });
+    } // Revalidate all current loaders.  If a navigation is in progress or if this
+    // is interrupted by a navigation, allow this to "succeed" by calling all
+    // loaders during the next loader round
+    function revalidate() {
+        interruptActiveLoads();
+        updateState({
+            revalidation: "loading"
+        }); // If we're currently submitting an action, we don't need to start a new
+        // navigation, we'll just let the follow up loader execution call all loaders
+        if (state.navigation.state === "submitting") return;
+         // If we're currently in an idle state, start a new navigation for the current
+        // action/location and mark it as uninterrupted, which will skip the history
+        // update in completeNavigation
+        if (state.navigation.state === "idle") {
+            startNavigation(state.historyAction, state.location, {
+                startUninterruptedRevalidation: true
+            });
+            return;
+        } // Otherwise, if we're currently in a loading state, just start a new
+        // navigation to the navigation.location but do not trigger an uninterrupted
+        // revalidation so that history correctly updates once the navigation completes
+        startNavigation(pendingAction || state.historyAction, state.navigation.location, {
+            overrideNavigation: state.navigation
+        });
+    } // Start a navigation to the given action/location.  Can optionally provide a
+    // overrideNavigation which will override the normalLoad in the case of a redirect
+    // navigation
+    async function startNavigation(historyAction, location, opts) {
+        // Abort any in-progress navigations and start a new one. Unset any ongoing
+        // uninterrupted revalidations unless told otherwise, since we want this
+        // new navigation to update history normally
+        pendingNavigationController && pendingNavigationController.abort();
+        pendingNavigationController = null;
+        pendingAction = historyAction;
+        isUninterruptedRevalidation = (opts && opts.startUninterruptedRevalidation) === true; // Save the current scroll position every time we start a new navigation,
+        // and track whether we should reset scroll on completion
+        saveScrollPosition(state.location, state.matches);
+        pendingPreventScrollReset = (opts && opts.preventScrollReset) === true;
+        let routesToUse = inFlightDataRoutes || dataRoutes;
+        let loadingNavigation = opts && opts.overrideNavigation;
+        let matches = matchRoutes(routesToUse, location, basename); // Short circuit with a 404 on the root error boundary if we match nothing
+        if (!matches) {
+            let error = getInternalRouterError(404, {
+                pathname: location.pathname
+            });
+            let { matches: notFoundMatches , route  } = getShortCircuitMatches(routesToUse); // Cancel all pending deferred on 404s since we don't keep any routes
+            cancelActiveDeferreds();
+            completeNavigation(location, {
+                matches: notFoundMatches,
+                loaderData: {},
+                errors: {
+                    [route.id]: error
+                }
+            });
+            return;
+        } // Short circuit if it's only a hash change and not a mutation submission
+        // For example, on /page#hash and submit a <Form method="post"> which will
+        // default to a navigation to /page
+        if (isHashChangeOnly(state.location, location) && !(opts && opts.submission && isMutationMethod(opts.submission.formMethod))) {
+            completeNavigation(location, {
+                matches
+            });
+            return;
+        } // Create a controller/Request for this navigation
+        pendingNavigationController = new AbortController();
+        let request = createClientSideRequest(init.history, location, pendingNavigationController.signal, opts && opts.submission);
+        let pendingActionData;
+        let pendingError;
+        if (opts && opts.pendingError) // If we have a pendingError, it means the user attempted a GET submission
+        // with binary FormData so assign here and skip to handleLoaders.  That
+        // way we handle calling loaders above the boundary etc.  It's not really
+        // different from an actionError in that sense.
+        pendingError = {
+            [findNearestBoundary(matches).route.id]: opts.pendingError
+        };
+        else if (opts && opts.submission && isMutationMethod(opts.submission.formMethod)) {
+            // Call action if we received an action submission
+            let actionOutput = await handleAction(request, location, opts.submission, matches, {
+                replace: opts.replace
+            });
+            if (actionOutput.shortCircuited) return;
+            pendingActionData = actionOutput.pendingActionData;
+            pendingError = actionOutput.pendingActionError;
+            let navigation = _extends({
+                state: "loading",
+                location
+            }, opts.submission);
+            loadingNavigation = navigation; // Create a GET request for the loaders
+            request = new Request(request.url, {
+                signal: request.signal
+            });
+        } // Call loaders
+        let { shortCircuited , loaderData , errors  } = await handleLoaders(request, location, matches, loadingNavigation, opts && opts.submission, opts && opts.fetcherSubmission, opts && opts.replace, pendingActionData, pendingError);
+        if (shortCircuited) return;
+         // Clean up now that the action/loaders have completed.  Don't clean up if
+        // we short circuited because pendingNavigationController will have already
+        // been assigned to a new controller for the next navigation
+        pendingNavigationController = null;
+        completeNavigation(location, _extends({
+            matches
+        }, pendingActionData ? {
+            actionData: pendingActionData
+        } : {}, {
+            loaderData,
+            errors
+        }));
+    } // Call the action matched by the leaf route for this navigation and handle
+    // redirects/errors
+    async function handleAction(request, location, submission, matches, opts) {
+        interruptActiveLoads(); // Put us in a submitting state
+        let navigation = _extends({
+            state: "submitting",
+            location
+        }, submission);
+        updateState({
+            navigation
+        }); // Call our action and get the result
+        let result;
+        let actionMatch = getTargetMatch(matches, location);
+        if (!actionMatch.route.action && !actionMatch.route.lazy) result = {
+            type: ResultType.error,
+            error: getInternalRouterError(405, {
+                method: request.method,
+                pathname: location.pathname,
+                routeId: actionMatch.route.id
+            })
+        };
+        else {
+            result = await callLoaderOrAction("action", request, actionMatch, matches, manifest, mapRouteProperties, basename);
+            if (request.signal.aborted) return {
+                shortCircuited: true
+            };
+        }
+        if (isRedirectResult(result)) {
+            let replace;
+            if (opts && opts.replace != null) replace = opts.replace;
+            else // If the user didn't explicity indicate replace behavior, replace if
+            // we redirected to the exact same location we're currently at to avoid
+            // double back-buttons
+            replace = result.location === state.location.pathname + state.location.search;
+            await startRedirectNavigation(state, result, {
+                submission,
+                replace
+            });
+            return {
+                shortCircuited: true
+            };
+        }
+        if (isErrorResult(result)) {
+            // Store off the pending error - we use it to determine which loaders
+            // to call and will commit it when we complete the navigation
+            let boundaryMatch = findNearestBoundary(matches, actionMatch.route.id); // By default, all submissions are REPLACE navigations, but if the
+            // action threw an error that'll be rendered in an errorElement, we fall
+            // back to PUSH so that the user can use the back button to get back to
+            // the pre-submission form location to try again
+            if ((opts && opts.replace) !== true) pendingAction = Action.Push;
+            return {
+                // Send back an empty object we can use to clear out any prior actionData
+                pendingActionData: {},
+                pendingActionError: {
+                    [boundaryMatch.route.id]: result.error
+                }
+            };
+        }
+        if (isDeferredResult(result)) throw getInternalRouterError(400, {
+            type: "defer-action"
+        });
+        return {
+            pendingActionData: {
+                [actionMatch.route.id]: result.data
+            }
+        };
+    } // Call all applicable loaders for the given matches, handling redirects,
+    // errors, etc.
+    async function handleLoaders(request, location, matches, overrideNavigation, submission, fetcherSubmission, replace, pendingActionData, pendingError) {
+        // Figure out the right navigation we want to use for data loading
+        let loadingNavigation = overrideNavigation;
+        if (!loadingNavigation) {
+            let navigation = _extends({
+                state: "loading",
+                location,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined
+            }, submission);
+            loadingNavigation = navigation;
+        } // If this was a redirect from an action we don't have a "submission" but
+        // we have it on the loading navigation so use that if available
+        let activeSubmission = submission || fetcherSubmission ? submission || fetcherSubmission : loadingNavigation.formMethod && loadingNavigation.formAction && loadingNavigation.formData && loadingNavigation.formEncType ? {
+            formMethod: loadingNavigation.formMethod,
+            formAction: loadingNavigation.formAction,
+            formData: loadingNavigation.formData,
+            formEncType: loadingNavigation.formEncType
+        } : undefined;
+        let routesToUse = inFlightDataRoutes || dataRoutes;
+        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, activeSubmission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, routesToUse, basename, pendingActionData, pendingError); // Cancel pending deferreds for no-longer-matched routes or routes we're
+        // about to reload.  Note that if this is an action reload we would have
+        // already cancelled all pending deferreds so this would be a no-op
+        cancelActiveDeferreds((routeId)=>!(matches && matches.some((m)=>m.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m)=>m.route.id === routeId)); // Short circuit if we have no loaders to run
+        if (matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
+            let updatedFetchers = markFetchRedirectsDone();
+            completeNavigation(location, _extends({
+                matches,
+                loaderData: {},
+                // Commit pending error if we're short circuiting
+                errors: pendingError || null
+            }, pendingActionData ? {
+                actionData: pendingActionData
+            } : {}, updatedFetchers ? {
+                fetchers: new Map(state.fetchers)
+            } : {}));
+            return {
+                shortCircuited: true
+            };
+        } // If this is an uninterrupted revalidation, we remain in our current idle
+        // state.  If not, we need to switch to our loading state and load data,
+        // preserving any new action data or existing action data (in the case of
+        // a revalidation interrupting an actionReload)
+        if (!isUninterruptedRevalidation) {
+            revalidatingFetchers.forEach((rf)=>{
+                let fetcher = state.fetchers.get(rf.key);
+                let revalidatingFetcher = {
+                    state: "loading",
+                    data: fetcher && fetcher.data,
+                    formMethod: undefined,
+                    formAction: undefined,
+                    formEncType: undefined,
+                    formData: undefined,
+                    " _hasFetcherDoneAnything ": true
+                };
+                state.fetchers.set(rf.key, revalidatingFetcher);
+            });
+            let actionData = pendingActionData || state.actionData;
+            updateState(_extends({
+                navigation: loadingNavigation
+            }, actionData ? Object.keys(actionData).length === 0 ? {
+                actionData: null
+            } : {
+                actionData
+            } : {}, revalidatingFetchers.length > 0 ? {
+                fetchers: new Map(state.fetchers)
+            } : {}));
+        }
+        pendingNavigationLoadId = ++incrementingLoadId;
+        revalidatingFetchers.forEach((rf)=>{
+            if (rf.controller) // Fetchers use an independent AbortController so that aborting a fetcher
+            // (via deleteFetcher) does not abort the triggering navigation that
+            // triggered the revalidation
+            fetchControllers.set(rf.key, rf.controller);
+        }); // Proxy navigation abort through to revalidation fetchers
+        let abortPendingFetchRevalidations = ()=>revalidatingFetchers.forEach((f)=>abortFetcher(f.key));
+        if (pendingNavigationController) pendingNavigationController.signal.addEventListener("abort", abortPendingFetchRevalidations);
+        let { results , loaderResults , fetcherResults  } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, request);
+        if (request.signal.aborted) return {
+            shortCircuited: true
+        };
+         // Clean up _after_ loaders have completed.  Don't clean up if we short
+        // circuited because fetchControllers would have been aborted and
+        // reassigned to new controllers for the next navigation
+        if (pendingNavigationController) pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
+        revalidatingFetchers.forEach((rf)=>fetchControllers.delete(rf.key)); // If any loaders returned a redirect Response, start a new REPLACE navigation
+        let redirect = findRedirect(results);
+        if (redirect) {
+            await startRedirectNavigation(state, redirect, {
+                replace
+            });
+            return {
+                shortCircuited: true
+            };
+        } // Process and commit output from loaders
+        let { loaderData , errors  } = processLoaderData(state, matches, matchesToLoad, loaderResults, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds); // Wire up subscribers to update loaderData as promises settle
+        activeDeferreds.forEach((deferredData, routeId)=>{
+            deferredData.subscribe((aborted)=>{
+                // Note: No need to updateState here since the TrackedPromise on
+                // loaderData is stable across resolve/reject
+                // Remove this instance if we were aborted or if promises have settled
+                if (aborted || deferredData.done) activeDeferreds.delete(routeId);
+            });
+        });
+        let updatedFetchers = markFetchRedirectsDone();
+        let didAbortFetchLoads = abortStaleFetchLoads(pendingNavigationLoadId);
+        let shouldUpdateFetchers = updatedFetchers || didAbortFetchLoads || revalidatingFetchers.length > 0;
+        return _extends({
+            loaderData,
+            errors
+        }, shouldUpdateFetchers ? {
+            fetchers: new Map(state.fetchers)
+        } : {});
+    }
+    function getFetcher(key) {
+        return state.fetchers.get(key) || IDLE_FETCHER;
+    } // Trigger a fetcher load/submit for the given fetcher key
+    function fetch(key, routeId, href, opts) {
+        if (isServer) throw new Error("router.fetch() was called during the server render, but it shouldn't be. You are likely calling a useFetcher() method in the body of your component. Try moving it to a useEffect or a callback.");
+        if (fetchControllers.has(key)) abortFetcher(key);
+        let routesToUse = inFlightDataRoutes || dataRoutes;
+        let normalizedPath = normalizeTo(state.location, state.matches, basename, future.v7_prependBasename, href, routeId, opts == null ? void 0 : opts.relative);
+        let matches = matchRoutes(routesToUse, normalizedPath, basename);
+        if (!matches) {
+            setFetcherError(key, routeId, getInternalRouterError(404, {
+                pathname: normalizedPath
+            }));
+            return;
+        }
+        let { path , submission  } = normalizeNavigateOptions(future.v7_normalizeFormMethod, true, normalizedPath, opts);
+        let match = getTargetMatch(matches, path);
+        pendingPreventScrollReset = (opts && opts.preventScrollReset) === true;
+        if (submission && isMutationMethod(submission.formMethod)) {
+            handleFetcherAction(key, routeId, path, match, matches, submission);
+            return;
+        } // Store off the match so we can call it's shouldRevalidate on subsequent
+        // revalidations
+        fetchLoadMatches.set(key, {
+            routeId,
+            path
+        });
+        handleFetcherLoader(key, routeId, path, match, matches, submission);
+    } // Call the action for the matched fetcher.submit(), and then handle redirects,
+    // errors, and revalidation
+    async function handleFetcherAction(key, routeId, path, match, requestMatches, submission) {
+        interruptActiveLoads();
+        fetchLoadMatches.delete(key);
+        if (!match.route.action && !match.route.lazy) {
+            let error = getInternalRouterError(405, {
+                method: submission.formMethod,
+                pathname: path,
+                routeId: routeId
+            });
+            setFetcherError(key, routeId, error);
+            return;
+        } // Put this fetcher into it's submitting state
+        let existingFetcher = state.fetchers.get(key);
+        let fetcher = _extends({
+            state: "submitting"
+        }, submission, {
+            data: existingFetcher && existingFetcher.data,
+            " _hasFetcherDoneAnything ": true
+        });
+        state.fetchers.set(key, fetcher);
+        updateState({
+            fetchers: new Map(state.fetchers)
+        }); // Call the action for the fetcher
+        let abortController = new AbortController();
+        let fetchRequest = createClientSideRequest(init.history, path, abortController.signal, submission);
+        fetchControllers.set(key, abortController);
+        let actionResult = await callLoaderOrAction("action", fetchRequest, match, requestMatches, manifest, mapRouteProperties, basename);
+        if (fetchRequest.signal.aborted) {
+            // We can delete this so long as we weren't aborted by ou our own fetcher
+            // re-submit which would have put _new_ controller is in fetchControllers
+            if (fetchControllers.get(key) === abortController) fetchControllers.delete(key);
+            return;
+        }
+        if (isRedirectResult(actionResult)) {
+            fetchControllers.delete(key);
+            fetchRedirectIds.add(key);
+            let loadingFetcher = _extends({
+                state: "loading"
+            }, submission, {
+                data: undefined,
+                " _hasFetcherDoneAnything ": true
+            });
+            state.fetchers.set(key, loadingFetcher);
+            updateState({
+                fetchers: new Map(state.fetchers)
+            });
+            return startRedirectNavigation(state, actionResult, {
+                submission,
+                isFetchActionRedirect: true
+            });
+        } // Process any non-redirect errors thrown
+        if (isErrorResult(actionResult)) {
+            setFetcherError(key, routeId, actionResult.error);
+            return;
+        }
+        if (isDeferredResult(actionResult)) throw getInternalRouterError(400, {
+            type: "defer-action"
+        });
+         // Start the data load for current matches, or the next location if we're
+        // in the middle of a navigation
+        let nextLocation = state.navigation.location || state.location;
+        let revalidationRequest = createClientSideRequest(init.history, nextLocation, abortController.signal);
+        let routesToUse = inFlightDataRoutes || dataRoutes;
+        let matches = state.navigation.state !== "idle" ? matchRoutes(routesToUse, state.navigation.location, basename) : state.matches;
+        invariant(matches, "Didn't find any matches after fetcher action");
+        let loadId = ++incrementingLoadId;
+        fetchReloadIds.set(key, loadId);
+        let loadFetcher = _extends({
+            state: "loading",
+            data: actionResult.data
+        }, submission, {
+            " _hasFetcherDoneAnything ": true
+        });
+        state.fetchers.set(key, loadFetcher);
+        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, submission, nextLocation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, routesToUse, basename, {
+            [match.route.id]: actionResult.data
+        }, undefined // No need to send through errors since we short circuit above
+        ); // Put all revalidating fetchers into the loading state, except for the
+        // current fetcher which we want to keep in it's current loading state which
+        // contains it's action submission info + action data
+        revalidatingFetchers.filter((rf)=>rf.key !== key).forEach((rf)=>{
+            let staleKey = rf.key;
+            let existingFetcher = state.fetchers.get(staleKey);
+            let revalidatingFetcher = {
+                state: "loading",
+                data: existingFetcher && existingFetcher.data,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined,
+                " _hasFetcherDoneAnything ": true
+            };
+            state.fetchers.set(staleKey, revalidatingFetcher);
+            if (rf.controller) fetchControllers.set(staleKey, rf.controller);
+        });
+        updateState({
+            fetchers: new Map(state.fetchers)
+        });
+        let abortPendingFetchRevalidations = ()=>revalidatingFetchers.forEach((rf)=>abortFetcher(rf.key));
+        abortController.signal.addEventListener("abort", abortPendingFetchRevalidations);
+        let { results , loaderResults , fetcherResults  } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
+        if (abortController.signal.aborted) return;
+        abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
+        fetchReloadIds.delete(key);
+        fetchControllers.delete(key);
+        revalidatingFetchers.forEach((r)=>fetchControllers.delete(r.key));
+        let redirect = findRedirect(results);
+        if (redirect) return startRedirectNavigation(state, redirect);
+         // Process and commit output from loaders
+        let { loaderData , errors  } = processLoaderData(state, state.matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
+        let doneFetcher = {
+            state: "idle",
+            data: actionResult.data,
+            formMethod: undefined,
+            formAction: undefined,
+            formEncType: undefined,
+            formData: undefined,
+            " _hasFetcherDoneAnything ": true
+        };
+        state.fetchers.set(key, doneFetcher);
+        let didAbortFetchLoads = abortStaleFetchLoads(loadId); // If we are currently in a navigation loading state and this fetcher is
+        // more recent than the navigation, we want the newer data so abort the
+        // navigation and complete it with the fetcher data
+        if (state.navigation.state === "loading" && loadId > pendingNavigationLoadId) {
+            invariant(pendingAction, "Expected pending action");
+            pendingNavigationController && pendingNavigationController.abort();
+            completeNavigation(state.navigation.location, {
+                matches,
+                loaderData,
+                errors,
+                fetchers: new Map(state.fetchers)
+            });
+        } else {
+            // otherwise just update with the fetcher data, preserving any existing
+            // loaderData for loaders that did not need to reload.  We have to
+            // manually merge here since we aren't going through completeNavigation
+            updateState(_extends({
+                errors,
+                loaderData: mergeLoaderData(state.loaderData, loaderData, matches, errors)
+            }, didAbortFetchLoads ? {
+                fetchers: new Map(state.fetchers)
+            } : {}));
+            isRevalidationRequired = false;
+        }
+    } // Call the matched loader for fetcher.load(), handling redirects, errors, etc.
+    async function handleFetcherLoader(key, routeId, path, match, matches, submission) {
+        let existingFetcher = state.fetchers.get(key); // Put this fetcher into it's loading state
+        let loadingFetcher = _extends({
+            state: "loading",
+            formMethod: undefined,
+            formAction: undefined,
+            formEncType: undefined,
+            formData: undefined
+        }, submission, {
+            data: existingFetcher && existingFetcher.data,
+            " _hasFetcherDoneAnything ": true
+        });
+        state.fetchers.set(key, loadingFetcher);
+        updateState({
+            fetchers: new Map(state.fetchers)
+        }); // Call the loader for this fetcher route match
+        let abortController = new AbortController();
+        let fetchRequest = createClientSideRequest(init.history, path, abortController.signal);
+        fetchControllers.set(key, abortController);
+        let result = await callLoaderOrAction("loader", fetchRequest, match, matches, manifest, mapRouteProperties, basename); // Deferred isn't supported for fetcher loads, await everything and treat it
+        // as a normal load.  resolveDeferredData will return undefined if this
+        // fetcher gets aborted, so we just leave result untouched and short circuit
+        // below if that happens
+        if (isDeferredResult(result)) result = await resolveDeferredData(result, fetchRequest.signal, true) || result;
+         // We can delete this so long as we weren't aborted by our our own fetcher
+        // re-load which would have put _new_ controller is in fetchControllers
+        if (fetchControllers.get(key) === abortController) fetchControllers.delete(key);
+        if (fetchRequest.signal.aborted) return;
+         // If the loader threw a redirect Response, start a new REPLACE navigation
+        if (isRedirectResult(result)) {
+            fetchRedirectIds.add(key);
+            await startRedirectNavigation(state, result);
+            return;
+        } // Process any non-redirect errors thrown
+        if (isErrorResult(result)) {
+            let boundaryMatch = findNearestBoundary(state.matches, routeId);
+            state.fetchers.delete(key); // TODO: In remix, this would reset to IDLE_NAVIGATION if it was a catch -
+            // do we need to behave any differently with our non-redirect errors?
+            // What if it was a non-redirect Response?
+            updateState({
+                fetchers: new Map(state.fetchers),
+                errors: {
+                    [boundaryMatch.route.id]: result.error
+                }
+            });
+            return;
+        }
+        invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"); // Put the fetcher back into an idle state
+        let doneFetcher = {
+            state: "idle",
+            data: result.data,
+            formMethod: undefined,
+            formAction: undefined,
+            formEncType: undefined,
+            formData: undefined,
+            " _hasFetcherDoneAnything ": true
+        };
+        state.fetchers.set(key, doneFetcher);
+        updateState({
+            fetchers: new Map(state.fetchers)
+        });
+    }
+    /**
+   * Utility function to handle redirects returned from an action or loader.
+   * Normally, a redirect "replaces" the navigation that triggered it.  So, for
+   * example:
+   *
+   *  - user is on /a
+   *  - user clicks a link to /b
+   *  - loader for /b redirects to /c
+   *
+   * In a non-JS app the browser would track the in-flight navigation to /b and
+   * then replace it with /c when it encountered the redirect response.  In
+   * the end it would only ever update the URL bar with /c.
+   *
+   * In client-side routing using pushState/replaceState, we aim to emulate
+   * this behavior and we also do not update history until the end of the
+   * navigation (including processed redirects).  This means that we never
+   * actually touch history until we've processed redirects, so we just use
+   * the history action from the original navigation (PUSH or REPLACE).
+   */ async function startRedirectNavigation(state, redirect, _temp) {
+        var _window;
+        let { submission , replace , isFetchActionRedirect  } = _temp === void 0 ? {} : _temp;
+        if (redirect.revalidate) isRevalidationRequired = true;
+        let redirectLocation = createLocation(state.location, redirect.location, _extends({
+            _isRedirect: true
+        }, isFetchActionRedirect ? {
+            _isFetchActionRedirect: true
+        } : {}));
+        invariant(redirectLocation, "Expected a location on the redirect navigation"); // Check if this an absolute external redirect that goes to a new origin
+        if (ABSOLUTE_URL_REGEX.test(redirect.location) && isBrowser && typeof ((_window = window) == null ? void 0 : _window.location) !== "undefined") {
+            let url = init.history.createURL(redirect.location);
+            let isDifferentBasename = stripBasename(url.pathname, basename) == null;
+            if (window.location.origin !== url.origin || isDifferentBasename) {
+                if (replace) window.location.replace(redirect.location);
+                else window.location.assign(redirect.location);
+                return;
+            }
+        } // There's no need to abort on redirects, since we don't detect the
+        // redirect until the action/loaders have settled
+        pendingNavigationController = null;
+        let redirectHistoryAction = replace === true ? Action.Replace : Action.Push; // Use the incoming submission if provided, fallback on the active one in
+        // state.navigation
+        let { formMethod , formAction , formEncType , formData  } = state.navigation;
+        if (!submission && formMethod && formAction && formData && formEncType) submission = {
+            formMethod,
+            formAction,
+            formEncType,
+            formData
+        };
+         // If this was a 307/308 submission we want to preserve the HTTP method and
+        // re-submit the GET/POST/PUT/PATCH/DELETE as a submission navigation to the
+        // redirected location
+        if (redirectPreserveMethodStatusCodes.has(redirect.status) && submission && isMutationMethod(submission.formMethod)) await startNavigation(redirectHistoryAction, redirectLocation, {
+            submission: _extends({}, submission, {
+                formAction: redirect.location
+            }),
+            // Preserve this flag across redirects
+            preventScrollReset: pendingPreventScrollReset
+        });
+        else if (isFetchActionRedirect) // For a fetch action redirect, we kick off a new loading navigation
+        // without the fetcher submission, but we send it along for shouldRevalidate
+        await startNavigation(redirectHistoryAction, redirectLocation, {
+            overrideNavigation: {
+                state: "loading",
+                location: redirectLocation,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined
+            },
+            fetcherSubmission: submission,
+            // Preserve this flag across redirects
+            preventScrollReset: pendingPreventScrollReset
+        });
+        else // Otherwise, we kick off a new loading navigation, preserving the
+        // submission info for the duration of this navigation
+        await startNavigation(redirectHistoryAction, redirectLocation, {
+            overrideNavigation: {
+                state: "loading",
+                location: redirectLocation,
+                formMethod: submission ? submission.formMethod : undefined,
+                formAction: submission ? submission.formAction : undefined,
+                formEncType: submission ? submission.formEncType : undefined,
+                formData: submission ? submission.formData : undefined
+            },
+            // Preserve this flag across redirects
+            preventScrollReset: pendingPreventScrollReset
+        });
+    }
+    async function callLoadersAndMaybeResolveData(currentMatches, matches, matchesToLoad, fetchersToLoad, request) {
+        // Call all navigation loaders and revalidating fetcher loaders in parallel,
+        // then slice off the results into separate arrays so we can handle them
+        // accordingly
+        let results = await Promise.all([
+            ...matchesToLoad.map((match)=>callLoaderOrAction("loader", request, match, matches, manifest, mapRouteProperties, basename)),
+            ...fetchersToLoad.map((f)=>{
+                if (f.matches && f.match && f.controller) return callLoaderOrAction("loader", createClientSideRequest(init.history, f.path, f.controller.signal), f.match, f.matches, manifest, mapRouteProperties, basename);
+                else {
+                    let error = {
+                        type: ResultType.error,
+                        error: getInternalRouterError(404, {
+                            pathname: f.path
+                        })
+                    };
+                    return error;
+                }
+            })
+        ]);
+        let loaderResults = results.slice(0, matchesToLoad.length);
+        let fetcherResults = results.slice(matchesToLoad.length);
+        await Promise.all([
+            resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(()=>request.signal), false, state.loaderData),
+            resolveDeferredResults(currentMatches, fetchersToLoad.map((f)=>f.match), fetcherResults, fetchersToLoad.map((f)=>f.controller ? f.controller.signal : null), true)
+        ]);
+        return {
+            results,
+            loaderResults,
+            fetcherResults
+        };
+    }
+    function interruptActiveLoads() {
+        // Every interruption triggers a revalidation
+        isRevalidationRequired = true; // Cancel pending route-level deferreds and mark cancelled routes for
+        // revalidation
+        cancelledDeferredRoutes.push(...cancelActiveDeferreds()); // Abort in-flight fetcher loads
+        fetchLoadMatches.forEach((_, key)=>{
+            if (fetchControllers.has(key)) {
+                cancelledFetcherLoads.push(key);
+                abortFetcher(key);
+            }
+        });
+    }
+    function setFetcherError(key, routeId, error) {
+        let boundaryMatch = findNearestBoundary(state.matches, routeId);
+        deleteFetcher(key);
+        updateState({
+            errors: {
+                [boundaryMatch.route.id]: error
+            },
+            fetchers: new Map(state.fetchers)
+        });
+    }
+    function deleteFetcher(key) {
+        if (fetchControllers.has(key)) abortFetcher(key);
+        fetchLoadMatches.delete(key);
+        fetchReloadIds.delete(key);
+        fetchRedirectIds.delete(key);
+        state.fetchers.delete(key);
+    }
+    function abortFetcher(key) {
+        let controller = fetchControllers.get(key);
+        invariant(controller, "Expected fetch controller: " + key);
+        controller.abort();
+        fetchControllers.delete(key);
+    }
+    function markFetchersDone(keys) {
+        for (let key of keys){
+            let fetcher = getFetcher(key);
+            let doneFetcher = {
+                state: "idle",
+                data: fetcher.data,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined,
+                " _hasFetcherDoneAnything ": true
+            };
+            state.fetchers.set(key, doneFetcher);
+        }
+    }
+    function markFetchRedirectsDone() {
+        let doneKeys = [];
+        let updatedFetchers = false;
+        for (let key of fetchRedirectIds){
+            let fetcher = state.fetchers.get(key);
+            invariant(fetcher, "Expected fetcher: " + key);
+            if (fetcher.state === "loading") {
+                fetchRedirectIds.delete(key);
+                doneKeys.push(key);
+                updatedFetchers = true;
+            }
+        }
+        markFetchersDone(doneKeys);
+        return updatedFetchers;
+    }
+    function abortStaleFetchLoads(landedId) {
+        let yeetedKeys = [];
+        for (let [key, id] of fetchReloadIds)if (id < landedId) {
+            let fetcher = state.fetchers.get(key);
+            invariant(fetcher, "Expected fetcher: " + key);
+            if (fetcher.state === "loading") {
+                abortFetcher(key);
+                fetchReloadIds.delete(key);
+                yeetedKeys.push(key);
+            }
+        }
+        markFetchersDone(yeetedKeys);
+        return yeetedKeys.length > 0;
+    }
+    function getBlocker(key, fn) {
+        let blocker = state.blockers.get(key) || IDLE_BLOCKER;
+        if (blockerFunctions.get(key) !== fn) blockerFunctions.set(key, fn);
+        return blocker;
+    }
+    function deleteBlocker(key) {
+        state.blockers.delete(key);
+        blockerFunctions.delete(key);
+    } // Utility function to update blockers, ensuring valid state transitions
+    function updateBlocker(key, newBlocker) {
+        let blocker = state.blockers.get(key) || IDLE_BLOCKER; // Poor mans state machine :)
+        // https://mermaid.live/edit#pako:eNqVkc9OwzAMxl8l8nnjAYrEtDIOHEBIgwvKJTReGy3_lDpIqO27k6awMG0XcrLlnz87nwdonESogKXXBuE79rq75XZO3-yHds0RJVuv70YrPlUrCEe2HfrORS3rubqZfuhtpg5C9wk5tZ4VKcRUq88q9Z8RS0-48cE1iHJkL0ugbHuFLus9L6spZy8nX9MP2CNdomVaposqu3fGayT8T8-jJQwhepo_UtpgBQaDEUom04dZhAN1aJBDlUKJBxE1ceB2Smj0Mln-IBW5AFU2dwUiktt_2Qaq2dBfaKdEup85UV7Yd-dKjlnkabl2Pvr0DTkTreM
+        invariant(blocker.state === "unblocked" && newBlocker.state === "blocked" || blocker.state === "blocked" && newBlocker.state === "blocked" || blocker.state === "blocked" && newBlocker.state === "proceeding" || blocker.state === "blocked" && newBlocker.state === "unblocked" || blocker.state === "proceeding" && newBlocker.state === "unblocked", "Invalid blocker state transition: " + blocker.state + " -> " + newBlocker.state);
+        state.blockers.set(key, newBlocker);
+        updateState({
+            blockers: new Map(state.blockers)
+        });
+    }
+    function shouldBlockNavigation(_ref2) {
+        let { currentLocation , nextLocation , historyAction  } = _ref2;
+        if (blockerFunctions.size === 0) return;
+         // We ony support a single active blocker at the moment since we don't have
+        // any compelling use cases for multi-blocker yet
+        if (blockerFunctions.size > 1) warning(false, "A router only supports one blocker at a time");
+        let entries = Array.from(blockerFunctions.entries());
+        let [blockerKey, blockerFunction] = entries[entries.length - 1];
+        let blocker = state.blockers.get(blockerKey);
+        if (blocker && blocker.state === "proceeding") // If the blocker is currently proceeding, we don't need to re-check
+        // it and can let this navigation continue
+        return;
+         // At this point, we know we're unblocked/blocked so we need to check the
+        // user-provided blocker function
+        if (blockerFunction({
+            currentLocation,
+            nextLocation,
+            historyAction
+        })) return blockerKey;
+    }
+    function cancelActiveDeferreds(predicate) {
+        let cancelledRouteIds = [];
+        activeDeferreds.forEach((dfd, routeId)=>{
+            if (!predicate || predicate(routeId)) {
+                // Cancel the deferred - but do not remove from activeDeferreds here -
+                // we rely on the subscribers to do that so our tests can assert proper
+                // cleanup via _internalActiveDeferreds
+                dfd.cancel();
+                cancelledRouteIds.push(routeId);
+                activeDeferreds.delete(routeId);
+            }
+        });
+        return cancelledRouteIds;
+    } // Opt in to capturing and reporting scroll positions during navigations,
+    // used by the <ScrollRestoration> component
+    function enableScrollRestoration(positions, getPosition, getKey) {
+        savedScrollPositions = positions;
+        getScrollPosition = getPosition;
+        getScrollRestorationKey = getKey || ((location)=>location.key); // Perform initial hydration scroll restoration, since we miss the boat on
+        // the initial updateState() because we've not yet rendered <ScrollRestoration/>
+        // and therefore have no savedScrollPositions available
+        if (!initialScrollRestored && state.navigation === IDLE_NAVIGATION) {
+            initialScrollRestored = true;
+            let y = getSavedScrollPosition(state.location, state.matches);
+            if (y != null) updateState({
+                restoreScrollPosition: y
+            });
+        }
+        return ()=>{
+            savedScrollPositions = null;
+            getScrollPosition = null;
+            getScrollRestorationKey = null;
+        };
+    }
+    function saveScrollPosition(location, matches) {
+        if (savedScrollPositions && getScrollRestorationKey && getScrollPosition) {
+            let userMatches = matches.map((m)=>createUseMatchesMatch(m, state.loaderData));
+            let key = getScrollRestorationKey(location, userMatches) || location.key;
+            savedScrollPositions[key] = getScrollPosition();
+        }
+    }
+    function getSavedScrollPosition(location, matches) {
+        if (savedScrollPositions && getScrollRestorationKey && getScrollPosition) {
+            let userMatches = matches.map((m)=>createUseMatchesMatch(m, state.loaderData));
+            let key = getScrollRestorationKey(location, userMatches) || location.key;
+            let y = savedScrollPositions[key];
+            if (typeof y === "number") return y;
+        }
+        return null;
+    }
+    function _internalSetRoutes(newRoutes) {
+        inFlightDataRoutes = newRoutes;
+    }
+    router = {
+        get basename () {
+            return basename;
+        },
+        get state () {
+            return state;
+        },
+        get routes () {
+            return dataRoutes;
+        },
+        initialize,
+        subscribe,
+        enableScrollRestoration,
+        navigate,
+        fetch,
+        revalidate,
+        // Passthrough to history-aware createHref used by useHref so we get proper
+        // hash-aware URLs in DOM paths
+        createHref: (to)=>init.history.createHref(to),
+        encodeLocation: (to)=>init.history.encodeLocation(to),
+        getFetcher,
+        deleteFetcher,
+        dispose,
+        getBlocker,
+        deleteBlocker,
+        _internalFetchControllers: fetchControllers,
+        _internalActiveDeferreds: activeDeferreds,
+        // TODO: Remove setRoutes, it's temporary to avoid dealing with
+        // updating the tree while validating the update algorithm.
+        _internalSetRoutes
+    };
+    return router;
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region createStaticHandler
+////////////////////////////////////////////////////////////////////////////////
+const UNSAFE_DEFERRED_SYMBOL = Symbol("deferred");
+function createStaticHandler(routes, opts) {
+    invariant(routes.length > 0, "You must provide a non-empty routes array to createStaticHandler");
+    let manifest = {};
+    let basename = (opts ? opts.basename : null) || "/";
+    let mapRouteProperties;
+    if (opts != null && opts.mapRouteProperties) mapRouteProperties = opts.mapRouteProperties;
+    else if (opts != null && opts.detectErrorBoundary) {
+        // If they are still using the deprecated version, wrap it with the new API
+        let detectErrorBoundary = opts.detectErrorBoundary;
+        mapRouteProperties = (route)=>({
+                hasErrorBoundary: detectErrorBoundary(route)
+            });
+    } else mapRouteProperties = defaultMapRouteProperties;
+    let dataRoutes = convertRoutesToDataRoutes(routes, mapRouteProperties, undefined, manifest);
+    /**
+   * The query() method is intended for document requests, in which we want to
+   * call an optional action and potentially multiple loaders for all nested
+   * routes.  It returns a StaticHandlerContext object, which is very similar
+   * to the router state (location, loaderData, actionData, errors, etc.) and
+   * also adds SSR-specific information such as the statusCode and headers
+   * from action/loaders Responses.
+   *
+   * It _should_ never throw and should report all errors through the
+   * returned context.errors object, properly associating errors to their error
+   * boundary.  Additionally, it tracks _deepestRenderedBoundaryId which can be
+   * used to emulate React error boundaries during SSr by performing a second
+   * pass only down to the boundaryId.
+   *
+   * The one exception where we do not return a StaticHandlerContext is when a
+   * redirect response is returned or thrown from any action/loader.  We
+   * propagate that out and return the raw Response so the HTTP server can
+   * return it directly.
+   */ async function query(request, _temp2) {
+        let { requestContext  } = _temp2 === void 0 ? {} : _temp2;
+        let url = new URL(request.url);
+        let method = request.method;
+        let location = createLocation("", createPath(url), null, "default");
+        let matches = matchRoutes(dataRoutes, location, basename); // SSR supports HEAD requests while SPA doesn't
+        if (!isValidMethod(method) && method !== "HEAD") {
+            let error = getInternalRouterError(405, {
+                method
+            });
+            let { matches: methodNotAllowedMatches , route  } = getShortCircuitMatches(dataRoutes);
+            return {
+                basename,
+                location,
+                matches: methodNotAllowedMatches,
+                loaderData: {},
+                actionData: null,
+                errors: {
+                    [route.id]: error
+                },
+                statusCode: error.status,
+                loaderHeaders: {},
+                actionHeaders: {},
+                activeDeferreds: null
+            };
+        } else if (!matches) {
+            let error = getInternalRouterError(404, {
+                pathname: location.pathname
+            });
+            let { matches: notFoundMatches , route  } = getShortCircuitMatches(dataRoutes);
+            return {
+                basename,
+                location,
+                matches: notFoundMatches,
+                loaderData: {},
+                actionData: null,
+                errors: {
+                    [route.id]: error
+                },
+                statusCode: error.status,
+                loaderHeaders: {},
+                actionHeaders: {},
+                activeDeferreds: null
+            };
+        }
+        let result = await queryImpl(request, location, matches, requestContext);
+        if (isResponse(result)) return result;
+         // When returning StaticHandlerContext, we patch back in the location here
+        // since we need it for React Context.  But this helps keep our submit and
+        // loadRouteData operating on a Request instead of a Location
+        return _extends({
+            location,
+            basename
+        }, result);
+    }
+    /**
+   * The queryRoute() method is intended for targeted route requests, either
+   * for fetch ?_data requests or resource route requests.  In this case, we
+   * are only ever calling a single action or loader, and we are returning the
+   * returned value directly.  In most cases, this will be a Response returned
+   * from the action/loader, but it may be a primitive or other value as well -
+   * and in such cases the calling context should handle that accordingly.
+   *
+   * We do respect the throw/return differentiation, so if an action/loader
+   * throws, then this method will throw the value.  This is important so we
+   * can do proper boundary identification in Remix where a thrown Response
+   * must go to the Catch Boundary but a returned Response is happy-path.
+   *
+   * One thing to note is that any Router-initiated Errors that make sense
+   * to associate with a status code will be thrown as an ErrorResponse
+   * instance which include the raw Error, such that the calling context can
+   * serialize the error as they see fit while including the proper response
+   * code.  Examples here are 404 and 405 errors that occur prior to reaching
+   * any user-defined loaders.
+   */ async function queryRoute(request, _temp3) {
+        let { routeId , requestContext  } = _temp3 === void 0 ? {} : _temp3;
+        let url = new URL(request.url);
+        let method = request.method;
+        let location = createLocation("", createPath(url), null, "default");
+        let matches = matchRoutes(dataRoutes, location, basename); // SSR supports HEAD requests while SPA doesn't
+        if (!isValidMethod(method) && method !== "HEAD" && method !== "OPTIONS") throw getInternalRouterError(405, {
+            method
+        });
+        else if (!matches) throw getInternalRouterError(404, {
+            pathname: location.pathname
+        });
+        let match = routeId ? matches.find((m)=>m.route.id === routeId) : getTargetMatch(matches, location);
+        if (routeId && !match) throw getInternalRouterError(403, {
+            pathname: location.pathname,
+            routeId
+        });
+        else if (!match) // This should never hit I don't think?
+        throw getInternalRouterError(404, {
+            pathname: location.pathname
+        });
+        let result = await queryImpl(request, location, matches, requestContext, match);
+        if (isResponse(result)) return result;
+        let error = result.errors ? Object.values(result.errors)[0] : undefined;
+        if (error !== undefined) // If we got back result.errors, that means the loader/action threw
+        // _something_ that wasn't a Response, but it's not guaranteed/required
+        // to be an `instanceof Error` either, so we have to use throw here to
+        // preserve the "error" state outside of queryImpl.
+        throw error;
+         // Pick off the right state value to return
+        if (result.actionData) return Object.values(result.actionData)[0];
+        if (result.loaderData) {
+            var _result$activeDeferre;
+            let data = Object.values(result.loaderData)[0];
+            if ((_result$activeDeferre = result.activeDeferreds) != null && _result$activeDeferre[match.route.id]) data[UNSAFE_DEFERRED_SYMBOL] = result.activeDeferreds[match.route.id];
+            return data;
+        }
+        return undefined;
+    }
+    async function queryImpl(request, location, matches, requestContext, routeMatch) {
+        invariant(request.signal, "query()/queryRoute() requests must contain an AbortController signal");
+        try {
+            if (isMutationMethod(request.method.toLowerCase())) {
+                let result = await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, routeMatch != null);
+                return result;
+            }
+            let result = await loadRouteData(request, matches, requestContext, routeMatch);
+            return isResponse(result) ? result : _extends({}, result, {
+                actionData: null,
+                actionHeaders: {}
+            });
+        } catch (e) {
+            // If the user threw/returned a Response in callLoaderOrAction, we throw
+            // it to bail out and then return or throw here based on whether the user
+            // returned or threw
+            if (isQueryRouteResponse(e)) {
+                if (e.type === ResultType.error && !isRedirectResponse(e.response)) throw e.response;
+                return e.response;
+            } // Redirects are always returned since they don't propagate to catch
+            // boundaries
+            if (isRedirectResponse(e)) return e;
+            throw e;
+        }
+    }
+    async function submit(request, matches, actionMatch, requestContext, isRouteRequest) {
+        let result;
+        if (!actionMatch.route.action && !actionMatch.route.lazy) {
+            let error = getInternalRouterError(405, {
+                method: request.method,
+                pathname: new URL(request.url).pathname,
+                routeId: actionMatch.route.id
+            });
+            if (isRouteRequest) throw error;
+            result = {
+                type: ResultType.error,
+                error
+            };
+        } else {
+            result = await callLoaderOrAction("action", request, actionMatch, matches, manifest, mapRouteProperties, basename, true, isRouteRequest, requestContext);
+            if (request.signal.aborted) {
+                let method = isRouteRequest ? "queryRoute" : "query";
+                throw new Error(method + "() call aborted");
+            }
+        }
+        if (isRedirectResult(result)) // Uhhhh - this should never happen, we should always throw these from
+        // callLoaderOrAction, but the type narrowing here keeps TS happy and we
+        // can get back on the "throw all redirect responses" train here should
+        // this ever happen :/
+        throw new Response(null, {
+            status: result.status,
+            headers: {
+                Location: result.location
+            }
+        });
+        if (isDeferredResult(result)) {
+            let error = getInternalRouterError(400, {
+                type: "defer-action"
+            });
+            if (isRouteRequest) throw error;
+            result = {
+                type: ResultType.error,
+                error
+            };
+        }
+        if (isRouteRequest) {
+            // Note: This should only be non-Response values if we get here, since
+            // isRouteRequest should throw any Response received in callLoaderOrAction
+            if (isErrorResult(result)) throw result.error;
+            return {
+                matches: [
+                    actionMatch
+                ],
+                loaderData: {},
+                actionData: {
+                    [actionMatch.route.id]: result.data
+                },
+                errors: null,
+                // Note: statusCode + headers are unused here since queryRoute will
+                // return the raw Response or value
+                statusCode: 200,
+                loaderHeaders: {},
+                actionHeaders: {},
+                activeDeferreds: null
+            };
+        }
+        if (isErrorResult(result)) {
+            // Store off the pending error - we use it to determine which loaders
+            // to call and will commit it when we complete the navigation
+            let boundaryMatch = findNearestBoundary(matches, actionMatch.route.id);
+            let context = await loadRouteData(request, matches, requestContext, undefined, {
+                [boundaryMatch.route.id]: result.error
+            }); // action status codes take precedence over loader status codes
+            return _extends({}, context, {
+                statusCode: isRouteErrorResponse(result.error) ? result.error.status : 500,
+                actionData: null,
+                actionHeaders: _extends({}, result.headers ? {
+                    [actionMatch.route.id]: result.headers
+                } : {})
+            });
+        } // Create a GET request for the loaders
+        let loaderRequest = new Request(request.url, {
+            headers: request.headers,
+            redirect: request.redirect,
+            signal: request.signal
+        });
+        let context = await loadRouteData(loaderRequest, matches, requestContext);
+        return _extends({}, context, result.statusCode ? {
+            statusCode: result.statusCode
+        } : {}, {
+            actionData: {
+                [actionMatch.route.id]: result.data
+            },
+            actionHeaders: _extends({}, result.headers ? {
+                [actionMatch.route.id]: result.headers
+            } : {})
+        });
+    }
+    async function loadRouteData(request, matches, requestContext, routeMatch, pendingActionError) {
+        let isRouteRequest = routeMatch != null; // Short circuit if we have no loaders to run (queryRoute())
+        if (isRouteRequest && !(routeMatch != null && routeMatch.route.loader) && !(routeMatch != null && routeMatch.route.lazy)) throw getInternalRouterError(400, {
+            method: request.method,
+            pathname: new URL(request.url).pathname,
+            routeId: routeMatch == null ? void 0 : routeMatch.route.id
+        });
+        let requestMatches = routeMatch ? [
+            routeMatch
+        ] : getLoaderMatchesUntilBoundary(matches, Object.keys(pendingActionError || {})[0]);
+        let matchesToLoad = requestMatches.filter((m)=>m.route.loader || m.route.lazy); // Short circuit if we have no loaders to run (query())
+        if (matchesToLoad.length === 0) return {
+            matches,
+            // Add a null for all matched routes for proper revalidation on the client
+            loaderData: matches.reduce((acc, m)=>Object.assign(acc, {
+                    [m.route.id]: null
+                }), {}),
+            errors: pendingActionError || null,
+            statusCode: 200,
+            loaderHeaders: {},
+            activeDeferreds: null
+        };
+        let results = await Promise.all([
+            ...matchesToLoad.map((match)=>callLoaderOrAction("loader", request, match, matches, manifest, mapRouteProperties, basename, true, isRouteRequest, requestContext))
+        ]);
+        if (request.signal.aborted) {
+            let method = isRouteRequest ? "queryRoute" : "query";
+            throw new Error(method + "() call aborted");
+        } // Process and commit output from loaders
+        let activeDeferreds = new Map();
+        let context = processRouteLoaderData(matches, matchesToLoad, results, pendingActionError, activeDeferreds); // Add a null for any non-loader matches for proper revalidation on the client
+        let executedLoaders = new Set(matchesToLoad.map((match)=>match.route.id));
+        matches.forEach((match)=>{
+            if (!executedLoaders.has(match.route.id)) context.loaderData[match.route.id] = null;
+        });
+        return _extends({}, context, {
+            matches,
+            activeDeferreds: activeDeferreds.size > 0 ? Object.fromEntries(activeDeferreds.entries()) : null
+        });
+    }
+    return {
+        dataRoutes,
+        query,
+        queryRoute
+    };
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Helpers
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Given an existing StaticHandlerContext and an error thrown at render time,
+ * provide an updated StaticHandlerContext suitable for a second SSR render
+ */ function getStaticContextFromError(routes, context, error) {
+    let newContext = _extends({}, context, {
+        statusCode: 500,
+        errors: {
+            [context._deepestRenderedBoundaryId || routes[0].id]: error
+        }
+    });
+    return newContext;
+}
+function isSubmissionNavigation(opts) {
+    return opts != null && "formData" in opts;
+}
+function normalizeTo(location, matches, basename, prependBasename, to, fromRouteId, relative) {
+    let contextualMatches;
+    let activeRouteMatch;
+    if (fromRouteId != null && relative !== "path") {
+        // Grab matches up to the calling route so our route-relative logic is
+        // relative to the correct source route.  When using relative:path,
+        // fromRouteId is ignored since that is always relative to the current
+        // location path
+        contextualMatches = [];
+        for (let match of matches){
+            contextualMatches.push(match);
+            if (match.route.id === fromRouteId) {
+                activeRouteMatch = match;
+                break;
+            }
+        }
+    } else {
+        contextualMatches = matches;
+        activeRouteMatch = matches[matches.length - 1];
+    } // Resolve the relative path
+    let path = resolveTo(to ? to : ".", getPathContributingMatches(contextualMatches).map((m)=>m.pathnameBase), location.pathname, relative === "path"); // When `to` is not specified we inherit search/hash from the current
+    // location, unlike when to="." and we just inherit the path.
+    // See https://github.com/remix-run/remix/issues/927
+    if (to == null) {
+        path.search = location.search;
+        path.hash = location.hash;
+    } // Add an ?index param for matched index routes if we don't already have one
+    if ((to == null || to === "" || to === ".") && activeRouteMatch && activeRouteMatch.route.index && !hasNakedIndexQuery(path.search)) path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+     // If we're operating within a basename, prepend it to the pathname.  If
+    // this is a root navigation, then just use the raw basename which allows
+    // the basename to have full control over the presence of a trailing slash
+    // on root actions
+    if (prependBasename && basename !== "/") path.pathname = path.pathname === "/" ? basename : joinPaths([
+        basename,
+        path.pathname
+    ]);
+    return createPath(path);
+} // Normalize navigation options by converting formMethod=GET formData objects to
+// URLSearchParams so they behave identically to links with query params
+function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
+    // Return location verbatim on non-submission navigations
+    if (!opts || !isSubmissionNavigation(opts)) return {
+        path
+    };
+    if (opts.formMethod && !isValidMethod(opts.formMethod)) return {
+        path,
+        error: getInternalRouterError(405, {
+            method: opts.formMethod
+        })
+    };
+     // Create a Submission on non-GET navigations
+    let submission;
+    if (opts.formData) {
+        let formMethod = opts.formMethod || "get";
+        submission = {
+            formMethod: normalizeFormMethod ? formMethod.toUpperCase() : formMethod.toLowerCase(),
+            formAction: stripHashFromPath(path),
+            formEncType: opts && opts.formEncType || "application/x-www-form-urlencoded",
+            formData: opts.formData
+        };
+        if (isMutationMethod(submission.formMethod)) return {
+            path,
+            submission
+        };
+    } // Flatten submission onto URLSearchParams for GET submissions
+    let parsedPath = parsePath(path);
+    let searchParams = convertFormDataToSearchParams(opts.formData); // On GET navigation submissions we can drop the ?index param from the
+    // resulting location since all loaders will run.  But fetcher GET submissions
+    // only run a single loader so we need to preserve any incoming ?index params
+    if (isFetcher && parsedPath.search && hasNakedIndexQuery(parsedPath.search)) searchParams.append("index", "");
+    parsedPath.search = "?" + searchParams;
+    return {
+        path: createPath(parsedPath),
+        submission
+    };
+} // Filter out all routes below any caught error as they aren't going to
+// render so we don't need to load them
+function getLoaderMatchesUntilBoundary(matches, boundaryId) {
+    let boundaryMatches = matches;
+    if (boundaryId) {
+        let index = matches.findIndex((m)=>m.route.id === boundaryId);
+        if (index >= 0) boundaryMatches = matches.slice(0, index);
+    }
+    return boundaryMatches;
+}
+function getMatchesToLoad(history, state, matches, submission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, routesToUse, basename, pendingActionData, pendingError) {
+    let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : undefined;
+    let currentUrl = history.createURL(state.location);
+    let nextUrl = history.createURL(location); // Pick navigation matches that are net-new or qualify for revalidation
+    let boundaryId = pendingError ? Object.keys(pendingError)[0] : undefined;
+    let boundaryMatches = getLoaderMatchesUntilBoundary(matches, boundaryId);
+    let navigationMatches = boundaryMatches.filter((match, index)=>{
+        if (match.route.lazy) // We haven't loaded this route yet so we don't know if it's got a loader!
+        return true;
+        if (match.route.loader == null) return false;
+         // Always call the loader on new route instances and pending defer cancellations
+        if (isNewLoader(state.loaderData, state.matches[index], match) || cancelledDeferredRoutes.some((id)=>id === match.route.id)) return true;
+         // This is the default implementation for when we revalidate.  If the route
+        // provides it's own implementation, then we give them full control but
+        // provide this value so they can leverage it if needed after they check
+        // their own specific use cases
+        let currentRouteMatch = state.matches[index];
+        let nextRouteMatch = match;
+        return shouldRevalidateLoader(match, _extends({
+            currentUrl,
+            currentParams: currentRouteMatch.params,
+            nextUrl,
+            nextParams: nextRouteMatch.params
+        }, submission, {
+            actionResult,
+            defaultShouldRevalidate: isRevalidationRequired || // Clicked the same link, resubmitted a GET form
+            currentUrl.toString() === nextUrl.toString() || // Search params affect all loaders
+            currentUrl.search !== nextUrl.search || isNewRouteInstance(currentRouteMatch, nextRouteMatch)
+        }));
+    }); // Pick fetcher.loads that need to be revalidated
+    let revalidatingFetchers = [];
+    fetchLoadMatches.forEach((f, key)=>{
+        // Don't revalidate if fetcher won't be present in the subsequent render
+        if (!matches.some((m)=>m.route.id === f.routeId)) return;
+        let fetcherMatches = matchRoutes(routesToUse, f.path, basename); // If the fetcher path no longer matches, push it in with null matches so
+        // we can trigger a 404 in callLoadersAndMaybeResolveData
+        if (!fetcherMatches) {
+            revalidatingFetchers.push({
+                key,
+                routeId: f.routeId,
+                path: f.path,
+                matches: null,
+                match: null,
+                controller: null
+            });
+            return;
+        }
+        let fetcherMatch = getTargetMatch(fetcherMatches, f.path);
+        if (cancelledFetcherLoads.includes(key)) {
+            revalidatingFetchers.push({
+                key,
+                routeId: f.routeId,
+                path: f.path,
+                matches: fetcherMatches,
+                match: fetcherMatch,
+                controller: new AbortController()
+            });
+            return;
+        } // Revalidating fetchers are decoupled from the route matches since they
+        // hit a static href, so they _always_ check shouldRevalidate and the
+        // default is strictly if a revalidation is explicitly required (action
+        // submissions, useRevalidator, X-Remix-Revalidate).
+        let shouldRevalidate = shouldRevalidateLoader(fetcherMatch, _extends({
+            currentUrl,
+            currentParams: state.matches[state.matches.length - 1].params,
+            nextUrl,
+            nextParams: matches[matches.length - 1].params
+        }, submission, {
+            actionResult,
+            // Forced revalidation due to submission, useRevalidator, or X-Remix-Revalidate
+            defaultShouldRevalidate: isRevalidationRequired
+        }));
+        if (shouldRevalidate) revalidatingFetchers.push({
+            key,
+            routeId: f.routeId,
+            path: f.path,
+            matches: fetcherMatches,
+            match: fetcherMatch,
+            controller: new AbortController()
+        });
+    });
+    return [
+        navigationMatches,
+        revalidatingFetchers
+    ];
+}
+function isNewLoader(currentLoaderData, currentMatch, match) {
+    let isNew = !currentMatch || // [a, b] -> [a, c]
+    match.route.id !== currentMatch.route.id; // Handle the case that we don't have data for a re-used route, potentially
+    // from a prior error or from a cancelled pending deferred
+    let isMissingData = currentLoaderData[match.route.id] === undefined; // Always load if this is a net-new route or we don't yet have data
+    return isNew || isMissingData;
+}
+function isNewRouteInstance(currentMatch, match) {
+    let currentPath = currentMatch.route.path;
+    return currentMatch.pathname !== match.pathname || // splat param changed, which is not present in match.path
+    // e.g. /files/images/avatar.jpg -> files/finances.xls
+    currentPath != null && currentPath.endsWith("*") && currentMatch.params["*"] !== match.params["*"];
+}
+function shouldRevalidateLoader(loaderMatch, arg) {
+    if (loaderMatch.route.shouldRevalidate) {
+        let routeChoice = loaderMatch.route.shouldRevalidate(arg);
+        if (typeof routeChoice === "boolean") return routeChoice;
+    }
+    return arg.defaultShouldRevalidate;
+}
+/**
+ * Execute route.lazy() methods to lazily load route modules (loader, action,
+ * shouldRevalidate) and update the routeManifest in place which shares objects
+ * with dataRoutes so those get updated as well.
+ */ async function loadLazyRouteModule(route, mapRouteProperties, manifest) {
+    if (!route.lazy) return;
+    let lazyRoute = await route.lazy(); // If the lazy route function was executed and removed by another parallel
+    // call then we can return - first lazy() to finish wins because the return
+    // value of lazy is expected to be static
+    if (!route.lazy) return;
+    let routeToUpdate = manifest[route.id];
+    invariant(routeToUpdate, "No route found in manifest"); // Update the route in place.  This should be safe because there's no way
+    // we could yet be sitting on this route as we can't get there without
+    // resolving lazy() first.
+    //
+    // This is different than the HMR "update" use-case where we may actively be
+    // on the route being updated.  The main concern boils down to "does this
+    // mutation affect any ongoing navigations or any current state.matches
+    // values?".  If not, it should be safe to update in place.
+    let routeUpdates = {};
+    for(let lazyRouteProperty in lazyRoute){
+        let staticRouteValue = routeToUpdate[lazyRouteProperty];
+        let isPropertyStaticallyDefined = staticRouteValue !== undefined && // This property isn't static since it should always be updated based
+        // on the route updates
+        lazyRouteProperty !== "hasErrorBoundary";
+        warning(!isPropertyStaticallyDefined, 'Route "' + routeToUpdate.id + '" has a static property "' + lazyRouteProperty + '" ' + "defined but its lazy function is also returning a value for this property. " + ('The lazy route property "' + lazyRouteProperty + '" will be ignored.'));
+        if (!isPropertyStaticallyDefined && !immutableRouteKeys.has(lazyRouteProperty)) routeUpdates[lazyRouteProperty] = lazyRoute[lazyRouteProperty];
+    } // Mutate the route with the provided updates.  Do this first so we pass
+    // the updated version to mapRouteProperties
+    Object.assign(routeToUpdate, routeUpdates); // Mutate the `hasErrorBoundary` property on the route based on the route
+    // updates and remove the `lazy` function so we don't resolve the lazy
+    // route again.
+    Object.assign(routeToUpdate, _extends({}, mapRouteProperties(routeToUpdate), {
+        lazy: undefined
+    }));
+}
+async function callLoaderOrAction(type, request, match, matches, manifest, mapRouteProperties, basename, isStaticRequest, isRouteRequest, requestContext) {
+    if (isStaticRequest === void 0) isStaticRequest = false;
+    if (isRouteRequest === void 0) isRouteRequest = false;
+    let resultType;
+    let result;
+    let onReject;
+    let runHandler = (handler)=>{
+        // Setup a promise we can race against so that abort signals short circuit
+        let reject;
+        let abortPromise = new Promise((_, r)=>reject = r);
+        onReject = ()=>reject();
+        request.signal.addEventListener("abort", onReject);
+        return Promise.race([
+            handler({
+                request,
+                params: match.params,
+                context: requestContext
+            }),
+            abortPromise
+        ]);
+    };
+    try {
+        let handler = match.route[type];
+        if (match.route.lazy) {
+            if (handler) {
+                // Run statically defined handler in parallel with lazy()
+                let values = await Promise.all([
+                    runHandler(handler),
+                    loadLazyRouteModule(match.route, mapRouteProperties, manifest)
+                ]);
+                result = values[0];
+            } else {
+                // Load lazy route module, then run any returned handler
+                await loadLazyRouteModule(match.route, mapRouteProperties, manifest);
+                handler = match.route[type];
+                if (handler) // Handler still run even if we got interrupted to maintain consistency
+                // with un-abortable behavior of handler execution on non-lazy or
+                // previously-lazy-loaded routes
+                result = await runHandler(handler);
+                else if (type === "action") {
+                    let url = new URL(request.url);
+                    let pathname = url.pathname + url.search;
+                    throw getInternalRouterError(405, {
+                        method: request.method,
+                        pathname,
+                        routeId: match.route.id
+                    });
+                } else // lazy() route has no loader to run.  Short circuit here so we don't
+                // hit the invariant below that errors on returning undefined.
+                return {
+                    type: ResultType.data,
+                    data: undefined
+                };
+            }
+        } else if (!handler) {
+            let url = new URL(request.url);
+            let pathname = url.pathname + url.search;
+            throw getInternalRouterError(404, {
+                pathname
+            });
+        } else result = await runHandler(handler);
+        invariant(result !== undefined, "You defined " + (type === "action" ? "an action" : "a loader") + " for route " + ('"' + match.route.id + "\" but didn't return anything from your `" + type + "` ") + "function. Please return a value or `null`.");
+    } catch (e) {
+        resultType = ResultType.error;
+        result = e;
+    } finally{
+        if (onReject) request.signal.removeEventListener("abort", onReject);
+    }
+    if (isResponse(result)) {
+        let status = result.status; // Process redirects
+        if (redirectStatusCodes.has(status)) {
+            let location = result.headers.get("Location");
+            invariant(location, "Redirects returned/thrown from loaders/actions must have a Location header"); // Support relative routing in internal redirects
+            if (!ABSOLUTE_URL_REGEX.test(location)) location = normalizeTo(new URL(request.url), matches.slice(0, matches.indexOf(match) + 1), basename, true, location);
+            else if (!isStaticRequest) {
+                // Strip off the protocol+origin for same-origin + same-basename absolute
+                // redirects. If this is a static request, we can let it go back to the
+                // browser as-is
+                let currentUrl = new URL(request.url);
+                let url = location.startsWith("//") ? new URL(currentUrl.protocol + location) : new URL(location);
+                let isSameBasename = stripBasename(url.pathname, basename) != null;
+                if (url.origin === currentUrl.origin && isSameBasename) location = url.pathname + url.search + url.hash;
+            } // Don't process redirects in the router during static requests requests.
+            // Instead, throw the Response and let the server handle it with an HTTP
+            // redirect.  We also update the Location header in place in this flow so
+            // basename and relative routing is taken into account
+            if (isStaticRequest) {
+                result.headers.set("Location", location);
+                throw result;
+            }
+            return {
+                type: ResultType.redirect,
+                status,
+                location,
+                revalidate: result.headers.get("X-Remix-Revalidate") !== null
+            };
+        } // For SSR single-route requests, we want to hand Responses back directly
+        // without unwrapping.  We do this with the QueryRouteResponse wrapper
+        // interface so we can know whether it was returned or thrown
+        if (isRouteRequest) // eslint-disable-next-line no-throw-literal
+        throw {
+            type: resultType || ResultType.data,
+            response: result
+        };
+        let data;
+        let contentType = result.headers.get("Content-Type"); // Check between word boundaries instead of startsWith() due to the last
+        // paragraph of https://httpwg.org/specs/rfc9110.html#field.content-type
+        if (contentType && /\bapplication\/json\b/.test(contentType)) data = await result.json();
+        else data = await result.text();
+        if (resultType === ResultType.error) return {
+            type: resultType,
+            error: new ErrorResponse(status, result.statusText, data),
+            headers: result.headers
+        };
+        return {
+            type: ResultType.data,
+            data,
+            statusCode: result.status,
+            headers: result.headers
+        };
+    }
+    if (resultType === ResultType.error) return {
+        type: resultType,
+        error: result
+    };
+    if (isDeferredData(result)) {
+        var _result$init, _result$init2;
+        return {
+            type: ResultType.deferred,
+            deferredData: result,
+            statusCode: (_result$init = result.init) == null ? void 0 : _result$init.status,
+            headers: ((_result$init2 = result.init) == null ? void 0 : _result$init2.headers) && new Headers(result.init.headers)
+        };
+    }
+    return {
+        type: ResultType.data,
+        data: result
+    };
+} // Utility method for creating the Request instances for loaders/actions during
+// client-side navigations and fetches.  During SSR we will always have a
+// Request instance from the static handler (query/queryRoute)
+function createClientSideRequest(history, location, signal, submission) {
+    let url = history.createURL(stripHashFromPath(location)).toString();
+    let init = {
+        signal
+    };
+    if (submission && isMutationMethod(submission.formMethod)) {
+        let { formMethod , formEncType , formData  } = submission; // Didn't think we needed this but it turns out unlike other methods, patch
+        // won't be properly normalized to uppercase and results in a 405 error.
+        // See: https://fetch.spec.whatwg.org/#concept-method
+        init.method = formMethod.toUpperCase();
+        init.body = formEncType === "application/x-www-form-urlencoded" ? convertFormDataToSearchParams(formData) : formData;
+    } // Content-Type is inferred (https://fetch.spec.whatwg.org/#dom-request)
+    return new Request(url, init);
+}
+function convertFormDataToSearchParams(formData) {
+    let searchParams = new URLSearchParams();
+    for (let [key, value] of formData.entries())// https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#converting-an-entry-list-to-a-list-of-name-value-pairs
+    searchParams.append(key, value instanceof File ? value.name : value);
+    return searchParams;
+}
+function processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds) {
+    // Fill in loaderData/errors from our loaders
+    let loaderData = {};
+    let errors = null;
+    let statusCode;
+    let foundError = false;
+    let loaderHeaders = {}; // Process loader results into state.loaderData/state.errors
+    results.forEach((result, index)=>{
+        let id = matchesToLoad[index].route.id;
+        invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData");
+        if (isErrorResult(result)) {
+            // Look upwards from the matched route for the closest ancestor
+            // error boundary, defaulting to the root match
+            let boundaryMatch = findNearestBoundary(matches, id);
+            let error = result.error; // If we have a pending action error, we report it at the highest-route
+            // that throws a loader error, and then clear it out to indicate that
+            // it was consumed
+            if (pendingError) {
+                error = Object.values(pendingError)[0];
+                pendingError = undefined;
+            }
+            errors = errors || {}; // Prefer higher error values if lower errors bubble to the same boundary
+            if (errors[boundaryMatch.route.id] == null) errors[boundaryMatch.route.id] = error;
+             // Clear our any prior loaderData for the throwing route
+            loaderData[id] = undefined; // Once we find our first (highest) error, we set the status code and
+            // prevent deeper status codes from overriding
+            if (!foundError) {
+                foundError = true;
+                statusCode = isRouteErrorResponse(result.error) ? result.error.status : 500;
+            }
+            if (result.headers) loaderHeaders[id] = result.headers;
+        } else {
+            if (isDeferredResult(result)) {
+                activeDeferreds.set(id, result.deferredData);
+                loaderData[id] = result.deferredData.data;
+            } else loaderData[id] = result.data;
+             // Error status codes always override success status codes, but if all
+            // loaders are successful we take the deepest status code.
+            if (result.statusCode != null && result.statusCode !== 200 && !foundError) statusCode = result.statusCode;
+            if (result.headers) loaderHeaders[id] = result.headers;
+        }
+    }); // If we didn't consume the pending action error (i.e., all loaders
+    // resolved), then consume it here.  Also clear out any loaderData for the
+    // throwing route
+    if (pendingError) {
+        errors = pendingError;
+        loaderData[Object.keys(pendingError)[0]] = undefined;
+    }
+    return {
+        loaderData,
+        errors,
+        statusCode: statusCode || 200,
+        loaderHeaders
+    };
+}
+function processLoaderData(state, matches, matchesToLoad, results, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds) {
+    let { loaderData , errors  } = processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds); // Process results from our revalidating fetchers
+    for(let index = 0; index < revalidatingFetchers.length; index++){
+        let { key , match , controller  } = revalidatingFetchers[index];
+        invariant(fetcherResults !== undefined && fetcherResults[index] !== undefined, "Did not find corresponding fetcher result");
+        let result = fetcherResults[index]; // Process fetcher non-redirect errors
+        if (controller && controller.signal.aborted) continue;
+        else if (isErrorResult(result)) {
+            let boundaryMatch = findNearestBoundary(state.matches, match == null ? void 0 : match.route.id);
+            if (!(errors && errors[boundaryMatch.route.id])) errors = _extends({}, errors, {
+                [boundaryMatch.route.id]: result.error
+            });
+            state.fetchers.delete(key);
+        } else if (isRedirectResult(result)) // Should never get here, redirects should get processed above, but we
+        // keep this to type narrow to a success result in the else
+        invariant(false, "Unhandled fetcher revalidation redirect");
+        else if (isDeferredResult(result)) // Should never get here, deferred data should be awaited for fetchers
+        // in resolveDeferredResults
+        invariant(false, "Unhandled fetcher deferred data");
+        else {
+            let doneFetcher = {
+                state: "idle",
+                data: result.data,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined,
+                " _hasFetcherDoneAnything ": true
+            };
+            state.fetchers.set(key, doneFetcher);
+        }
+    }
+    return {
+        loaderData,
+        errors
+    };
+}
+function mergeLoaderData(loaderData, newLoaderData, matches, errors) {
+    let mergedLoaderData = _extends({}, newLoaderData);
+    for (let match of matches){
+        let id = match.route.id;
+        if (newLoaderData.hasOwnProperty(id)) {
+            if (newLoaderData[id] !== undefined) mergedLoaderData[id] = newLoaderData[id];
+        } else if (loaderData[id] !== undefined && match.route.loader) // Preserve existing keys not included in newLoaderData and where a loader
+        // wasn't removed by HMR
+        mergedLoaderData[id] = loaderData[id];
+        if (errors && errors.hasOwnProperty(id)) break;
+    }
+    return mergedLoaderData;
+} // Find the nearest error boundary, looking upwards from the leaf route (or the
+// route specified by routeId) for the closest ancestor error boundary,
+// defaulting to the root match
+function findNearestBoundary(matches, routeId) {
+    let eligibleMatches = routeId ? matches.slice(0, matches.findIndex((m)=>m.route.id === routeId) + 1) : [
+        ...matches
+    ];
+    return eligibleMatches.reverse().find((m)=>m.route.hasErrorBoundary === true) || matches[0];
+}
+function getShortCircuitMatches(routes) {
+    // Prefer a root layout route if present, otherwise shim in a route object
+    let route = routes.find((r)=>r.index || !r.path || r.path === "/") || {
+        id: "__shim-error-route__"
+    };
+    return {
+        matches: [
+            {
+                params: {},
+                pathname: "",
+                pathnameBase: "",
+                route
+            }
+        ],
+        route
+    };
+}
+function getInternalRouterError(status, _temp4) {
+    let { pathname , routeId , method , type  } = _temp4 === void 0 ? {} : _temp4;
+    let statusText = "Unknown Server Error";
+    let errorMessage = "Unknown @remix-run/router error";
+    if (status === 400) {
+        statusText = "Bad Request";
+        if (method && pathname && routeId) errorMessage = "You made a " + method + ' request to "' + pathname + '" but ' + ('did not provide a `loader` for route "' + routeId + '", ') + "so there is no way to handle the request.";
+        else if (type === "defer-action") errorMessage = "defer() is not supported in actions";
+    } else if (status === 403) {
+        statusText = "Forbidden";
+        errorMessage = 'Route "' + routeId + '" does not match URL "' + pathname + '"';
+    } else if (status === 404) {
+        statusText = "Not Found";
+        errorMessage = 'No route matches URL "' + pathname + '"';
+    } else if (status === 405) {
+        statusText = "Method Not Allowed";
+        if (method && pathname && routeId) errorMessage = "You made a " + method.toUpperCase() + ' request to "' + pathname + '" but ' + ('did not provide an `action` for route "' + routeId + '", ') + "so there is no way to handle the request.";
+        else if (method) errorMessage = 'Invalid request method "' + method.toUpperCase() + '"';
+    }
+    return new ErrorResponse(status || 500, statusText, new Error(errorMessage), true);
+} // Find any returned redirect errors, starting from the lowest match
+function findRedirect(results) {
+    for(let i = results.length - 1; i >= 0; i--){
+        let result = results[i];
+        if (isRedirectResult(result)) return result;
+    }
+}
+function stripHashFromPath(path) {
+    let parsedPath = typeof path === "string" ? parsePath(path) : path;
+    return createPath(_extends({}, parsedPath, {
+        hash: ""
+    }));
+}
+function isHashChangeOnly(a, b) {
+    return a.pathname === b.pathname && a.search === b.search && a.hash !== b.hash;
+}
+function isDeferredResult(result) {
+    return result.type === ResultType.deferred;
+}
+function isErrorResult(result) {
+    return result.type === ResultType.error;
+}
+function isRedirectResult(result) {
+    return (result && result.type) === ResultType.redirect;
+}
+function isDeferredData(value) {
+    let deferred = value;
+    return deferred && typeof deferred === "object" && typeof deferred.data === "object" && typeof deferred.subscribe === "function" && typeof deferred.cancel === "function" && typeof deferred.resolveData === "function";
+}
+function isResponse(value) {
+    return value != null && typeof value.status === "number" && typeof value.statusText === "string" && typeof value.headers === "object" && typeof value.body !== "undefined";
+}
+function isRedirectResponse(result) {
+    if (!isResponse(result)) return false;
+    let status = result.status;
+    let location = result.headers.get("Location");
+    return status >= 300 && status <= 399 && location != null;
+}
+function isQueryRouteResponse(obj) {
+    return obj && isResponse(obj.response) && (obj.type === ResultType.data || ResultType.error);
+}
+function isValidMethod(method) {
+    return validRequestMethods.has(method.toLowerCase());
+}
+function isMutationMethod(method) {
+    return validMutationMethods.has(method.toLowerCase());
+}
+async function resolveDeferredResults(currentMatches, matchesToLoad, results, signals, isFetcher, currentLoaderData) {
+    for(let index = 0; index < results.length; index++){
+        let result = results[index];
+        let match = matchesToLoad[index]; // If we don't have a match, then we can have a deferred result to do
+        // anything with.  This is for revalidating fetchers where the route was
+        // removed during HMR
+        if (!match) continue;
+        let currentMatch = currentMatches.find((m)=>m.route.id === match.route.id);
+        let isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== undefined;
+        if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
+            // Note: we do not have to touch activeDeferreds here since we race them
+            // against the signal in resolveDeferredData and they'll get aborted
+            // there if needed
+            let signal = signals[index];
+            invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result");
+            await resolveDeferredData(result, signal, isFetcher).then((result)=>{
+                if (result) results[index] = result || results[index];
+            });
+        }
+    }
+}
+async function resolveDeferredData(result, signal, unwrap) {
+    if (unwrap === void 0) unwrap = false;
+    let aborted = await result.deferredData.resolveData(signal);
+    if (aborted) return;
+    if (unwrap) try {
+        return {
+            type: ResultType.data,
+            data: result.deferredData.unwrappedData
+        };
+    } catch (e) {
+        // Handle any TrackedPromise._error values encountered while unwrapping
+        return {
+            type: ResultType.error,
+            error: e
+        };
+    }
+    return {
+        type: ResultType.data,
+        data: result.deferredData.data
+    };
+}
+function hasNakedIndexQuery(search) {
+    return new URLSearchParams(search).getAll("index").some((v)=>v === "");
+} // Note: This should match the format exported by useMatches, so if you change
+// this please also change that :)  Eventually we'll DRY this up
+function createUseMatchesMatch(match, loaderData) {
+    let { route , pathname , params  } = match;
+    return {
+        id: route.id,
+        pathname,
+        params,
+        data: loaderData[route.id],
+        handle: route.handle
+    };
+}
+function getTargetMatch(matches, location) {
+    let search = typeof location === "string" ? parsePath(location).search : location.search;
+    if (matches[matches.length - 1].route.index && hasNakedIndexQuery(search || "")) // Return the leaf index route when index is present
+    return matches[matches.length - 1];
+     // Otherwise grab the deepest "path contributing" match (ignoring index and
+    // pathless layout routes)
+    let pathMatches = getPathContributingMatches(matches);
+    return pathMatches[pathMatches.length - 1];
+} //#endregion
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9xmpe":[function(require,module,exports) {
+/**
+ * React Router DOM v6.11.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AbortedDeferredError", ()=>(0, _reactRouter.AbortedDeferredError));
+parcelHelpers.export(exports, "Await", ()=>(0, _reactRouter.Await));
+parcelHelpers.export(exports, "MemoryRouter", ()=>(0, _reactRouter.MemoryRouter));
+parcelHelpers.export(exports, "Navigate", ()=>(0, _reactRouter.Navigate));
+parcelHelpers.export(exports, "NavigationType", ()=>(0, _reactRouter.NavigationType));
+parcelHelpers.export(exports, "Outlet", ()=>(0, _reactRouter.Outlet));
+parcelHelpers.export(exports, "Route", ()=>(0, _reactRouter.Route));
+parcelHelpers.export(exports, "Router", ()=>(0, _reactRouter.Router));
+parcelHelpers.export(exports, "RouterProvider", ()=>(0, _reactRouter.RouterProvider));
+parcelHelpers.export(exports, "Routes", ()=>(0, _reactRouter.Routes));
+parcelHelpers.export(exports, "UNSAFE_DataRouterContext", ()=>(0, _reactRouter.UNSAFE_DataRouterContext));
+parcelHelpers.export(exports, "UNSAFE_DataRouterStateContext", ()=>(0, _reactRouter.UNSAFE_DataRouterStateContext));
+parcelHelpers.export(exports, "UNSAFE_LocationContext", ()=>(0, _reactRouter.UNSAFE_LocationContext));
+parcelHelpers.export(exports, "UNSAFE_NavigationContext", ()=>(0, _reactRouter.UNSAFE_NavigationContext));
+parcelHelpers.export(exports, "UNSAFE_RouteContext", ()=>(0, _reactRouter.UNSAFE_RouteContext));
+parcelHelpers.export(exports, "UNSAFE_useRouteId", ()=>(0, _reactRouter.UNSAFE_useRouteId));
+parcelHelpers.export(exports, "createMemoryRouter", ()=>(0, _reactRouter.createMemoryRouter));
+parcelHelpers.export(exports, "createPath", ()=>(0, _reactRouter.createPath));
+parcelHelpers.export(exports, "createRoutesFromChildren", ()=>(0, _reactRouter.createRoutesFromChildren));
+parcelHelpers.export(exports, "createRoutesFromElements", ()=>(0, _reactRouter.createRoutesFromElements));
+parcelHelpers.export(exports, "defer", ()=>(0, _reactRouter.defer));
+parcelHelpers.export(exports, "generatePath", ()=>(0, _reactRouter.generatePath));
+parcelHelpers.export(exports, "isRouteErrorResponse", ()=>(0, _reactRouter.isRouteErrorResponse));
+parcelHelpers.export(exports, "json", ()=>(0, _reactRouter.json));
+parcelHelpers.export(exports, "matchPath", ()=>(0, _reactRouter.matchPath));
+parcelHelpers.export(exports, "matchRoutes", ()=>(0, _reactRouter.matchRoutes));
+parcelHelpers.export(exports, "parsePath", ()=>(0, _reactRouter.parsePath));
+parcelHelpers.export(exports, "redirect", ()=>(0, _reactRouter.redirect));
+parcelHelpers.export(exports, "renderMatches", ()=>(0, _reactRouter.renderMatches));
+parcelHelpers.export(exports, "resolvePath", ()=>(0, _reactRouter.resolvePath));
+parcelHelpers.export(exports, "unstable_useBlocker", ()=>(0, _reactRouter.unstable_useBlocker));
+parcelHelpers.export(exports, "useActionData", ()=>(0, _reactRouter.useActionData));
+parcelHelpers.export(exports, "useAsyncError", ()=>(0, _reactRouter.useAsyncError));
+parcelHelpers.export(exports, "useAsyncValue", ()=>(0, _reactRouter.useAsyncValue));
+parcelHelpers.export(exports, "useHref", ()=>(0, _reactRouter.useHref));
+parcelHelpers.export(exports, "useInRouterContext", ()=>(0, _reactRouter.useInRouterContext));
+parcelHelpers.export(exports, "useLoaderData", ()=>(0, _reactRouter.useLoaderData));
+parcelHelpers.export(exports, "useLocation", ()=>(0, _reactRouter.useLocation));
+parcelHelpers.export(exports, "useMatch", ()=>(0, _reactRouter.useMatch));
+parcelHelpers.export(exports, "useMatches", ()=>(0, _reactRouter.useMatches));
+parcelHelpers.export(exports, "useNavigate", ()=>(0, _reactRouter.useNavigate));
+parcelHelpers.export(exports, "useNavigation", ()=>(0, _reactRouter.useNavigation));
+parcelHelpers.export(exports, "useNavigationType", ()=>(0, _reactRouter.useNavigationType));
+parcelHelpers.export(exports, "useOutlet", ()=>(0, _reactRouter.useOutlet));
+parcelHelpers.export(exports, "useOutletContext", ()=>(0, _reactRouter.useOutletContext));
+parcelHelpers.export(exports, "useParams", ()=>(0, _reactRouter.useParams));
+parcelHelpers.export(exports, "useResolvedPath", ()=>(0, _reactRouter.useResolvedPath));
+parcelHelpers.export(exports, "useRevalidator", ()=>(0, _reactRouter.useRevalidator));
+parcelHelpers.export(exports, "useRouteError", ()=>(0, _reactRouter.useRouteError));
+parcelHelpers.export(exports, "useRouteLoaderData", ()=>(0, _reactRouter.useRouteLoaderData));
+parcelHelpers.export(exports, "useRoutes", ()=>(0, _reactRouter.useRoutes));
+//#endregion
+parcelHelpers.export(exports, "BrowserRouter", ()=>BrowserRouter);
+parcelHelpers.export(exports, "Form", ()=>Form);
+parcelHelpers.export(exports, "HashRouter", ()=>HashRouter);
+parcelHelpers.export(exports, "Link", ()=>Link);
+parcelHelpers.export(exports, "NavLink", ()=>NavLink);
+parcelHelpers.export(exports, "ScrollRestoration", ()=>ScrollRestoration);
+parcelHelpers.export(exports, "UNSAFE_useScrollRestoration", ()=>useScrollRestoration);
+parcelHelpers.export(exports, "createBrowserRouter", ()=>createBrowserRouter);
+parcelHelpers.export(exports, "createHashRouter", ()=>createHashRouter);
+parcelHelpers.export(exports, "createSearchParams", ()=>createSearchParams);
+parcelHelpers.export(exports, "unstable_HistoryRouter", ()=>HistoryRouter);
+parcelHelpers.export(exports, "unstable_usePrompt", ()=>usePrompt);
+parcelHelpers.export(exports, "useBeforeUnload", ()=>useBeforeUnload);
+parcelHelpers.export(exports, "useFetcher", ()=>useFetcher);
+parcelHelpers.export(exports, "useFetchers", ()=>useFetchers);
+parcelHelpers.export(exports, "useFormAction", ()=>useFormAction);
+parcelHelpers.export(exports, "useLinkClickHandler", ()=>useLinkClickHandler);
+parcelHelpers.export(exports, "useSearchParams", ()=>useSearchParams);
+parcelHelpers.export(exports, "useSubmit", ()=>useSubmit);
+var _react = require("react");
+var _reactRouter = require("react-router");
+var _router = require("@remix-run/router");
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+const defaultMethod = "get";
+const defaultEncType = "application/x-www-form-urlencoded";
+function isHtmlElement(object) {
+    return object != null && typeof object.tagName === "string";
+}
+function isButtonElement(object) {
+    return isHtmlElement(object) && object.tagName.toLowerCase() === "button";
+}
+function isFormElement(object) {
+    return isHtmlElement(object) && object.tagName.toLowerCase() === "form";
+}
+function isInputElement(object) {
+    return isHtmlElement(object) && object.tagName.toLowerCase() === "input";
+}
+function isModifiedEvent(event) {
+    return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+function shouldProcessLinkClick(event, target) {
+    return event.button === 0 && (!target || target === "_self") && // Let browser handle "target=_blank" etc.
+    !isModifiedEvent(event) // Ignore clicks with modifier keys
+    ;
+}
+/**
+ * Creates a URLSearchParams object using the given initializer.
+ *
+ * This is identical to `new URLSearchParams(init)` except it also
+ * supports arrays as values in the object form of the initializer
+ * instead of just strings. This is convenient when you need multiple
+ * values for a given key, but don't want to use an array initializer.
+ *
+ * For example, instead of:
+ *
+ *   let searchParams = new URLSearchParams([
+ *     ['sort', 'name'],
+ *     ['sort', 'price']
+ *   ]);
+ *
+ * you can do:
+ *
+ *   let searchParams = createSearchParams({
+ *     sort: ['name', 'price']
+ *   });
+ */ function createSearchParams(init) {
+    if (init === void 0) init = "";
+    return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key)=>{
+        let value = init[key];
+        return memo.concat(Array.isArray(value) ? value.map((v)=>[
+                key,
+                v
+            ]) : [
+            [
+                key,
+                value
+            ]
+        ]);
+    }, []));
+}
+function getSearchParamsForLocation(locationSearch, defaultSearchParams) {
+    let searchParams = createSearchParams(locationSearch);
+    if (defaultSearchParams) {
+        for (let key of defaultSearchParams.keys())if (!searchParams.has(key)) defaultSearchParams.getAll(key).forEach((value)=>{
+            searchParams.append(key, value);
+        });
+    }
+    return searchParams;
+}
+function getFormSubmissionInfo(target, options, basename) {
+    let method;
+    let action = null;
+    let encType;
+    let formData;
+    if (isFormElement(target)) {
+        let submissionTrigger = options.submissionTrigger;
+        if (options.action) action = options.action;
+        else {
+            // When grabbing the action from the element, it will have had the basename
+            // prefixed to ensure non-JS scenarios work, so strip it since we'll
+            // re-prefix in the router
+            let attr = target.getAttribute("action");
+            action = attr ? (0, _router.stripBasename)(attr, basename) : null;
+        }
+        method = options.method || target.getAttribute("method") || defaultMethod;
+        encType = options.encType || target.getAttribute("enctype") || defaultEncType;
+        formData = new FormData(target);
+        if (submissionTrigger && submissionTrigger.name) formData.append(submissionTrigger.name, submissionTrigger.value);
+    } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
+        let form = target.form;
+        if (form == null) throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
+         // <button>/<input type="submit"> may override attributes of <form>
+        if (options.action) action = options.action;
+        else {
+            // When grabbing the action from the element, it will have had the basename
+            // prefixed to ensure non-JS scenarios work, so strip it since we'll
+            // re-prefix in the router
+            let attr = target.getAttribute("formaction") || form.getAttribute("action");
+            action = attr ? (0, _router.stripBasename)(attr, basename) : null;
+        }
+        method = options.method || target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod;
+        encType = options.encType || target.getAttribute("formenctype") || form.getAttribute("enctype") || defaultEncType;
+        formData = new FormData(form); // Include name + value from a <button>, appending in case the button name
+        // matches an existing input name
+        if (target.name) formData.append(target.name, target.value);
+    } else if (isHtmlElement(target)) throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
+    else {
+        method = options.method || defaultMethod;
+        action = options.action || null;
+        encType = options.encType || defaultEncType;
+        if (target instanceof FormData) formData = target;
+        else {
+            formData = new FormData();
+            if (target instanceof URLSearchParams) for (let [name, value] of target)formData.append(name, value);
+            else if (target != null) for (let name of Object.keys(target))formData.append(name, target[name]);
+        }
+    }
+    return {
+        action,
+        method: method.toLowerCase(),
+        encType,
+        formData
+    };
+}
+const _excluded = [
+    "onClick",
+    "relative",
+    "reloadDocument",
+    "replace",
+    "state",
+    "target",
+    "to",
+    "preventScrollReset"
+], _excluded2 = [
+    "aria-current",
+    "caseSensitive",
+    "className",
+    "end",
+    "style",
+    "to",
+    "children"
+], _excluded3 = [
+    "reloadDocument",
+    "replace",
+    "method",
+    "action",
+    "onSubmit",
+    "fetcherKey",
+    "routeId",
+    "relative",
+    "preventScrollReset"
+];
+function createBrowserRouter(routes, opts) {
+    return (0, _router.createRouter)({
+        basename: opts == null ? void 0 : opts.basename,
+        future: _extends({}, opts == null ? void 0 : opts.future, {
+            v7_prependBasename: true
+        }),
+        history: (0, _router.createBrowserHistory)({
+            window: opts == null ? void 0 : opts.window
+        }),
+        hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
+        routes,
+        mapRouteProperties: (0, _reactRouter.UNSAFE_mapRouteProperties)
+    }).initialize();
+}
+function createHashRouter(routes, opts) {
+    return (0, _router.createRouter)({
+        basename: opts == null ? void 0 : opts.basename,
+        future: _extends({}, opts == null ? void 0 : opts.future, {
+            v7_prependBasename: true
+        }),
+        history: (0, _router.createHashHistory)({
+            window: opts == null ? void 0 : opts.window
+        }),
+        hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
+        routes,
+        mapRouteProperties: (0, _reactRouter.UNSAFE_mapRouteProperties)
+    }).initialize();
+}
+function parseHydrationData() {
+    var _window;
+    let state = (_window = window) == null ? void 0 : _window.__staticRouterHydrationData;
+    if (state && state.errors) state = _extends({}, state, {
+        errors: deserializeErrors(state.errors)
+    });
+    return state;
+}
+function deserializeErrors(errors) {
+    if (!errors) return null;
+    let entries = Object.entries(errors);
+    let serialized = {};
+    for (let [key, val] of entries){
+        // Hey you!  If you change this, please change the corresponding logic in
+        // serializeErrors in react-router-dom/server.tsx :)
+        if (val && val.__type === "RouteErrorResponse") serialized[key] = new (0, _router.ErrorResponse)(val.status, val.statusText, val.data, val.internal === true);
+        else if (val && val.__type === "Error") {
+            let error = new Error(val.message); // Wipe away the client-side stack trace.  Nothing to fill it in with
+            // because we don't serialize SSR stack traces for security reasons
+            error.stack = "";
+            serialized[key] = error;
+        } else serialized[key] = val;
+    }
+    return serialized;
+}
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */ function BrowserRouter(_ref) {
+    let { basename , children , window: window1  } = _ref;
+    let historyRef = _react.useRef();
+    if (historyRef.current == null) historyRef.current = (0, _router.createBrowserHistory)({
+        window: window1,
+        v5Compat: true
+    });
+    let history = historyRef.current;
+    let [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement((0, _reactRouter.Router), {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */ function HashRouter(_ref2) {
+    let { basename , children , window: window1  } = _ref2;
+    let historyRef = _react.useRef();
+    if (historyRef.current == null) historyRef.current = (0, _router.createHashHistory)({
+        window: window1,
+        v5Compat: true
+    });
+    let history = historyRef.current;
+    let [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement((0, _reactRouter.Router), {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+/**
+ * A `<Router>` that accepts a pre-instantiated history object. It's important
+ * to note that using your own history object is highly discouraged and may add
+ * two versions of the history library to your bundles unless you use the same
+ * version of the history library that React Router uses internally.
+ */ function HistoryRouter(_ref3) {
+    let { basename , children , history  } = _ref3;
+    const [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement((0, _reactRouter.Router), {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+HistoryRouter.displayName = "unstable_HistoryRouter";
+const isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
+const ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+/**
+ * The public API for rendering a history-aware <a>.
+ */ const Link = /*#__PURE__*/ _react.forwardRef(function LinkWithRef(_ref4, ref) {
+    let { onClick , relative , reloadDocument , replace , state , target , to , preventScrollReset  } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext)); // Rendered into <a href> for absolute URLs
+    let absoluteHref;
+    let isExternal = false;
+    if (typeof to === "string" && ABSOLUTE_URL_REGEX.test(to)) {
+        // Render the absolute href server- and client-side
+        absoluteHref = to; // Only check for external origins client-side
+        if (isBrowser) try {
+            let currentUrl = new URL(window.location.href);
+            let targetUrl = to.startsWith("//") ? new URL(currentUrl.protocol + to) : new URL(to);
+            let path = (0, _router.stripBasename)(targetUrl.pathname, basename);
+            if (targetUrl.origin === currentUrl.origin && path != null) // Strip the protocol/origin/basename for same-origin absolute URLs
+            to = path + targetUrl.search + targetUrl.hash;
+            else isExternal = true;
+        } catch (e) {
+            (0, _router.UNSAFE_warning)(false, '<Link to="' + to + '"> contains an invalid URL which will probably break ' + "when clicked - please update to a valid URL path.");
+        }
+    } // Rendered into <a href> for relative URLs
+    let href = (0, _reactRouter.useHref)(to, {
+        relative
+    });
+    let internalOnClick = useLinkClickHandler(to, {
+        replace,
+        state,
+        target,
+        preventScrollReset,
+        relative
+    });
+    function handleClick(event) {
+        if (onClick) onClick(event);
+        if (!event.defaultPrevented) internalOnClick(event);
+    }
+    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/anchor-has-content
+    _react.createElement("a", _extends({}, rest, {
+        href: absoluteHref || href,
+        onClick: isExternal || reloadDocument ? onClick : handleClick,
+        ref: ref,
+        target: target
+    })));
+});
+Link.displayName = "Link";
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */ const NavLink = /*#__PURE__*/ _react.forwardRef(function NavLinkWithRef(_ref5, ref) {
+    let { "aria-current": ariaCurrentProp = "page" , caseSensitive =false , className: classNameProp = "" , end =false , style: styleProp , to , children  } = _ref5, rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+    let path = (0, _reactRouter.useResolvedPath)(to, {
+        relative: rest.relative
+    });
+    let location = (0, _reactRouter.useLocation)();
+    let routerState = _react.useContext((0, _reactRouter.UNSAFE_DataRouterStateContext));
+    let { navigator  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let toPathname = navigator.encodeLocation ? navigator.encodeLocation(path).pathname : path.pathname;
+    let locationPathname = location.pathname;
+    let nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
+    if (!caseSensitive) {
+        locationPathname = locationPathname.toLowerCase();
+        nextLocationPathname = nextLocationPathname ? nextLocationPathname.toLowerCase() : null;
+        toPathname = toPathname.toLowerCase();
+    }
+    let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+    let isPending = nextLocationPathname != null && (nextLocationPathname === toPathname || !end && nextLocationPathname.startsWith(toPathname) && nextLocationPathname.charAt(toPathname.length) === "/");
+    let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+    let className;
+    if (typeof classNameProp === "function") className = classNameProp({
+        isActive,
+        isPending
+    });
+    else // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [
+        classNameProp,
+        isActive ? "active" : null,
+        isPending ? "pending" : null
+    ].filter(Boolean).join(" ");
+    let style = typeof styleProp === "function" ? styleProp({
+        isActive,
+        isPending
+    }) : styleProp;
+    return /*#__PURE__*/ _react.createElement(Link, _extends({}, rest, {
+        "aria-current": ariaCurrent,
+        className: className,
+        ref: ref,
+        style: style,
+        to: to
+    }), typeof children === "function" ? children({
+        isActive,
+        isPending
+    }) : children);
+});
+NavLink.displayName = "NavLink";
+/**
+ * A `@remix-run/router`-aware `<form>`. It behaves like a normal form except
+ * that the interaction with the server is with `fetch` instead of new document
+ * requests, allowing components to add nicer UX to the page as the form is
+ * submitted and returns with data.
+ */ const Form = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    return /*#__PURE__*/ _react.createElement(FormImpl, _extends({}, props, {
+        ref: ref
+    }));
+});
+Form.displayName = "Form";
+const FormImpl = /*#__PURE__*/ _react.forwardRef((_ref6, forwardedRef)=>{
+    let { reloadDocument , replace , method =defaultMethod , action , onSubmit , fetcherKey , routeId , relative , preventScrollReset  } = _ref6, props = _objectWithoutPropertiesLoose(_ref6, _excluded3);
+    let submit = useSubmitImpl(fetcherKey, routeId);
+    let formMethod = method.toLowerCase() === "get" ? "get" : "post";
+    let formAction = useFormAction(action, {
+        relative
+    });
+    let submitHandler = (event)=>{
+        onSubmit && onSubmit(event);
+        if (event.defaultPrevented) return;
+        event.preventDefault();
+        let submitter = event.nativeEvent.submitter;
+        let submitMethod = (submitter == null ? void 0 : submitter.getAttribute("formmethod")) || method;
+        submit(submitter || event.currentTarget, {
+            method: submitMethod,
+            replace,
+            relative,
+            preventScrollReset
+        });
+    };
+    return /*#__PURE__*/ _react.createElement("form", _extends({
+        ref: forwardedRef,
+        method: formMethod,
+        action: formAction,
+        onSubmit: reloadDocument ? onSubmit : submitHandler
+    }, props));
+});
+FormImpl.displayName = "FormImpl";
+/**
+ * This component will emulate the browser's scroll restoration on location
+ * changes.
+ */ function ScrollRestoration(_ref7) {
+    let { getKey , storageKey  } = _ref7;
+    useScrollRestoration({
+        getKey,
+        storageKey
+    });
+    return null;
+}
+ScrollRestoration.displayName = "ScrollRestoration";
+////////////////////////////////////////////////////////////////////////////////
+//#region Hooks
+////////////////////////////////////////////////////////////////////////////////
+var DataRouterHook;
+(function(DataRouterHook) {
+    DataRouterHook["UseScrollRestoration"] = "useScrollRestoration";
+    DataRouterHook["UseSubmitImpl"] = "useSubmitImpl";
+    DataRouterHook["UseFetcher"] = "useFetcher";
+})(DataRouterHook || (DataRouterHook = {}));
+var DataRouterStateHook;
+(function(DataRouterStateHook) {
+    DataRouterStateHook["UseFetchers"] = "useFetchers";
+    DataRouterStateHook["UseScrollRestoration"] = "useScrollRestoration";
+})(DataRouterStateHook || (DataRouterStateHook = {}));
+function getDataRouterConsoleError(hookName) {
+    return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+function useDataRouterContext(hookName) {
+    let ctx = _react.useContext((0, _reactRouter.UNSAFE_DataRouterContext));
+    !ctx && (0, _router.UNSAFE_invariant)(false, getDataRouterConsoleError(hookName));
+    return ctx;
+}
+function useDataRouterState(hookName) {
+    let state = _react.useContext((0, _reactRouter.UNSAFE_DataRouterStateContext));
+    !state && (0, _router.UNSAFE_invariant)(false, getDataRouterConsoleError(hookName));
+    return state;
+}
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */ function useLinkClickHandler(to, _temp) {
+    let { target , replace: replaceProp , state , preventScrollReset , relative  } = _temp === void 0 ? {} : _temp;
+    let navigate = (0, _reactRouter.useNavigate)();
+    let location = (0, _reactRouter.useLocation)();
+    let path = (0, _reactRouter.useResolvedPath)(to, {
+        relative
+    });
+    return _react.useCallback((event)=>{
+        if (shouldProcessLinkClick(event, target)) {
+            event.preventDefault(); // If the URL hasn't changed, a regular <a> will do a replace instead of
+            // a push, so do the same here unless the replace prop is explicitly set
+            let replace = replaceProp !== undefined ? replaceProp : (0, _reactRouter.createPath)(location) === (0, _reactRouter.createPath)(path);
+            navigate(to, {
+                replace,
+                state,
+                preventScrollReset,
+                relative
+            });
+        }
+    }, [
+        location,
+        navigate,
+        path,
+        replaceProp,
+        state,
+        target,
+        to,
+        preventScrollReset,
+        relative
+    ]);
+}
+/**
+ * A convenient wrapper for reading and writing search parameters via the
+ * URLSearchParams interface.
+ */ function useSearchParams(defaultInit) {
+    (0, _router.UNSAFE_warning)(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params\n\nIf you're unsure how to load polyfills, we recommend you check out https://polyfill.io/v3/ which provides some recommendations about how to load polyfills only for users that need them, instead of for every user.");
+    let defaultSearchParamsRef = _react.useRef(createSearchParams(defaultInit));
+    let hasSetSearchParamsRef = _react.useRef(false);
+    let location = (0, _reactRouter.useLocation)();
+    let searchParams = _react.useMemo(()=>// Once we call that we want those to take precedence, otherwise you can't
+        // remove a param with setSearchParams({}) if it has an initial value
+        getSearchParamsForLocation(location.search, hasSetSearchParamsRef.current ? null : defaultSearchParamsRef.current), [
+        location.search
+    ]);
+    let navigate = (0, _reactRouter.useNavigate)();
+    let setSearchParams = _react.useCallback((nextInit, navigateOptions)=>{
+        const newSearchParams = createSearchParams(typeof nextInit === "function" ? nextInit(searchParams) : nextInit);
+        hasSetSearchParamsRef.current = true;
+        navigate("?" + newSearchParams, navigateOptions);
+    }, [
+        navigate,
+        searchParams
+    ]);
+    return [
+        searchParams,
+        setSearchParams
+    ];
+}
+/**
+ * Returns a function that may be used to programmatically submit a form (or
+ * some arbitrary data) to the server.
+ */ function useSubmit() {
+    return useSubmitImpl();
+}
+function useSubmitImpl(fetcherKey, fetcherRouteId) {
+    let { router  } = useDataRouterContext(DataRouterHook.UseSubmitImpl);
+    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let currentRouteId = (0, _reactRouter.UNSAFE_useRouteId)();
+    return _react.useCallback(function(target, options) {
+        if (options === void 0) options = {};
+        if (typeof document === "undefined") throw new Error("You are calling submit during the server render. Try calling submit within a `useEffect` or callback instead.");
+        let { action , method , encType , formData  } = getFormSubmissionInfo(target, options, basename); // Base options shared between fetch() and navigate()
+        let opts = {
+            preventScrollReset: options.preventScrollReset,
+            formData,
+            formMethod: method,
+            formEncType: encType
+        };
+        if (fetcherKey) {
+            !(fetcherRouteId != null) && (0, _router.UNSAFE_invariant)(false, "No routeId available for useFetcher()");
+            router.fetch(fetcherKey, fetcherRouteId, action, opts);
+        } else router.navigate(action, _extends({}, opts, {
+            replace: options.replace,
+            fromRouteId: currentRouteId
+        }));
+    }, [
+        router,
+        basename,
+        fetcherKey,
+        fetcherRouteId,
+        currentRouteId
+    ]);
+} // v7: Eventually we should deprecate this entirely in favor of using the
+// router method directly?
+function useFormAction(action, _temp2) {
+    let { relative  } = _temp2 === void 0 ? {} : _temp2;
+    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let routeContext = _react.useContext((0, _reactRouter.UNSAFE_RouteContext));
+    !routeContext && (0, _router.UNSAFE_invariant)(false, "useFormAction must be used inside a RouteContext");
+    let [match] = routeContext.matches.slice(-1); // Shallow clone path so we can modify it below, otherwise we modify the
+    // object referenced by useMemo inside useResolvedPath
+    let path = _extends({}, (0, _reactRouter.useResolvedPath)(action ? action : ".", {
+        relative
+    })); // Previously we set the default action to ".". The problem with this is that
+    // `useResolvedPath(".")` excludes search params and the hash of the resolved
+    // URL. This is the intended behavior of when "." is specifically provided as
+    // the form action, but inconsistent w/ browsers when the action is omitted.
+    // https://github.com/remix-run/remix/issues/927
+    let location = (0, _reactRouter.useLocation)();
+    if (action == null) {
+        // Safe to write to these directly here since if action was undefined, we
+        // would have called useResolvedPath(".") which will never include a search
+        // or hash
+        path.search = location.search;
+        path.hash = location.hash; // When grabbing search params from the URL, remove the automatically
+        // inserted ?index param so we match the useResolvedPath search behavior
+        // which would not include ?index
+        if (match.route.index) {
+            let params = new URLSearchParams(path.search);
+            params.delete("index");
+            path.search = params.toString() ? "?" + params.toString() : "";
+        }
+    }
+    if ((!action || action === ".") && match.route.index) path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+     // If we're operating within a basename, prepend it to the pathname prior
+    // to creating the form action.  If this is a root navigation, then just use
+    // the raw basename which allows the basename to have full control over the
+    // presence of a trailing slash on root actions
+    if (basename !== "/") path.pathname = path.pathname === "/" ? basename : (0, _router.joinPaths)([
+        basename,
+        path.pathname
+    ]);
+    return (0, _reactRouter.createPath)(path);
+}
+function createFetcherForm(fetcherKey, routeId) {
+    let FetcherForm = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+        return /*#__PURE__*/ _react.createElement(FormImpl, _extends({}, props, {
+            ref: ref,
+            fetcherKey: fetcherKey,
+            routeId: routeId
+        }));
+    });
+    FetcherForm.displayName = "fetcher.Form";
+    return FetcherForm;
+}
+let fetcherId = 0;
+/**
+ * Interacts with route loaders and actions without causing a navigation. Great
+ * for any interaction that stays on the same page.
+ */ function useFetcher() {
+    var _route$matches;
+    let { router  } = useDataRouterContext(DataRouterHook.UseFetcher);
+    let route = _react.useContext((0, _reactRouter.UNSAFE_RouteContext));
+    !route && (0, _router.UNSAFE_invariant)(false, "useFetcher must be used inside a RouteContext");
+    let routeId = (_route$matches = route.matches[route.matches.length - 1]) == null ? void 0 : _route$matches.route.id;
+    !(routeId != null) && (0, _router.UNSAFE_invariant)(false, 'useFetcher can only be used on routes that contain a unique "id"');
+    let [fetcherKey] = _react.useState(()=>String(++fetcherId));
+    let [Form] = _react.useState(()=>{
+        !routeId && (0, _router.UNSAFE_invariant)(false, "No routeId available for fetcher.Form()");
+        return createFetcherForm(fetcherKey, routeId);
+    });
+    let [load] = _react.useState(()=>(href)=>{
+            !router && (0, _router.UNSAFE_invariant)(false, "No router available for fetcher.load()");
+            !routeId && (0, _router.UNSAFE_invariant)(false, "No routeId available for fetcher.load()");
+            router.fetch(fetcherKey, routeId, href);
+        });
+    let submit = useSubmitImpl(fetcherKey, routeId);
+    let fetcher = router.getFetcher(fetcherKey);
+    let fetcherWithComponents = _react.useMemo(()=>_extends({
+            Form,
+            submit,
+            load
+        }, fetcher), [
+        fetcher,
+        Form,
+        submit,
+        load
+    ]);
+    _react.useEffect(()=>{
+        // Is this busted when the React team gets real weird and calls effects
+        // twice on mount?  We really just need to garbage collect here when this
+        // fetcher is no longer around.
+        return ()=>{
+            if (!router) {
+                console.warn("No router available to clean up from useFetcher()");
+                return;
+            }
+            router.deleteFetcher(fetcherKey);
+        };
+    }, [
+        router,
+        fetcherKey
+    ]);
+    return fetcherWithComponents;
+}
+/**
+ * Provides all fetchers currently on the page. Useful for layouts and parent
+ * routes that need to provide pending/optimistic UI regarding the fetch.
+ */ function useFetchers() {
+    let state = useDataRouterState(DataRouterStateHook.UseFetchers);
+    return [
+        ...state.fetchers.values()
+    ];
+}
+const SCROLL_RESTORATION_STORAGE_KEY = "react-router-scroll-positions";
+let savedScrollPositions = {};
+/**
+ * When rendered inside a RouterProvider, will restore scroll positions on navigations
+ */ function useScrollRestoration(_temp3) {
+    let { getKey , storageKey  } = _temp3 === void 0 ? {} : _temp3;
+    let { router  } = useDataRouterContext(DataRouterHook.UseScrollRestoration);
+    let { restoreScrollPosition , preventScrollReset  } = useDataRouterState(DataRouterStateHook.UseScrollRestoration);
+    let location = (0, _reactRouter.useLocation)();
+    let matches = (0, _reactRouter.useMatches)();
+    let navigation = (0, _reactRouter.useNavigation)(); // Trigger manual scroll restoration while we're active
+    _react.useEffect(()=>{
+        window.history.scrollRestoration = "manual";
+        return ()=>{
+            window.history.scrollRestoration = "auto";
+        };
+    }, []); // Save positions on pagehide
+    usePageHide(_react.useCallback(()=>{
+        if (navigation.state === "idle") {
+            let key = (getKey ? getKey(location, matches) : null) || location.key;
+            savedScrollPositions[key] = window.scrollY;
+        }
+        sessionStorage.setItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY, JSON.stringify(savedScrollPositions));
+        window.history.scrollRestoration = "auto";
+    }, [
+        storageKey,
+        getKey,
+        navigation.state,
+        location,
+        matches
+    ])); // Read in any saved scroll locations
+    if (typeof document !== "undefined") {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        _react.useLayoutEffect(()=>{
+            try {
+                let sessionPositions = sessionStorage.getItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY);
+                if (sessionPositions) savedScrollPositions = JSON.parse(sessionPositions);
+            } catch (e) {}
+        }, [
+            storageKey
+        ]); // Enable scroll restoration in the router
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        _react.useLayoutEffect(()=>{
+            let disableScrollRestoration = router == null ? void 0 : router.enableScrollRestoration(savedScrollPositions, ()=>window.scrollY, getKey);
+            return ()=>disableScrollRestoration && disableScrollRestoration();
+        }, [
+            router,
+            getKey
+        ]); // Restore scrolling when state.restoreScrollPosition changes
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        _react.useLayoutEffect(()=>{
+            // Explicit false means don't do anything (used for submissions)
+            if (restoreScrollPosition === false) return;
+             // been here before, scroll to it
+            if (typeof restoreScrollPosition === "number") {
+                window.scrollTo(0, restoreScrollPosition);
+                return;
+            } // try to scroll to the hash
+            if (location.hash) {
+                let el = document.getElementById(location.hash.slice(1));
+                if (el) {
+                    el.scrollIntoView();
+                    return;
+                }
+            } // Don't reset if this navigation opted out
+            if (preventScrollReset === true) return;
+             // otherwise go to the top on new locations
+            window.scrollTo(0, 0);
+        }, [
+            location,
+            restoreScrollPosition,
+            preventScrollReset
+        ]);
+    }
+}
+/**
+ * Setup a callback to be fired on the window's `beforeunload` event. This is
+ * useful for saving some data to `window.localStorage` just before the page
+ * refreshes.
+ *
+ * Note: The `callback` argument should be a function created with
+ * `React.useCallback()`.
+ */ function useBeforeUnload(callback, options) {
+    let { capture  } = options || {};
+    _react.useEffect(()=>{
+        let opts = capture != null ? {
+            capture
+        } : undefined;
+        window.addEventListener("beforeunload", callback, opts);
+        return ()=>{
+            window.removeEventListener("beforeunload", callback, opts);
+        };
+    }, [
+        callback,
+        capture
+    ]);
+}
+/**
+ * Setup a callback to be fired on the window's `pagehide` event. This is
+ * useful for saving some data to `window.localStorage` just before the page
+ * refreshes.  This event is better supported than beforeunload across browsers.
+ *
+ * Note: The `callback` argument should be a function created with
+ * `React.useCallback()`.
+ */ function usePageHide(callback, options) {
+    let { capture  } = options || {};
+    _react.useEffect(()=>{
+        let opts = capture != null ? {
+            capture
+        } : undefined;
+        window.addEventListener("pagehide", callback, opts);
+        return ()=>{
+            window.removeEventListener("pagehide", callback, opts);
+        };
+    }, [
+        callback,
+        capture
+    ]);
+}
+/**
+ * Wrapper around useBlocker to show a window.confirm prompt to users instead
+ * of building a custom UI with useBlocker.
+ *
+ * Warning: This has *a lot of rough edges* and behaves very differently (and
+ * very incorrectly in some cases) across browsers if user click addition
+ * back/forward navigations while the confirm is open.  Use at your own risk.
+ */ function usePrompt(_ref8) {
+    let { when , message  } = _ref8;
+    let blocker = (0, _reactRouter.unstable_useBlocker)(when);
+    _react.useEffect(()=>{
+        if (blocker.state === "blocked" && !when) blocker.reset();
+    }, [
+        blocker,
+        when
+    ]);
+    _react.useEffect(()=>{
+        if (blocker.state === "blocked") {
+            let proceed = window.confirm(message);
+            if (proceed) setTimeout(blocker.proceed, 0);
+            else blocker.reset();
+        }
+    }, [
+        blocker,
+        message
+    ]);
+}
+
+},{"react":"21dqq","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41157,8 +46386,10 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LoginView", ()=>LoginView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _framerMotion = require("framer-motion");
 var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const showPassword = ()=>{
     var passwordInput = document.getElementById("passwordInput1");
@@ -41192,94 +46423,224 @@ const LoginView = ({ onLoggedIn  })=>{
             alert("Something went wrong");
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
-        onSubmit: handleSubmit,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                controlId: "forUsername",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                        children: "Username"
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 48,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value),
-                        minlength: "4",
-                        autocomplete: "username",
-                        placeholder: "Username",
-                        required: true
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 49,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 47,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                controlId: "forPassword",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                        children: "Password"
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 60,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value),
-                        minlength: "4",
-                        id: "passwordInput1",
-                        placeholder: "Password",
-                        required: true
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 61,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 59,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
-                type: "switch",
-                label: "Show Password",
-                onClick: showPassword
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 71,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 74,
-                columnNumber: 42
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                variant: "primary",
-                type: "submit",
-                children: "Submit"
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 76,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.AnimatePresence), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+            className: "login-container",
+            animate: {
+                scale: 1
+            },
+            initial: {
+                scale: 0
+            },
+            transition: {
+                type: "tween",
+                duration: .5
+            },
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "text-center",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "my",
+                                    children: "my"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 53,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "flix",
+                                    children: "Flix"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 53,
+                                    columnNumber: 55
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 53,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "my",
+                                    children: "Log"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 54,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "flix",
+                                    children: "in"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 54,
+                                    columnNumber: 56
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 54,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 52,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).Form, {
+                    onSubmit: handleSubmit,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "forUsername",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Username"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 58,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: username,
+                                    onChange: (e)=>setUsername(e.target.value),
+                                    minlength: "4",
+                                    autocomplete: "username",
+                                    placeholder: "Username",
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 59,
+                                    columnNumber: 25
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 57,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            controlId: "forPassword",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                    children: "Password"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 70,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "password",
+                                    value: password,
+                                    onChange: (e)=>setPassword(e.target.value),
+                                    minlength: "4",
+                                    id: "passwordInput1",
+                                    placeholder: "Password",
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 71,
+                                    columnNumber: 25
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 69,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
+                            type: "switch",
+                            label: "Show Password",
+                            onClick: showPassword
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 81,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 84,
+                            columnNumber: 50
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "text-center",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                variant: "outline-primary",
+                                type: "submit",
+                                children: "Login"
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 86,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 85,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 56,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "text-center",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 91,
+                            columnNumber: 46
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 91,
+                            columnNumber: 52
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                            children: "Not already a member? "
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 92,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/signup",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                variant: "primary",
+                                children: "Sign Up Now!"
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 94,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 93,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 91,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 48,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 46,
+        lineNumber: 47,
         columnNumber: 9
     }, undefined);
 };
@@ -41293,7 +46654,12206 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react-bootstrap":"3AD9A"}],"4OGiN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react-bootstrap":"3AD9A","framer-motion":"5bZBB","react-router-dom":"9xmpe"}],"5bZBB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createDomMotionComponent", ()=>(0, _motionMjs.createDomMotionComponent));
+parcelHelpers.export(exports, "motion", ()=>(0, _motionMjs.motion));
+parcelHelpers.export(exports, "m", ()=>(0, _motionMinimalMjs.m));
+parcelHelpers.export(exports, "AnimatePresence", ()=>(0, _indexMjs.AnimatePresence));
+parcelHelpers.export(exports, "MotionConfig", ()=>(0, _indexMjs1.MotionConfig));
+parcelHelpers.export(exports, "LazyMotion", ()=>(0, _indexMjs2.LazyMotion));
+parcelHelpers.export(exports, "LayoutGroup", ()=>(0, _indexMjs3.LayoutGroup));
+parcelHelpers.export(exports, "Reorder", ()=>(0, _indexMjs4.Reorder));
+parcelHelpers.export(exports, "domAnimation", ()=>(0, _featuresAnimationMjs.domAnimation));
+parcelHelpers.export(exports, "domMax", ()=>(0, _featuresMaxMjs.domMax));
+parcelHelpers.export(exports, "useMotionValue", ()=>(0, _useMotionValueMjs.useMotionValue));
+parcelHelpers.export(exports, "useMotionTemplate", ()=>(0, _useMotionTemplateMjs.useMotionTemplate));
+parcelHelpers.export(exports, "resolveMotionValue", ()=>(0, _resolveMotionValueMjs.resolveMotionValue));
+parcelHelpers.export(exports, "useTransform", ()=>(0, _useTransformMjs.useTransform));
+parcelHelpers.export(exports, "useSpring", ()=>(0, _useSpringMjs.useSpring));
+parcelHelpers.export(exports, "useVelocity", ()=>(0, _useVelocityMjs.useVelocity));
+parcelHelpers.export(exports, "useScroll", ()=>(0, _useScrollMjs.useScroll));
+parcelHelpers.export(exports, "useElementScroll", ()=>(0, _useElementScrollMjs.useElementScroll));
+parcelHelpers.export(exports, "useViewportScroll", ()=>(0, _useViewportScrollMjs.useViewportScroll));
+parcelHelpers.export(exports, "useTime", ()=>(0, _useTimeMjs.useTime));
+parcelHelpers.export(exports, "useWillChange", ()=>(0, _indexMjs5.useWillChange));
+parcelHelpers.export(exports, "useMotionValueEvent", ()=>(0, _useMotionValueEventMjs.useMotionValueEvent));
+parcelHelpers.export(exports, "useReducedMotion", ()=>(0, _useReducedMotionMjs.useReducedMotion));
+parcelHelpers.export(exports, "useReducedMotionConfig", ()=>(0, _useReducedMotionConfigMjs.useReducedMotionConfig));
+parcelHelpers.export(exports, "animationControls", ()=>(0, _animationControlsMjs.animationControls));
+parcelHelpers.export(exports, "useAnimate", ()=>(0, _useAnimateMjs.useAnimate));
+parcelHelpers.export(exports, "useAnimation", ()=>(0, _useAnimationMjs.useAnimation));
+parcelHelpers.export(exports, "useAnimationControls", ()=>(0, _useAnimationMjs.useAnimationControls));
+parcelHelpers.export(exports, "useAnimationFrame", ()=>(0, _useAnimationFrameMjs.useAnimationFrame));
+parcelHelpers.export(exports, "animateVisualElement", ()=>(0, _visualElementMjs.animateVisualElement));
+parcelHelpers.export(exports, "useCycle", ()=>(0, _useCycleMjs.useCycle));
+parcelHelpers.export(exports, "isValidMotionProp", ()=>(0, _validPropMjs.isValidMotionProp));
+parcelHelpers.export(exports, "useIsPresent", ()=>(0, _usePresenceMjs.useIsPresent));
+parcelHelpers.export(exports, "usePresence", ()=>(0, _usePresenceMjs.usePresence));
+parcelHelpers.export(exports, "useInView", ()=>(0, _useInViewMjs.useInView));
+parcelHelpers.export(exports, "DragControls", ()=>(0, _useDragControlsMjs.DragControls));
+parcelHelpers.export(exports, "useDragControls", ()=>(0, _useDragControlsMjs.useDragControls));
+parcelHelpers.export(exports, "useDomEvent", ()=>(0, _useDomEventMjs.useDomEvent));
+parcelHelpers.export(exports, "createMotionComponent", ()=>(0, _indexMjs6.createMotionComponent));
+parcelHelpers.export(exports, "isMotionComponent", ()=>(0, _isMotionComponentMjs.isMotionComponent));
+parcelHelpers.export(exports, "unwrapMotionComponent", ()=>(0, _unwrapMotionComponentMjs.unwrapMotionComponent));
+parcelHelpers.export(exports, "VisualElement", ()=>(0, _visualElementMjs1.VisualElement));
+parcelHelpers.export(exports, "addScaleCorrector", ()=>(0, _scaleCorrectionMjs.addScaleCorrector));
+parcelHelpers.export(exports, "useInstantTransition", ()=>(0, _useInstantTransitionMjs.useInstantTransition));
+parcelHelpers.export(exports, "useInstantLayoutTransition", ()=>(0, _useInstantLayoutTransitionMjs.useInstantLayoutTransition));
+parcelHelpers.export(exports, "useResetProjection", ()=>(0, _useResetProjectionMjs.useResetProjection));
+parcelHelpers.export(exports, "buildTransform", ()=>(0, _buildTransformMjs.buildTransform));
+parcelHelpers.export(exports, "animateValue", ()=>(0, _indexMjs7.animateValue));
+parcelHelpers.export(exports, "color", ()=>(0, _indexMjs8.color));
+parcelHelpers.export(exports, "complex", ()=>(0, _indexMjs9.complex));
+parcelHelpers.export(exports, "px", ()=>(0, _unitsMjs.px));
+parcelHelpers.export(exports, "startOptimizedAppearAnimation", ()=>(0, _startMjs.startOptimizedAppearAnimation));
+parcelHelpers.export(exports, "optimizedAppearDataAttribute", ()=>(0, _dataIdMjs.optimizedAppearDataAttribute));
+parcelHelpers.export(exports, "spring", ()=>(0, _indexMjs10.spring));
+parcelHelpers.export(exports, "MotionContext", ()=>(0, _indexMjs11.MotionContext));
+parcelHelpers.export(exports, "MotionConfigContext", ()=>(0, _motionConfigContextMjs.MotionConfigContext));
+parcelHelpers.export(exports, "PresenceContext", ()=>(0, _presenceContextMjs.PresenceContext));
+parcelHelpers.export(exports, "LayoutGroupContext", ()=>(0, _layoutGroupContextMjs.LayoutGroupContext));
+parcelHelpers.export(exports, "SwitchLayoutGroupContext", ()=>(0, _switchLayoutGroupContextMjs.SwitchLayoutGroupContext));
+parcelHelpers.export(exports, "FlatTree", ()=>(0, _flatTreeMjs.FlatTree));
+parcelHelpers.export(exports, "DeprecatedLayoutGroupContext", ()=>(0, _deprecatedLayoutGroupContextMjs.DeprecatedLayoutGroupContext));
+parcelHelpers.export(exports, "useDeprecatedAnimatedState", ()=>(0, _useAnimatedStateMjs.useAnimatedState));
+parcelHelpers.export(exports, "useDeprecatedInvertedScale", ()=>(0, _useInvertedScaleMjs.useInvertedScale));
+parcelHelpers.export(exports, "AnimateSharedLayout", ()=>(0, _animateSharedLayoutMjs.AnimateSharedLayout));
+parcelHelpers.export(exports, "MotionValue", ()=>(0, _indexMjs12.MotionValue));
+parcelHelpers.export(exports, "motionValue", ()=>(0, _indexMjs12.motionValue));
+parcelHelpers.export(exports, "animate", ()=>(0, _animateMjs.animate));
+parcelHelpers.export(exports, "createScopedAnimate", ()=>(0, _animateMjs.createScopedAnimate));
+parcelHelpers.export(exports, "scroll", ()=>(0, _indexMjs13.scroll));
+parcelHelpers.export(exports, "inView", ()=>(0, _indexMjs14.inView));
+parcelHelpers.export(exports, "stagger", ()=>(0, _staggerMjs.stagger));
+parcelHelpers.export(exports, "transform", ()=>(0, _transformMjs.transform));
+parcelHelpers.export(exports, "clamp", ()=>(0, _clampMjs.clamp));
+parcelHelpers.export(exports, "mix", ()=>(0, _mixMjs.mix));
+parcelHelpers.export(exports, "pipe", ()=>(0, _pipeMjs.pipe));
+parcelHelpers.export(exports, "progress", ()=>(0, _progressMjs.progress));
+parcelHelpers.export(exports, "wrap", ()=>(0, _wrapMjs.wrap));
+parcelHelpers.export(exports, "frameData", ()=>(0, _dataMjs.frameData));
+parcelHelpers.export(exports, "anticipate", ()=>(0, _anticipateMjs.anticipate));
+parcelHelpers.export(exports, "backIn", ()=>(0, _backMjs.backIn));
+parcelHelpers.export(exports, "backInOut", ()=>(0, _backMjs.backInOut));
+parcelHelpers.export(exports, "backOut", ()=>(0, _backMjs.backOut));
+parcelHelpers.export(exports, "circIn", ()=>(0, _circMjs.circIn));
+parcelHelpers.export(exports, "circInOut", ()=>(0, _circMjs.circInOut));
+parcelHelpers.export(exports, "circOut", ()=>(0, _circMjs.circOut));
+parcelHelpers.export(exports, "easeIn", ()=>(0, _easeMjs.easeIn));
+parcelHelpers.export(exports, "easeInOut", ()=>(0, _easeMjs.easeInOut));
+parcelHelpers.export(exports, "easeOut", ()=>(0, _easeMjs.easeOut));
+parcelHelpers.export(exports, "cubicBezier", ()=>(0, _cubicBezierMjs.cubicBezier));
+parcelHelpers.export(exports, "mirrorEasing", ()=>(0, _mirrorMjs.mirrorEasing));
+parcelHelpers.export(exports, "reverseEasing", ()=>(0, _reverseMjs.reverseEasing));
+parcelHelpers.export(exports, "delay", ()=>(0, _delayMjs.delay));
+parcelHelpers.export(exports, "distance", ()=>(0, _distanceMjs.distance));
+parcelHelpers.export(exports, "distance2D", ()=>(0, _distanceMjs.distance2D));
+parcelHelpers.export(exports, "invariant", ()=>(0, _errorsMjs.invariant));
+parcelHelpers.export(exports, "warning", ()=>(0, _errorsMjs.warning));
+parcelHelpers.export(exports, "interpolate", ()=>(0, _interpolateMjs.interpolate));
+parcelHelpers.export(exports, "cancelFrame", ()=>(0, _indexMjs15.cancelFrame));
+parcelHelpers.export(exports, "frame", ()=>(0, _indexMjs15.frame));
+parcelHelpers.export(exports, "steps", ()=>(0, _indexMjs15.steps));
+parcelHelpers.export(exports, "stepsOrder", ()=>(0, _indexMjs15.stepsOrder));
+parcelHelpers.export(exports, "cancelSync", ()=>(0, _indexLegacyMjs.cancelSync));
+parcelHelpers.export(exports, "sync", ()=>(0, _indexLegacyMjs.sync));
+parcelHelpers.export(exports, "animations", ()=>(0, _animationsMjs.animations));
+parcelHelpers.export(exports, "checkTargetForNewValues", ()=>(0, _settersMjs.checkTargetForNewValues));
+parcelHelpers.export(exports, "createBox", ()=>(0, _modelsMjs.createBox));
+parcelHelpers.export(exports, "calcLength", ()=>(0, _deltaCalcMjs.calcLength));
+parcelHelpers.export(exports, "filterProps", ()=>(0, _filterPropsMjs.filterProps));
+parcelHelpers.export(exports, "makeUseVisualState", ()=>(0, _useVisualStateMjs.makeUseVisualState));
+parcelHelpers.export(exports, "isDragActive", ()=>(0, _lockMjs.isDragActive));
+parcelHelpers.export(exports, "addPointerEvent", ()=>(0, _addPointerEventMjs.addPointerEvent));
+parcelHelpers.export(exports, "addPointerInfo", ()=>(0, _eventInfoMjs.addPointerInfo));
+parcelHelpers.export(exports, "isMotionValue", ()=>(0, _isMotionValueMjs.isMotionValue));
+parcelHelpers.export(exports, "isBrowser", ()=>(0, _isBrowserMjs.isBrowser));
+parcelHelpers.export(exports, "useUnmountEffect", ()=>(0, _useUnmountEffectMjs.useUnmountEffect));
+parcelHelpers.export(exports, "useIsomorphicLayoutEffect", ()=>(0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect));
+parcelHelpers.export(exports, "useForceUpdate", ()=>(0, _useForceUpdateMjs.useForceUpdate));
+var _motionMjs = require("./render/dom/motion.mjs");
+var _motionMinimalMjs = require("./render/dom/motion-minimal.mjs");
+var _indexMjs = require("./components/AnimatePresence/index.mjs");
+var _indexMjs1 = require("./components/MotionConfig/index.mjs");
+var _indexMjs2 = require("./components/LazyMotion/index.mjs");
+var _indexMjs3 = require("./components/LayoutGroup/index.mjs");
+var _indexMjs4 = require("./components/Reorder/index.mjs");
+var _featuresAnimationMjs = require("./render/dom/features-animation.mjs");
+var _featuresMaxMjs = require("./render/dom/features-max.mjs");
+var _useMotionValueMjs = require("./value/use-motion-value.mjs");
+var _useMotionTemplateMjs = require("./value/use-motion-template.mjs");
+var _resolveMotionValueMjs = require("./value/utils/resolve-motion-value.mjs");
+var _useTransformMjs = require("./value/use-transform.mjs");
+var _useSpringMjs = require("./value/use-spring.mjs");
+var _useVelocityMjs = require("./value/use-velocity.mjs");
+var _useScrollMjs = require("./value/use-scroll.mjs");
+var _useElementScrollMjs = require("./value/scroll/use-element-scroll.mjs");
+var _useViewportScrollMjs = require("./value/scroll/use-viewport-scroll.mjs");
+var _useTimeMjs = require("./value/use-time.mjs");
+var _indexMjs5 = require("./value/use-will-change/index.mjs");
+var _useMotionValueEventMjs = require("./utils/use-motion-value-event.mjs");
+var _useReducedMotionMjs = require("./utils/reduced-motion/use-reduced-motion.mjs");
+var _useReducedMotionConfigMjs = require("./utils/reduced-motion/use-reduced-motion-config.mjs");
+var _animationControlsMjs = require("./animation/hooks/animation-controls.mjs");
+var _useAnimateMjs = require("./animation/hooks/use-animate.mjs");
+var _useAnimationMjs = require("./animation/hooks/use-animation.mjs");
+var _useAnimationFrameMjs = require("./utils/use-animation-frame.mjs");
+var _visualElementMjs = require("./animation/interfaces/visual-element.mjs");
+var _useCycleMjs = require("./utils/use-cycle.mjs");
+var _validPropMjs = require("./motion/utils/valid-prop.mjs");
+var _usePresenceMjs = require("./components/AnimatePresence/use-presence.mjs");
+var _useInViewMjs = require("./utils/use-in-view.mjs");
+var _useDragControlsMjs = require("./gestures/drag/use-drag-controls.mjs");
+var _useDomEventMjs = require("./events/use-dom-event.mjs");
+var _indexMjs6 = require("./motion/index.mjs");
+var _isMotionComponentMjs = require("./motion/utils/is-motion-component.mjs");
+var _unwrapMotionComponentMjs = require("./motion/utils/unwrap-motion-component.mjs");
+var _visualElementMjs1 = require("./render/VisualElement.mjs");
+var _scaleCorrectionMjs = require("./projection/styles/scale-correction.mjs");
+var _useInstantTransitionMjs = require("./utils/use-instant-transition.mjs");
+var _useInstantLayoutTransitionMjs = require("./projection/use-instant-layout-transition.mjs");
+var _useResetProjectionMjs = require("./projection/use-reset-projection.mjs");
+var _buildTransformMjs = require("./render/html/utils/build-transform.mjs");
+var _indexMjs7 = require("./animation/animators/js/index.mjs");
+var _indexMjs8 = require("./value/types/color/index.mjs");
+var _indexMjs9 = require("./value/types/complex/index.mjs");
+var _unitsMjs = require("./value/types/numbers/units.mjs");
+var _startMjs = require("./animation/optimized-appear/start.mjs");
+var _dataIdMjs = require("./animation/optimized-appear/data-id.mjs");
+var _indexMjs10 = require("./animation/generators/spring/index.mjs");
+var _indexMjs11 = require("./context/MotionContext/index.mjs");
+var _motionConfigContextMjs = require("./context/MotionConfigContext.mjs");
+var _presenceContextMjs = require("./context/PresenceContext.mjs");
+var _layoutGroupContextMjs = require("./context/LayoutGroupContext.mjs");
+var _switchLayoutGroupContextMjs = require("./context/SwitchLayoutGroupContext.mjs");
+var _flatTreeMjs = require("./render/utils/flat-tree.mjs");
+var _deprecatedLayoutGroupContextMjs = require("./context/DeprecatedLayoutGroupContext.mjs");
+var _useAnimatedStateMjs = require("./animation/hooks/use-animated-state.mjs");
+var _useInvertedScaleMjs = require("./value/use-inverted-scale.mjs");
+var _animateSharedLayoutMjs = require("./components/AnimateSharedLayout.mjs");
+var _indexMjs12 = require("./value/index.mjs");
+var _animateMjs = require("./animation/animate.mjs");
+var _indexMjs13 = require("./render/dom/scroll/index.mjs");
+var _indexMjs14 = require("./render/dom/viewport/index.mjs");
+var _staggerMjs = require("./animation/utils/stagger.mjs");
+var _transformMjs = require("./utils/transform.mjs");
+var _clampMjs = require("./utils/clamp.mjs");
+var _mixMjs = require("./utils/mix.mjs");
+var _pipeMjs = require("./utils/pipe.mjs");
+var _progressMjs = require("./utils/progress.mjs");
+var _wrapMjs = require("./utils/wrap.mjs");
+var _dataMjs = require("./frameloop/data.mjs");
+var _anticipateMjs = require("./easing/anticipate.mjs");
+var _backMjs = require("./easing/back.mjs");
+var _circMjs = require("./easing/circ.mjs");
+var _easeMjs = require("./easing/ease.mjs");
+var _cubicBezierMjs = require("./easing/cubic-bezier.mjs");
+var _mirrorMjs = require("./easing/modifiers/mirror.mjs");
+var _reverseMjs = require("./easing/modifiers/reverse.mjs");
+var _delayMjs = require("./utils/delay.mjs");
+var _distanceMjs = require("./utils/distance.mjs");
+var _errorsMjs = require("./utils/errors.mjs");
+var _interpolateMjs = require("./utils/interpolate.mjs");
+var _indexMjs15 = require("./frameloop/index.mjs");
+var _indexLegacyMjs = require("./frameloop/index-legacy.mjs");
+var _animationsMjs = require("./motion/features/animations.mjs");
+var _settersMjs = require("./render/utils/setters.mjs");
+var _modelsMjs = require("./projection/geometry/models.mjs");
+var _deltaCalcMjs = require("./projection/geometry/delta-calc.mjs");
+var _filterPropsMjs = require("./render/dom/utils/filter-props.mjs");
+var _useVisualStateMjs = require("./motion/utils/use-visual-state.mjs");
+var _lockMjs = require("./gestures/drag/utils/lock.mjs");
+var _addPointerEventMjs = require("./events/add-pointer-event.mjs");
+var _eventInfoMjs = require("./events/event-info.mjs");
+var _isMotionValueMjs = require("./value/utils/is-motion-value.mjs");
+var _isBrowserMjs = require("./utils/is-browser.mjs");
+var _useUnmountEffectMjs = require("./utils/use-unmount-effect.mjs");
+var _useIsomorphicEffectMjs = require("./utils/use-isomorphic-effect.mjs");
+var _useForceUpdateMjs = require("./utils/use-force-update.mjs");
+
+},{"./render/dom/motion.mjs":"9Tsxv","./render/dom/motion-minimal.mjs":"dti0O","./components/AnimatePresence/index.mjs":"fBuY4","./components/MotionConfig/index.mjs":"4Dtw3","./components/LazyMotion/index.mjs":"gir8X","./components/LayoutGroup/index.mjs":"b9GPH","./components/Reorder/index.mjs":"9SwgC","./render/dom/features-animation.mjs":"JCL26","./render/dom/features-max.mjs":"4i5ex","./value/use-motion-value.mjs":"rszYa","./value/use-motion-template.mjs":"cjUvi","./value/utils/resolve-motion-value.mjs":"2waBq","./value/use-transform.mjs":"gAMIr","./value/use-spring.mjs":"2gasM","./value/use-velocity.mjs":"cl4th","./value/use-scroll.mjs":"8vYLG","./value/scroll/use-element-scroll.mjs":"aZTUZ","./value/scroll/use-viewport-scroll.mjs":"dr5jF","./value/use-time.mjs":"o2prt","./value/use-will-change/index.mjs":"9VGCG","./utils/use-motion-value-event.mjs":"l3eTb","./utils/reduced-motion/use-reduced-motion.mjs":"8WCy4","./utils/reduced-motion/use-reduced-motion-config.mjs":"1tbj3","./animation/hooks/animation-controls.mjs":"b0jPR","./animation/hooks/use-animate.mjs":"bAyXK","./animation/hooks/use-animation.mjs":"gGFFX","./utils/use-animation-frame.mjs":"jPG8M","./animation/interfaces/visual-element.mjs":"e0aFv","./utils/use-cycle.mjs":"04q0C","./motion/utils/valid-prop.mjs":"9bBA6","./components/AnimatePresence/use-presence.mjs":"5CDO8","./utils/use-in-view.mjs":"diahp","./gestures/drag/use-drag-controls.mjs":"4F1ee","./events/use-dom-event.mjs":"7UOGF","./motion/index.mjs":"iexSD","./motion/utils/is-motion-component.mjs":"6FqHQ","./motion/utils/unwrap-motion-component.mjs":"5Ip67","./render/VisualElement.mjs":"3YJr4","./projection/styles/scale-correction.mjs":"4Bydu","./utils/use-instant-transition.mjs":"22k6b","./projection/use-instant-layout-transition.mjs":"4nSHl","./projection/use-reset-projection.mjs":"4obBa","./render/html/utils/build-transform.mjs":"exDqb","./animation/animators/js/index.mjs":"5PB20","./value/types/color/index.mjs":"1nAma","./value/types/complex/index.mjs":"lmoWV","./value/types/numbers/units.mjs":"lGBHA","./animation/optimized-appear/start.mjs":"ex7eY","./animation/optimized-appear/data-id.mjs":"4rpx1","./animation/generators/spring/index.mjs":"aNeOI","./context/MotionContext/index.mjs":"3aBYo","./context/MotionConfigContext.mjs":"8MLRw","./context/PresenceContext.mjs":"7DzvZ","./context/LayoutGroupContext.mjs":"dEA1W","./context/SwitchLayoutGroupContext.mjs":"7GP4u","./render/utils/flat-tree.mjs":"cinYO","./context/DeprecatedLayoutGroupContext.mjs":"6NZsP","./animation/hooks/use-animated-state.mjs":"6M6nJ","./value/use-inverted-scale.mjs":"a81pc","./components/AnimateSharedLayout.mjs":"5dn5T","./value/index.mjs":"he8bY","./animation/animate.mjs":"kfwt5","./render/dom/scroll/index.mjs":"WMW6Q","./render/dom/viewport/index.mjs":"flLUA","./animation/utils/stagger.mjs":"l87y1","./utils/transform.mjs":"a4wqO","./utils/clamp.mjs":"aZOh4","./utils/mix.mjs":"jx86W","./utils/pipe.mjs":"jGo2b","./utils/progress.mjs":"3vvIn","./utils/wrap.mjs":"j9YxN","./frameloop/data.mjs":"gzDj4","./easing/anticipate.mjs":"1Nbn6","./easing/back.mjs":"d5Nwb","./easing/circ.mjs":"LdSua","./easing/ease.mjs":"8Qwxb","./easing/cubic-bezier.mjs":"hC5AC","./easing/modifiers/mirror.mjs":"8JYdZ","./easing/modifiers/reverse.mjs":"9dSeG","./utils/delay.mjs":"bbpYv","./utils/distance.mjs":"adpzX","./utils/errors.mjs":"drRZ6","./utils/interpolate.mjs":"d7x9H","./frameloop/index.mjs":"3Dz3U","./frameloop/index-legacy.mjs":"eK1zf","./motion/features/animations.mjs":"c1lwU","./render/utils/setters.mjs":"5AEB8","./projection/geometry/models.mjs":"8tocy","./projection/geometry/delta-calc.mjs":"7r3CU","./render/dom/utils/filter-props.mjs":"juMO1","./motion/utils/use-visual-state.mjs":"bYE4p","./gestures/drag/utils/lock.mjs":"81Jq8","./events/add-pointer-event.mjs":"80iJi","./events/event-info.mjs":"4Spbd","./value/utils/is-motion-value.mjs":"94AYa","./utils/is-browser.mjs":"1XAMO","./utils/use-unmount-effect.mjs":"gNrSX","./utils/use-isomorphic-effect.mjs":"5Yog2","./utils/use-force-update.mjs":"58SRa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9Tsxv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createDomMotionComponent", ()=>createDomMotionComponent);
+parcelHelpers.export(exports, "motion", ()=>motion);
+var _indexMjs = require("../../motion/index.mjs");
+var _motionProxyMjs = require("./motion-proxy.mjs");
+var _createConfigMjs = require("./utils/create-config.mjs");
+var _gesturesMjs = require("../../motion/features/gestures.mjs");
+var _animationsMjs = require("../../motion/features/animations.mjs");
+var _dragMjs = require("../../motion/features/drag.mjs");
+var _createVisualElementMjs = require("./create-visual-element.mjs");
+var _layoutMjs = require("../../motion/features/layout.mjs");
+const preloadedFeatures = {
+    ...(0, _animationsMjs.animations),
+    ...(0, _gesturesMjs.gestureAnimations),
+    ...(0, _dragMjs.drag),
+    ...(0, _layoutMjs.layout)
+};
+/**
+ * HTML & SVG components, optimised for use with gestures and animation. These can be used as
+ * drop-in replacements for any HTML & SVG component, all CSS & SVG properties are supported.
+ *
+ * @public
+ */ const motion = /*@__PURE__*/ (0, _motionProxyMjs.createMotionProxy)((Component, config)=>(0, _createConfigMjs.createDomMotionConfig)(Component, config, preloadedFeatures, (0, _createVisualElementMjs.createDomVisualElement)));
+/**
+ * Create a DOM `motion` component with the provided string. This is primarily intended
+ * as a full alternative to `motion` for consumers who have to support environments that don't
+ * support `Proxy`.
+ *
+ * ```javascript
+ * import { createDomMotionComponent } from "framer-motion"
+ *
+ * const motion = {
+ *   div: createDomMotionComponent('div')
+ * }
+ * ```
+ *
+ * @public
+ */ function createDomMotionComponent(key) {
+    return (0, _indexMjs.createMotionComponent)((0, _createConfigMjs.createDomMotionConfig)(key, {
+        forwardMotionProps: false
+    }, preloadedFeatures, (0, _createVisualElementMjs.createDomVisualElement)));
+}
+
+},{"../../motion/index.mjs":"iexSD","./motion-proxy.mjs":"3j9Za","./utils/create-config.mjs":"6TbpJ","../../motion/features/gestures.mjs":"h2ALs","../../motion/features/animations.mjs":"c1lwU","../../motion/features/drag.mjs":"fBUJ5","./create-visual-element.mjs":"WHCBp","../../motion/features/layout.mjs":"6XGhA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iexSD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createMotionComponent", ()=>createMotionComponent);
+var _react = require("react");
+var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
+var _indexMjs = require("../context/MotionContext/index.mjs");
+var _useVisualElementMjs = require("./utils/use-visual-element.mjs");
+var _useMotionRefMjs = require("./utils/use-motion-ref.mjs");
+var _createMjs = require("../context/MotionContext/create.mjs");
+var _loadFeaturesMjs = require("./features/load-features.mjs");
+var _isBrowserMjs = require("../utils/is-browser.mjs");
+var _idMjs = require("../projection/node/id.mjs");
+var _layoutGroupContextMjs = require("../context/LayoutGroupContext.mjs");
+var _lazyContextMjs = require("../context/LazyContext.mjs");
+var _switchLayoutGroupContextMjs = require("../context/SwitchLayoutGroupContext.mjs");
+var _symbolMjs = require("./utils/symbol.mjs");
+/**
+ * Create a `motion` component.
+ *
+ * This function accepts a Component argument, which can be either a string (ie "div"
+ * for `motion.div`), or an actual React component.
+ *
+ * Alongside this is a config option which provides a way of rendering the provided
+ * component "offline", or outside the React render cycle.
+ */ function createMotionComponent({ preloadedFeatures , createVisualElement , useRender , useVisualState , Component  }) {
+    preloadedFeatures && (0, _loadFeaturesMjs.loadFeatures)(preloadedFeatures);
+    function MotionComponent(props, externalRef) {
+        /**
+         * If we need to measure the element we load this functionality in a
+         * separate class component in order to gain access to getSnapshotBeforeUpdate.
+         */ let MeasureLayout;
+        const configAndProps = {
+            ...(0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext)),
+            ...props,
+            layoutId: useLayoutId(props)
+        };
+        const { isStatic  } = configAndProps;
+        const context = (0, _createMjs.useCreateMotionContext)(props);
+        /**
+         * Create a unique projection ID for this component. If a new component is added
+         * during a layout animation we'll use this to query the DOM and hydrate its ref early, allowing
+         * us to measure it as soon as any layout effect flushes pending layout animations.
+         *
+         * Performance note: It'd be better not to have to search the DOM for these elements.
+         * For newly-entering components it could be enough to only correct treeScale, in which
+         * case we could mount in a scale-correction mode. This wouldn't be enough for
+         * shared element transitions however. Perhaps for those we could revert to a root node
+         * that gets forceRendered and layout animations are triggered on its layout effect.
+         */ const projectionId = isStatic ? undefined : (0, _idMjs.useProjectionId)();
+        const visualState = useVisualState(props, isStatic);
+        if (!isStatic && (0, _isBrowserMjs.isBrowser)) {
+            /**
+             * Create a VisualElement for this component. A VisualElement provides a common
+             * interface to renderer-specific APIs (ie DOM/Three.js etc) as well as
+             * providing a way of rendering to these APIs outside of the React render loop
+             * for more performant animations and interactions
+             */ context.visualElement = (0, _useVisualElementMjs.useVisualElement)(Component, visualState, configAndProps, createVisualElement);
+            /**
+             * Load Motion gesture and animation features. These are rendered as renderless
+             * components so each feature can optionally make use of React lifecycle methods.
+             */ const initialLayoutGroupConfig = (0, _react.useContext)((0, _switchLayoutGroupContextMjs.SwitchLayoutGroupContext));
+            const isStrict = (0, _react.useContext)((0, _lazyContextMjs.LazyContext)).strict;
+            if (context.visualElement) MeasureLayout = context.visualElement.loadFeatures(// Note: Pass the full new combined props to correctly re-render dynamic feature components.
+            configAndProps, isStrict, preloadedFeatures, projectionId, initialLayoutGroupConfig);
+        }
+        /**
+         * The mount order and hierarchy is specific to ensure our element ref
+         * is hydrated by the time features fire their effects.
+         */ return _react.createElement((0, _indexMjs.MotionContext).Provider, {
+            value: context
+        }, MeasureLayout && context.visualElement ? _react.createElement(MeasureLayout, {
+            visualElement: context.visualElement,
+            ...configAndProps
+        }) : null, useRender(Component, props, projectionId, (0, _useMotionRefMjs.useMotionRef)(visualState, context.visualElement, externalRef), visualState, isStatic, context.visualElement));
+    }
+    const ForwardRefComponent = (0, _react.forwardRef)(MotionComponent);
+    ForwardRefComponent[0, _symbolMjs.motionComponentSymbol] = Component;
+    return ForwardRefComponent;
+}
+function useLayoutId({ layoutId  }) {
+    const layoutGroupId = (0, _react.useContext)((0, _layoutGroupContextMjs.LayoutGroupContext)).id;
+    return layoutGroupId && layoutId !== undefined ? layoutGroupId + "-" + layoutId : layoutId;
+}
+
+},{"react":"21dqq","../context/MotionConfigContext.mjs":"8MLRw","../context/MotionContext/index.mjs":"3aBYo","./utils/use-visual-element.mjs":"jpZGy","./utils/use-motion-ref.mjs":"dSaJF","../context/MotionContext/create.mjs":"e5BOK","./features/load-features.mjs":"5V8E4","../utils/is-browser.mjs":"1XAMO","../projection/node/id.mjs":"43lie","../context/LayoutGroupContext.mjs":"dEA1W","../context/LazyContext.mjs":"3dClU","../context/SwitchLayoutGroupContext.mjs":"7GP4u","./utils/symbol.mjs":"11WZZ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8MLRw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MotionConfigContext", ()=>MotionConfigContext);
+var _react = require("react");
+/**
+ * @public
+ */ const MotionConfigContext = (0, _react.createContext)({
+    transformPagePoint: (p)=>p,
+    isStatic: false,
+    reducedMotion: "never"
+});
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3aBYo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MotionContext", ()=>MotionContext);
+var _react = require("react");
+const MotionContext = (0, _react.createContext)({});
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jpZGy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useVisualElement", ()=>useVisualElement);
+var _react = require("react");
+var _presenceContextMjs = require("../../context/PresenceContext.mjs");
+var _indexMjs = require("../../context/MotionContext/index.mjs");
+var _useIsomorphicEffectMjs = require("../../utils/use-isomorphic-effect.mjs");
+var _lazyContextMjs = require("../../context/LazyContext.mjs");
+var _motionConfigContextMjs = require("../../context/MotionConfigContext.mjs");
+function useVisualElement(Component, visualState, props, createVisualElement) {
+    const { visualElement: parent  } = (0, _react.useContext)((0, _indexMjs.MotionContext));
+    const lazyContext = (0, _react.useContext)((0, _lazyContextMjs.LazyContext));
+    const presenceContext = (0, _react.useContext)((0, _presenceContextMjs.PresenceContext));
+    const reducedMotionConfig = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext)).reducedMotion;
+    const visualElementRef = (0, _react.useRef)();
+    /**
+     * If we haven't preloaded a renderer, check to see if we have one lazy-loaded
+     */ createVisualElement = createVisualElement || lazyContext.renderer;
+    if (!visualElementRef.current && createVisualElement) visualElementRef.current = createVisualElement(Component, {
+        visualState,
+        parent,
+        props,
+        presenceContext,
+        blockInitialAnimation: presenceContext ? presenceContext.initial === false : false,
+        reducedMotionConfig
+    });
+    const visualElement = visualElementRef.current;
+    (0, _react.useInsertionEffect)(()=>{
+        visualElement && visualElement.update(props, presenceContext);
+    });
+    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
+        visualElement && visualElement.render();
+    });
+    (0, _react.useEffect)(()=>{
+        visualElement && visualElement.updateFeatures();
+    });
+    /**
+     * Ideally this function would always run in a useEffect.
+     *
+     * However, if we have optimised appear animations to handoff from,
+     * it needs to happen synchronously to ensure there's no flash of
+     * incorrect styles in the event of a hydration error.
+     *
+     * So if we detect a situtation where optimised appear animations
+     * are running, we use useLayoutEffect to trigger animations.
+     */ const useAnimateChangesEffect = window.HandoffAppearAnimations ? (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect) : (0, _react.useEffect);
+    useAnimateChangesEffect(()=>{
+        if (visualElement && visualElement.animationState) visualElement.animationState.animateChanges();
+    });
+    return visualElement;
+}
+
+},{"react":"21dqq","../../context/PresenceContext.mjs":"7DzvZ","../../context/MotionContext/index.mjs":"3aBYo","../../utils/use-isomorphic-effect.mjs":"5Yog2","../../context/LazyContext.mjs":"3dClU","../../context/MotionConfigContext.mjs":"8MLRw","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7DzvZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "PresenceContext", ()=>PresenceContext);
+var _react = require("react");
+/**
+ * @public
+ */ const PresenceContext = (0, _react.createContext)(null);
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5Yog2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsomorphicLayoutEffect", ()=>useIsomorphicLayoutEffect);
+var _react = require("react");
+var _isBrowserMjs = require("./is-browser.mjs");
+const useIsomorphicLayoutEffect = (0, _isBrowserMjs.isBrowser) ? (0, _react.useLayoutEffect) : (0, _react.useEffect);
+
+},{"react":"21dqq","./is-browser.mjs":"1XAMO","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1XAMO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isBrowser", ()=>isBrowser);
+const isBrowser = typeof document !== "undefined";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3dClU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LazyContext", ()=>LazyContext);
+var _react = require("react");
+const LazyContext = (0, _react.createContext)({
+    strict: false
+});
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dSaJF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMotionRef", ()=>useMotionRef);
+var _react = require("react");
+var _isRefObjectMjs = require("../../utils/is-ref-object.mjs");
+/**
+ * Creates a ref function that, when called, hydrates the provided
+ * external ref and VisualElement.
+ */ function useMotionRef(visualState, visualElement, externalRef) {
+    return (0, _react.useCallback)((instance)=>{
+        instance && visualState.mount && visualState.mount(instance);
+        if (visualElement) instance ? visualElement.mount(instance) : visualElement.unmount();
+        if (externalRef) {
+            if (typeof externalRef === "function") externalRef(instance);
+            else if ((0, _isRefObjectMjs.isRefObject)(externalRef)) externalRef.current = instance;
+        }
+    }, /**
+     * Only pass a new ref callback to React if we've received a visual element
+     * factory. Otherwise we'll be mounting/remounting every time externalRef
+     * or other dependencies change.
+     */ [
+        visualElement
+    ]);
+}
+
+},{"react":"21dqq","../../utils/is-ref-object.mjs":"hA3DA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hA3DA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isRefObject", ()=>isRefObject);
+function isRefObject(ref) {
+    return typeof ref === "object" && Object.prototype.hasOwnProperty.call(ref, "current");
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"e5BOK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCreateMotionContext", ()=>useCreateMotionContext);
+var _react = require("react");
+var _indexMjs = require("./index.mjs");
+var _utilsMjs = require("./utils.mjs");
+function useCreateMotionContext(props) {
+    const { initial , animate  } = (0, _utilsMjs.getCurrentTreeVariants)(props, (0, _react.useContext)((0, _indexMjs.MotionContext)));
+    return (0, _react.useMemo)(()=>({
+            initial,
+            animate
+        }), [
+        variantLabelsAsDependency(initial),
+        variantLabelsAsDependency(animate)
+    ]);
+}
+function variantLabelsAsDependency(prop) {
+    return Array.isArray(prop) ? prop.join(" ") : prop;
+}
+
+},{"react":"21dqq","./index.mjs":"3aBYo","./utils.mjs":"i5uJb","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"i5uJb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getCurrentTreeVariants", ()=>getCurrentTreeVariants);
+var _isVariantLabelMjs = require("../../render/utils/is-variant-label.mjs");
+var _isControllingVariantsMjs = require("../../render/utils/is-controlling-variants.mjs");
+function getCurrentTreeVariants(props, context) {
+    if ((0, _isControllingVariantsMjs.isControllingVariants)(props)) {
+        const { initial , animate  } = props;
+        return {
+            initial: initial === false || (0, _isVariantLabelMjs.isVariantLabel)(initial) ? initial : undefined,
+            animate: (0, _isVariantLabelMjs.isVariantLabel)(animate) ? animate : undefined
+        };
+    }
+    return props.inherit !== false ? context : {};
+}
+
+},{"../../render/utils/is-variant-label.mjs":"erxli","../../render/utils/is-controlling-variants.mjs":"i9jG9","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"erxli":[function(require,module,exports) {
+/**
+ * Decides if the supplied variable is variant label
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isVariantLabel", ()=>isVariantLabel);
+function isVariantLabel(v) {
+    return typeof v === "string" || Array.isArray(v);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"i9jG9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isControllingVariants", ()=>isControllingVariants);
+parcelHelpers.export(exports, "isVariantNode", ()=>isVariantNode);
+var _isAnimationControlsMjs = require("../../animation/utils/is-animation-controls.mjs");
+var _isVariantLabelMjs = require("./is-variant-label.mjs");
+var _variantPropsMjs = require("./variant-props.mjs");
+function isControllingVariants(props) {
+    return (0, _isAnimationControlsMjs.isAnimationControls)(props.animate) || (0, _variantPropsMjs.variantProps).some((name)=>(0, _isVariantLabelMjs.isVariantLabel)(props[name]));
+}
+function isVariantNode(props) {
+    return Boolean(isControllingVariants(props) || props.variants);
+}
+
+},{"../../animation/utils/is-animation-controls.mjs":"3wAZE","./is-variant-label.mjs":"erxli","./variant-props.mjs":"huf2R","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3wAZE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isAnimationControls", ()=>isAnimationControls);
+function isAnimationControls(v) {
+    return typeof v === "object" && typeof v.start === "function";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"huf2R":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "variantPriorityOrder", ()=>variantPriorityOrder);
+parcelHelpers.export(exports, "variantProps", ()=>variantProps);
+const variantPriorityOrder = [
+    "animate",
+    "whileInView",
+    "whileFocus",
+    "whileHover",
+    "whileTap",
+    "whileDrag",
+    "exit"
+];
+const variantProps = [
+    "initial",
+    ...variantPriorityOrder
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5V8E4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "loadFeatures", ()=>loadFeatures);
+var _definitionsMjs = require("./definitions.mjs");
+function loadFeatures(features) {
+    for(const key in features)(0, _definitionsMjs.featureDefinitions)[key] = {
+        ...(0, _definitionsMjs.featureDefinitions)[key],
+        ...features[key]
+    };
+}
+
+},{"./definitions.mjs":"2lmsj","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2lmsj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "featureDefinitions", ()=>featureDefinitions);
+const featureProps = {
+    animation: [
+        "animate",
+        "variants",
+        "whileHover",
+        "whileTap",
+        "exit",
+        "whileInView",
+        "whileFocus",
+        "whileDrag"
+    ],
+    exit: [
+        "exit"
+    ],
+    drag: [
+        "drag",
+        "dragControls"
+    ],
+    focus: [
+        "whileFocus"
+    ],
+    hover: [
+        "whileHover",
+        "onHoverStart",
+        "onHoverEnd"
+    ],
+    tap: [
+        "whileTap",
+        "onTap",
+        "onTapStart",
+        "onTapCancel"
+    ],
+    pan: [
+        "onPan",
+        "onPanStart",
+        "onPanSessionStart",
+        "onPanEnd"
+    ],
+    inView: [
+        "whileInView",
+        "onViewportEnter",
+        "onViewportLeave"
+    ],
+    layout: [
+        "layout",
+        "layoutId"
+    ]
+};
+const featureDefinitions = {};
+for(const key in featureProps)featureDefinitions[key] = {
+    isEnabled: (props)=>featureProps[key].some((name)=>!!props[name])
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"43lie":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useProjectionId", ()=>useProjectionId);
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _stateMjs = require("./state.mjs");
+let id = 1;
+function useProjectionId() {
+    return (0, _useConstantMjs.useConstant)(()=>{
+        if ((0, _stateMjs.globalProjectionState).hasEverUpdated) return id++;
+    });
+}
+
+},{"../../utils/use-constant.mjs":"gAAJI","./state.mjs":"bSdze","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gAAJI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useConstant", ()=>useConstant);
+var _react = require("react");
+/**
+ * Creates a constant value over the lifecycle of a component.
+ *
+ * Even if `useMemo` is provided an empty array as its final argument, it doesn't offer
+ * a guarantee that it won't re-run for performance reasons later on. By using `useConstant`
+ * you can ensure that initialisers don't execute twice or more.
+ */ function useConstant(init) {
+    const ref = (0, _react.useRef)(null);
+    if (ref.current === null) ref.current = init();
+    return ref.current;
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bSdze":[function(require,module,exports) {
+/**
+ * This should only ever be modified on the client otherwise it'll
+ * persist through server requests. If we need instanced states we
+ * could lazy-init via root.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "globalProjectionState", ()=>globalProjectionState);
+const globalProjectionState = {
+    /**
+     * Global flag as to whether the tree has animated since the last time
+     * we resized the window
+     */ hasAnimatedSinceResize: true,
+    /**
+     * We set this to true once, on the first update. Any nodes added to the tree beyond that
+     * update will be given a `data-projection-id` attribute.
+     */ hasEverUpdated: false
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dEA1W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LayoutGroupContext", ()=>LayoutGroupContext);
+var _react = require("react");
+const LayoutGroupContext = (0, _react.createContext)({});
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7GP4u":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SwitchLayoutGroupContext", ()=>SwitchLayoutGroupContext);
+var _react = require("react");
+/**
+ * Internal, exported only for usage in Framer
+ */ const SwitchLayoutGroupContext = (0, _react.createContext)({});
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"11WZZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "motionComponentSymbol", ()=>motionComponentSymbol);
+const motionComponentSymbol = Symbol.for("motionComponentSymbol");
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3j9Za":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createMotionProxy", ()=>createMotionProxy);
+var _indexMjs = require("../../motion/index.mjs");
+/**
+ * Convert any React component into a `motion` component. The provided component
+ * **must** use `React.forwardRef` to the underlying DOM component you want to animate.
+ *
+ * ```jsx
+ * const Component = React.forwardRef((props, ref) => {
+ *   return <div ref={ref} />
+ * })
+ *
+ * const MotionComponent = motion(Component)
+ * ```
+ *
+ * @public
+ */ function createMotionProxy(createConfig) {
+    function custom(Component, customMotionComponentConfig = {}) {
+        return (0, _indexMjs.createMotionComponent)(createConfig(Component, customMotionComponentConfig));
+    }
+    if (typeof Proxy === "undefined") return custom;
+    /**
+     * A cache of generated `motion` components, e.g `motion.div`, `motion.input` etc.
+     * Rather than generating them anew every render.
+     */ const componentCache = new Map();
+    return new Proxy(custom, {
+        /**
+         * Called when `motion` is referenced with a prop: `motion.div`, `motion.input` etc.
+         * The prop name is passed through as `key` and we can use that to generate a `motion`
+         * DOM component with that name.
+         */ get: (_target, key)=>{
+            /**
+             * If this element doesn't exist in the component cache, create it and cache.
+             */ if (!componentCache.has(key)) componentCache.set(key, custom(key));
+            return componentCache.get(key);
+        }
+    });
+}
+
+},{"../../motion/index.mjs":"iexSD","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6TbpJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createDomMotionConfig", ()=>createDomMotionConfig);
+var _isSvgComponentMjs = require("./is-svg-component.mjs");
+var _useRenderMjs = require("../use-render.mjs");
+var _configMotionMjs = require("../../svg/config-motion.mjs");
+var _configMotionMjs1 = require("../../html/config-motion.mjs");
+function createDomMotionConfig(Component, { forwardMotionProps =false  }, preloadedFeatures, createVisualElement) {
+    const baseConfig = (0, _isSvgComponentMjs.isSVGComponent)(Component) ? (0, _configMotionMjs.svgMotionConfig) : (0, _configMotionMjs1.htmlMotionConfig);
+    return {
+        ...baseConfig,
+        preloadedFeatures,
+        useRender: (0, _useRenderMjs.createUseRender)(forwardMotionProps),
+        createVisualElement,
+        Component
+    };
+}
+
+},{"./is-svg-component.mjs":"hnK2P","../use-render.mjs":"7Sb9b","../../svg/config-motion.mjs":"fAKfy","../../html/config-motion.mjs":"bqr1f","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hnK2P":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isSVGComponent", ()=>isSVGComponent);
+var _lowercaseElementsMjs = require("../../svg/lowercase-elements.mjs");
+function isSVGComponent(Component) {
+    if (/**
+     * If it's not a string, it's a custom React component. Currently we only support
+     * HTML custom React components.
+     */ typeof Component !== "string" || /**
+         * If it contains a dash, the element is a custom HTML webcomponent.
+         */ Component.includes("-")) return false;
+    else if (/**
+     * If it's in our list of lowercase SVG tags, it's an SVG component
+     */ (0, _lowercaseElementsMjs.lowercaseSVGElements).indexOf(Component) > -1 || /**
+         * If it contains a capital letter, it's an SVG component
+         */ /[A-Z]/.test(Component)) return true;
+    return false;
+}
+
+},{"../../svg/lowercase-elements.mjs":"4UtXq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4UtXq":[function(require,module,exports) {
+/**
+ * We keep these listed seperately as we use the lowercase tag names as part
+ * of the runtime bundle to detect SVG components
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "lowercaseSVGElements", ()=>lowercaseSVGElements);
+const lowercaseSVGElements = [
+    "animate",
+    "circle",
+    "defs",
+    "desc",
+    "ellipse",
+    "g",
+    "image",
+    "line",
+    "filter",
+    "marker",
+    "mask",
+    "metadata",
+    "path",
+    "pattern",
+    "polygon",
+    "polyline",
+    "rect",
+    "stop",
+    "switch",
+    "symbol",
+    "svg",
+    "text",
+    "tspan",
+    "use",
+    "view"
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7Sb9b":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createUseRender", ()=>createUseRender);
+var _react = require("react");
+var _usePropsMjs = require("../html/use-props.mjs");
+var _filterPropsMjs = require("./utils/filter-props.mjs");
+var _isSvgComponentMjs = require("./utils/is-svg-component.mjs");
+var _usePropsMjs1 = require("../svg/use-props.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+function createUseRender(forwardMotionProps = false) {
+    const useRender = (Component, props, projectionId, ref, { latestValues  }, isStatic)=>{
+        const useVisualProps = (0, _isSvgComponentMjs.isSVGComponent)(Component) ? (0, _usePropsMjs1.useSVGProps) : (0, _usePropsMjs.useHTMLProps);
+        const visualProps = useVisualProps(props, latestValues, isStatic, Component);
+        const filteredProps = (0, _filterPropsMjs.filterProps)(props, typeof Component === "string", forwardMotionProps);
+        const elementProps = {
+            ...filteredProps,
+            ...visualProps,
+            ref
+        };
+        /**
+         * If component has been handed a motion value as its child,
+         * memoise its initial value and render that. Subsequent updates
+         * will be handled by the onChange handler
+         */ const { children  } = props;
+        const renderedChildren = (0, _react.useMemo)(()=>(0, _isMotionValueMjs.isMotionValue)(children) ? children.get() : children, [
+            children
+        ]);
+        if (projectionId) elementProps["data-projection-id"] = projectionId;
+        return (0, _react.createElement)(Component, {
+            ...elementProps,
+            children: renderedChildren
+        });
+    };
+    return useRender;
+}
+
+},{"react":"21dqq","../html/use-props.mjs":"2D388","./utils/filter-props.mjs":"juMO1","./utils/is-svg-component.mjs":"hnK2P","../svg/use-props.mjs":"eKOGX","../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2D388":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "copyRawValuesOnly", ()=>copyRawValuesOnly);
+parcelHelpers.export(exports, "useHTMLProps", ()=>useHTMLProps);
+var _react = require("react");
+var _isForcedMotionValueMjs = require("../../motion/utils/is-forced-motion-value.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+var _buildStylesMjs = require("./utils/build-styles.mjs");
+var _createRenderStateMjs = require("./utils/create-render-state.mjs");
+function copyRawValuesOnly(target, source, props) {
+    for(const key in source)if (!(0, _isMotionValueMjs.isMotionValue)(source[key]) && !(0, _isForcedMotionValueMjs.isForcedMotionValue)(key, props)) target[key] = source[key];
+}
+function useInitialMotionValues({ transformTemplate  }, visualState, isStatic) {
+    return (0, _react.useMemo)(()=>{
+        const state = (0, _createRenderStateMjs.createHtmlRenderState)();
+        (0, _buildStylesMjs.buildHTMLStyles)(state, visualState, {
+            enableHardwareAcceleration: !isStatic
+        }, transformTemplate);
+        return Object.assign({}, state.vars, state.style);
+    }, [
+        visualState
+    ]);
+}
+function useStyle(props, visualState, isStatic) {
+    const styleProp = props.style || {};
+    const style = {};
+    /**
+     * Copy non-Motion Values straight into style
+     */ copyRawValuesOnly(style, styleProp, props);
+    Object.assign(style, useInitialMotionValues(props, visualState, isStatic));
+    return props.transformValues ? props.transformValues(style) : style;
+}
+function useHTMLProps(props, visualState, isStatic) {
+    // The `any` isn't ideal but it is the type of createElement props argument
+    const htmlProps = {};
+    const style = useStyle(props, visualState, isStatic);
+    if (props.drag && props.dragListener !== false) {
+        // Disable the ghost element when a user drags
+        htmlProps.draggable = false;
+        // Disable text selection
+        style.userSelect = style.WebkitUserSelect = style.WebkitTouchCallout = "none";
+        // Disable scrolling on the draggable direction
+        style.touchAction = props.drag === true ? "none" : `pan-${props.drag === "x" ? "y" : "x"}`;
+    }
+    if (props.tabIndex === undefined && (props.onTap || props.onTapStart || props.whileTap)) htmlProps.tabIndex = 0;
+    htmlProps.style = style;
+    return htmlProps;
+}
+
+},{"react":"21dqq","../../motion/utils/is-forced-motion-value.mjs":"lWFg7","../../value/utils/is-motion-value.mjs":"94AYa","./utils/build-styles.mjs":"2ABzU","./utils/create-render-state.mjs":"fH0Wg","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lWFg7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isForcedMotionValue", ()=>isForcedMotionValue);
+var _scaleCorrectionMjs = require("../../projection/styles/scale-correction.mjs");
+var _transformMjs = require("../../render/html/utils/transform.mjs");
+function isForcedMotionValue(key, { layout , layoutId  }) {
+    return (0, _transformMjs.transformProps).has(key) || key.startsWith("origin") || (layout || layoutId !== undefined) && (!!(0, _scaleCorrectionMjs.scaleCorrectors)[key] || key === "opacity");
+}
+
+},{"../../projection/styles/scale-correction.mjs":"4Bydu","../../render/html/utils/transform.mjs":"iSy8E","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4Bydu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addScaleCorrector", ()=>addScaleCorrector);
+parcelHelpers.export(exports, "scaleCorrectors", ()=>scaleCorrectors);
+const scaleCorrectors = {};
+function addScaleCorrector(correctors) {
+    Object.assign(scaleCorrectors, correctors);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iSy8E":[function(require,module,exports) {
+/**
+ * Generate a list of every possible transform key.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "transformPropOrder", ()=>transformPropOrder);
+parcelHelpers.export(exports, "transformProps", ()=>transformProps);
+const transformPropOrder = [
+    "transformPerspective",
+    "x",
+    "y",
+    "z",
+    "translateX",
+    "translateY",
+    "translateZ",
+    "scale",
+    "scaleX",
+    "scaleY",
+    "rotate",
+    "rotateX",
+    "rotateY",
+    "rotateZ",
+    "skew",
+    "skewX",
+    "skewY"
+];
+/**
+ * A quick lookup for transform props.
+ */ const transformProps = new Set(transformPropOrder);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"94AYa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isMotionValue", ()=>isMotionValue);
+const isMotionValue = (value)=>Boolean(value && value.getVelocity);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2ABzU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "buildHTMLStyles", ()=>buildHTMLStyles);
+var _buildTransformMjs = require("./build-transform.mjs");
+var _isCssVariableMjs = require("../../dom/utils/is-css-variable.mjs");
+var _transformMjs = require("./transform.mjs");
+var _getAsTypeMjs = require("../../dom/value-types/get-as-type.mjs");
+var _numberMjs = require("../../dom/value-types/number.mjs");
+function buildHTMLStyles(state, latestValues, options, transformTemplate) {
+    const { style , vars , transform , transformOrigin  } = state;
+    // Track whether we encounter any transform or transformOrigin values.
+    let hasTransform = false;
+    let hasTransformOrigin = false;
+    // Does the calculated transform essentially equal "none"?
+    let transformIsNone = true;
+    /**
+     * Loop over all our latest animated values and decide whether to handle them
+     * as a style or CSS variable.
+     *
+     * Transforms and transform origins are kept seperately for further processing.
+     */ for(const key in latestValues){
+        const value = latestValues[key];
+        /**
+         * If this is a CSS variable we don't do any further processing.
+         */ if ((0, _isCssVariableMjs.isCSSVariableName)(key)) {
+            vars[key] = value;
+            continue;
+        }
+        // Convert the value to its default value type, ie 0 -> "0px"
+        const valueType = (0, _numberMjs.numberValueTypes)[key];
+        const valueAsType = (0, _getAsTypeMjs.getValueAsType)(value, valueType);
+        if ((0, _transformMjs.transformProps).has(key)) {
+            // If this is a transform, flag to enable further transform processing
+            hasTransform = true;
+            transform[key] = valueAsType;
+            // If we already know we have a non-default transform, early return
+            if (!transformIsNone) continue;
+            // Otherwise check to see if this is a default transform
+            if (value !== (valueType.default || 0)) transformIsNone = false;
+        } else if (key.startsWith("origin")) {
+            // If this is a transform origin, flag and enable further transform-origin processing
+            hasTransformOrigin = true;
+            transformOrigin[key] = valueAsType;
+        } else style[key] = valueAsType;
+    }
+    if (!latestValues.transform) {
+        if (hasTransform || transformTemplate) style.transform = (0, _buildTransformMjs.buildTransform)(state.transform, options, transformIsNone, transformTemplate);
+        else if (style.transform) /**
+             * If we have previously created a transform but currently don't have any,
+             * reset transform style to none.
+             */ style.transform = "none";
+    }
+    /**
+     * Build a transformOrigin style. Uses the same defaults as the browser for
+     * undefined origins.
+     */ if (hasTransformOrigin) {
+        const { originX ="50%" , originY ="50%" , originZ =0  } = transformOrigin;
+        style.transformOrigin = `${originX} ${originY} ${originZ}`;
+    }
+}
+
+},{"./build-transform.mjs":"exDqb","../../dom/utils/is-css-variable.mjs":"8qZz5","./transform.mjs":"iSy8E","../../dom/value-types/get-as-type.mjs":"cv0EP","../../dom/value-types/number.mjs":"biQiX","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"exDqb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "buildTransform", ()=>buildTransform);
+var _transformMjs = require("./transform.mjs");
+const translateAlias = {
+    x: "translateX",
+    y: "translateY",
+    z: "translateZ",
+    transformPerspective: "perspective"
+};
+const numTransforms = (0, _transformMjs.transformPropOrder).length;
+/**
+ * Build a CSS transform style from individual x/y/scale etc properties.
+ *
+ * This outputs with a default order of transforms/scales/rotations, this can be customised by
+ * providing a transformTemplate function.
+ */ function buildTransform(transform, { enableHardwareAcceleration =true , allowTransformNone =true  }, transformIsDefault, transformTemplate) {
+    // The transform string we're going to build into.
+    let transformString = "";
+    /**
+     * Loop over all possible transforms in order, adding the ones that
+     * are present to the transform string.
+     */ for(let i = 0; i < numTransforms; i++){
+        const key = (0, _transformMjs.transformPropOrder)[i];
+        if (transform[key] !== undefined) {
+            const transformName = translateAlias[key] || key;
+            transformString += `${transformName}(${transform[key]}) `;
+        }
+    }
+    if (enableHardwareAcceleration && !transform.z) transformString += "translateZ(0)";
+    transformString = transformString.trim();
+    // If we have a custom `transform` template, pass our transform values and
+    // generated transformString to that before returning
+    if (transformTemplate) transformString = transformTemplate(transform, transformIsDefault ? "" : transformString);
+    else if (allowTransformNone && transformIsDefault) transformString = "none";
+    return transformString;
+}
+
+},{"./transform.mjs":"iSy8E","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8qZz5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cssVariableRegex", ()=>cssVariableRegex);
+parcelHelpers.export(exports, "isCSSVariableName", ()=>isCSSVariableName);
+parcelHelpers.export(exports, "isCSSVariableToken", ()=>isCSSVariableToken);
+const checkStringStartsWith = (token)=>(key)=>typeof key === "string" && key.startsWith(token);
+const isCSSVariableName = checkStringStartsWith("--");
+const isCSSVariableToken = checkStringStartsWith("var(--");
+const cssVariableRegex = /var\s*\(\s*--[\w-]+(\s*,\s*(?:(?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)+)?\s*\)/g;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cv0EP":[function(require,module,exports) {
+/**
+ * Provided a value and a ValueType, returns the value as that value type.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getValueAsType", ()=>getValueAsType);
+const getValueAsType = (value, type)=>{
+    return type && typeof value === "number" ? type.transform(value) : value;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"biQiX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "numberValueTypes", ()=>numberValueTypes);
+var _indexMjs = require("../../../value/types/numbers/index.mjs");
+var _unitsMjs = require("../../../value/types/numbers/units.mjs");
+var _typeIntMjs = require("./type-int.mjs");
+const numberValueTypes = {
+    // Border props
+    borderWidth: (0, _unitsMjs.px),
+    borderTopWidth: (0, _unitsMjs.px),
+    borderRightWidth: (0, _unitsMjs.px),
+    borderBottomWidth: (0, _unitsMjs.px),
+    borderLeftWidth: (0, _unitsMjs.px),
+    borderRadius: (0, _unitsMjs.px),
+    radius: (0, _unitsMjs.px),
+    borderTopLeftRadius: (0, _unitsMjs.px),
+    borderTopRightRadius: (0, _unitsMjs.px),
+    borderBottomRightRadius: (0, _unitsMjs.px),
+    borderBottomLeftRadius: (0, _unitsMjs.px),
+    // Positioning props
+    width: (0, _unitsMjs.px),
+    maxWidth: (0, _unitsMjs.px),
+    height: (0, _unitsMjs.px),
+    maxHeight: (0, _unitsMjs.px),
+    size: (0, _unitsMjs.px),
+    top: (0, _unitsMjs.px),
+    right: (0, _unitsMjs.px),
+    bottom: (0, _unitsMjs.px),
+    left: (0, _unitsMjs.px),
+    // Spacing props
+    padding: (0, _unitsMjs.px),
+    paddingTop: (0, _unitsMjs.px),
+    paddingRight: (0, _unitsMjs.px),
+    paddingBottom: (0, _unitsMjs.px),
+    paddingLeft: (0, _unitsMjs.px),
+    margin: (0, _unitsMjs.px),
+    marginTop: (0, _unitsMjs.px),
+    marginRight: (0, _unitsMjs.px),
+    marginBottom: (0, _unitsMjs.px),
+    marginLeft: (0, _unitsMjs.px),
+    // Transform props
+    rotate: (0, _unitsMjs.degrees),
+    rotateX: (0, _unitsMjs.degrees),
+    rotateY: (0, _unitsMjs.degrees),
+    rotateZ: (0, _unitsMjs.degrees),
+    scale: (0, _indexMjs.scale),
+    scaleX: (0, _indexMjs.scale),
+    scaleY: (0, _indexMjs.scale),
+    scaleZ: (0, _indexMjs.scale),
+    skew: (0, _unitsMjs.degrees),
+    skewX: (0, _unitsMjs.degrees),
+    skewY: (0, _unitsMjs.degrees),
+    distance: (0, _unitsMjs.px),
+    translateX: (0, _unitsMjs.px),
+    translateY: (0, _unitsMjs.px),
+    translateZ: (0, _unitsMjs.px),
+    x: (0, _unitsMjs.px),
+    y: (0, _unitsMjs.px),
+    z: (0, _unitsMjs.px),
+    perspective: (0, _unitsMjs.px),
+    transformPerspective: (0, _unitsMjs.px),
+    opacity: (0, _indexMjs.alpha),
+    originX: (0, _unitsMjs.progressPercentage),
+    originY: (0, _unitsMjs.progressPercentage),
+    originZ: (0, _unitsMjs.px),
+    // Misc
+    zIndex: (0, _typeIntMjs.int),
+    // SVG
+    fillOpacity: (0, _indexMjs.alpha),
+    strokeOpacity: (0, _indexMjs.alpha),
+    numOctaves: (0, _typeIntMjs.int)
+};
+
+},{"../../../value/types/numbers/index.mjs":"bI9mf","../../../value/types/numbers/units.mjs":"lGBHA","./type-int.mjs":"cWdiE","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bI9mf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "alpha", ()=>alpha);
+parcelHelpers.export(exports, "number", ()=>number);
+parcelHelpers.export(exports, "scale", ()=>scale);
+var _clampMjs = require("../../../utils/clamp.mjs");
+const number = {
+    test: (v)=>typeof v === "number",
+    parse: parseFloat,
+    transform: (v)=>v
+};
+const alpha = {
+    ...number,
+    transform: (v)=>(0, _clampMjs.clamp)(0, 1, v)
+};
+const scale = {
+    ...number,
+    default: 1
+};
+
+},{"../../../utils/clamp.mjs":"aZOh4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aZOh4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "clamp", ()=>clamp);
+const clamp = (min, max, v)=>Math.min(Math.max(v, min), max);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lGBHA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "degrees", ()=>degrees);
+parcelHelpers.export(exports, "percent", ()=>percent);
+parcelHelpers.export(exports, "progressPercentage", ()=>progressPercentage);
+parcelHelpers.export(exports, "px", ()=>px);
+parcelHelpers.export(exports, "vh", ()=>vh);
+parcelHelpers.export(exports, "vw", ()=>vw);
+var _utilsMjs = require("../utils.mjs");
+const createUnitType = (unit)=>({
+        test: (v)=>(0, _utilsMjs.isString)(v) && v.endsWith(unit) && v.split(" ").length === 1,
+        parse: parseFloat,
+        transform: (v)=>`${v}${unit}`
+    });
+const degrees = createUnitType("deg");
+const percent = createUnitType("%");
+const px = createUnitType("px");
+const vh = createUnitType("vh");
+const vw = createUnitType("vw");
+const progressPercentage = {
+    ...percent,
+    parse: (v)=>percent.parse(v) / 100,
+    transform: (v)=>percent.transform(v * 100)
+};
+
+},{"../utils.mjs":"kaB0b","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"kaB0b":[function(require,module,exports) {
+/**
+ * TODO: When we move from string as a source of truth to data models
+ * everything in this folder should probably be referred to as models vs types
+ */ // If this number is a decimal, make it just five decimal places
+// to avoid exponents
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "colorRegex", ()=>colorRegex);
+parcelHelpers.export(exports, "floatRegex", ()=>floatRegex);
+parcelHelpers.export(exports, "isString", ()=>isString);
+parcelHelpers.export(exports, "sanitize", ()=>sanitize);
+parcelHelpers.export(exports, "singleColorRegex", ()=>singleColorRegex);
+const sanitize = (v)=>Math.round(v * 100000) / 100000;
+const floatRegex = /(-)?([\d]*\.?[\d])+/g;
+const colorRegex = /(#[0-9a-f]{3,8}|(rgb|hsl)a?\((-?[\d\.]+%?[,\s]+){2}(-?[\d\.]+%?)\s*[\,\/]?\s*[\d\.]*%?\))/gi;
+const singleColorRegex = /^(#[0-9a-f]{3,8}|(rgb|hsl)a?\((-?[\d\.]+%?[,\s]+){2}(-?[\d\.]+%?)\s*[\,\/]?\s*[\d\.]*%?\))$/i;
+function isString(v) {
+    return typeof v === "string";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cWdiE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "int", ()=>int);
+var _indexMjs = require("../../../value/types/numbers/index.mjs");
+const int = {
+    ...(0, _indexMjs.number),
+    transform: Math.round
+};
+
+},{"../../../value/types/numbers/index.mjs":"bI9mf","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fH0Wg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createHtmlRenderState", ()=>createHtmlRenderState);
+const createHtmlRenderState = ()=>({
+        style: {},
+        transform: {},
+        transformOrigin: {},
+        vars: {}
+    });
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"juMO1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterProps", ()=>filterProps);
+parcelHelpers.export(exports, "loadExternalIsValidProp", ()=>loadExternalIsValidProp);
+var _validPropMjs = require("../../../motion/utils/valid-prop.mjs");
+let shouldForward = (key)=>!(0, _validPropMjs.isValidMotionProp)(key);
+function loadExternalIsValidProp(isValidProp) {
+    if (!isValidProp) return;
+    // Explicitly filter our events
+    shouldForward = (key)=>key.startsWith("on") ? !(0, _validPropMjs.isValidMotionProp)(key) : isValidProp(key);
+}
+/**
+ * Emotion and Styled Components both allow users to pass through arbitrary props to their components
+ * to dynamically generate CSS. They both use the `@emotion/is-prop-valid` package to determine which
+ * of these should be passed to the underlying DOM node.
+ *
+ * However, when styling a Motion component `styled(motion.div)`, both packages pass through *all* props
+ * as it's seen as an arbitrary component rather than a DOM node. Motion only allows arbitrary props
+ * passed through the `custom` prop so it doesn't *need* the payload or computational overhead of
+ * `@emotion/is-prop-valid`, however to fix this problem we need to use it.
+ *
+ * By making it an optionalDependency we can offer this functionality only in the situations where it's
+ * actually required.
+ */ try {
+    /**
+     * We attempt to import this package but require won't be defined in esm environments, in that case
+     * isPropValid will have to be provided via `MotionContext`. In a 6.0.0 this should probably be removed
+     * in favour of explicit injection.
+     */ loadExternalIsValidProp(require("7c6089e5667271a9").default);
+} catch (_a) {
+// We don't need to actually do anything here - the fallback is the existing `isPropValid`.
+}
+function filterProps(props, isDom, forwardMotionProps) {
+    const filteredProps = {};
+    for(const key in props){
+        /**
+         * values is considered a valid prop by Emotion, so if it's present
+         * this will be rendered out to the DOM unless explicitly filtered.
+         *
+         * We check the type as it could be used with the `feColorMatrix`
+         * element, which we support.
+         */ if (key === "values" && typeof props.values === "object") continue;
+        if (shouldForward(key) || forwardMotionProps === true && (0, _validPropMjs.isValidMotionProp)(key) || !isDom && !(0, _validPropMjs.isValidMotionProp)(key) || // If trying to use native HTML drag events, forward drag listeners
+        props["draggable"] && key.startsWith("onDrag")) filteredProps[key] = props[key];
+    }
+    return filteredProps;
+}
+
+},{"../../../motion/utils/valid-prop.mjs":"9bBA6","7c6089e5667271a9":"5ZOhJ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9bBA6":[function(require,module,exports) {
+/**
+ * A list of all valid MotionProps.
+ *
+ * @privateRemarks
+ * This doesn't throw if a `MotionProp` name is missing - it should.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isValidMotionProp", ()=>isValidMotionProp);
+const validMotionProps = new Set([
+    "animate",
+    "exit",
+    "variants",
+    "initial",
+    "style",
+    "values",
+    "variants",
+    "transition",
+    "transformTemplate",
+    "transformValues",
+    "custom",
+    "inherit",
+    "onLayoutAnimationStart",
+    "onLayoutAnimationComplete",
+    "onLayoutMeasure",
+    "onBeforeLayoutMeasure",
+    "onAnimationStart",
+    "onAnimationComplete",
+    "onUpdate",
+    "onDragStart",
+    "onDrag",
+    "onDragEnd",
+    "onMeasureDragConstraints",
+    "onDirectionLock",
+    "onDragTransitionEnd",
+    "_dragX",
+    "_dragY",
+    "onHoverStart",
+    "onHoverEnd",
+    "onViewportEnter",
+    "onViewportLeave",
+    "ignoreStrict",
+    "viewport"
+]);
+/**
+ * Check whether a prop name is a valid `MotionProp` key.
+ *
+ * @param key - Name of the property to check
+ * @returns `true` is key is a valid `MotionProp`.
+ *
+ * @public
+ */ function isValidMotionProp(key) {
+    return key.startsWith("while") || key.startsWith("drag") && key !== "draggable" || key.startsWith("layout") || key.startsWith("onTap") || key.startsWith("onPan") || validMotionProps.has(key);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5ZOhJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _memoize = require("@emotion/memoize");
+var _memoizeDefault = parcelHelpers.interopDefault(_memoize);
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|inert|itemProp|itemScope|itemType|itemID|itemRef|on|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+var index = (0, _memoizeDefault.default)(function(prop) {
+    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
+});
+exports.default = index;
+
+},{"@emotion/memoize":"3aVvJ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3aVvJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function memoize(fn) {
+    var cache = {};
+    return function(arg) {
+        if (cache[arg] === undefined) cache[arg] = fn(arg);
+        return cache[arg];
+    };
+}
+exports.default = memoize;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"eKOGX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useSVGProps", ()=>useSVGProps);
+var _react = require("react");
+var _usePropsMjs = require("../html/use-props.mjs");
+var _buildAttrsMjs = require("./utils/build-attrs.mjs");
+var _createRenderStateMjs = require("./utils/create-render-state.mjs");
+var _isSvgTagMjs = require("./utils/is-svg-tag.mjs");
+function useSVGProps(props, visualState, _isStatic, Component) {
+    const visualProps = (0, _react.useMemo)(()=>{
+        const state = (0, _createRenderStateMjs.createSvgRenderState)();
+        (0, _buildAttrsMjs.buildSVGAttrs)(state, visualState, {
+            enableHardwareAcceleration: false
+        }, (0, _isSvgTagMjs.isSVGTag)(Component), props.transformTemplate);
+        return {
+            ...state.attrs,
+            style: {
+                ...state.style
+            }
+        };
+    }, [
+        visualState
+    ]);
+    if (props.style) {
+        const rawStyles = {};
+        (0, _usePropsMjs.copyRawValuesOnly)(rawStyles, props.style, props);
+        visualProps.style = {
+            ...rawStyles,
+            ...visualProps.style
+        };
+    }
+    return visualProps;
+}
+
+},{"react":"21dqq","../html/use-props.mjs":"2D388","./utils/build-attrs.mjs":"lDaMj","./utils/create-render-state.mjs":"bM46q","./utils/is-svg-tag.mjs":"iLrl0","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lDaMj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "buildSVGAttrs", ()=>buildSVGAttrs);
+var _buildStylesMjs = require("../../html/utils/build-styles.mjs");
+var _transformOriginMjs = require("./transform-origin.mjs");
+var _pathMjs = require("./path.mjs");
+/**
+ * Build SVG visual attrbutes, like cx and style.transform
+ */ function buildSVGAttrs(state, { attrX , attrY , attrScale , originX , originY , pathLength , pathSpacing =1 , pathOffset =0 , // This is object creation, which we try to avoid per-frame.
+...latest }, options, isSVGTag, transformTemplate) {
+    (0, _buildStylesMjs.buildHTMLStyles)(state, latest, options, transformTemplate);
+    /**
+     * For svg tags we just want to make sure viewBox is animatable and treat all the styles
+     * as normal HTML tags.
+     */ if (isSVGTag) {
+        if (state.style.viewBox) state.attrs.viewBox = state.style.viewBox;
+        return;
+    }
+    state.attrs = state.style;
+    state.style = {};
+    const { attrs , style , dimensions  } = state;
+    /**
+     * However, we apply transforms as CSS transforms. So if we detect a transform we take it from attrs
+     * and copy it into style.
+     */ if (attrs.transform) {
+        if (dimensions) style.transform = attrs.transform;
+        delete attrs.transform;
+    }
+    // Parse transformOrigin
+    if (dimensions && (originX !== undefined || originY !== undefined || style.transform)) style.transformOrigin = (0, _transformOriginMjs.calcSVGTransformOrigin)(dimensions, originX !== undefined ? originX : 0.5, originY !== undefined ? originY : 0.5);
+    // Render attrX/attrY/attrScale as attributes
+    if (attrX !== undefined) attrs.x = attrX;
+    if (attrY !== undefined) attrs.y = attrY;
+    if (attrScale !== undefined) attrs.scale = attrScale;
+    // Build SVG path if one has been defined
+    if (pathLength !== undefined) (0, _pathMjs.buildSVGPath)(attrs, pathLength, pathSpacing, pathOffset, false);
+}
+
+},{"../../html/utils/build-styles.mjs":"2ABzU","./transform-origin.mjs":"hcFr3","./path.mjs":"akvM2","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hcFr3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcSVGTransformOrigin", ()=>calcSVGTransformOrigin);
+var _unitsMjs = require("../../../value/types/numbers/units.mjs");
+function calcOrigin(origin, offset, size) {
+    return typeof origin === "string" ? origin : (0, _unitsMjs.px).transform(offset + size * origin);
+}
+/**
+ * The SVG transform origin defaults are different to CSS and is less intuitive,
+ * so we use the measured dimensions of the SVG to reconcile these.
+ */ function calcSVGTransformOrigin(dimensions, originX, originY) {
+    const pxOriginX = calcOrigin(originX, dimensions.x, dimensions.width);
+    const pxOriginY = calcOrigin(originY, dimensions.y, dimensions.height);
+    return `${pxOriginX} ${pxOriginY}`;
+}
+
+},{"../../../value/types/numbers/units.mjs":"lGBHA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"akvM2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "buildSVGPath", ()=>buildSVGPath);
+var _unitsMjs = require("../../../value/types/numbers/units.mjs");
+const dashKeys = {
+    offset: "stroke-dashoffset",
+    array: "stroke-dasharray"
+};
+const camelKeys = {
+    offset: "strokeDashoffset",
+    array: "strokeDasharray"
+};
+/**
+ * Build SVG path properties. Uses the path's measured length to convert
+ * our custom pathLength, pathSpacing and pathOffset into stroke-dashoffset
+ * and stroke-dasharray attributes.
+ *
+ * This function is mutative to reduce per-frame GC.
+ */ function buildSVGPath(attrs, length, spacing = 1, offset = 0, useDashCase = true) {
+    // Normalise path length by setting SVG attribute pathLength to 1
+    attrs.pathLength = 1;
+    // We use dash case when setting attributes directly to the DOM node and camel case
+    // when defining props on a React component.
+    const keys = useDashCase ? dashKeys : camelKeys;
+    // Build the dash offset
+    attrs[keys.offset] = (0, _unitsMjs.px).transform(-offset);
+    // Build the dash array
+    const pathLength = (0, _unitsMjs.px).transform(length);
+    const pathSpacing = (0, _unitsMjs.px).transform(spacing);
+    attrs[keys.array] = `${pathLength} ${pathSpacing}`;
+}
+
+},{"../../../value/types/numbers/units.mjs":"lGBHA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bM46q":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createSvgRenderState", ()=>createSvgRenderState);
+var _createRenderStateMjs = require("../../html/utils/create-render-state.mjs");
+const createSvgRenderState = ()=>({
+        ...(0, _createRenderStateMjs.createHtmlRenderState)(),
+        attrs: {}
+    });
+
+},{"../../html/utils/create-render-state.mjs":"fH0Wg","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iLrl0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isSVGTag", ()=>isSVGTag);
+const isSVGTag = (tag)=>typeof tag === "string" && tag.toLowerCase() === "svg";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fAKfy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "svgMotionConfig", ()=>svgMotionConfig);
+var _renderMjs = require("./utils/render.mjs");
+var _scrapeMotionValuesMjs = require("./utils/scrape-motion-values.mjs");
+var _useVisualStateMjs = require("../../motion/utils/use-visual-state.mjs");
+var _createRenderStateMjs = require("./utils/create-render-state.mjs");
+var _buildAttrsMjs = require("./utils/build-attrs.mjs");
+var _isSvgTagMjs = require("./utils/is-svg-tag.mjs");
+const svgMotionConfig = {
+    useVisualState: (0, _useVisualStateMjs.makeUseVisualState)({
+        scrapeMotionValuesFromProps: (0, _scrapeMotionValuesMjs.scrapeMotionValuesFromProps),
+        createRenderState: (0, _createRenderStateMjs.createSvgRenderState),
+        onMount: (props, instance, { renderState , latestValues  })=>{
+            try {
+                renderState.dimensions = typeof instance.getBBox === "function" ? instance.getBBox() : instance.getBoundingClientRect();
+            } catch (e) {
+                // Most likely trying to measure an unrendered element under Firefox
+                renderState.dimensions = {
+                    x: 0,
+                    y: 0,
+                    width: 0,
+                    height: 0
+                };
+            }
+            (0, _buildAttrsMjs.buildSVGAttrs)(renderState, latestValues, {
+                enableHardwareAcceleration: false
+            }, (0, _isSvgTagMjs.isSVGTag)(instance.tagName), props.transformTemplate);
+            (0, _renderMjs.renderSVG)(instance, renderState);
+        }
+    })
+};
+
+},{"./utils/render.mjs":"iuDSF","./utils/scrape-motion-values.mjs":"bGUYu","../../motion/utils/use-visual-state.mjs":"bYE4p","./utils/create-render-state.mjs":"bM46q","./utils/build-attrs.mjs":"lDaMj","./utils/is-svg-tag.mjs":"iLrl0","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iuDSF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "renderSVG", ()=>renderSVG);
+var _camelToDashMjs = require("../../dom/utils/camel-to-dash.mjs");
+var _renderMjs = require("../../html/utils/render.mjs");
+var _camelCaseAttrsMjs = require("./camel-case-attrs.mjs");
+function renderSVG(element, renderState, _styleProp, projection) {
+    (0, _renderMjs.renderHTML)(element, renderState, undefined, projection);
+    for(const key in renderState.attrs)element.setAttribute(!(0, _camelCaseAttrsMjs.camelCaseAttributes).has(key) ? (0, _camelToDashMjs.camelToDash)(key) : key, renderState.attrs[key]);
+}
+
+},{"../../dom/utils/camel-to-dash.mjs":"eUOx7","../../html/utils/render.mjs":"jRfU5","./camel-case-attrs.mjs":"aH7Xw","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"eUOx7":[function(require,module,exports) {
+/**
+ * Convert camelCase to dash-case properties.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "camelToDash", ()=>camelToDash);
+const camelToDash = (str)=>str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jRfU5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "renderHTML", ()=>renderHTML);
+function renderHTML(element, { style , vars  }, styleProp, projection) {
+    Object.assign(element.style, style, projection && projection.getProjectionStyles(styleProp));
+    // Loop over any CSS variables and assign those.
+    for(const key in vars)element.style.setProperty(key, vars[key]);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aH7Xw":[function(require,module,exports) {
+/**
+ * A set of attribute names that are always read/written as camel case.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "camelCaseAttributes", ()=>camelCaseAttributes);
+const camelCaseAttributes = new Set([
+    "baseFrequency",
+    "diffuseConstant",
+    "kernelMatrix",
+    "kernelUnitLength",
+    "keySplines",
+    "keyTimes",
+    "limitingConeAngle",
+    "markerHeight",
+    "markerWidth",
+    "numOctaves",
+    "targetX",
+    "targetY",
+    "surfaceScale",
+    "specularConstant",
+    "specularExponent",
+    "stdDeviation",
+    "tableValues",
+    "viewBox",
+    "gradientTransform",
+    "pathLength",
+    "startOffset",
+    "textLength",
+    "lengthAdjust"
+]);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bGUYu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "scrapeMotionValuesFromProps", ()=>scrapeMotionValuesFromProps);
+var _isMotionValueMjs = require("../../../value/utils/is-motion-value.mjs");
+var _scrapeMotionValuesMjs = require("../../html/utils/scrape-motion-values.mjs");
+var _transformMjs = require("../../html/utils/transform.mjs");
+function scrapeMotionValuesFromProps(props, prevProps) {
+    const newValues = (0, _scrapeMotionValuesMjs.scrapeMotionValuesFromProps)(props, prevProps);
+    for(const key in props)if ((0, _isMotionValueMjs.isMotionValue)(props[key]) || (0, _isMotionValueMjs.isMotionValue)(prevProps[key])) {
+        const targetKey = (0, _transformMjs.transformPropOrder).indexOf(key) !== -1 ? "attr" + key.charAt(0).toUpperCase() + key.substring(1) : key;
+        newValues[targetKey] = props[key];
+    }
+    return newValues;
+}
+
+},{"../../../value/utils/is-motion-value.mjs":"94AYa","../../html/utils/scrape-motion-values.mjs":"fCzyn","../../html/utils/transform.mjs":"iSy8E","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fCzyn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "scrapeMotionValuesFromProps", ()=>scrapeMotionValuesFromProps);
+var _isForcedMotionValueMjs = require("../../../motion/utils/is-forced-motion-value.mjs");
+var _isMotionValueMjs = require("../../../value/utils/is-motion-value.mjs");
+function scrapeMotionValuesFromProps(props, prevProps) {
+    const { style  } = props;
+    const newValues = {};
+    for(const key in style)if ((0, _isMotionValueMjs.isMotionValue)(style[key]) || prevProps.style && (0, _isMotionValueMjs.isMotionValue)(prevProps.style[key]) || (0, _isForcedMotionValueMjs.isForcedMotionValue)(key, props)) newValues[key] = style[key];
+    return newValues;
+}
+
+},{"../../../motion/utils/is-forced-motion-value.mjs":"lWFg7","../../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bYE4p":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "makeUseVisualState", ()=>makeUseVisualState);
+var _react = require("react");
+var _isAnimationControlsMjs = require("../../animation/utils/is-animation-controls.mjs");
+var _presenceContextMjs = require("../../context/PresenceContext.mjs");
+var _resolveVariantsMjs = require("../../render/utils/resolve-variants.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _resolveMotionValueMjs = require("../../value/utils/resolve-motion-value.mjs");
+var _indexMjs = require("../../context/MotionContext/index.mjs");
+var _isControllingVariantsMjs = require("../../render/utils/is-controlling-variants.mjs");
+function makeState({ scrapeMotionValuesFromProps , createRenderState , onMount  }, props, context, presenceContext) {
+    const state = {
+        latestValues: makeLatestValues(props, context, presenceContext, scrapeMotionValuesFromProps),
+        renderState: createRenderState()
+    };
+    if (onMount) state.mount = (instance)=>onMount(props, instance, state);
+    return state;
+}
+const makeUseVisualState = (config)=>(props, isStatic)=>{
+        const context = (0, _react.useContext)((0, _indexMjs.MotionContext));
+        const presenceContext = (0, _react.useContext)((0, _presenceContextMjs.PresenceContext));
+        const make = ()=>makeState(config, props, context, presenceContext);
+        return isStatic ? make() : (0, _useConstantMjs.useConstant)(make);
+    };
+function makeLatestValues(props, context, presenceContext, scrapeMotionValues) {
+    const values = {};
+    const motionValues = scrapeMotionValues(props, {});
+    for(const key in motionValues)values[key] = (0, _resolveMotionValueMjs.resolveMotionValue)(motionValues[key]);
+    let { initial , animate  } = props;
+    const isControllingVariants$1 = (0, _isControllingVariantsMjs.isControllingVariants)(props);
+    const isVariantNode$1 = (0, _isControllingVariantsMjs.isVariantNode)(props);
+    if (context && isVariantNode$1 && !isControllingVariants$1 && props.inherit !== false) {
+        if (initial === undefined) initial = context.initial;
+        if (animate === undefined) animate = context.animate;
+    }
+    let isInitialAnimationBlocked = presenceContext ? presenceContext.initial === false : false;
+    isInitialAnimationBlocked = isInitialAnimationBlocked || initial === false;
+    const variantToSet = isInitialAnimationBlocked ? animate : initial;
+    if (variantToSet && typeof variantToSet !== "boolean" && !(0, _isAnimationControlsMjs.isAnimationControls)(variantToSet)) {
+        const list = Array.isArray(variantToSet) ? variantToSet : [
+            variantToSet
+        ];
+        list.forEach((definition)=>{
+            const resolved = (0, _resolveVariantsMjs.resolveVariantFromProps)(props, definition);
+            if (!resolved) return;
+            const { transitionEnd , transition , ...target } = resolved;
+            for(const key in target){
+                let valueTarget = target[key];
+                if (Array.isArray(valueTarget)) {
+                    /**
+                     * Take final keyframe if the initial animation is blocked because
+                     * we want to initialise at the end of that blocked animation.
+                     */ const index = isInitialAnimationBlocked ? valueTarget.length - 1 : 0;
+                    valueTarget = valueTarget[index];
+                }
+                if (valueTarget !== null) values[key] = valueTarget;
+            }
+            for(const key in transitionEnd)values[key] = transitionEnd[key];
+        });
+    }
+    return values;
+}
+
+},{"react":"21dqq","../../animation/utils/is-animation-controls.mjs":"3wAZE","../../context/PresenceContext.mjs":"7DzvZ","../../render/utils/resolve-variants.mjs":"8MzkH","../../utils/use-constant.mjs":"gAAJI","../../value/utils/resolve-motion-value.mjs":"2waBq","../../context/MotionContext/index.mjs":"3aBYo","../../render/utils/is-controlling-variants.mjs":"i9jG9","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8MzkH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resolveVariantFromProps", ()=>resolveVariantFromProps);
+function resolveVariantFromProps(props, definition, custom, currentValues = {}, currentVelocity = {}) {
+    /**
+     * If the variant definition is a function, resolve.
+     */ if (typeof definition === "function") definition = definition(custom !== undefined ? custom : props.custom, currentValues, currentVelocity);
+    /**
+     * If the variant definition is a variant label, or
+     * the function returned a variant label, resolve.
+     */ if (typeof definition === "string") definition = props.variants && props.variants[definition];
+    /**
+     * At this point we've resolved both functions and variant labels,
+     * but the resolved variant label might itself have been a function.
+     * If so, resolve. This can only have returned a valid target object.
+     */ if (typeof definition === "function") definition = definition(custom !== undefined ? custom : props.custom, currentValues, currentVelocity);
+    return definition;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2waBq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resolveMotionValue", ()=>resolveMotionValue);
+var _resolveValueMjs = require("../../utils/resolve-value.mjs");
+var _isMotionValueMjs = require("./is-motion-value.mjs");
+/**
+ * If the provided value is a MotionValue, this returns the actual value, otherwise just the value itself
+ *
+ * TODO: Remove and move to library
+ */ function resolveMotionValue(value) {
+    const unwrappedValue = (0, _isMotionValueMjs.isMotionValue)(value) ? value.get() : value;
+    return (0, _resolveValueMjs.isCustomValue)(unwrappedValue) ? unwrappedValue.toValue() : unwrappedValue;
+}
+
+},{"../../utils/resolve-value.mjs":"cPnbP","./is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cPnbP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isCustomValue", ()=>isCustomValue);
+parcelHelpers.export(exports, "resolveFinalValueInKeyframes", ()=>resolveFinalValueInKeyframes);
+var _isKeyframesTargetMjs = require("../animation/utils/is-keyframes-target.mjs");
+const isCustomValue = (v)=>{
+    return Boolean(v && typeof v === "object" && v.mix && v.toValue);
+};
+const resolveFinalValueInKeyframes = (v)=>{
+    // TODO maybe throw if v.length - 1 is placeholder token?
+    return (0, _isKeyframesTargetMjs.isKeyframesTarget)(v) ? v[v.length - 1] || 0 : v;
+};
+
+},{"../animation/utils/is-keyframes-target.mjs":"sPTPk","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"sPTPk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isKeyframesTarget", ()=>isKeyframesTarget);
+const isKeyframesTarget = (v)=>{
+    return Array.isArray(v);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bqr1f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "htmlMotionConfig", ()=>htmlMotionConfig);
+var _useVisualStateMjs = require("../../motion/utils/use-visual-state.mjs");
+var _scrapeMotionValuesMjs = require("./utils/scrape-motion-values.mjs");
+var _createRenderStateMjs = require("./utils/create-render-state.mjs");
+const htmlMotionConfig = {
+    useVisualState: (0, _useVisualStateMjs.makeUseVisualState)({
+        scrapeMotionValuesFromProps: (0, _scrapeMotionValuesMjs.scrapeMotionValuesFromProps),
+        createRenderState: (0, _createRenderStateMjs.createHtmlRenderState)
+    })
+};
+
+},{"../../motion/utils/use-visual-state.mjs":"bYE4p","./utils/scrape-motion-values.mjs":"fCzyn","./utils/create-render-state.mjs":"fH0Wg","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"h2ALs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "gestureAnimations", ()=>gestureAnimations);
+var _hoverMjs = require("../../gestures/hover.mjs");
+var _focusMjs = require("../../gestures/focus.mjs");
+var _pressMjs = require("../../gestures/press.mjs");
+var _indexMjs = require("./viewport/index.mjs");
+const gestureAnimations = {
+    inView: {
+        Feature: (0, _indexMjs.InViewFeature)
+    },
+    tap: {
+        Feature: (0, _pressMjs.PressGesture)
+    },
+    focus: {
+        Feature: (0, _focusMjs.FocusGesture)
+    },
+    hover: {
+        Feature: (0, _hoverMjs.HoverGesture)
+    }
+};
+
+},{"../../gestures/hover.mjs":"45i9b","../../gestures/focus.mjs":"lF48W","../../gestures/press.mjs":"f9WQy","./viewport/index.mjs":"lrrdM","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"45i9b":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HoverGesture", ()=>HoverGesture);
+var _addPointerEventMjs = require("../events/add-pointer-event.mjs");
+var _pipeMjs = require("../utils/pipe.mjs");
+var _lockMjs = require("./drag/utils/lock.mjs");
+var _featureMjs = require("../motion/features/Feature.mjs");
+var _indexMjs = require("../frameloop/index.mjs");
+function addHoverEvent(node, isActive) {
+    const eventName = "pointer" + (isActive ? "enter" : "leave");
+    const callbackName = "onHover" + (isActive ? "Start" : "End");
+    const handleEvent = (event, info)=>{
+        if (event.type === "touch" || (0, _lockMjs.isDragActive)()) return;
+        const props = node.getProps();
+        if (node.animationState && props.whileHover) node.animationState.setActive("whileHover", isActive);
+        if (props[callbackName]) (0, _indexMjs.frame).update(()=>props[callbackName](event, info));
+    };
+    return (0, _addPointerEventMjs.addPointerEvent)(node.current, eventName, handleEvent, {
+        passive: !node.getProps()[callbackName]
+    });
+}
+class HoverGesture extends (0, _featureMjs.Feature) {
+    mount() {
+        this.unmount = (0, _pipeMjs.pipe)(addHoverEvent(this.node, true), addHoverEvent(this.node, false));
+    }
+    unmount() {}
+}
+
+},{"../events/add-pointer-event.mjs":"80iJi","../utils/pipe.mjs":"jGo2b","./drag/utils/lock.mjs":"81Jq8","../motion/features/Feature.mjs":"lI7Ue","../frameloop/index.mjs":"3Dz3U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"80iJi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addPointerEvent", ()=>addPointerEvent);
+var _addDomEventMjs = require("./add-dom-event.mjs");
+var _eventInfoMjs = require("./event-info.mjs");
+function addPointerEvent(target, eventName, handler, options) {
+    return (0, _addDomEventMjs.addDomEvent)(target, eventName, (0, _eventInfoMjs.addPointerInfo)(handler), options);
+}
+
+},{"./add-dom-event.mjs":"jAgCf","./event-info.mjs":"4Spbd","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jAgCf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addDomEvent", ()=>addDomEvent);
+function addDomEvent(target, eventName, handler, options = {
+    passive: true
+}) {
+    target.addEventListener(eventName, handler, options);
+    return ()=>target.removeEventListener(eventName, handler);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4Spbd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addPointerInfo", ()=>addPointerInfo);
+parcelHelpers.export(exports, "extractEventInfo", ()=>extractEventInfo);
+var _isPrimaryPointerMjs = require("./utils/is-primary-pointer.mjs");
+function extractEventInfo(event, pointType = "page") {
+    return {
+        point: {
+            x: event[pointType + "X"],
+            y: event[pointType + "Y"]
+        }
+    };
+}
+const addPointerInfo = (handler)=>{
+    return (event)=>(0, _isPrimaryPointerMjs.isPrimaryPointer)(event) && handler(event, extractEventInfo(event));
+};
+
+},{"./utils/is-primary-pointer.mjs":"lSBSo","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lSBSo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isPrimaryPointer", ()=>isPrimaryPointer);
+const isPrimaryPointer = (event)=>{
+    if (event.pointerType === "mouse") return typeof event.button !== "number" || event.button <= 0;
+    else /**
+         * isPrimary is true for all mice buttons, whereas every touch point
+         * is regarded as its own input. So subsequent concurrent touch points
+         * will be false.
+         *
+         * Specifically match against false here as incomplete versions of
+         * PointerEvents in very old browser might have it set as undefined.
+         */ return event.isPrimary !== false;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jGo2b":[function(require,module,exports) {
+/**
+ * Pipe
+ * Compose other transformers to run linearily
+ * pipe(min(20), max(40))
+ * @param  {...functions} transformers
+ * @return {function}
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "pipe", ()=>pipe);
+const combineFunctions = (a, b)=>(v)=>b(a(v));
+const pipe = (...transformers)=>transformers.reduce(combineFunctions);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"81Jq8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createLock", ()=>createLock);
+parcelHelpers.export(exports, "getGlobalLock", ()=>getGlobalLock);
+parcelHelpers.export(exports, "isDragActive", ()=>isDragActive);
+function createLock(name) {
+    let lock = null;
+    return ()=>{
+        const openLock = ()=>{
+            lock = null;
+        };
+        if (lock === null) {
+            lock = name;
+            return openLock;
+        }
+        return false;
+    };
+}
+const globalHorizontalLock = createLock("dragHorizontal");
+const globalVerticalLock = createLock("dragVertical");
+function getGlobalLock(drag) {
+    let lock = false;
+    if (drag === "y") lock = globalVerticalLock();
+    else if (drag === "x") lock = globalHorizontalLock();
+    else {
+        const openHorizontal = globalHorizontalLock();
+        const openVertical = globalVerticalLock();
+        if (openHorizontal && openVertical) lock = ()=>{
+            openHorizontal();
+            openVertical();
+        };
+        else {
+            // Release the locks because we don't use them
+            if (openHorizontal) openHorizontal();
+            if (openVertical) openVertical();
+        }
+    }
+    return lock;
+}
+function isDragActive() {
+    // Check the gesture lock - if we get it, it means no drag gesture is active
+    // and we can safely fire the tap gesture.
+    const openGestureLock = getGlobalLock(true);
+    if (!openGestureLock) return true;
+    openGestureLock();
+    return false;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lI7Ue":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Feature", ()=>Feature);
+class Feature {
+    constructor(node){
+        this.isMounted = false;
+        this.node = node;
+    }
+    update() {}
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3Dz3U":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cancelFrame", ()=>cancelFrame);
+parcelHelpers.export(exports, "frame", ()=>frame);
+parcelHelpers.export(exports, "steps", ()=>steps);
+parcelHelpers.export(exports, "stepsOrder", ()=>stepsOrder);
+var _createRenderStepMjs = require("./create-render-step.mjs");
+var _dataMjs = require("./data.mjs");
+const maxElapsed = 40;
+let useDefaultElapsed = true;
+let runNextFrame = false;
+const stepsOrder = [
+    "read",
+    "update",
+    "preRender",
+    "render",
+    "postRender"
+];
+const steps = stepsOrder.reduce((acc, key)=>{
+    acc[key] = (0, _createRenderStepMjs.createRenderStep)(()=>runNextFrame = true);
+    return acc;
+}, {});
+const processStep = (stepId)=>steps[stepId].process((0, _dataMjs.frameData));
+const processFrame = (timestamp)=>{
+    runNextFrame = false;
+    (0, _dataMjs.frameData).delta = useDefaultElapsed ? 1000 / 60 : Math.max(Math.min(timestamp - (0, _dataMjs.frameData).timestamp, maxElapsed), 1);
+    (0, _dataMjs.frameData).timestamp = timestamp;
+    (0, _dataMjs.frameData).isProcessing = true;
+    stepsOrder.forEach(processStep);
+    (0, _dataMjs.frameData).isProcessing = false;
+    if (runNextFrame) {
+        useDefaultElapsed = false;
+        requestAnimationFrame(processFrame);
+    }
+};
+const startLoop = ()=>{
+    runNextFrame = true;
+    useDefaultElapsed = true;
+    if (!(0, _dataMjs.frameData).isProcessing) requestAnimationFrame(processFrame);
+};
+const frame = stepsOrder.reduce((acc, key)=>{
+    const step = steps[key];
+    acc[key] = (process, keepAlive = false, immediate = false)=>{
+        if (!runNextFrame) startLoop();
+        return step.schedule(process, keepAlive, immediate);
+    };
+    return acc;
+}, {});
+function cancelFrame(process) {
+    stepsOrder.forEach((key)=>steps[key].cancel(process));
+}
+
+},{"./create-render-step.mjs":"lWrBK","./data.mjs":"gzDj4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lWrBK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createRenderStep", ()=>createRenderStep);
+function createRenderStep(runNextFrame) {
+    /**
+     * We create and reuse two arrays, one to queue jobs for the current frame
+     * and one for the next. We reuse to avoid triggering GC after x frames.
+     */ let toRun = [];
+    let toRunNextFrame = [];
+    /**
+     *
+     */ let numToRun = 0;
+    /**
+     * Track whether we're currently processing jobs in this step. This way
+     * we can decide whether to schedule new jobs for this frame or next.
+     */ let isProcessing = false;
+    let flushNextFrame = false;
+    /**
+     * A set of processes which were marked keepAlive when scheduled.
+     */ const toKeepAlive = new WeakSet();
+    const step = {
+        /**
+         * Schedule a process to run on the next frame.
+         */ schedule: (callback, keepAlive = false, immediate = false)=>{
+            const addToCurrentFrame = immediate && isProcessing;
+            const buffer = addToCurrentFrame ? toRun : toRunNextFrame;
+            if (keepAlive) toKeepAlive.add(callback);
+            // If the buffer doesn't already contain this callback, add it
+            if (buffer.indexOf(callback) === -1) {
+                buffer.push(callback);
+                // If we're adding it to the currently running buffer, update its measured size
+                if (addToCurrentFrame && isProcessing) numToRun = toRun.length;
+            }
+            return callback;
+        },
+        /**
+         * Cancel the provided callback from running on the next frame.
+         */ cancel: (callback)=>{
+            const index = toRunNextFrame.indexOf(callback);
+            if (index !== -1) toRunNextFrame.splice(index, 1);
+            toKeepAlive.delete(callback);
+        },
+        /**
+         * Execute all schedule callbacks.
+         */ process: (frameData)=>{
+            /**
+             * If we're already processing we've probably been triggered by a flushSync
+             * inside an existing process. Instead of executing, mark flushNextFrame
+             * as true and ensure we flush the following frame at the end of this one.
+             */ if (isProcessing) {
+                flushNextFrame = true;
+                return;
+            }
+            isProcessing = true;
+            [toRun, toRunNextFrame] = [
+                toRunNextFrame,
+                toRun
+            ];
+            // Clear the next frame list
+            toRunNextFrame.length = 0;
+            // Execute this frame
+            numToRun = toRun.length;
+            if (numToRun) for(let i = 0; i < numToRun; i++){
+                const callback = toRun[i];
+                callback(frameData);
+                if (toKeepAlive.has(callback)) {
+                    step.schedule(callback);
+                    runNextFrame();
+                }
+            }
+            isProcessing = false;
+            if (flushNextFrame) {
+                flushNextFrame = false;
+                step.process(frameData);
+            }
+        }
+    };
+    return step;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gzDj4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "frameData", ()=>frameData);
+const frameData = {
+    delta: 0,
+    timestamp: 0,
+    isProcessing: false
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lF48W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FocusGesture", ()=>FocusGesture);
+var _addDomEventMjs = require("../events/add-dom-event.mjs");
+var _featureMjs = require("../motion/features/Feature.mjs");
+var _pipeMjs = require("../utils/pipe.mjs");
+class FocusGesture extends (0, _featureMjs.Feature) {
+    constructor(){
+        super(...arguments);
+        this.isActive = false;
+    }
+    onFocus() {
+        let isFocusVisible = false;
+        /**
+         * If this element doesn't match focus-visible then don't
+         * apply whileHover. But, if matches throws that focus-visible
+         * is not a valid selector then in that browser outline styles will be applied
+         * to the element by default and we want to match that behaviour with whileFocus.
+         */ try {
+            isFocusVisible = this.node.current.matches(":focus-visible");
+        } catch (e) {
+            isFocusVisible = true;
+        }
+        if (!isFocusVisible || !this.node.animationState) return;
+        this.node.animationState.setActive("whileFocus", true);
+        this.isActive = true;
+    }
+    onBlur() {
+        if (!this.isActive || !this.node.animationState) return;
+        this.node.animationState.setActive("whileFocus", false);
+        this.isActive = false;
+    }
+    mount() {
+        this.unmount = (0, _pipeMjs.pipe)((0, _addDomEventMjs.addDomEvent)(this.node.current, "focus", ()=>this.onFocus()), (0, _addDomEventMjs.addDomEvent)(this.node.current, "blur", ()=>this.onBlur()));
+    }
+    unmount() {}
+}
+
+},{"../events/add-dom-event.mjs":"jAgCf","../motion/features/Feature.mjs":"lI7Ue","../utils/pipe.mjs":"jGo2b","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"f9WQy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "PressGesture", ()=>PressGesture);
+var _eventInfoMjs = require("../events/event-info.mjs");
+var _addDomEventMjs = require("../events/add-dom-event.mjs");
+var _addPointerEventMjs = require("../events/add-pointer-event.mjs");
+var _featureMjs = require("../motion/features/Feature.mjs");
+var _pipeMjs = require("../utils/pipe.mjs");
+var _lockMjs = require("./drag/utils/lock.mjs");
+var _isNodeOrChildMjs = require("./utils/is-node-or-child.mjs");
+var _noopMjs = require("../utils/noop.mjs");
+var _indexMjs = require("../frameloop/index.mjs");
+function fireSyntheticPointerEvent(name, handler) {
+    if (!handler) return;
+    const syntheticPointerEvent = new PointerEvent("pointer" + name);
+    handler(syntheticPointerEvent, (0, _eventInfoMjs.extractEventInfo)(syntheticPointerEvent));
+}
+class PressGesture extends (0, _featureMjs.Feature) {
+    constructor(){
+        super(...arguments);
+        this.removeStartListeners = (0, _noopMjs.noop);
+        this.removeEndListeners = (0, _noopMjs.noop);
+        this.removeAccessibleListeners = (0, _noopMjs.noop);
+        this.startPointerPress = (startEvent, startInfo)=>{
+            this.removeEndListeners();
+            if (this.isPressing) return;
+            const props = this.node.getProps();
+            const endPointerPress = (endEvent, endInfo)=>{
+                if (!this.checkPressEnd()) return;
+                const { onTap , onTapCancel  } = this.node.getProps();
+                (0, _indexMjs.frame).update(()=>{
+                    /**
+                     * We only count this as a tap gesture if the event.target is the same
+                     * as, or a child of, this component's element
+                     */ !(0, _isNodeOrChildMjs.isNodeOrChild)(this.node.current, endEvent.target) ? onTapCancel && onTapCancel(endEvent, endInfo) : onTap && onTap(endEvent, endInfo);
+                });
+            };
+            const removePointerUpListener = (0, _addPointerEventMjs.addPointerEvent)(window, "pointerup", endPointerPress, {
+                passive: !(props.onTap || props["onPointerUp"])
+            });
+            const removePointerCancelListener = (0, _addPointerEventMjs.addPointerEvent)(window, "pointercancel", (cancelEvent, cancelInfo)=>this.cancelPress(cancelEvent, cancelInfo), {
+                passive: !(props.onTapCancel || props["onPointerCancel"])
+            });
+            this.removeEndListeners = (0, _pipeMjs.pipe)(removePointerUpListener, removePointerCancelListener);
+            this.startPress(startEvent, startInfo);
+        };
+        this.startAccessiblePress = ()=>{
+            const handleKeydown = (keydownEvent)=>{
+                if (keydownEvent.key !== "Enter" || this.isPressing) return;
+                const handleKeyup = (keyupEvent)=>{
+                    if (keyupEvent.key !== "Enter" || !this.checkPressEnd()) return;
+                    fireSyntheticPointerEvent("up", (event, info)=>{
+                        const { onTap  } = this.node.getProps();
+                        if (onTap) (0, _indexMjs.frame).update(()=>onTap(event, info));
+                    });
+                };
+                this.removeEndListeners();
+                this.removeEndListeners = (0, _addDomEventMjs.addDomEvent)(this.node.current, "keyup", handleKeyup);
+                fireSyntheticPointerEvent("down", (event, info)=>{
+                    this.startPress(event, info);
+                });
+            };
+            const removeKeydownListener = (0, _addDomEventMjs.addDomEvent)(this.node.current, "keydown", handleKeydown);
+            const handleBlur = ()=>{
+                if (!this.isPressing) return;
+                fireSyntheticPointerEvent("cancel", (cancelEvent, cancelInfo)=>this.cancelPress(cancelEvent, cancelInfo));
+            };
+            const removeBlurListener = (0, _addDomEventMjs.addDomEvent)(this.node.current, "blur", handleBlur);
+            this.removeAccessibleListeners = (0, _pipeMjs.pipe)(removeKeydownListener, removeBlurListener);
+        };
+    }
+    startPress(event, info) {
+        this.isPressing = true;
+        const { onTapStart , whileTap  } = this.node.getProps();
+        /**
+         * Ensure we trigger animations before firing event callback
+         */ if (whileTap && this.node.animationState) this.node.animationState.setActive("whileTap", true);
+        if (onTapStart) (0, _indexMjs.frame).update(()=>onTapStart(event, info));
+    }
+    checkPressEnd() {
+        this.removeEndListeners();
+        this.isPressing = false;
+        const props = this.node.getProps();
+        if (props.whileTap && this.node.animationState) this.node.animationState.setActive("whileTap", false);
+        return !(0, _lockMjs.isDragActive)();
+    }
+    cancelPress(event, info) {
+        if (!this.checkPressEnd()) return;
+        const { onTapCancel  } = this.node.getProps();
+        if (onTapCancel) (0, _indexMjs.frame).update(()=>onTapCancel(event, info));
+    }
+    mount() {
+        const props = this.node.getProps();
+        const removePointerListener = (0, _addPointerEventMjs.addPointerEvent)(this.node.current, "pointerdown", this.startPointerPress, {
+            passive: !(props.onTapStart || props["onPointerStart"])
+        });
+        const removeFocusListener = (0, _addDomEventMjs.addDomEvent)(this.node.current, "focus", this.startAccessiblePress);
+        this.removeStartListeners = (0, _pipeMjs.pipe)(removePointerListener, removeFocusListener);
+    }
+    unmount() {
+        this.removeStartListeners();
+        this.removeEndListeners();
+        this.removeAccessibleListeners();
+    }
+}
+
+},{"../events/event-info.mjs":"4Spbd","../events/add-dom-event.mjs":"jAgCf","../events/add-pointer-event.mjs":"80iJi","../motion/features/Feature.mjs":"lI7Ue","../utils/pipe.mjs":"jGo2b","./drag/utils/lock.mjs":"81Jq8","./utils/is-node-or-child.mjs":"he1j7","../utils/noop.mjs":"67SDH","../frameloop/index.mjs":"3Dz3U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"he1j7":[function(require,module,exports) {
+/**
+ * Recursively traverse up the tree to check whether the provided child node
+ * is the parent or a descendant of it.
+ *
+ * @param parent - Element to find
+ * @param child - Element to test against parent
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isNodeOrChild", ()=>isNodeOrChild);
+const isNodeOrChild = (parent, child)=>{
+    if (!child) return false;
+    else if (parent === child) return true;
+    else return isNodeOrChild(parent, child.parentElement);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"67SDH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "noop", ()=>noop);
+const noop = (any)=>any;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lrrdM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "InViewFeature", ()=>InViewFeature);
+var _featureMjs = require("../Feature.mjs");
+var _observersMjs = require("./observers.mjs");
+const thresholdNames = {
+    some: 0,
+    all: 1
+};
+class InViewFeature extends (0, _featureMjs.Feature) {
+    constructor(){
+        super(...arguments);
+        this.hasEnteredView = false;
+        this.isInView = false;
+    }
+    startObserver() {
+        this.unmount();
+        const { viewport ={}  } = this.node.getProps();
+        const { root , margin: rootMargin , amount ="some" , once  } = viewport;
+        const options = {
+            root: root ? root.current : undefined,
+            rootMargin,
+            threshold: typeof amount === "number" ? amount : thresholdNames[amount]
+        };
+        const onIntersectionUpdate = (entry)=>{
+            const { isIntersecting  } = entry;
+            /**
+             * If there's been no change in the viewport state, early return.
+             */ if (this.isInView === isIntersecting) return;
+            this.isInView = isIntersecting;
+            /**
+             * Handle hasEnteredView. If this is only meant to run once, and
+             * element isn't visible, early return. Otherwise set hasEnteredView to true.
+             */ if (once && !isIntersecting && this.hasEnteredView) return;
+            else if (isIntersecting) this.hasEnteredView = true;
+            if (this.node.animationState) this.node.animationState.setActive("whileInView", isIntersecting);
+            /**
+             * Use the latest committed props rather than the ones in scope
+             * when this observer is created
+             */ const { onViewportEnter , onViewportLeave  } = this.node.getProps();
+            const callback = isIntersecting ? onViewportEnter : onViewportLeave;
+            callback && callback(entry);
+        };
+        return (0, _observersMjs.observeIntersection)(this.node.current, options, onIntersectionUpdate);
+    }
+    mount() {
+        this.startObserver();
+    }
+    update() {
+        if (typeof IntersectionObserver === "undefined") return;
+        const { props , prevProps  } = this.node;
+        const hasOptionsChanged = [
+            "amount",
+            "margin",
+            "root"
+        ].some(hasViewportOptionChanged(props, prevProps));
+        if (hasOptionsChanged) this.startObserver();
+    }
+    unmount() {}
+}
+function hasViewportOptionChanged({ viewport ={}  }, { viewport: prevViewport = {}  } = {}) {
+    return (name)=>viewport[name] !== prevViewport[name];
+}
+
+},{"../Feature.mjs":"lI7Ue","./observers.mjs":"esyQ3","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"esyQ3":[function(require,module,exports) {
+/**
+ * Map an IntersectionHandler callback to an element. We only ever make one handler for one
+ * element, so even though these handlers might all be triggered by different
+ * observers, we can keep them in the same map.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "observeIntersection", ()=>observeIntersection);
+const observerCallbacks = new WeakMap();
+/**
+ * Multiple observers can be created for multiple element/document roots. Each with
+ * different settings. So here we store dictionaries of observers to each root,
+ * using serialised settings (threshold/margin) as lookup keys.
+ */ const observers = new WeakMap();
+const fireObserverCallback = (entry)=>{
+    const callback = observerCallbacks.get(entry.target);
+    callback && callback(entry);
+};
+const fireAllObserverCallbacks = (entries)=>{
+    entries.forEach(fireObserverCallback);
+};
+function initIntersectionObserver({ root , ...options }) {
+    const lookupRoot = root || document;
+    /**
+     * If we don't have an observer lookup map for this root, create one.
+     */ if (!observers.has(lookupRoot)) observers.set(lookupRoot, {});
+    const rootObservers = observers.get(lookupRoot);
+    const key = JSON.stringify(options);
+    /**
+     * If we don't have an observer for this combination of root and settings,
+     * create one.
+     */ if (!rootObservers[key]) rootObservers[key] = new IntersectionObserver(fireAllObserverCallbacks, {
+        root,
+        ...options
+    });
+    return rootObservers[key];
+}
+function observeIntersection(element, options, callback) {
+    const rootInteresectionObserver = initIntersectionObserver(options);
+    observerCallbacks.set(element, callback);
+    rootInteresectionObserver.observe(element);
+    return ()=>{
+        observerCallbacks.delete(element);
+        rootInteresectionObserver.unobserve(element);
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"c1lwU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animations", ()=>animations);
+var _indexMjs = require("./animation/index.mjs");
+var _exitMjs = require("./animation/exit.mjs");
+const animations = {
+    animation: {
+        Feature: (0, _indexMjs.AnimationFeature)
+    },
+    exit: {
+        Feature: (0, _exitMjs.ExitAnimationFeature)
+    }
+};
+
+},{"./animation/index.mjs":"2F0Qk","./animation/exit.mjs":"inv8k","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2F0Qk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AnimationFeature", ()=>AnimationFeature);
+var _isAnimationControlsMjs = require("../../../animation/utils/is-animation-controls.mjs");
+var _animationStateMjs = require("../../../render/utils/animation-state.mjs");
+var _featureMjs = require("../Feature.mjs");
+class AnimationFeature extends (0, _featureMjs.Feature) {
+    /**
+     * We dynamically generate the AnimationState manager as it contains a reference
+     * to the underlying animation library. We only want to load that if we load this,
+     * so people can optionally code split it out using the `m` component.
+     */ constructor(node){
+        super(node);
+        node.animationState || (node.animationState = (0, _animationStateMjs.createAnimationState)(node));
+    }
+    updateAnimationControlsSubscription() {
+        const { animate  } = this.node.getProps();
+        this.unmount();
+        if ((0, _isAnimationControlsMjs.isAnimationControls)(animate)) this.unmount = animate.subscribe(this.node);
+    }
+    /**
+     * Subscribe any provided AnimationControls to the component's VisualElement
+     */ mount() {
+        this.updateAnimationControlsSubscription();
+    }
+    update() {
+        const { animate  } = this.node.getProps();
+        const { animate: prevAnimate  } = this.node.prevProps || {};
+        if (animate !== prevAnimate) this.updateAnimationControlsSubscription();
+    }
+    unmount() {}
+}
+
+},{"../../../animation/utils/is-animation-controls.mjs":"3wAZE","../../../render/utils/animation-state.mjs":"f4EjM","../Feature.mjs":"lI7Ue","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"f4EjM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkVariantsDidChange", ()=>checkVariantsDidChange);
+parcelHelpers.export(exports, "createAnimationState", ()=>createAnimationState);
+var _isAnimationControlsMjs = require("../../animation/utils/is-animation-controls.mjs");
+var _isKeyframesTargetMjs = require("../../animation/utils/is-keyframes-target.mjs");
+var _shallowCompareMjs = require("../../utils/shallow-compare.mjs");
+var _isVariantLabelMjs = require("./is-variant-label.mjs");
+var _resolveDynamicVariantsMjs = require("./resolve-dynamic-variants.mjs");
+var _variantPropsMjs = require("./variant-props.mjs");
+var _visualElementMjs = require("../../animation/interfaces/visual-element.mjs");
+const reversePriorityOrder = [
+    ...(0, _variantPropsMjs.variantPriorityOrder)
+].reverse();
+const numAnimationTypes = (0, _variantPropsMjs.variantPriorityOrder).length;
+function animateList(visualElement) {
+    return (animations)=>Promise.all(animations.map(({ animation , options  })=>(0, _visualElementMjs.animateVisualElement)(visualElement, animation, options)));
+}
+function createAnimationState(visualElement) {
+    let animate = animateList(visualElement);
+    const state = createState();
+    let isInitialRender = true;
+    /**
+     * This function will be used to reduce the animation definitions for
+     * each active animation type into an object of resolved values for it.
+     */ const buildResolvedTypeValues = (acc, definition)=>{
+        const resolved = (0, _resolveDynamicVariantsMjs.resolveVariant)(visualElement, definition);
+        if (resolved) {
+            const { transition , transitionEnd , ...target } = resolved;
+            acc = {
+                ...acc,
+                ...target,
+                ...transitionEnd
+            };
+        }
+        return acc;
+    };
+    /**
+     * This just allows us to inject mocked animation functions
+     * @internal
+     */ function setAnimateFunction(makeAnimator) {
+        animate = makeAnimator(visualElement);
+    }
+    /**
+     * When we receive new props, we need to:
+     * 1. Create a list of protected keys for each type. This is a directory of
+     *    value keys that are currently being "handled" by types of a higher priority
+     *    so that whenever an animation is played of a given type, these values are
+     *    protected from being animated.
+     * 2. Determine if an animation type needs animating.
+     * 3. Determine if any values have been removed from a type and figure out
+     *    what to animate those to.
+     */ function animateChanges(options, changedActiveType) {
+        const props = visualElement.getProps();
+        const context = visualElement.getVariantContext(true) || {};
+        /**
+         * A list of animations that we'll build into as we iterate through the animation
+         * types. This will get executed at the end of the function.
+         */ const animations = [];
+        /**
+         * Keep track of which values have been removed. Then, as we hit lower priority
+         * animation types, we can check if they contain removed values and animate to that.
+         */ const removedKeys = new Set();
+        /**
+         * A dictionary of all encountered keys. This is an object to let us build into and
+         * copy it without iteration. Each time we hit an animation type we set its protected
+         * keys - the keys its not allowed to animate - to the latest version of this object.
+         */ let encounteredKeys = {};
+        /**
+         * If a variant has been removed at a given index, and this component is controlling
+         * variant animations, we want to ensure lower-priority variants are forced to animate.
+         */ let removedVariantIndex = Infinity;
+        /**
+         * Iterate through all animation types in reverse priority order. For each, we want to
+         * detect which values it's handling and whether or not they've changed (and therefore
+         * need to be animated). If any values have been removed, we want to detect those in
+         * lower priority props and flag for animation.
+         */ for(let i = 0; i < numAnimationTypes; i++){
+            const type = reversePriorityOrder[i];
+            const typeState = state[type];
+            const prop = props[type] !== undefined ? props[type] : context[type];
+            const propIsVariant = (0, _isVariantLabelMjs.isVariantLabel)(prop);
+            /**
+             * If this type has *just* changed isActive status, set activeDelta
+             * to that status. Otherwise set to null.
+             */ const activeDelta = type === changedActiveType ? typeState.isActive : null;
+            if (activeDelta === false) removedVariantIndex = i;
+            /**
+             * If this prop is an inherited variant, rather than been set directly on the
+             * component itself, we want to make sure we allow the parent to trigger animations.
+             *
+             * TODO: Can probably change this to a !isControllingVariants check
+             */ let isInherited = prop === context[type] && prop !== props[type] && propIsVariant;
+            /**
+             *
+             */ if (isInherited && isInitialRender && visualElement.manuallyAnimateOnMount) isInherited = false;
+            /**
+             * Set all encountered keys so far as the protected keys for this type. This will
+             * be any key that has been animated or otherwise handled by active, higher-priortiy types.
+             */ typeState.protectedKeys = {
+                ...encounteredKeys
+            };
+            // Check if we can skip analysing this prop early
+            if (// If it isn't active and hasn't *just* been set as inactive
+            !typeState.isActive && activeDelta === null || // If we didn't and don't have any defined prop for this animation type
+            !prop && !typeState.prevProp || // Or if the prop doesn't define an animation
+            (0, _isAnimationControlsMjs.isAnimationControls)(prop) || typeof prop === "boolean") continue;
+            /**
+             * As we go look through the values defined on this type, if we detect
+             * a changed value or a value that was removed in a higher priority, we set
+             * this to true and add this prop to the animation list.
+             */ const variantDidChange = checkVariantsDidChange(typeState.prevProp, prop);
+            let shouldAnimateType = variantDidChange || // If we're making this variant active, we want to always make it active
+            type === changedActiveType && typeState.isActive && !isInherited && propIsVariant || // If we removed a higher-priority variant (i is in reverse order)
+            i > removedVariantIndex && propIsVariant;
+            /**
+             * As animations can be set as variant lists, variants or target objects, we
+             * coerce everything to an array if it isn't one already
+             */ const definitionList = Array.isArray(prop) ? prop : [
+                prop
+            ];
+            /**
+             * Build an object of all the resolved values. We'll use this in the subsequent
+             * animateChanges calls to determine whether a value has changed.
+             */ let resolvedValues = definitionList.reduce(buildResolvedTypeValues, {});
+            if (activeDelta === false) resolvedValues = {};
+            /**
+             * Now we need to loop through all the keys in the prev prop and this prop,
+             * and decide:
+             * 1. If the value has changed, and needs animating
+             * 2. If it has been removed, and needs adding to the removedKeys set
+             * 3. If it has been removed in a higher priority type and needs animating
+             * 4. If it hasn't been removed in a higher priority but hasn't changed, and
+             *    needs adding to the type's protectedKeys list.
+             */ const { prevResolvedValues ={}  } = typeState;
+            const allKeys = {
+                ...prevResolvedValues,
+                ...resolvedValues
+            };
+            const markToAnimate = (key)=>{
+                shouldAnimateType = true;
+                removedKeys.delete(key);
+                typeState.needsAnimating[key] = true;
+            };
+            for(const key in allKeys){
+                const next = resolvedValues[key];
+                const prev = prevResolvedValues[key];
+                // If we've already handled this we can just skip ahead
+                if (encounteredKeys.hasOwnProperty(key)) continue;
+                /**
+                 * If the value has changed, we probably want to animate it.
+                 */ if (next !== prev) {
+                    /**
+                     * If both values are keyframes, we need to shallow compare them to
+                     * detect whether any value has changed. If it has, we animate it.
+                     */ if ((0, _isKeyframesTargetMjs.isKeyframesTarget)(next) && (0, _isKeyframesTargetMjs.isKeyframesTarget)(prev)) {
+                        if (!(0, _shallowCompareMjs.shallowCompare)(next, prev) || variantDidChange) markToAnimate(key);
+                        else /**
+                             * If it hasn't changed, we want to ensure it doesn't animate by
+                             * adding it to the list of protected keys.
+                             */ typeState.protectedKeys[key] = true;
+                    } else if (next !== undefined) // If next is defined and doesn't equal prev, it needs animating
+                    markToAnimate(key);
+                    else // If it's undefined, it's been removed.
+                    removedKeys.add(key);
+                } else if (next !== undefined && removedKeys.has(key)) /**
+                     * If next hasn't changed and it isn't undefined, we want to check if it's
+                     * been removed by a higher priority
+                     */ markToAnimate(key);
+                else /**
+                     * If it hasn't changed, we add it to the list of protected values
+                     * to ensure it doesn't get animated.
+                     */ typeState.protectedKeys[key] = true;
+            }
+            /**
+             * Update the typeState so next time animateChanges is called we can compare the
+             * latest prop and resolvedValues to these.
+             */ typeState.prevProp = prop;
+            typeState.prevResolvedValues = resolvedValues;
+            /**
+             *
+             */ if (typeState.isActive) encounteredKeys = {
+                ...encounteredKeys,
+                ...resolvedValues
+            };
+            if (isInitialRender && visualElement.blockInitialAnimation) shouldAnimateType = false;
+            /**
+             * If this is an inherited prop we want to hard-block animations
+             * TODO: Test as this should probably still handle animations triggered
+             * by removed values?
+             */ if (shouldAnimateType && !isInherited) animations.push(...definitionList.map((animation)=>({
+                    animation: animation,
+                    options: {
+                        type,
+                        ...options
+                    }
+                })));
+        }
+        /**
+         * If there are some removed value that haven't been dealt with,
+         * we need to create a new animation that falls back either to the value
+         * defined in the style prop, or the last read value.
+         */ if (removedKeys.size) {
+            const fallbackAnimation = {};
+            removedKeys.forEach((key)=>{
+                const fallbackTarget = visualElement.getBaseTarget(key);
+                if (fallbackTarget !== undefined) fallbackAnimation[key] = fallbackTarget;
+            });
+            animations.push({
+                animation: fallbackAnimation
+            });
+        }
+        let shouldAnimate = Boolean(animations.length);
+        if (isInitialRender && props.initial === false && !visualElement.manuallyAnimateOnMount) shouldAnimate = false;
+        isInitialRender = false;
+        return shouldAnimate ? animate(animations) : Promise.resolve();
+    }
+    /**
+     * Change whether a certain animation type is active.
+     */ function setActive(type, isActive, options) {
+        var _a;
+        // If the active state hasn't changed, we can safely do nothing here
+        if (state[type].isActive === isActive) return Promise.resolve();
+        // Propagate active change to children
+        (_a = visualElement.variantChildren) === null || _a === void 0 || _a.forEach((child)=>{
+            var _a;
+            return (_a = child.animationState) === null || _a === void 0 ? void 0 : _a.setActive(type, isActive);
+        });
+        state[type].isActive = isActive;
+        const animations = animateChanges(options, type);
+        for(const key in state)state[key].protectedKeys = {};
+        return animations;
+    }
+    return {
+        animateChanges,
+        setActive,
+        setAnimateFunction,
+        getState: ()=>state
+    };
+}
+function checkVariantsDidChange(prev, next) {
+    if (typeof next === "string") return next !== prev;
+    else if (Array.isArray(next)) return !(0, _shallowCompareMjs.shallowCompare)(next, prev);
+    return false;
+}
+function createTypeState(isActive = false) {
+    return {
+        isActive,
+        protectedKeys: {},
+        needsAnimating: {},
+        prevResolvedValues: {}
+    };
+}
+function createState() {
+    return {
+        animate: createTypeState(true),
+        whileInView: createTypeState(),
+        whileHover: createTypeState(),
+        whileTap: createTypeState(),
+        whileDrag: createTypeState(),
+        whileFocus: createTypeState(),
+        exit: createTypeState()
+    };
+}
+
+},{"../../animation/utils/is-animation-controls.mjs":"3wAZE","../../animation/utils/is-keyframes-target.mjs":"sPTPk","../../utils/shallow-compare.mjs":"7y29z","./is-variant-label.mjs":"erxli","./resolve-dynamic-variants.mjs":"dSXph","./variant-props.mjs":"huf2R","../../animation/interfaces/visual-element.mjs":"e0aFv","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7y29z":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "shallowCompare", ()=>shallowCompare);
+function shallowCompare(next, prev) {
+    if (!Array.isArray(prev)) return false;
+    const prevLength = prev.length;
+    if (prevLength !== next.length) return false;
+    for(let i = 0; i < prevLength; i++){
+        if (prev[i] !== next[i]) return false;
+    }
+    return true;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dSXph":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resolveVariant", ()=>resolveVariant);
+var _resolveVariantsMjs = require("./resolve-variants.mjs");
+/**
+ * Creates an object containing the latest state of every MotionValue on a VisualElement
+ */ function getCurrent(visualElement) {
+    const current = {};
+    visualElement.values.forEach((value, key)=>current[key] = value.get());
+    return current;
+}
+/**
+ * Creates an object containing the latest velocity of every MotionValue on a VisualElement
+ */ function getVelocity(visualElement) {
+    const velocity = {};
+    visualElement.values.forEach((value, key)=>velocity[key] = value.getVelocity());
+    return velocity;
+}
+function resolveVariant(visualElement, definition, custom) {
+    const props = visualElement.getProps();
+    return (0, _resolveVariantsMjs.resolveVariantFromProps)(props, definition, custom !== undefined ? custom : props.custom, getCurrent(visualElement), getVelocity(visualElement));
+}
+
+},{"./resolve-variants.mjs":"8MzkH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"e0aFv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateVisualElement", ()=>animateVisualElement);
+var _resolveDynamicVariantsMjs = require("../../render/utils/resolve-dynamic-variants.mjs");
+var _visualElementTargetMjs = require("./visual-element-target.mjs");
+var _visualElementVariantMjs = require("./visual-element-variant.mjs");
+function animateVisualElement(visualElement, definition, options = {}) {
+    visualElement.notify("AnimationStart", definition);
+    let animation;
+    if (Array.isArray(definition)) {
+        const animations = definition.map((variant)=>(0, _visualElementVariantMjs.animateVariant)(visualElement, variant, options));
+        animation = Promise.all(animations);
+    } else if (typeof definition === "string") animation = (0, _visualElementVariantMjs.animateVariant)(visualElement, definition, options);
+    else {
+        const resolvedDefinition = typeof definition === "function" ? (0, _resolveDynamicVariantsMjs.resolveVariant)(visualElement, definition, options.custom) : definition;
+        animation = Promise.all((0, _visualElementTargetMjs.animateTarget)(visualElement, resolvedDefinition, options));
+    }
+    return animation.then(()=>visualElement.notify("AnimationComplete", definition));
+}
+
+},{"../../render/utils/resolve-dynamic-variants.mjs":"dSXph","./visual-element-target.mjs":"6SL9E","./visual-element-variant.mjs":"80mMV","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6SL9E":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateTarget", ()=>animateTarget);
+var _indexMjs = require("../../frameloop/index.mjs");
+var _transformMjs = require("../../render/html/utils/transform.mjs");
+var _dataIdMjs = require("../optimized-appear/data-id.mjs");
+var _motionValueMjs = require("./motion-value.mjs");
+var _isMjs = require("../../value/use-will-change/is.mjs");
+var _settersMjs = require("../../render/utils/setters.mjs");
+/**
+ * Decide whether we should block this animation. Previously, we achieved this
+ * just by checking whether the key was listed in protectedKeys, but this
+ * posed problems if an animation was triggered by afterChildren and protectedKeys
+ * had been set to true in the meantime.
+ */ function shouldBlockAnimation({ protectedKeys , needsAnimating  }, key) {
+    const shouldBlock = protectedKeys.hasOwnProperty(key) && needsAnimating[key] !== true;
+    needsAnimating[key] = false;
+    return shouldBlock;
+}
+function animateTarget(visualElement, definition, { delay =0 , transitionOverride , type  } = {}) {
+    let { transition =visualElement.getDefaultTransition() , transitionEnd , ...target } = visualElement.makeTargetAnimatable(definition);
+    const willChange = visualElement.getValue("willChange");
+    if (transitionOverride) transition = transitionOverride;
+    const animations = [];
+    const animationTypeState = type && visualElement.animationState && visualElement.animationState.getState()[type];
+    for(const key in target){
+        const value = visualElement.getValue(key);
+        const valueTarget = target[key];
+        if (!value || valueTarget === undefined || animationTypeState && shouldBlockAnimation(animationTypeState, key)) continue;
+        const valueTransition = {
+            delay,
+            elapsed: 0,
+            ...transition
+        };
+        /**
+         * If this is the first time a value is being animated, check
+         * to see if we're handling off from an existing animation.
+         */ if (window.HandoffAppearAnimations && !value.hasAnimated) {
+            const appearId = visualElement.getProps()[0, _dataIdMjs.optimizedAppearDataAttribute];
+            if (appearId) valueTransition.elapsed = window.HandoffAppearAnimations(appearId, key, value, (0, _indexMjs.frame));
+        }
+        value.start((0, _motionValueMjs.animateMotionValue)(key, value, valueTarget, visualElement.shouldReduceMotion && (0, _transformMjs.transformProps).has(key) ? {
+            type: false
+        } : valueTransition));
+        const animation = value.animation;
+        if ((0, _isMjs.isWillChangeMotionValue)(willChange)) {
+            willChange.add(key);
+            animation.then(()=>willChange.remove(key));
+        }
+        animations.push(animation);
+    }
+    if (transitionEnd) Promise.all(animations).then(()=>{
+        transitionEnd && (0, _settersMjs.setTarget)(visualElement, transitionEnd);
+    });
+    return animations;
+}
+
+},{"../../frameloop/index.mjs":"3Dz3U","../../render/html/utils/transform.mjs":"iSy8E","../optimized-appear/data-id.mjs":"4rpx1","./motion-value.mjs":"gQYlj","../../value/use-will-change/is.mjs":"6vOmr","../../render/utils/setters.mjs":"5AEB8","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4rpx1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "optimizedAppearDataAttribute", ()=>optimizedAppearDataAttribute);
+parcelHelpers.export(exports, "optimizedAppearDataId", ()=>optimizedAppearDataId);
+var _camelToDashMjs = require("../../render/dom/utils/camel-to-dash.mjs");
+const optimizedAppearDataId = "framerAppearId";
+const optimizedAppearDataAttribute = "data-" + (0, _camelToDashMjs.camelToDash)(optimizedAppearDataId);
+
+},{"../../render/dom/utils/camel-to-dash.mjs":"eUOx7","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gQYlj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateMotionValue", ()=>animateMotionValue);
+var _errorsMjs = require("../../utils/errors.mjs");
+var _timeConversionMjs = require("../../utils/time-conversion.mjs");
+var _useInstantTransitionStateMjs = require("../../utils/use-instant-transition-state.mjs");
+var _createAcceleratedAnimationMjs = require("../animators/waapi/create-accelerated-animation.mjs");
+var _instantMjs = require("../animators/instant.mjs");
+var _defaultTransitionsMjs = require("../utils/default-transitions.mjs");
+var _isAnimatableMjs = require("../utils/is-animatable.mjs");
+var _keyframesMjs = require("../utils/keyframes.mjs");
+var _transitionsMjs = require("../utils/transitions.mjs");
+var _indexMjs = require("../animators/js/index.mjs");
+const animateMotionValue = (valueName, value, target, transition = {})=>{
+    return (onComplete)=>{
+        const valueTransition = (0, _transitionsMjs.getValueTransition)(transition, valueName) || {};
+        /**
+         * Most transition values are currently completely overwritten by value-specific
+         * transitions. In the future it'd be nicer to blend these transitions. But for now
+         * delay actually does inherit from the root transition if not value-specific.
+         */ const delay = valueTransition.delay || transition.delay || 0;
+        /**
+         * Elapsed isn't a public transition option but can be passed through from
+         * optimized appear effects in milliseconds.
+         */ let { elapsed =0  } = transition;
+        elapsed = elapsed - (0, _timeConversionMjs.secondsToMilliseconds)(delay);
+        const keyframes = (0, _keyframesMjs.getKeyframes)(value, valueName, target, valueTransition);
+        /**
+         * Check if we're able to animate between the start and end keyframes,
+         * and throw a warning if we're attempting to animate between one that's
+         * animatable and another that isn't.
+         */ const originKeyframe = keyframes[0];
+        const targetKeyframe = keyframes[keyframes.length - 1];
+        const isOriginAnimatable = (0, _isAnimatableMjs.isAnimatable)(valueName, originKeyframe);
+        const isTargetAnimatable = (0, _isAnimatableMjs.isAnimatable)(valueName, targetKeyframe);
+        (0, _errorsMjs.warning)(isOriginAnimatable === isTargetAnimatable, `You are trying to animate ${valueName} from "${originKeyframe}" to "${targetKeyframe}". ${originKeyframe} is not an animatable value - to enable this animation set ${originKeyframe} to a value animatable to ${targetKeyframe} via the \`style\` property.`);
+        let options = {
+            keyframes,
+            velocity: value.getVelocity(),
+            ease: "easeOut",
+            ...valueTransition,
+            delay: -elapsed,
+            onUpdate: (v)=>{
+                value.set(v);
+                valueTransition.onUpdate && valueTransition.onUpdate(v);
+            },
+            onComplete: ()=>{
+                onComplete();
+                valueTransition.onComplete && valueTransition.onComplete();
+            }
+        };
+        /**
+         * If there's no transition defined for this value, we can generate
+         * unqiue transition settings for this value.
+         */ if (!(0, _transitionsMjs.isTransitionDefined)(valueTransition)) options = {
+            ...options,
+            ...(0, _defaultTransitionsMjs.getDefaultTransition)(valueName, options)
+        };
+        /**
+         * Both WAAPI and our internal animation functions use durations
+         * as defined by milliseconds, while our external API defines them
+         * as seconds.
+         */ if (options.duration) options.duration = (0, _timeConversionMjs.secondsToMilliseconds)(options.duration);
+        if (options.repeatDelay) options.repeatDelay = (0, _timeConversionMjs.secondsToMilliseconds)(options.repeatDelay);
+        if (!isOriginAnimatable || !isTargetAnimatable || (0, _useInstantTransitionStateMjs.instantAnimationState).current || valueTransition.type === false) /**
+             * If we can't animate this value, or the global instant animation flag is set,
+             * or this is simply defined as an instant transition, return an instant transition.
+             */ return (0, _instantMjs.createInstantAnimation)(options);
+        /**
+         * Animate via WAAPI if possible.
+         */ if (value.owner && value.owner.current instanceof HTMLElement && !value.owner.getProps().onUpdate) {
+            const acceleratedAnimation = (0, _createAcceleratedAnimationMjs.createAcceleratedAnimation)(value, valueName, options);
+            if (acceleratedAnimation) return acceleratedAnimation;
+        }
+        /**
+         * If we didn't create an accelerated animation, create a JS animation
+         */ return (0, _indexMjs.animateValue)(options);
+    };
+};
+
+},{"../../utils/errors.mjs":"drRZ6","../../utils/time-conversion.mjs":"gdr8V","../../utils/use-instant-transition-state.mjs":"acYRG","../animators/waapi/create-accelerated-animation.mjs":"dCQxY","../animators/instant.mjs":"luMrD","../utils/default-transitions.mjs":"4yIKR","../utils/is-animatable.mjs":"7YoDs","../utils/keyframes.mjs":"1c50D","../utils/transitions.mjs":"bsOYk","../animators/js/index.mjs":"5PB20","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"drRZ6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "invariant", ()=>invariant);
+parcelHelpers.export(exports, "warning", ()=>warning);
+var _noopMjs = require("./noop.mjs");
+let warning = (0, _noopMjs.noop);
+let invariant = (0, _noopMjs.noop);
+warning = (check, message)=>{
+    if (!check && typeof console !== "undefined") console.warn(message);
+};
+invariant = (check, message)=>{
+    if (!check) throw new Error(message);
+};
+
+},{"./noop.mjs":"67SDH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gdr8V":[function(require,module,exports) {
+/**
+ * Converts seconds to milliseconds
+ *
+ * @param seconds - Time in seconds.
+ * @return milliseconds - Converted time in milliseconds.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "millisecondsToSeconds", ()=>millisecondsToSeconds);
+parcelHelpers.export(exports, "secondsToMilliseconds", ()=>secondsToMilliseconds);
+const secondsToMilliseconds = (seconds)=>seconds * 1000;
+const millisecondsToSeconds = (milliseconds)=>milliseconds / 1000;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"acYRG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "instantAnimationState", ()=>instantAnimationState);
+const instantAnimationState = {
+    current: false
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dCQxY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createAcceleratedAnimation", ()=>createAcceleratedAnimation);
+var _indexMjs = require("../../../frameloop/index.mjs");
+var _indexMjs1 = require("./index.mjs");
+var _easingMjs = require("./easing.mjs");
+var _supportsMjs = require("./supports.mjs");
+var _getFinalKeyframeMjs = require("./utils/get-final-keyframe.mjs");
+var _indexMjs2 = require("../js/index.mjs");
+var _timeConversionMjs = require("../../../utils/time-conversion.mjs");
+/**
+ * A list of values that can be hardware-accelerated.
+ */ const acceleratedValues = new Set([
+    "opacity",
+    "clipPath",
+    "filter",
+    "transform",
+    "backgroundColor"
+]);
+/**
+ * 10ms is chosen here as it strikes a balance between smooth
+ * results (more than one keyframe per frame at 60fps) and
+ * keyframe quantity.
+ */ const sampleDelta = 10; //ms
+/**
+ * Implement a practical max duration for keyframe generation
+ * to prevent infinite loops
+ */ const maxDuration = 20000;
+const requiresPregeneratedKeyframes = (valueName, options)=>options.type === "spring" || valueName === "backgroundColor" || !(0, _easingMjs.isWaapiSupportedEasing)(options.ease);
+function createAcceleratedAnimation(value, valueName, { onUpdate , onComplete , ...options }) {
+    const canAccelerateAnimation = (0, _supportsMjs.supports).waapi() && acceleratedValues.has(valueName) && !options.repeatDelay && options.repeatType !== "mirror" && options.damping !== 0 && options.type !== "inertia";
+    if (!canAccelerateAnimation) return false;
+    /**
+     * TODO: Unify with js/index
+     */ let hasStopped = false;
+    let resolveFinishedPromise;
+    let currentFinishedPromise;
+    /**
+     * Create a new finished Promise every time we enter the
+     * finished state and resolve the old Promise. This is
+     * WAAPI-compatible behaviour.
+     */ const updateFinishedPromise = ()=>{
+        currentFinishedPromise = new Promise((resolve)=>{
+            resolveFinishedPromise = resolve;
+        });
+    };
+    // Create the first finished promise
+    updateFinishedPromise();
+    let { keyframes , duration =300 , ease , times  } = options;
+    /**
+     * If this animation needs pre-generated keyframes then generate.
+     */ if (requiresPregeneratedKeyframes(valueName, options)) {
+        const sampleAnimation = (0, _indexMjs2.animateValue)({
+            ...options,
+            repeat: 0,
+            delay: 0
+        });
+        let state = {
+            done: false,
+            value: keyframes[0]
+        };
+        const pregeneratedKeyframes = [];
+        /**
+         * Bail after 20 seconds of pre-generated keyframes as it's likely
+         * we're heading for an infinite loop.
+         */ let t = 0;
+        while(!state.done && t < maxDuration){
+            state = sampleAnimation.sample(t);
+            pregeneratedKeyframes.push(state.value);
+            t += sampleDelta;
+        }
+        times = undefined;
+        keyframes = pregeneratedKeyframes;
+        duration = t - sampleDelta;
+        ease = "linear";
+    }
+    const animation = (0, _indexMjs1.animateStyle)(value.owner.current, valueName, keyframes, {
+        ...options,
+        duration,
+        /**
+         * This function is currently not called if ease is provided
+         * as a function so the cast is safe.
+         *
+         * However it would be possible for a future refinement to port
+         * in easing pregeneration from Motion One for browsers that
+         * support the upcoming `linear()` easing function.
+         */ ease: ease,
+        times
+    });
+    const cancelAnimation = ()=>animation.cancel();
+    const safeCancel = ()=>{
+        (0, _indexMjs.frame).update(cancelAnimation);
+        resolveFinishedPromise();
+        updateFinishedPromise();
+    };
+    /**
+     * Prefer the `onfinish` prop as it's more widely supported than
+     * the `finished` promise.
+     *
+     * Here, we synchronously set the provided MotionValue to the end
+     * keyframe. If we didn't, when the WAAPI animation is finished it would
+     * be removed from the element which would then revert to its old styles.
+     */ animation.onfinish = ()=>{
+        value.set((0, _getFinalKeyframeMjs.getFinalKeyframe)(keyframes, options));
+        onComplete && onComplete();
+        safeCancel();
+    };
+    /**
+     * Animation interrupt callback.
+     */ return {
+        then (resolve, reject) {
+            return currentFinishedPromise.then(resolve, reject);
+        },
+        get time () {
+            return (0, _timeConversionMjs.millisecondsToSeconds)(animation.currentTime || 0);
+        },
+        set time (newTime){
+            animation.currentTime = (0, _timeConversionMjs.secondsToMilliseconds)(newTime);
+        },
+        get speed () {
+            return animation.playbackRate;
+        },
+        set speed (newSpeed){
+            animation.playbackRate = newSpeed;
+        },
+        get duration () {
+            return (0, _timeConversionMjs.millisecondsToSeconds)(duration);
+        },
+        play: ()=>{
+            if (hasStopped) return;
+            animation.play();
+            /**
+             * Cancel any pending cancel tasks
+             */ (0, _indexMjs.cancelFrame)(cancelAnimation);
+        },
+        pause: ()=>animation.pause(),
+        stop: ()=>{
+            hasStopped = true;
+            if (animation.playState === "idle") return;
+            /**
+             * WAAPI doesn't natively have any interruption capabilities.
+             *
+             * Rather than read commited styles back out of the DOM, we can
+             * create a renderless JS animation and sample it twice to calculate
+             * its current value, "previous" value, and therefore allow
+             * Motion to calculate velocity for any subsequent animation.
+             */ const { currentTime  } = animation;
+            if (currentTime) {
+                const sampleAnimation = (0, _indexMjs2.animateValue)({
+                    ...options,
+                    autoplay: false
+                });
+                value.setWithVelocity(sampleAnimation.sample(currentTime - sampleDelta).value, sampleAnimation.sample(currentTime).value, sampleDelta);
+            }
+            safeCancel();
+        },
+        complete: ()=>animation.finish(),
+        cancel: safeCancel
+    };
+}
+
+},{"../../../frameloop/index.mjs":"3Dz3U","./index.mjs":"br5tE","./easing.mjs":"2wybM","./supports.mjs":"5GOe1","./utils/get-final-keyframe.mjs":"jLZPp","../js/index.mjs":"5PB20","../../../utils/time-conversion.mjs":"gdr8V","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"br5tE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateStyle", ()=>animateStyle);
+var _easingMjs = require("./easing.mjs");
+function animateStyle(element, valueName, keyframes, { delay =0 , duration , repeat =0 , repeatType ="loop" , ease , times  } = {}) {
+    const keyframeOptions = {
+        [valueName]: keyframes
+    };
+    if (times) keyframeOptions.offset = times;
+    const easing = (0, _easingMjs.mapEasingToNativeEasing)(ease);
+    /**
+     * If this is an easing array, apply to keyframes, not animation as a whole
+     */ if (Array.isArray(easing)) keyframeOptions.easing = easing;
+    return element.animate(keyframeOptions, {
+        delay,
+        duration,
+        easing: !Array.isArray(easing) ? easing : "linear",
+        fill: "both",
+        iterations: repeat + 1,
+        direction: repeatType === "reverse" ? "alternate" : "normal"
+    });
+}
+
+},{"./easing.mjs":"2wybM","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2wybM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cubicBezierAsString", ()=>cubicBezierAsString);
+parcelHelpers.export(exports, "isWaapiSupportedEasing", ()=>isWaapiSupportedEasing);
+parcelHelpers.export(exports, "mapEasingToNativeEasing", ()=>mapEasingToNativeEasing);
+parcelHelpers.export(exports, "supportedWaapiEasing", ()=>supportedWaapiEasing);
+var _isBezierDefinitionMjs = require("../../../easing/utils/is-bezier-definition.mjs");
+function isWaapiSupportedEasing(easing) {
+    return Boolean(!easing || typeof easing === "string" && supportedWaapiEasing[easing] || (0, _isBezierDefinitionMjs.isBezierDefinition)(easing) || Array.isArray(easing) && easing.every(isWaapiSupportedEasing));
+}
+const cubicBezierAsString = ([a, b, c, d])=>`cubic-bezier(${a}, ${b}, ${c}, ${d})`;
+const supportedWaapiEasing = {
+    linear: "linear",
+    ease: "ease",
+    easeIn: "ease-in",
+    easeOut: "ease-out",
+    easeInOut: "ease-in-out",
+    circIn: cubicBezierAsString([
+        0,
+        0.65,
+        0.55,
+        1
+    ]),
+    circOut: cubicBezierAsString([
+        0.55,
+        0,
+        1,
+        0.45
+    ]),
+    backIn: cubicBezierAsString([
+        0.31,
+        0.01,
+        0.66,
+        -0.59
+    ]),
+    backOut: cubicBezierAsString([
+        0.33,
+        1.53,
+        0.69,
+        0.99
+    ])
+};
+function mapEasingToNativeEasing(easing) {
+    if (!easing) return undefined;
+    return (0, _isBezierDefinitionMjs.isBezierDefinition)(easing) ? cubicBezierAsString(easing) : Array.isArray(easing) ? easing.map(mapEasingToNativeEasing) : supportedWaapiEasing[easing];
+}
+
+},{"../../../easing/utils/is-bezier-definition.mjs":"fV1CC","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fV1CC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isBezierDefinition", ()=>isBezierDefinition);
+const isBezierDefinition = (easing)=>Array.isArray(easing) && typeof easing[0] === "number";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5GOe1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "supports", ()=>supports);
+const featureTests = {
+    waapi: ()=>Object.hasOwnProperty.call(Element.prototype, "animate")
+};
+const results = {};
+const supports = {};
+/**
+ * Generate features tests that cache their results.
+ */ for(const key in featureTests)supports[key] = ()=>{
+    if (results[key] === undefined) results[key] = featureTests[key]();
+    return results[key];
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jLZPp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getFinalKeyframe", ()=>getFinalKeyframe);
+function getFinalKeyframe(keyframes, { repeat , repeatType ="loop"  }) {
+    const index = repeat && repeatType !== "loop" && repeat % 2 === 1 ? 0 : keyframes.length - 1;
+    return keyframes[index];
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5PB20":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateValue", ()=>animateValue);
+var _keyframesMjs = require("../../generators/keyframes.mjs");
+var _indexMjs = require("../../generators/spring/index.mjs");
+var _inertiaMjs = require("../../generators/inertia.mjs");
+var _driverFrameloopMjs = require("./driver-frameloop.mjs");
+var _interpolateMjs = require("../../../utils/interpolate.mjs");
+var _clampMjs = require("../../../utils/clamp.mjs");
+var _timeConversionMjs = require("../../../utils/time-conversion.mjs");
+var _calcDurationMjs = require("../../generators/utils/calc-duration.mjs");
+const types = {
+    decay: (0, _inertiaMjs.inertia),
+    inertia: (0, _inertiaMjs.inertia),
+    tween: (0, _keyframesMjs.keyframes),
+    keyframes: (0, _keyframesMjs.keyframes),
+    spring: (0, _indexMjs.spring)
+};
+/**
+ * Animate a single value on the main thread.
+ *
+ * This function is written, where functionality overlaps,
+ * to be largely spec-compliant with WAAPI to allow fungibility
+ * between the two.
+ */ function animateValue({ autoplay =true , delay =0 , driver =(0, _driverFrameloopMjs.frameloopDriver) , keyframes: keyframes$1 , type ="keyframes" , repeat =0 , repeatDelay =0 , repeatType ="loop" , onPlay , onStop , onComplete , onUpdate , ...options }) {
+    let speed = 1;
+    let hasStopped = false;
+    let resolveFinishedPromise;
+    let currentFinishedPromise;
+    /**
+     * Create a new finished Promise every time we enter the
+     * finished state and resolve the old Promise. This is
+     * WAAPI-compatible behaviour.
+     */ const updateFinishedPromise = ()=>{
+        resolveFinishedPromise && resolveFinishedPromise();
+        currentFinishedPromise = new Promise((resolve)=>{
+            resolveFinishedPromise = resolve;
+        });
+    };
+    // Create the first finished promise
+    updateFinishedPromise();
+    let animationDriver;
+    const generatorFactory = types[type] || (0, _keyframesMjs.keyframes);
+    /**
+     * If this isn't the keyframes generator and we've been provided
+     * strings as keyframes, we need to interpolate these.
+     * TODO: Support velocity for units and complex value types/
+     */ let mapNumbersToKeyframes;
+    if (generatorFactory !== (0, _keyframesMjs.keyframes) && typeof keyframes$1[0] !== "number") {
+        mapNumbersToKeyframes = (0, _interpolateMjs.interpolate)([
+            0,
+            100
+        ], keyframes$1, {
+            clamp: false
+        });
+        keyframes$1 = [
+            0,
+            100
+        ];
+    }
+    const generator = generatorFactory({
+        ...options,
+        keyframes: keyframes$1
+    });
+    let mirroredGenerator;
+    if (repeatType === "mirror") mirroredGenerator = generatorFactory({
+        ...options,
+        keyframes: [
+            ...keyframes$1
+        ].reverse(),
+        velocity: -(options.velocity || 0)
+    });
+    let playState = "idle";
+    let holdTime = null;
+    let startTime = null;
+    let cancelTime = null;
+    /**
+     * If duration is undefined and we have repeat options,
+     * we need to calculate a duration from the generator.
+     *
+     * We set it to the generator itself to cache the duration.
+     * Any timeline resolver will need to have already precalculated
+     * the duration by this step.
+     */ if (generator.calculatedDuration === null && repeat) generator.calculatedDuration = (0, _calcDurationMjs.calcGeneratorDuration)(generator);
+    const { calculatedDuration  } = generator;
+    let resolvedDuration = Infinity;
+    let totalDuration = Infinity;
+    if (calculatedDuration !== null) {
+        resolvedDuration = calculatedDuration + repeatDelay;
+        totalDuration = resolvedDuration * (repeat + 1) - repeatDelay;
+    }
+    let currentTime = 0;
+    const tick = (timestamp)=>{
+        if (startTime === null) return;
+        /**
+         * requestAnimationFrame timestamps can come through as lower than
+         * the startTime as set by performance.now(). Here we prevent this,
+         * though in the future it could be possible to make setting startTime
+         * a pending operation that gets resolved here.
+         */ if (speed > 0) startTime = Math.min(startTime, timestamp);
+        if (holdTime !== null) currentTime = holdTime;
+        else currentTime = (timestamp - startTime) * speed;
+        // Rebase on delay
+        const timeWithoutDelay = currentTime - delay;
+        const isInDelayPhase = timeWithoutDelay < 0;
+        currentTime = Math.max(timeWithoutDelay, 0);
+        /**
+         * If this animation has finished, set the current time
+         * to the total duration.
+         */ if (playState === "finished" && holdTime === null) currentTime = totalDuration;
+        let elapsed = currentTime;
+        let frameGenerator = generator;
+        if (repeat) {
+            /**
+             * Get the current progress (0-1) of the animation. If t is >
+             * than duration we'll get values like 2.5 (midway through the
+             * third iteration)
+             */ const progress = currentTime / resolvedDuration;
+            /**
+             * Get the current iteration (0 indexed). For instance the floor of
+             * 2.5 is 2.
+             */ let currentIteration = Math.floor(progress);
+            /**
+             * Get the current progress of the iteration by taking the remainder
+             * so 2.5 is 0.5 through iteration 2
+             */ let iterationProgress = progress % 1.0;
+            /**
+             * If iteration progress is 1 we count that as the end
+             * of the previous iteration.
+             */ if (!iterationProgress && progress >= 1) iterationProgress = 1;
+            iterationProgress === 1 && currentIteration--;
+            currentIteration = Math.min(currentIteration, repeat + 1);
+            /**
+             * Reverse progress if we're not running in "normal" direction
+             */ const iterationIsOdd = Boolean(currentIteration % 2);
+            if (iterationIsOdd) {
+                if (repeatType === "reverse") {
+                    iterationProgress = 1 - iterationProgress;
+                    if (repeatDelay) iterationProgress -= repeatDelay / resolvedDuration;
+                } else if (repeatType === "mirror") frameGenerator = mirroredGenerator;
+            }
+            let p = (0, _clampMjs.clamp)(0, 1, iterationProgress);
+            if (currentTime > totalDuration) p = repeatType === "reverse" && iterationIsOdd ? 1 : 0;
+            elapsed = p * resolvedDuration;
+        }
+        /**
+         * If we're in negative time, set state as the initial keyframe.
+         * This prevents delay: x, duration: 0 animations from finishing
+         * instantly.
+         */ const state = isInDelayPhase ? {
+            done: false,
+            value: keyframes$1[0]
+        } : frameGenerator.next(elapsed);
+        if (mapNumbersToKeyframes) state.value = mapNumbersToKeyframes(state.value);
+        let { done  } = state;
+        if (!isInDelayPhase && calculatedDuration !== null) done = currentTime >= totalDuration;
+        const isAnimationFinished = holdTime === null && (playState === "finished" || playState === "running" && done || speed < 0 && currentTime <= 0);
+        if (onUpdate) onUpdate(state.value);
+        if (isAnimationFinished) finish();
+        return state;
+    };
+    const stopAnimationDriver = ()=>{
+        animationDriver && animationDriver.stop();
+        animationDriver = undefined;
+    };
+    const cancel = ()=>{
+        playState = "idle";
+        stopAnimationDriver();
+        updateFinishedPromise();
+        startTime = cancelTime = null;
+    };
+    const finish = ()=>{
+        playState = "finished";
+        onComplete && onComplete();
+        stopAnimationDriver();
+        updateFinishedPromise();
+    };
+    const play = ()=>{
+        if (hasStopped) return;
+        if (!animationDriver) animationDriver = driver(tick);
+        const now = animationDriver.now();
+        onPlay && onPlay();
+        if (holdTime !== null) startTime = now - holdTime;
+        else if (!startTime || playState === "finished") startTime = now;
+        cancelTime = startTime;
+        holdTime = null;
+        /**
+         * Set playState to running only after we've used it in
+         * the previous logic.
+         */ playState = "running";
+        animationDriver.start();
+    };
+    if (autoplay) play();
+    const controls = {
+        then (resolve, reject) {
+            return currentFinishedPromise.then(resolve, reject);
+        },
+        get time () {
+            return (0, _timeConversionMjs.millisecondsToSeconds)(currentTime);
+        },
+        set time (newTime){
+            newTime = (0, _timeConversionMjs.secondsToMilliseconds)(newTime);
+            currentTime = newTime;
+            if (holdTime !== null || !animationDriver || speed === 0) holdTime = newTime;
+            else startTime = animationDriver.now() - newTime / speed;
+        },
+        get duration () {
+            const duration = generator.calculatedDuration === null ? (0, _calcDurationMjs.calcGeneratorDuration)(generator) : generator.calculatedDuration;
+            return (0, _timeConversionMjs.millisecondsToSeconds)(duration);
+        },
+        get speed () {
+            return speed;
+        },
+        set speed (newSpeed){
+            if (newSpeed === speed || !animationDriver) return;
+            speed = newSpeed;
+            controls.time = (0, _timeConversionMjs.millisecondsToSeconds)(currentTime);
+        },
+        get state () {
+            return playState;
+        },
+        play,
+        pause: ()=>{
+            playState = "paused";
+            holdTime = currentTime;
+        },
+        stop: ()=>{
+            hasStopped = true;
+            if (playState === "idle") return;
+            playState = "idle";
+            onStop && onStop();
+            cancel();
+        },
+        cancel: ()=>{
+            if (cancelTime !== null) tick(cancelTime);
+            cancel();
+        },
+        complete: ()=>{
+            playState = "finished";
+        },
+        sample: (elapsed)=>{
+            startTime = 0;
+            return tick(elapsed);
+        }
+    };
+    return controls;
+}
+
+},{"../../generators/keyframes.mjs":"hjEq3","../../generators/spring/index.mjs":"aNeOI","../../generators/inertia.mjs":"50UUJ","./driver-frameloop.mjs":"fRIMv","../../../utils/interpolate.mjs":"d7x9H","../../../utils/clamp.mjs":"aZOh4","../../../utils/time-conversion.mjs":"gdr8V","../../generators/utils/calc-duration.mjs":"iTe1T","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hjEq3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "defaultEasing", ()=>defaultEasing);
+parcelHelpers.export(exports, "keyframes", ()=>keyframes);
+var _easeMjs = require("../../easing/ease.mjs");
+var _isEasingArrayMjs = require("../../easing/utils/is-easing-array.mjs");
+var _mapMjs = require("../../easing/utils/map.mjs");
+var _interpolateMjs = require("../../utils/interpolate.mjs");
+var _defaultMjs = require("../../utils/offsets/default.mjs");
+var _timeMjs = require("../../utils/offsets/time.mjs");
+function defaultEasing(values, easing) {
+    return values.map(()=>easing || (0, _easeMjs.easeInOut)).splice(0, values.length - 1);
+}
+function keyframes({ duration =300 , keyframes: keyframeValues , times , ease ="easeInOut"  }) {
+    /**
+     * Easing functions can be externally defined as strings. Here we convert them
+     * into actual functions.
+     */ const easingFunctions = (0, _isEasingArrayMjs.isEasingArray)(ease) ? ease.map((0, _mapMjs.easingDefinitionToFunction)) : (0, _mapMjs.easingDefinitionToFunction)(ease);
+    /**
+     * This is the Iterator-spec return value. We ensure it's mutable rather than using a generator
+     * to reduce GC during animation.
+     */ const state = {
+        done: false,
+        value: keyframeValues[0]
+    };
+    /**
+     * Create a times array based on the provided 0-1 offsets
+     */ const absoluteTimes = (0, _timeMjs.convertOffsetToTimes)(// Only use the provided offsets if they're the correct length
+    // TODO Maybe we should warn here if there's a length mismatch
+    times && times.length === keyframeValues.length ? times : (0, _defaultMjs.defaultOffset)(keyframeValues), duration);
+    const mapTimeToKeyframe = (0, _interpolateMjs.interpolate)(absoluteTimes, keyframeValues, {
+        ease: Array.isArray(easingFunctions) ? easingFunctions : defaultEasing(keyframeValues, easingFunctions)
+    });
+    return {
+        calculatedDuration: duration,
+        next: (t)=>{
+            state.value = mapTimeToKeyframe(t);
+            state.done = t >= duration;
+            return state;
+        }
+    };
+}
+
+},{"../../easing/ease.mjs":"8Qwxb","../../easing/utils/is-easing-array.mjs":"i3ygY","../../easing/utils/map.mjs":"e97Gy","../../utils/interpolate.mjs":"d7x9H","../../utils/offsets/default.mjs":"7Njqq","../../utils/offsets/time.mjs":"2k776","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8Qwxb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "easeIn", ()=>easeIn);
+parcelHelpers.export(exports, "easeInOut", ()=>easeInOut);
+parcelHelpers.export(exports, "easeOut", ()=>easeOut);
+var _cubicBezierMjs = require("./cubic-bezier.mjs");
+const easeIn = (0, _cubicBezierMjs.cubicBezier)(0.42, 0, 1, 1);
+const easeOut = (0, _cubicBezierMjs.cubicBezier)(0, 0, 0.58, 1);
+const easeInOut = (0, _cubicBezierMjs.cubicBezier)(0.42, 0, 0.58, 1);
+
+},{"./cubic-bezier.mjs":"hC5AC","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hC5AC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cubicBezier", ()=>cubicBezier);
+var _noopMjs = require("../utils/noop.mjs");
+/*
+  Bezier function generator
+  This has been modified from Gaëtan Renaudeau's BezierEasing
+  https://github.com/gre/bezier-easing/blob/master/src/index.js
+  https://github.com/gre/bezier-easing/blob/master/LICENSE
+  
+  I've removed the newtonRaphsonIterate algo because in benchmarking it
+  wasn't noticiably faster than binarySubdivision, indeed removing it
+  usually improved times, depending on the curve.
+  I also removed the lookup table, as for the added bundle size and loop we're
+  only cutting ~4 or so subdivision iterations. I bumped the max iterations up
+  to 12 to compensate and this still tended to be faster for no perceivable
+  loss in accuracy.
+  Usage
+    const easeOut = cubicBezier(.17,.67,.83,.67);
+    const x = easeOut(0.5); // returns 0.627...
+*/ // Returns x(t) given t, x1, and x2, or y(t) given t, y1, and y2.
+const calcBezier = (t, a1, a2)=>(((1.0 - 3.0 * a2 + 3.0 * a1) * t + (3.0 * a2 - 6.0 * a1)) * t + 3.0 * a1) * t;
+const subdivisionPrecision = 0.0000001;
+const subdivisionMaxIterations = 12;
+function binarySubdivide(x, lowerBound, upperBound, mX1, mX2) {
+    let currentX;
+    let currentT;
+    let i = 0;
+    do {
+        currentT = lowerBound + (upperBound - lowerBound) / 2.0;
+        currentX = calcBezier(currentT, mX1, mX2) - x;
+        if (currentX > 0.0) upperBound = currentT;
+        else lowerBound = currentT;
+    }while (Math.abs(currentX) > subdivisionPrecision && ++i < subdivisionMaxIterations);
+    return currentT;
+}
+function cubicBezier(mX1, mY1, mX2, mY2) {
+    // If this is a linear gradient, return linear easing
+    if (mX1 === mY1 && mX2 === mY2) return 0, _noopMjs.noop;
+    const getTForX = (aX)=>binarySubdivide(aX, 0, 1, mX1, mX2);
+    // If animation is at start/end, return t without easing
+    return (t)=>t === 0 || t === 1 ? t : calcBezier(getTForX(t), mY1, mY2);
+}
+
+},{"../utils/noop.mjs":"67SDH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"i3ygY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isEasingArray", ()=>isEasingArray);
+const isEasingArray = (ease)=>{
+    return Array.isArray(ease) && typeof ease[0] !== "number";
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"e97Gy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "easingDefinitionToFunction", ()=>easingDefinitionToFunction);
+var _errorsMjs = require("../../utils/errors.mjs");
+var _cubicBezierMjs = require("../cubic-bezier.mjs");
+var _noopMjs = require("../../utils/noop.mjs");
+var _easeMjs = require("../ease.mjs");
+var _circMjs = require("../circ.mjs");
+var _backMjs = require("../back.mjs");
+var _anticipateMjs = require("../anticipate.mjs");
+const easingLookup = {
+    linear: (0, _noopMjs.noop),
+    easeIn: (0, _easeMjs.easeIn),
+    easeInOut: (0, _easeMjs.easeInOut),
+    easeOut: (0, _easeMjs.easeOut),
+    circIn: (0, _circMjs.circIn),
+    circInOut: (0, _circMjs.circInOut),
+    circOut: (0, _circMjs.circOut),
+    backIn: (0, _backMjs.backIn),
+    backInOut: (0, _backMjs.backInOut),
+    backOut: (0, _backMjs.backOut),
+    anticipate: (0, _anticipateMjs.anticipate)
+};
+const easingDefinitionToFunction = (definition)=>{
+    if (Array.isArray(definition)) {
+        // If cubic bezier definition, create bezier curve
+        (0, _errorsMjs.invariant)(definition.length === 4, `Cubic bezier arrays must contain four numerical values.`);
+        const [x1, y1, x2, y2] = definition;
+        return (0, _cubicBezierMjs.cubicBezier)(x1, y1, x2, y2);
+    } else if (typeof definition === "string") {
+        // Else lookup from table
+        (0, _errorsMjs.invariant)(easingLookup[definition] !== undefined, `Invalid easing type '${definition}'`);
+        return easingLookup[definition];
+    }
+    return definition;
+};
+
+},{"../../utils/errors.mjs":"drRZ6","../cubic-bezier.mjs":"hC5AC","../../utils/noop.mjs":"67SDH","../ease.mjs":"8Qwxb","../circ.mjs":"LdSua","../back.mjs":"d5Nwb","../anticipate.mjs":"1Nbn6","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"LdSua":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "circIn", ()=>circIn);
+parcelHelpers.export(exports, "circInOut", ()=>circInOut);
+parcelHelpers.export(exports, "circOut", ()=>circOut);
+var _mirrorMjs = require("./modifiers/mirror.mjs");
+var _reverseMjs = require("./modifiers/reverse.mjs");
+const circIn = (p)=>1 - Math.sin(Math.acos(p));
+const circOut = (0, _reverseMjs.reverseEasing)(circIn);
+const circInOut = (0, _mirrorMjs.mirrorEasing)(circOut);
+
+},{"./modifiers/mirror.mjs":"8JYdZ","./modifiers/reverse.mjs":"9dSeG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8JYdZ":[function(require,module,exports) {
+// Accepts an easing function and returns a new one that outputs mirrored values for
+// the second half of the animation. Turns easeIn into easeInOut.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "mirrorEasing", ()=>mirrorEasing);
+const mirrorEasing = (easing)=>(p)=>p <= 0.5 ? easing(2 * p) / 2 : (2 - easing(2 * (1 - p))) / 2;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9dSeG":[function(require,module,exports) {
+// Accepts an easing function and returns a new one that outputs reversed values.
+// Turns easeIn into easeOut.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "reverseEasing", ()=>reverseEasing);
+const reverseEasing = (easing)=>(p)=>1 - easing(1 - p);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"d5Nwb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "backIn", ()=>backIn);
+parcelHelpers.export(exports, "backInOut", ()=>backInOut);
+parcelHelpers.export(exports, "backOut", ()=>backOut);
+var _cubicBezierMjs = require("./cubic-bezier.mjs");
+var _mirrorMjs = require("./modifiers/mirror.mjs");
+var _reverseMjs = require("./modifiers/reverse.mjs");
+const backOut = (0, _cubicBezierMjs.cubicBezier)(0.33, 1.53, 0.69, 0.99);
+const backIn = (0, _reverseMjs.reverseEasing)(backOut);
+const backInOut = (0, _mirrorMjs.mirrorEasing)(backIn);
+
+},{"./cubic-bezier.mjs":"hC5AC","./modifiers/mirror.mjs":"8JYdZ","./modifiers/reverse.mjs":"9dSeG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1Nbn6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "anticipate", ()=>anticipate);
+var _backMjs = require("./back.mjs");
+const anticipate = (p)=>(p *= 2) < 1 ? 0.5 * (0, _backMjs.backIn)(p) : 0.5 * (2 - Math.pow(2, -10 * (p - 1)));
+
+},{"./back.mjs":"d5Nwb","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"d7x9H":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "interpolate", ()=>interpolate);
+var _errorsMjs = require("./errors.mjs");
+var _indexMjs = require("../value/types/color/index.mjs");
+var _clampMjs = require("./clamp.mjs");
+var _mixMjs = require("./mix.mjs");
+var _mixColorMjs = require("./mix-color.mjs");
+var _mixComplexMjs = require("./mix-complex.mjs");
+var _pipeMjs = require("./pipe.mjs");
+var _progressMjs = require("./progress.mjs");
+var _noopMjs = require("./noop.mjs");
+const mixNumber = (from, to)=>(p)=>(0, _mixMjs.mix)(from, to, p);
+function detectMixerFactory(v) {
+    if (typeof v === "number") return mixNumber;
+    else if (typeof v === "string") return (0, _indexMjs.color).test(v) ? (0, _mixColorMjs.mixColor) : (0, _mixComplexMjs.mixComplex);
+    else if (Array.isArray(v)) return 0, _mixComplexMjs.mixArray;
+    else if (typeof v === "object") return 0, _mixComplexMjs.mixObject;
+    return mixNumber;
+}
+function createMixers(output, ease, customMixer) {
+    const mixers = [];
+    const mixerFactory = customMixer || detectMixerFactory(output[0]);
+    const numMixers = output.length - 1;
+    for(let i = 0; i < numMixers; i++){
+        let mixer = mixerFactory(output[i], output[i + 1]);
+        if (ease) {
+            const easingFunction = Array.isArray(ease) ? ease[i] || (0, _noopMjs.noop) : ease;
+            mixer = (0, _pipeMjs.pipe)(easingFunction, mixer);
+        }
+        mixers.push(mixer);
+    }
+    return mixers;
+}
+/**
+ * Create a function that maps from a numerical input array to a generic output array.
+ *
+ * Accepts:
+ *   - Numbers
+ *   - Colors (hex, hsl, hsla, rgb, rgba)
+ *   - Complex (combinations of one or more numbers or strings)
+ *
+ * ```jsx
+ * const mixColor = interpolate([0, 1], ['#fff', '#000'])
+ *
+ * mixColor(0.5) // 'rgba(128, 128, 128, 1)'
+ * ```
+ *
+ * TODO Revist this approach once we've moved to data models for values,
+ * probably not needed to pregenerate mixer functions.
+ *
+ * @public
+ */ function interpolate(input, output, { clamp: isClamp = true , ease , mixer  } = {}) {
+    const inputLength = input.length;
+    (0, _errorsMjs.invariant)(inputLength === output.length, "Both input and output ranges must be the same length");
+    /**
+     * If we're only provided a single input, we can just make a function
+     * that returns the output.
+     */ if (inputLength === 1) return ()=>output[0];
+    // If input runs highest -> lowest, reverse both arrays
+    if (input[0] > input[inputLength - 1]) {
+        input = [
+            ...input
+        ].reverse();
+        output = [
+            ...output
+        ].reverse();
+    }
+    const mixers = createMixers(output, ease, mixer);
+    const numMixers = mixers.length;
+    const interpolator = (v)=>{
+        let i = 0;
+        if (numMixers > 1) for(; i < input.length - 2; i++){
+            if (v < input[i + 1]) break;
+        }
+        const progressInRange = (0, _progressMjs.progress)(input[i], input[i + 1], v);
+        return mixers[i](progressInRange);
+    };
+    return isClamp ? (v)=>interpolator((0, _clampMjs.clamp)(input[0], input[inputLength - 1], v)) : interpolator;
+}
+
+},{"./errors.mjs":"drRZ6","../value/types/color/index.mjs":"1nAma","./clamp.mjs":"aZOh4","./mix.mjs":"jx86W","./mix-color.mjs":"7Evog","./mix-complex.mjs":"27EWY","./pipe.mjs":"jGo2b","./progress.mjs":"3vvIn","./noop.mjs":"67SDH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1nAma":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "color", ()=>color);
+var _utilsMjs = require("../utils.mjs");
+var _hexMjs = require("./hex.mjs");
+var _hslaMjs = require("./hsla.mjs");
+var _rgbaMjs = require("./rgba.mjs");
+const color = {
+    test: (v)=>(0, _rgbaMjs.rgba).test(v) || (0, _hexMjs.hex).test(v) || (0, _hslaMjs.hsla).test(v),
+    parse: (v)=>{
+        if ((0, _rgbaMjs.rgba).test(v)) return (0, _rgbaMjs.rgba).parse(v);
+        else if ((0, _hslaMjs.hsla).test(v)) return (0, _hslaMjs.hsla).parse(v);
+        else return (0, _hexMjs.hex).parse(v);
+    },
+    transform: (v)=>{
+        return (0, _utilsMjs.isString)(v) ? v : v.hasOwnProperty("red") ? (0, _rgbaMjs.rgba).transform(v) : (0, _hslaMjs.hsla).transform(v);
+    }
+};
+
+},{"../utils.mjs":"kaB0b","./hex.mjs":"5epZU","./hsla.mjs":"5FDku","./rgba.mjs":"4MXDV","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5epZU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hex", ()=>hex);
+var _rgbaMjs = require("./rgba.mjs");
+var _utilsMjs = require("./utils.mjs");
+function parseHex(v) {
+    let r = "";
+    let g = "";
+    let b = "";
+    let a = "";
+    // If we have 6 characters, ie #FF0000
+    if (v.length > 5) {
+        r = v.substring(1, 3);
+        g = v.substring(3, 5);
+        b = v.substring(5, 7);
+        a = v.substring(7, 9);
+    // Or we have 3 characters, ie #F00
+    } else {
+        r = v.substring(1, 2);
+        g = v.substring(2, 3);
+        b = v.substring(3, 4);
+        a = v.substring(4, 5);
+        r += r;
+        g += g;
+        b += b;
+        a += a;
+    }
+    return {
+        red: parseInt(r, 16),
+        green: parseInt(g, 16),
+        blue: parseInt(b, 16),
+        alpha: a ? parseInt(a, 16) / 255 : 1
+    };
+}
+const hex = {
+    test: (0, _utilsMjs.isColorString)("#"),
+    parse: parseHex,
+    transform: (0, _rgbaMjs.rgba).transform
+};
+
+},{"./rgba.mjs":"4MXDV","./utils.mjs":"kSu8U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4MXDV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "rgbUnit", ()=>rgbUnit);
+parcelHelpers.export(exports, "rgba", ()=>rgba);
+var _clampMjs = require("../../../utils/clamp.mjs");
+var _indexMjs = require("../numbers/index.mjs");
+var _utilsMjs = require("../utils.mjs");
+var _utilsMjs1 = require("./utils.mjs");
+const clampRgbUnit = (v)=>(0, _clampMjs.clamp)(0, 255, v);
+const rgbUnit = {
+    ...(0, _indexMjs.number),
+    transform: (v)=>Math.round(clampRgbUnit(v))
+};
+const rgba = {
+    test: (0, _utilsMjs1.isColorString)("rgb", "red"),
+    parse: (0, _utilsMjs1.splitColor)("red", "green", "blue"),
+    transform: ({ red , green , blue , alpha: alpha$1 = 1  })=>"rgba(" + rgbUnit.transform(red) + ", " + rgbUnit.transform(green) + ", " + rgbUnit.transform(blue) + ", " + (0, _utilsMjs.sanitize)((0, _indexMjs.alpha).transform(alpha$1)) + ")"
+};
+
+},{"../../../utils/clamp.mjs":"aZOh4","../numbers/index.mjs":"bI9mf","../utils.mjs":"kaB0b","./utils.mjs":"kSu8U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"kSu8U":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isColorString", ()=>isColorString);
+parcelHelpers.export(exports, "splitColor", ()=>splitColor);
+var _utilsMjs = require("../utils.mjs");
+/**
+ * Returns true if the provided string is a color, ie rgba(0,0,0,0) or #000,
+ * but false if a number or multiple colors
+ */ const isColorString = (type, testProp)=>(v)=>{
+        return Boolean((0, _utilsMjs.isString)(v) && (0, _utilsMjs.singleColorRegex).test(v) && v.startsWith(type) || testProp && Object.prototype.hasOwnProperty.call(v, testProp));
+    };
+const splitColor = (aName, bName, cName)=>(v)=>{
+        if (!(0, _utilsMjs.isString)(v)) return v;
+        const [a, b, c, alpha] = v.match((0, _utilsMjs.floatRegex));
+        return {
+            [aName]: parseFloat(a),
+            [bName]: parseFloat(b),
+            [cName]: parseFloat(c),
+            alpha: alpha !== undefined ? parseFloat(alpha) : 1
+        };
+    };
+
+},{"../utils.mjs":"kaB0b","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5FDku":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hsla", ()=>hsla);
+var _indexMjs = require("../numbers/index.mjs");
+var _unitsMjs = require("../numbers/units.mjs");
+var _utilsMjs = require("../utils.mjs");
+var _utilsMjs1 = require("./utils.mjs");
+const hsla = {
+    test: (0, _utilsMjs1.isColorString)("hsl", "hue"),
+    parse: (0, _utilsMjs1.splitColor)("hue", "saturation", "lightness"),
+    transform: ({ hue , saturation , lightness , alpha: alpha$1 = 1  })=>{
+        return "hsla(" + Math.round(hue) + ", " + (0, _unitsMjs.percent).transform((0, _utilsMjs.sanitize)(saturation)) + ", " + (0, _unitsMjs.percent).transform((0, _utilsMjs.sanitize)(lightness)) + ", " + (0, _utilsMjs.sanitize)((0, _indexMjs.alpha).transform(alpha$1)) + ")";
+    }
+};
+
+},{"../numbers/index.mjs":"bI9mf","../numbers/units.mjs":"lGBHA","../utils.mjs":"kaB0b","./utils.mjs":"kSu8U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jx86W":[function(require,module,exports) {
+/*
+  Value in range from progress
+
+  Given a lower limit and an upper limit, we return the value within
+  that range as expressed by progress (usually a number from 0 to 1)
+
+  So progress = 0.5 would change
+
+  from -------- to
+
+  to
+
+  from ---- to
+
+  E.g. from = 10, to = 20, progress = 0.5 => 15
+
+  @param [number]: Lower limit of range
+  @param [number]: Upper limit of range
+  @param [number]: The progress between lower and upper limits expressed 0-1
+  @return [number]: Value as calculated from progress within range (not limited within range)
+*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "mix", ()=>mix);
+const mix = (from, to, progress)=>-progress * from + progress * to + from;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7Evog":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "mixColor", ()=>mixColor);
+parcelHelpers.export(exports, "mixLinearColor", ()=>mixLinearColor);
+var _mixMjs = require("./mix.mjs");
+var _errorsMjs = require("./errors.mjs");
+var _hslaToRgbaMjs = require("./hsla-to-rgba.mjs");
+var _hexMjs = require("../value/types/color/hex.mjs");
+var _rgbaMjs = require("../value/types/color/rgba.mjs");
+var _hslaMjs = require("../value/types/color/hsla.mjs");
+// Linear color space blending
+// Explained https://www.youtube.com/watch?v=LKnqECcg6Gw
+// Demonstrated http://codepen.io/osublake/pen/xGVVaN
+const mixLinearColor = (from, to, v)=>{
+    const fromExpo = from * from;
+    return Math.sqrt(Math.max(0, v * (to * to - fromExpo) + fromExpo));
+};
+const colorTypes = [
+    (0, _hexMjs.hex),
+    (0, _rgbaMjs.rgba),
+    (0, _hslaMjs.hsla)
+];
+const getColorType = (v)=>colorTypes.find((type)=>type.test(v));
+function asRGBA(color) {
+    const type = getColorType(color);
+    (0, _errorsMjs.invariant)(Boolean(type), `'${color}' is not an animatable color. Use the equivalent color code instead.`);
+    let model = type.parse(color);
+    if (type === (0, _hslaMjs.hsla)) // TODO Remove this cast - needed since Framer Motion's stricter typing
+    model = (0, _hslaToRgbaMjs.hslaToRgba)(model);
+    return model;
+}
+const mixColor = (from, to)=>{
+    const fromRGBA = asRGBA(from);
+    const toRGBA = asRGBA(to);
+    const blended = {
+        ...fromRGBA
+    };
+    return (v)=>{
+        blended.red = mixLinearColor(fromRGBA.red, toRGBA.red, v);
+        blended.green = mixLinearColor(fromRGBA.green, toRGBA.green, v);
+        blended.blue = mixLinearColor(fromRGBA.blue, toRGBA.blue, v);
+        blended.alpha = (0, _mixMjs.mix)(fromRGBA.alpha, toRGBA.alpha, v);
+        return (0, _rgbaMjs.rgba).transform(blended);
+    };
+};
+
+},{"./mix.mjs":"jx86W","./errors.mjs":"drRZ6","./hsla-to-rgba.mjs":"4xZpQ","../value/types/color/hex.mjs":"5epZU","../value/types/color/rgba.mjs":"4MXDV","../value/types/color/hsla.mjs":"5FDku","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4xZpQ":[function(require,module,exports) {
+// Adapted from https://gist.github.com/mjackson/5311256
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hslaToRgba", ()=>hslaToRgba);
+function hueToRgb(p, q, t) {
+    if (t < 0) t += 1;
+    if (t > 1) t -= 1;
+    if (t < 1 / 6) return p + (q - p) * 6 * t;
+    if (t < 0.5) return q;
+    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+    return p;
+}
+function hslaToRgba({ hue , saturation , lightness , alpha  }) {
+    hue /= 360;
+    saturation /= 100;
+    lightness /= 100;
+    let red = 0;
+    let green = 0;
+    let blue = 0;
+    if (!saturation) red = green = blue = lightness;
+    else {
+        const q = lightness < 0.5 ? lightness * (1 + saturation) : lightness + saturation - lightness * saturation;
+        const p = 2 * lightness - q;
+        red = hueToRgb(p, q, hue + 1 / 3);
+        green = hueToRgb(p, q, hue);
+        blue = hueToRgb(p, q, hue - 1 / 3);
+    }
+    return {
+        red: Math.round(red * 255),
+        green: Math.round(green * 255),
+        blue: Math.round(blue * 255),
+        alpha
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"27EWY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "mixArray", ()=>mixArray);
+parcelHelpers.export(exports, "mixComplex", ()=>mixComplex);
+parcelHelpers.export(exports, "mixObject", ()=>mixObject);
+var _mixMjs = require("./mix.mjs");
+var _mixColorMjs = require("./mix-color.mjs");
+var _pipeMjs = require("./pipe.mjs");
+var _errorsMjs = require("./errors.mjs");
+var _indexMjs = require("../value/types/color/index.mjs");
+var _indexMjs1 = require("../value/types/complex/index.mjs");
+const mixImmediate = (origin, target)=>(p)=>`${p > 0 ? target : origin}`;
+function getMixer(origin, target) {
+    if (typeof origin === "number") return (v)=>(0, _mixMjs.mix)(origin, target, v);
+    else if ((0, _indexMjs.color).test(origin)) return (0, _mixColorMjs.mixColor)(origin, target);
+    else return origin.startsWith("var(") ? mixImmediate(origin, target) : mixComplex(origin, target);
+}
+const mixArray = (from, to)=>{
+    const output = [
+        ...from
+    ];
+    const numValues = output.length;
+    const blendValue = from.map((fromThis, i)=>getMixer(fromThis, to[i]));
+    return (v)=>{
+        for(let i = 0; i < numValues; i++)output[i] = blendValue[i](v);
+        return output;
+    };
+};
+const mixObject = (origin, target)=>{
+    const output = {
+        ...origin,
+        ...target
+    };
+    const blendValue = {};
+    for(const key in output)if (origin[key] !== undefined && target[key] !== undefined) blendValue[key] = getMixer(origin[key], target[key]);
+    return (v)=>{
+        for(const key in blendValue)output[key] = blendValue[key](v);
+        return output;
+    };
+};
+const mixComplex = (origin, target)=>{
+    const template = (0, _indexMjs1.complex).createTransformer(target);
+    const originStats = (0, _indexMjs1.analyseComplexValue)(origin);
+    const targetStats = (0, _indexMjs1.analyseComplexValue)(target);
+    const canInterpolate = originStats.numVars === targetStats.numVars && originStats.numColors === targetStats.numColors && originStats.numNumbers >= targetStats.numNumbers;
+    if (canInterpolate) return (0, _pipeMjs.pipe)(mixArray(originStats.values, targetStats.values), template);
+    else {
+        (0, _errorsMjs.warning)(true, `Complex values '${origin}' and '${target}' too different to mix. Ensure all colors are of the same type, and that each contains the same quantity of number and color values. Falling back to instant transition.`);
+        return mixImmediate(origin, target);
+    }
+};
+
+},{"./mix.mjs":"jx86W","./mix-color.mjs":"7Evog","./pipe.mjs":"jGo2b","./errors.mjs":"drRZ6","../value/types/color/index.mjs":"1nAma","../value/types/complex/index.mjs":"lmoWV","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lmoWV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "analyseComplexValue", ()=>analyseComplexValue);
+parcelHelpers.export(exports, "complex", ()=>complex);
+var _isCssVariableMjs = require("../../../render/dom/utils/is-css-variable.mjs");
+var _noopMjs = require("../../../utils/noop.mjs");
+var _indexMjs = require("../color/index.mjs");
+var _indexMjs1 = require("../numbers/index.mjs");
+var _utilsMjs = require("../utils.mjs");
+function test(v) {
+    var _a, _b;
+    return isNaN(v) && (0, _utilsMjs.isString)(v) && (((_a = v.match((0, _utilsMjs.floatRegex))) === null || _a === void 0 ? void 0 : _a.length) || 0) + (((_b = v.match((0, _utilsMjs.colorRegex))) === null || _b === void 0 ? void 0 : _b.length) || 0) > 0;
+}
+const cssVarTokeniser = {
+    regex: (0, _isCssVariableMjs.cssVariableRegex),
+    countKey: "Vars",
+    token: "${v}",
+    parse: (0, _noopMjs.noop)
+};
+const colorTokeniser = {
+    regex: (0, _utilsMjs.colorRegex),
+    countKey: "Colors",
+    token: "${c}",
+    parse: (0, _indexMjs.color).parse
+};
+const numberTokeniser = {
+    regex: (0, _utilsMjs.floatRegex),
+    countKey: "Numbers",
+    token: "${n}",
+    parse: (0, _indexMjs1.number).parse
+};
+function tokenise(info, { regex , countKey , token , parse  }) {
+    const matches = info.tokenised.match(regex);
+    if (!matches) return;
+    info["num" + countKey] = matches.length;
+    info.tokenised = info.tokenised.replace(regex, token);
+    info.values.push(...matches.map(parse));
+}
+function analyseComplexValue(value) {
+    const originalValue = value.toString();
+    const info = {
+        value: originalValue,
+        tokenised: originalValue,
+        values: [],
+        numVars: 0,
+        numColors: 0,
+        numNumbers: 0
+    };
+    if (info.value.includes("var(--")) tokenise(info, cssVarTokeniser);
+    tokenise(info, colorTokeniser);
+    tokenise(info, numberTokeniser);
+    return info;
+}
+function parseComplexValue(v) {
+    return analyseComplexValue(v).values;
+}
+function createTransformer(source) {
+    const { values , numColors , numVars , tokenised  } = analyseComplexValue(source);
+    const numValues = values.length;
+    return (v)=>{
+        let output = tokenised;
+        for(let i = 0; i < numValues; i++){
+            if (i < numVars) output = output.replace(cssVarTokeniser.token, v[i]);
+            else if (i < numVars + numColors) output = output.replace(colorTokeniser.token, (0, _indexMjs.color).transform(v[i]));
+            else output = output.replace(numberTokeniser.token, (0, _utilsMjs.sanitize)(v[i]));
+        }
+        return output;
+    };
+}
+const convertNumbersToZero = (v)=>typeof v === "number" ? 0 : v;
+function getAnimatableNone(v) {
+    const parsed = parseComplexValue(v);
+    const transformer = createTransformer(v);
+    return transformer(parsed.map(convertNumbersToZero));
+}
+const complex = {
+    test,
+    parse: parseComplexValue,
+    createTransformer,
+    getAnimatableNone
+};
+
+},{"../../../render/dom/utils/is-css-variable.mjs":"8qZz5","../../../utils/noop.mjs":"67SDH","../color/index.mjs":"1nAma","../numbers/index.mjs":"bI9mf","../utils.mjs":"kaB0b","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3vvIn":[function(require,module,exports) {
+/*
+  Progress within given range
+
+  Given a lower limit and an upper limit, we return the progress
+  (expressed as a number 0-1) represented by the given value, and
+  limit that progress to within 0-1.
+
+  @param [number]: Lower limit
+  @param [number]: Upper limit
+  @param [number]: Value to find progress within given range
+  @return [number]: Progress of value within range as expressed 0-1
+*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "progress", ()=>progress);
+const progress = (from, to, value)=>{
+    const toFromDifference = to - from;
+    return toFromDifference === 0 ? 1 : (value - from) / toFromDifference;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7Njqq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "defaultOffset", ()=>defaultOffset);
+var _fillMjs = require("./fill.mjs");
+function defaultOffset(arr) {
+    const offset = [
+        0
+    ];
+    (0, _fillMjs.fillOffset)(offset, arr.length - 1);
+    return offset;
+}
+
+},{"./fill.mjs":"i5hk9","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"i5hk9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "fillOffset", ()=>fillOffset);
+var _mixMjs = require("../mix.mjs");
+var _progressMjs = require("../progress.mjs");
+function fillOffset(offset, remaining) {
+    const min = offset[offset.length - 1];
+    for(let i = 1; i <= remaining; i++){
+        const offsetProgress = (0, _progressMjs.progress)(0, remaining, i);
+        offset.push((0, _mixMjs.mix)(min, 1, offsetProgress));
+    }
+}
+
+},{"../mix.mjs":"jx86W","../progress.mjs":"3vvIn","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2k776":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "convertOffsetToTimes", ()=>convertOffsetToTimes);
+function convertOffsetToTimes(offset, duration) {
+    return offset.map((o)=>o * duration);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aNeOI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "spring", ()=>spring);
+var _timeConversionMjs = require("../../../utils/time-conversion.mjs");
+var _velocityMjs = require("../utils/velocity.mjs");
+var _findMjs = require("./find.mjs");
+const durationKeys = [
+    "duration",
+    "bounce"
+];
+const physicsKeys = [
+    "stiffness",
+    "damping",
+    "mass"
+];
+function isSpringType(options, keys) {
+    return keys.some((key)=>options[key] !== undefined);
+}
+function getSpringOptions(options) {
+    let springOptions = {
+        velocity: 0.0,
+        stiffness: 100,
+        damping: 10,
+        mass: 1.0,
+        isResolvedFromDuration: false,
+        ...options
+    };
+    // stiffness/damping/mass overrides duration/bounce
+    if (!isSpringType(options, physicsKeys) && isSpringType(options, durationKeys)) {
+        const derived = (0, _findMjs.findSpring)(options);
+        springOptions = {
+            ...springOptions,
+            ...derived,
+            velocity: 0.0,
+            mass: 1.0
+        };
+        springOptions.isResolvedFromDuration = true;
+    }
+    return springOptions;
+}
+function spring({ keyframes , restDelta , restSpeed , ...options }) {
+    const origin = keyframes[0];
+    const target = keyframes[keyframes.length - 1];
+    /**
+     * This is the Iterator-spec return value. We ensure it's mutable rather than using a generator
+     * to reduce GC during animation.
+     */ const state = {
+        done: false,
+        value: origin
+    };
+    const { stiffness , damping , mass , velocity , duration , isResolvedFromDuration  } = getSpringOptions(options);
+    const initialVelocity = velocity ? -(0, _timeConversionMjs.millisecondsToSeconds)(velocity) : 0.0;
+    const dampingRatio = damping / (2 * Math.sqrt(stiffness * mass));
+    const initialDelta = target - origin;
+    const undampedAngularFreq = (0, _timeConversionMjs.millisecondsToSeconds)(Math.sqrt(stiffness / mass));
+    /**
+     * If we're working on a granular scale, use smaller defaults for determining
+     * when the spring is finished.
+     *
+     * These defaults have been selected emprically based on what strikes a good
+     * ratio between feeling good and finishing as soon as changes are imperceptible.
+     */ const isGranularScale = Math.abs(initialDelta) < 5;
+    restSpeed || (restSpeed = isGranularScale ? 0.01 : 2);
+    restDelta || (restDelta = isGranularScale ? 0.005 : 0.5);
+    let resolveSpring;
+    if (dampingRatio < 1) {
+        const angularFreq = (0, _findMjs.calcAngularFreq)(undampedAngularFreq, dampingRatio);
+        // Underdamped spring
+        resolveSpring = (t)=>{
+            const envelope = Math.exp(-dampingRatio * undampedAngularFreq * t);
+            return target - envelope * ((initialVelocity + dampingRatio * undampedAngularFreq * initialDelta) / angularFreq * Math.sin(angularFreq * t) + initialDelta * Math.cos(angularFreq * t));
+        };
+    } else if (dampingRatio === 1) // Critically damped spring
+    resolveSpring = (t)=>target - Math.exp(-undampedAngularFreq * t) * (initialDelta + (initialVelocity + undampedAngularFreq * initialDelta) * t);
+    else {
+        // Overdamped spring
+        const dampedAngularFreq = undampedAngularFreq * Math.sqrt(dampingRatio * dampingRatio - 1);
+        resolveSpring = (t)=>{
+            const envelope = Math.exp(-dampingRatio * undampedAngularFreq * t);
+            // When performing sinh or cosh values can hit Infinity so we cap them here
+            const freqForT = Math.min(dampedAngularFreq * t, 300);
+            return target - envelope * ((initialVelocity + dampingRatio * undampedAngularFreq * initialDelta) * Math.sinh(freqForT) + dampedAngularFreq * initialDelta * Math.cosh(freqForT)) / dampedAngularFreq;
+        };
+    }
+    return {
+        calculatedDuration: isResolvedFromDuration ? duration || null : null,
+        next: (t)=>{
+            const current = resolveSpring(t);
+            if (!isResolvedFromDuration) {
+                let currentVelocity = initialVelocity;
+                if (t !== 0) {
+                    /**
+                     * We only need to calculate velocity for under-damped springs
+                     * as over- and critically-damped springs can't overshoot, so
+                     * checking only for displacement is enough.
+                     */ if (dampingRatio < 1) currentVelocity = (0, _velocityMjs.calcGeneratorVelocity)(resolveSpring, t, current);
+                    else currentVelocity = 0;
+                }
+                const isBelowVelocityThreshold = Math.abs(currentVelocity) <= restSpeed;
+                const isBelowDisplacementThreshold = Math.abs(target - current) <= restDelta;
+                state.done = isBelowVelocityThreshold && isBelowDisplacementThreshold;
+            } else state.done = t >= duration;
+            state.value = state.done ? target : current;
+            return state;
+        }
+    };
+}
+
+},{"../../../utils/time-conversion.mjs":"gdr8V","../utils/velocity.mjs":"dfkbs","./find.mjs":"6HyEr","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dfkbs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcGeneratorVelocity", ()=>calcGeneratorVelocity);
+var _velocityPerSecondMjs = require("../../../utils/velocity-per-second.mjs");
+const velocitySampleDuration = 5; // ms
+function calcGeneratorVelocity(resolveValue, t, current) {
+    const prevT = Math.max(t - velocitySampleDuration, 0);
+    return (0, _velocityPerSecondMjs.velocityPerSecond)(current - resolveValue(prevT), t - prevT);
+}
+
+},{"../../../utils/velocity-per-second.mjs":"1eGg6","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1eGg6":[function(require,module,exports) {
+/*
+  Convert velocity into velocity per second
+
+  @param [number]: Unit per frame
+  @param [number]: Frame duration in ms
+*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "velocityPerSecond", ()=>velocityPerSecond);
+function velocityPerSecond(velocity, frameDuration) {
+    return frameDuration ? velocity * (1000 / frameDuration) : 0;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6HyEr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcAngularFreq", ()=>calcAngularFreq);
+parcelHelpers.export(exports, "findSpring", ()=>findSpring);
+parcelHelpers.export(exports, "maxDamping", ()=>maxDamping);
+parcelHelpers.export(exports, "maxDuration", ()=>maxDuration);
+parcelHelpers.export(exports, "minDamping", ()=>minDamping);
+parcelHelpers.export(exports, "minDuration", ()=>minDuration);
+var _errorsMjs = require("../../../utils/errors.mjs");
+var _clampMjs = require("../../../utils/clamp.mjs");
+var _timeConversionMjs = require("../../../utils/time-conversion.mjs");
+const safeMin = 0.001;
+const minDuration = 0.01;
+const maxDuration = 10.0;
+const minDamping = 0.05;
+const maxDamping = 1;
+function findSpring({ duration =800 , bounce =0.25 , velocity =0 , mass =1  }) {
+    let envelope;
+    let derivative;
+    (0, _errorsMjs.warning)(duration <= (0, _timeConversionMjs.secondsToMilliseconds)(maxDuration), "Spring duration must be 10 seconds or less");
+    let dampingRatio = 1 - bounce;
+    /**
+     * Restrict dampingRatio and duration to within acceptable ranges.
+     */ dampingRatio = (0, _clampMjs.clamp)(minDamping, maxDamping, dampingRatio);
+    duration = (0, _clampMjs.clamp)(minDuration, maxDuration, (0, _timeConversionMjs.millisecondsToSeconds)(duration));
+    if (dampingRatio < 1) {
+        /**
+         * Underdamped spring
+         */ envelope = (undampedFreq)=>{
+            const exponentialDecay = undampedFreq * dampingRatio;
+            const delta = exponentialDecay * duration;
+            const a = exponentialDecay - velocity;
+            const b = calcAngularFreq(undampedFreq, dampingRatio);
+            const c = Math.exp(-delta);
+            return safeMin - a / b * c;
+        };
+        derivative = (undampedFreq)=>{
+            const exponentialDecay = undampedFreq * dampingRatio;
+            const delta = exponentialDecay * duration;
+            const d = delta * velocity + velocity;
+            const e = Math.pow(dampingRatio, 2) * Math.pow(undampedFreq, 2) * duration;
+            const f = Math.exp(-delta);
+            const g = calcAngularFreq(Math.pow(undampedFreq, 2), dampingRatio);
+            const factor = -envelope(undampedFreq) + safeMin > 0 ? -1 : 1;
+            return factor * ((d - e) * f) / g;
+        };
+    } else {
+        /**
+         * Critically-damped spring
+         */ envelope = (undampedFreq)=>{
+            const a = Math.exp(-undampedFreq * duration);
+            const b = (undampedFreq - velocity) * duration + 1;
+            return -safeMin + a * b;
+        };
+        derivative = (undampedFreq)=>{
+            const a = Math.exp(-undampedFreq * duration);
+            const b = (velocity - undampedFreq) * (duration * duration);
+            return a * b;
+        };
+    }
+    const initialGuess = 5 / duration;
+    const undampedFreq = approximateRoot(envelope, derivative, initialGuess);
+    duration = (0, _timeConversionMjs.secondsToMilliseconds)(duration);
+    if (isNaN(undampedFreq)) return {
+        stiffness: 100,
+        damping: 10,
+        duration
+    };
+    else {
+        const stiffness = Math.pow(undampedFreq, 2) * mass;
+        return {
+            stiffness,
+            damping: dampingRatio * 2 * Math.sqrt(mass * stiffness),
+            duration
+        };
+    }
+}
+const rootIterations = 12;
+function approximateRoot(envelope, derivative, initialGuess) {
+    let result = initialGuess;
+    for(let i = 1; i < rootIterations; i++)result = result - envelope(result) / derivative(result);
+    return result;
+}
+function calcAngularFreq(undampedFreq, dampingRatio) {
+    return undampedFreq * Math.sqrt(1 - dampingRatio * dampingRatio);
+}
+
+},{"../../../utils/errors.mjs":"drRZ6","../../../utils/clamp.mjs":"aZOh4","../../../utils/time-conversion.mjs":"gdr8V","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"50UUJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "inertia", ()=>inertia);
+var _indexMjs = require("./spring/index.mjs");
+var _velocityMjs = require("./utils/velocity.mjs");
+function inertia({ keyframes , velocity =0.0 , power =0.8 , timeConstant =325 , bounceDamping =10 , bounceStiffness =500 , modifyTarget , min , max , restDelta =0.5 , restSpeed  }) {
+    const origin = keyframes[0];
+    const state = {
+        done: false,
+        value: origin
+    };
+    const isOutOfBounds = (v)=>min !== undefined && v < min || max !== undefined && v > max;
+    const nearestBoundary = (v)=>{
+        if (min === undefined) return max;
+        if (max === undefined) return min;
+        return Math.abs(min - v) < Math.abs(max - v) ? min : max;
+    };
+    let amplitude = power * velocity;
+    const ideal = origin + amplitude;
+    const target = modifyTarget === undefined ? ideal : modifyTarget(ideal);
+    /**
+     * If the target has changed we need to re-calculate the amplitude, otherwise
+     * the animation will start from the wrong position.
+     */ if (target !== ideal) amplitude = target - origin;
+    const calcDelta = (t)=>-amplitude * Math.exp(-t / timeConstant);
+    const calcLatest = (t)=>target + calcDelta(t);
+    const applyFriction = (t)=>{
+        const delta = calcDelta(t);
+        const latest = calcLatest(t);
+        state.done = Math.abs(delta) <= restDelta;
+        state.value = state.done ? target : latest;
+    };
+    /**
+     * Ideally this would resolve for t in a stateless way, we could
+     * do that by always precalculating the animation but as we know
+     * this will be done anyway we can assume that spring will
+     * be discovered during that.
+     */ let timeReachedBoundary;
+    let spring$1;
+    const checkCatchBoundary = (t)=>{
+        if (!isOutOfBounds(state.value)) return;
+        timeReachedBoundary = t;
+        spring$1 = (0, _indexMjs.spring)({
+            keyframes: [
+                state.value,
+                nearestBoundary(state.value)
+            ],
+            velocity: (0, _velocityMjs.calcGeneratorVelocity)(calcLatest, t, state.value),
+            damping: bounceDamping,
+            stiffness: bounceStiffness,
+            restDelta,
+            restSpeed
+        });
+    };
+    checkCatchBoundary(0);
+    return {
+        calculatedDuration: null,
+        next: (t)=>{
+            /**
+             * We need to resolve the friction to figure out if we need a
+             * spring but we don't want to do this twice per frame. So here
+             * we flag if we updated for this frame and later if we did
+             * we can skip doing it again.
+             */ let hasUpdatedFrame = false;
+            if (!spring$1 && timeReachedBoundary === undefined) {
+                hasUpdatedFrame = true;
+                applyFriction(t);
+                checkCatchBoundary(t);
+            }
+            /**
+             * If we have a spring and the provided t is beyond the moment the friction
+             * animation crossed the min/max boundary, use the spring.
+             */ if (timeReachedBoundary !== undefined && t > timeReachedBoundary) return spring$1.next(t - timeReachedBoundary);
+            else {
+                !hasUpdatedFrame && applyFriction(t);
+                return state;
+            }
+        }
+    };
+}
+
+},{"./spring/index.mjs":"aNeOI","./utils/velocity.mjs":"dfkbs","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fRIMv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "frameloopDriver", ()=>frameloopDriver);
+var _indexMjs = require("../../../frameloop/index.mjs");
+var _dataMjs = require("../../../frameloop/data.mjs");
+const frameloopDriver = (update)=>{
+    const passTimestamp = ({ timestamp  })=>update(timestamp);
+    return {
+        start: ()=>(0, _indexMjs.frame).update(passTimestamp, true),
+        stop: ()=>(0, _indexMjs.cancelFrame)(passTimestamp),
+        /**
+         * If we're processing this frame we can use the
+         * framelocked timestamp to keep things in sync.
+         */ now: ()=>(0, _dataMjs.frameData).isProcessing ? (0, _dataMjs.frameData).timestamp : performance.now()
+    };
+};
+
+},{"../../../frameloop/index.mjs":"3Dz3U","../../../frameloop/data.mjs":"gzDj4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iTe1T":[function(require,module,exports) {
+/**
+ * Implement a practical max duration for keyframe generation
+ * to prevent infinite loops
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcGeneratorDuration", ()=>calcGeneratorDuration);
+parcelHelpers.export(exports, "maxGeneratorDuration", ()=>maxGeneratorDuration);
+const maxGeneratorDuration = 20000;
+function calcGeneratorDuration(generator) {
+    let duration = 0;
+    const timeStep = 50;
+    let state = generator.next(duration);
+    while(!state.done && duration < maxGeneratorDuration){
+        duration += timeStep;
+        state = generator.next(duration);
+    }
+    return duration >= maxGeneratorDuration ? Infinity : duration;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"luMrD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createInstantAnimation", ()=>createInstantAnimation);
+var _indexMjs = require("./js/index.mjs");
+var _noopMjs = require("../../utils/noop.mjs");
+function createInstantAnimation({ keyframes , delay , onUpdate , onComplete  }) {
+    const setValue = ()=>{
+        onUpdate && onUpdate(keyframes[keyframes.length - 1]);
+        onComplete && onComplete();
+        /**
+         * TODO: As this API grows it could make sense to always return
+         * animateValue. This will be a bigger project as animateValue
+         * is frame-locked whereas this function resolves instantly.
+         * This is a behavioural change and also has ramifications regarding
+         * assumptions within tests.
+         */ return {
+            time: 0,
+            speed: 1,
+            duration: 0,
+            play: (0, _noopMjs.noop),
+            pause: (0, _noopMjs.noop),
+            stop: (0, _noopMjs.noop),
+            then: (resolve)=>{
+                resolve();
+                return Promise.resolve();
+            },
+            cancel: (0, _noopMjs.noop),
+            complete: (0, _noopMjs.noop)
+        };
+    };
+    return delay ? (0, _indexMjs.animateValue)({
+        keyframes: [
+            0,
+            1
+        ],
+        duration: 0,
+        delay,
+        onComplete: setValue
+    }) : setValue();
+}
+
+},{"./js/index.mjs":"5PB20","../../utils/noop.mjs":"67SDH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4yIKR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getDefaultTransition", ()=>getDefaultTransition);
+var _transformMjs = require("../../render/html/utils/transform.mjs");
+const underDampedSpring = {
+    type: "spring",
+    stiffness: 500,
+    damping: 25,
+    restSpeed: 10
+};
+const criticallyDampedSpring = (target)=>({
+        type: "spring",
+        stiffness: 550,
+        damping: target === 0 ? 2 * Math.sqrt(550) : 30,
+        restSpeed: 10
+    });
+const keyframesTransition = {
+    type: "keyframes",
+    duration: 0.8
+};
+/**
+ * Default easing curve is a slightly shallower version of
+ * the default browser easing curve.
+ */ const ease = {
+    type: "keyframes",
+    ease: [
+        0.25,
+        0.1,
+        0.35,
+        1
+    ],
+    duration: 0.3
+};
+const getDefaultTransition = (valueKey, { keyframes  })=>{
+    if (keyframes.length > 2) return keyframesTransition;
+    else if ((0, _transformMjs.transformProps).has(valueKey)) return valueKey.startsWith("scale") ? criticallyDampedSpring(keyframes[1]) : underDampedSpring;
+    return ease;
+};
+
+},{"../../render/html/utils/transform.mjs":"iSy8E","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7YoDs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isAnimatable", ()=>isAnimatable);
+var _indexMjs = require("../../value/types/complex/index.mjs");
+/**
+ * Check if a value is animatable. Examples:
+ *
+ * ✅: 100, "100px", "#fff"
+ * ❌: "block", "url(2.jpg)"
+ * @param value
+ *
+ * @internal
+ */ const isAnimatable = (key, value)=>{
+    // If the list of keys tat might be non-animatable grows, replace with Set
+    if (key === "zIndex") return false;
+    // If it's a number or a keyframes array, we can animate it. We might at some point
+    // need to do a deep isAnimatable check of keyframes, or let Popmotion handle this,
+    // but for now lets leave it like this for performance reasons
+    if (typeof value === "number" || Array.isArray(value)) return true;
+    if (typeof value === "string" && // It's animatable if we have a string
+    (0, _indexMjs.complex).test(value) && // And it contains numbers and/or colors
+    !value.startsWith("url(") // Unless it starts with "url("
+    ) return true;
+    return false;
+};
+
+},{"../../value/types/complex/index.mjs":"lmoWV","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1c50D":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getKeyframes", ()=>getKeyframes);
+var _animatableNoneMjs = require("../../render/dom/value-types/animatable-none.mjs");
+var _isAnimatableMjs = require("./is-animatable.mjs");
+var _transitionsMjs = require("./transitions.mjs");
+var _wildcardsMjs = require("./wildcards.mjs");
+function getKeyframes(value, valueName, target, transition) {
+    const isTargetAnimatable = (0, _isAnimatableMjs.isAnimatable)(valueName, target);
+    let origin = transition.from !== undefined ? transition.from : value.get();
+    if (origin === "none" && isTargetAnimatable && typeof target === "string") /**
+         * If we're trying to animate from "none", try and get an animatable version
+         * of the target. This could be improved to work both ways.
+         */ origin = (0, _animatableNoneMjs.getAnimatableNone)(valueName, target);
+    else if ((0, _transitionsMjs.isZero)(origin) && typeof target === "string") origin = (0, _transitionsMjs.getZeroUnit)(target);
+    else if (!Array.isArray(target) && (0, _transitionsMjs.isZero)(target) && typeof origin === "string") target = (0, _transitionsMjs.getZeroUnit)(origin);
+    /**
+     * If the target has been defined as a series of keyframes
+     */ if (Array.isArray(target)) return (0, _wildcardsMjs.fillWildcardKeyframes)(origin, target);
+    else return [
+        origin,
+        target
+    ];
+}
+
+},{"../../render/dom/value-types/animatable-none.mjs":"imHSe","./is-animatable.mjs":"7YoDs","./transitions.mjs":"bsOYk","./wildcards.mjs":"jgDmk","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"imHSe":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getAnimatableNone", ()=>getAnimatableNone);
+var _indexMjs = require("../../../value/types/complex/index.mjs");
+var _filterMjs = require("../../../value/types/complex/filter.mjs");
+var _defaultsMjs = require("./defaults.mjs");
+function getAnimatableNone(key, value) {
+    let defaultValueType = (0, _defaultsMjs.getDefaultValueType)(key);
+    if (defaultValueType !== (0, _filterMjs.filter)) defaultValueType = (0, _indexMjs.complex);
+    // If value is not recognised as animatable, ie "none", create an animatable version origin based on the target
+    return defaultValueType.getAnimatableNone ? defaultValueType.getAnimatableNone(value) : undefined;
+}
+
+},{"../../../value/types/complex/index.mjs":"lmoWV","../../../value/types/complex/filter.mjs":"8VF6A","./defaults.mjs":"1Ajoh","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8VF6A":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filter", ()=>filter);
+var _indexMjs = require("./index.mjs");
+var _utilsMjs = require("../utils.mjs");
+/**
+ * Properties that should default to 1 or 100%
+ */ const maxDefaults = new Set([
+    "brightness",
+    "contrast",
+    "saturate",
+    "opacity"
+]);
+function applyDefaultFilter(v) {
+    const [name, value] = v.slice(0, -1).split("(");
+    if (name === "drop-shadow") return v;
+    const [number] = value.match((0, _utilsMjs.floatRegex)) || [];
+    if (!number) return v;
+    const unit = value.replace(number, "");
+    let defaultValue = maxDefaults.has(name) ? 1 : 0;
+    if (number !== value) defaultValue *= 100;
+    return name + "(" + defaultValue + unit + ")";
+}
+const functionRegex = /([a-z-]*)\(.*?\)/g;
+const filter = {
+    ...(0, _indexMjs.complex),
+    getAnimatableNone: (v)=>{
+        const functions = v.match(functionRegex);
+        return functions ? functions.map(applyDefaultFilter).join(" ") : v;
+    }
+};
+
+},{"./index.mjs":"lmoWV","../utils.mjs":"kaB0b","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1Ajoh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "defaultValueTypes", ()=>defaultValueTypes);
+parcelHelpers.export(exports, "getDefaultValueType", ()=>getDefaultValueType);
+var _indexMjs = require("../../../value/types/color/index.mjs");
+var _filterMjs = require("../../../value/types/complex/filter.mjs");
+var _numberMjs = require("./number.mjs");
+/**
+ * A map of default value types for common values
+ */ const defaultValueTypes = {
+    ...(0, _numberMjs.numberValueTypes),
+    color: // Color props
+    (0, _indexMjs.color),
+    backgroundColor: (0, _indexMjs.color),
+    outlineColor: (0, _indexMjs.color),
+    fill: (0, _indexMjs.color),
+    stroke: (0, _indexMjs.color),
+    // Border props
+    borderColor: (0, _indexMjs.color),
+    borderTopColor: (0, _indexMjs.color),
+    borderRightColor: (0, _indexMjs.color),
+    borderBottomColor: (0, _indexMjs.color),
+    borderLeftColor: (0, _indexMjs.color),
+    filter: (0, _filterMjs.filter),
+    WebkitFilter: (0, _filterMjs.filter)
+};
+/**
+ * Gets the default ValueType for the provided value key
+ */ const getDefaultValueType = (key)=>defaultValueTypes[key];
+
+},{"../../../value/types/color/index.mjs":"1nAma","../../../value/types/complex/filter.mjs":"8VF6A","./number.mjs":"biQiX","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bsOYk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getValueTransition", ()=>getValueTransition);
+parcelHelpers.export(exports, "getZeroUnit", ()=>getZeroUnit);
+parcelHelpers.export(exports, "isTransitionDefined", ()=>isTransitionDefined);
+parcelHelpers.export(exports, "isZero", ()=>isZero);
+var _animatableNoneMjs = require("../../render/dom/value-types/animatable-none.mjs");
+/**
+ * Decide whether a transition is defined on a given Transition.
+ * This filters out orchestration options and returns true
+ * if any options are left.
+ */ function isTransitionDefined({ when , delay: _delay , delayChildren , staggerChildren , staggerDirection , repeat , repeatType , repeatDelay , from , elapsed , ...transition }) {
+    return !!Object.keys(transition).length;
+}
+function isZero(value) {
+    return value === 0 || typeof value === "string" && parseFloat(value) === 0 && value.indexOf(" ") === -1;
+}
+function getZeroUnit(potentialUnitType) {
+    return typeof potentialUnitType === "number" ? 0 : (0, _animatableNoneMjs.getAnimatableNone)("", potentialUnitType);
+}
+function getValueTransition(transition, key) {
+    return transition[key] || transition["default"] || transition;
+}
+
+},{"../../render/dom/value-types/animatable-none.mjs":"imHSe","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jgDmk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "fillWildcardKeyframes", ()=>fillWildcardKeyframes);
+function fillWildcardKeyframes(origin, [...keyframes]) {
+    /**
+     * Ensure an wildcard keyframes are hydrated by the origin.
+     */ for(let i = 0; i < keyframes.length; i++)if (keyframes[i] === null) keyframes[i] = i === 0 ? origin : keyframes[i - 1];
+    return keyframes;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6vOmr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isWillChangeMotionValue", ()=>isWillChangeMotionValue);
+var _isMotionValueMjs = require("../utils/is-motion-value.mjs");
+function isWillChangeMotionValue(value) {
+    return Boolean((0, _isMotionValueMjs.isMotionValue)(value) && value.add);
+}
+
+},{"../utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5AEB8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkTargetForNewValues", ()=>checkTargetForNewValues);
+parcelHelpers.export(exports, "getOrigin", ()=>getOrigin);
+parcelHelpers.export(exports, "getOriginFromTransition", ()=>getOriginFromTransition);
+parcelHelpers.export(exports, "setTarget", ()=>setTarget);
+parcelHelpers.export(exports, "setValues", ()=>setValues);
+var _isNumericalStringMjs = require("../../utils/is-numerical-string.mjs");
+var _isZeroValueStringMjs = require("../../utils/is-zero-value-string.mjs");
+var _resolveValueMjs = require("../../utils/resolve-value.mjs");
+var _indexMjs = require("../../value/index.mjs");
+var _indexMjs1 = require("../../value/types/complex/index.mjs");
+var _animatableNoneMjs = require("../dom/value-types/animatable-none.mjs");
+var _findMjs = require("../dom/value-types/find.mjs");
+var _resolveDynamicVariantsMjs = require("./resolve-dynamic-variants.mjs");
+/**
+ * Set VisualElement's MotionValue, creating a new MotionValue for it if
+ * it doesn't exist.
+ */ function setMotionValue(visualElement, key, value) {
+    if (visualElement.hasValue(key)) visualElement.getValue(key).set(value);
+    else visualElement.addValue(key, (0, _indexMjs.motionValue)(value));
+}
+function setTarget(visualElement, definition) {
+    const resolved = (0, _resolveDynamicVariantsMjs.resolveVariant)(visualElement, definition);
+    let { transitionEnd ={} , transition ={} , ...target } = resolved ? visualElement.makeTargetAnimatable(resolved, false) : {};
+    target = {
+        ...target,
+        ...transitionEnd
+    };
+    for(const key in target){
+        const value = (0, _resolveValueMjs.resolveFinalValueInKeyframes)(target[key]);
+        setMotionValue(visualElement, key, value);
+    }
+}
+function setVariants(visualElement, variantLabels) {
+    const reversedLabels = [
+        ...variantLabels
+    ].reverse();
+    reversedLabels.forEach((key)=>{
+        const variant = visualElement.getVariant(key);
+        variant && setTarget(visualElement, variant);
+        if (visualElement.variantChildren) visualElement.variantChildren.forEach((child)=>{
+            setVariants(child, variantLabels);
+        });
+    });
+}
+function setValues(visualElement, definition) {
+    if (Array.isArray(definition)) return setVariants(visualElement, definition);
+    else if (typeof definition === "string") return setVariants(visualElement, [
+        definition
+    ]);
+    else setTarget(visualElement, definition);
+}
+function checkTargetForNewValues(visualElement, target, origin) {
+    var _a, _b;
+    const newValueKeys = Object.keys(target).filter((key)=>!visualElement.hasValue(key));
+    const numNewValues = newValueKeys.length;
+    if (!numNewValues) return;
+    for(let i = 0; i < numNewValues; i++){
+        const key = newValueKeys[i];
+        const targetValue = target[key];
+        let value = null;
+        /**
+         * If the target is a series of keyframes, we can use the first value
+         * in the array. If this first value is null, we'll still need to read from the DOM.
+         */ if (Array.isArray(targetValue)) value = targetValue[0];
+        /**
+         * If the target isn't keyframes, or the first keyframe was null, we need to
+         * first check if an origin value was explicitly defined in the transition as "from",
+         * if not read the value from the DOM. As an absolute fallback, take the defined target value.
+         */ if (value === null) value = (_b = (_a = origin[key]) !== null && _a !== void 0 ? _a : visualElement.readValue(key)) !== null && _b !== void 0 ? _b : target[key];
+        /**
+         * If value is still undefined or null, ignore it. Preferably this would throw,
+         * but this was causing issues in Framer.
+         */ if (value === undefined || value === null) continue;
+        if (typeof value === "string" && ((0, _isNumericalStringMjs.isNumericalString)(value) || (0, _isZeroValueStringMjs.isZeroValueString)(value))) // If this is a number read as a string, ie "0" or "200", convert it to a number
+        value = parseFloat(value);
+        else if (!(0, _findMjs.findValueType)(value) && (0, _indexMjs1.complex).test(targetValue)) value = (0, _animatableNoneMjs.getAnimatableNone)(key, targetValue);
+        visualElement.addValue(key, (0, _indexMjs.motionValue)(value, {
+            owner: visualElement
+        }));
+        if (origin[key] === undefined) origin[key] = value;
+        if (value !== null) visualElement.setBaseTarget(key, value);
+    }
+}
+function getOriginFromTransition(key, transition) {
+    if (!transition) return;
+    const valueTransition = transition[key] || transition["default"] || transition;
+    return valueTransition.from;
+}
+function getOrigin(target, transition, visualElement) {
+    const origin = {};
+    for(const key in target){
+        const transitionOrigin = getOriginFromTransition(key, transition);
+        if (transitionOrigin !== undefined) origin[key] = transitionOrigin;
+        else {
+            const value = visualElement.getValue(key);
+            if (value) origin[key] = value.get();
+        }
+    }
+    return origin;
+}
+
+},{"../../utils/is-numerical-string.mjs":"c9b9u","../../utils/is-zero-value-string.mjs":"45kz9","../../utils/resolve-value.mjs":"cPnbP","../../value/index.mjs":"he8bY","../../value/types/complex/index.mjs":"lmoWV","../dom/value-types/animatable-none.mjs":"imHSe","../dom/value-types/find.mjs":"3gWgl","./resolve-dynamic-variants.mjs":"dSXph","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"c9b9u":[function(require,module,exports) {
+/**
+ * Check if value is a numerical string, ie a string that is purely a number eg "100" or "-100.1"
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isNumericalString", ()=>isNumericalString);
+const isNumericalString = (v)=>/^\-?\d*\.?\d+$/.test(v);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"45kz9":[function(require,module,exports) {
+/**
+ * Check if the value is a zero value string like "0px" or "0%"
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isZeroValueString", ()=>isZeroValueString);
+const isZeroValueString = (v)=>/^0[^.\s]+$/.test(v);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"he8bY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MotionValue", ()=>MotionValue);
+parcelHelpers.export(exports, "motionValue", ()=>motionValue);
+var _dataMjs = require("../frameloop/data.mjs");
+var _indexMjs = require("../frameloop/index.mjs");
+var _subscriptionManagerMjs = require("../utils/subscription-manager.mjs");
+var _velocityPerSecondMjs = require("../utils/velocity-per-second.mjs");
+var _warnOnceMjs = require("../utils/warn-once.mjs");
+const isFloat = (value)=>{
+    return !isNaN(parseFloat(value));
+};
+/**
+ * `MotionValue` is used to track the state and velocity of motion values.
+ *
+ * @public
+ */ class MotionValue {
+    /**
+     * @param init - The initiating value
+     * @param config - Optional configuration options
+     *
+     * -  `transformer`: A function to transform incoming values with.
+     *
+     * @internal
+     */ constructor(init, options = {}){
+        /**
+         * This will be replaced by the build step with the latest version number.
+         * When MotionValues are provided to motion components, warn if versions are mixed.
+         */ this.version = "10.12.4";
+        /**
+         * Duration, in milliseconds, since last updating frame.
+         *
+         * @internal
+         */ this.timeDelta = 0;
+        /**
+         * Timestamp of the last time this `MotionValue` was updated.
+         *
+         * @internal
+         */ this.lastUpdated = 0;
+        /**
+         * Tracks whether this value can output a velocity. Currently this is only true
+         * if the value is numerical, but we might be able to widen the scope here and support
+         * other value types.
+         *
+         * @internal
+         */ this.canTrackVelocity = false;
+        /**
+         * An object containing a SubscriptionManager for each active event.
+         */ this.events = {};
+        this.updateAndNotify = (v, render = true)=>{
+            this.prev = this.current;
+            this.current = v;
+            // Update timestamp
+            const { delta , timestamp  } = (0, _dataMjs.frameData);
+            if (this.lastUpdated !== timestamp) {
+                this.timeDelta = delta;
+                this.lastUpdated = timestamp;
+                (0, _indexMjs.frame).postRender(this.scheduleVelocityCheck);
+            }
+            // Update update subscribers
+            if (this.prev !== this.current && this.events.change) this.events.change.notify(this.current);
+            // Update velocity subscribers
+            if (this.events.velocityChange) this.events.velocityChange.notify(this.getVelocity());
+            // Update render subscribers
+            if (render && this.events.renderRequest) this.events.renderRequest.notify(this.current);
+        };
+        /**
+         * Schedule a velocity check for the next frame.
+         *
+         * This is an instanced and bound function to prevent generating a new
+         * function once per frame.
+         *
+         * @internal
+         */ this.scheduleVelocityCheck = ()=>(0, _indexMjs.frame).postRender(this.velocityCheck);
+        /**
+         * Updates `prev` with `current` if the value hasn't been updated this frame.
+         * This ensures velocity calculations return `0`.
+         *
+         * This is an instanced and bound function to prevent generating a new
+         * function once per frame.
+         *
+         * @internal
+         */ this.velocityCheck = ({ timestamp  })=>{
+            if (timestamp !== this.lastUpdated) {
+                this.prev = this.current;
+                if (this.events.velocityChange) this.events.velocityChange.notify(this.getVelocity());
+            }
+        };
+        this.hasAnimated = false;
+        this.prev = this.current = init;
+        this.canTrackVelocity = isFloat(this.current);
+        this.owner = options.owner;
+    }
+    /**
+     * Adds a function that will be notified when the `MotionValue` is updated.
+     *
+     * It returns a function that, when called, will cancel the subscription.
+     *
+     * When calling `onChange` inside a React component, it should be wrapped with the
+     * `useEffect` hook. As it returns an unsubscribe function, this should be returned
+     * from the `useEffect` function to ensure you don't add duplicate subscribers..
+     *
+     * ```jsx
+     * export const MyComponent = () => {
+     *   const x = useMotionValue(0)
+     *   const y = useMotionValue(0)
+     *   const opacity = useMotionValue(1)
+     *
+     *   useEffect(() => {
+     *     function updateOpacity() {
+     *       const maxXY = Math.max(x.get(), y.get())
+     *       const newOpacity = transform(maxXY, [0, 100], [1, 0])
+     *       opacity.set(newOpacity)
+     *     }
+     *
+     *     const unsubscribeX = x.on("change", updateOpacity)
+     *     const unsubscribeY = y.on("change", updateOpacity)
+     *
+     *     return () => {
+     *       unsubscribeX()
+     *       unsubscribeY()
+     *     }
+     *   }, [])
+     *
+     *   return <motion.div style={{ x }} />
+     * }
+     * ```
+     *
+     * @param subscriber - A function that receives the latest value.
+     * @returns A function that, when called, will cancel this subscription.
+     *
+     * @deprecated
+     */ onChange(subscription) {
+        (0, _warnOnceMjs.warnOnce)(false, `value.onChange(callback) is deprecated. Switch to value.on("change", callback).`);
+        return this.on("change", subscription);
+    }
+    on(eventName, callback) {
+        if (!this.events[eventName]) this.events[eventName] = new (0, _subscriptionManagerMjs.SubscriptionManager)();
+        const unsubscribe = this.events[eventName].add(callback);
+        if (eventName === "change") return ()=>{
+            unsubscribe();
+            /**
+                 * If we have no more change listeners by the start
+                 * of the next frame, stop active animations.
+                 */ (0, _indexMjs.frame).read(()=>{
+                if (!this.events.change.getSize()) this.stop();
+            });
+        };
+        return unsubscribe;
+    }
+    clearListeners() {
+        for(const eventManagers in this.events)this.events[eventManagers].clear();
+    }
+    /**
+     * Attaches a passive effect to the `MotionValue`.
+     *
+     * @internal
+     */ attach(passiveEffect, stopPassiveEffect) {
+        this.passiveEffect = passiveEffect;
+        this.stopPassiveEffect = stopPassiveEffect;
+    }
+    /**
+     * Sets the state of the `MotionValue`.
+     *
+     * @remarks
+     *
+     * ```jsx
+     * const x = useMotionValue(0)
+     * x.set(10)
+     * ```
+     *
+     * @param latest - Latest value to set.
+     * @param render - Whether to notify render subscribers. Defaults to `true`
+     *
+     * @public
+     */ set(v, render = true) {
+        if (!render || !this.passiveEffect) this.updateAndNotify(v, render);
+        else this.passiveEffect(v, this.updateAndNotify);
+    }
+    setWithVelocity(prev, current, delta) {
+        this.set(current);
+        this.prev = prev;
+        this.timeDelta = delta;
+    }
+    /**
+     * Set the state of the `MotionValue`, stopping any active animations,
+     * effects, and resets velocity to `0`.
+     */ jump(v) {
+        this.updateAndNotify(v);
+        this.prev = v;
+        this.stop();
+        if (this.stopPassiveEffect) this.stopPassiveEffect();
+    }
+    /**
+     * Returns the latest state of `MotionValue`
+     *
+     * @returns - The latest state of `MotionValue`
+     *
+     * @public
+     */ get() {
+        return this.current;
+    }
+    /**
+     * @public
+     */ getPrevious() {
+        return this.prev;
+    }
+    /**
+     * Returns the latest velocity of `MotionValue`
+     *
+     * @returns - The latest velocity of `MotionValue`. Returns `0` if the state is non-numerical.
+     *
+     * @public
+     */ getVelocity() {
+        // This could be isFloat(this.prev) && isFloat(this.current), but that would be wasteful
+        return this.canTrackVelocity ? (0, _velocityPerSecondMjs.velocityPerSecond)(parseFloat(this.current) - parseFloat(this.prev), this.timeDelta) : 0;
+    }
+    /**
+     * Registers a new animation to control this `MotionValue`. Only one
+     * animation can drive a `MotionValue` at one time.
+     *
+     * ```jsx
+     * value.start()
+     * ```
+     *
+     * @param animation - A function that starts the provided animation
+     *
+     * @internal
+     */ start(startAnimation) {
+        this.stop();
+        return new Promise((resolve)=>{
+            this.hasAnimated = true;
+            this.animation = startAnimation(resolve);
+            if (this.events.animationStart) this.events.animationStart.notify();
+        }).then(()=>{
+            if (this.events.animationComplete) this.events.animationComplete.notify();
+            this.clearAnimation();
+        });
+    }
+    /**
+     * Stop the currently active animation.
+     *
+     * @public
+     */ stop() {
+        if (this.animation) {
+            this.animation.stop();
+            if (this.events.animationCancel) this.events.animationCancel.notify();
+        }
+        this.clearAnimation();
+    }
+    /**
+     * Returns `true` if this value is currently animating.
+     *
+     * @public
+     */ isAnimating() {
+        return !!this.animation;
+    }
+    clearAnimation() {
+        delete this.animation;
+    }
+    /**
+     * Destroy and clean up subscribers to this `MotionValue`.
+     *
+     * The `MotionValue` hooks like `useMotionValue` and `useTransform` automatically
+     * handle the lifecycle of the returned `MotionValue`, so this method is only necessary if you've manually
+     * created a `MotionValue` via the `motionValue` function.
+     *
+     * @public
+     */ destroy() {
+        this.clearListeners();
+        this.stop();
+        if (this.stopPassiveEffect) this.stopPassiveEffect();
+    }
+}
+function motionValue(init, options) {
+    return new MotionValue(init, options);
+}
+
+},{"../frameloop/data.mjs":"gzDj4","../frameloop/index.mjs":"3Dz3U","../utils/subscription-manager.mjs":"fxDTo","../utils/velocity-per-second.mjs":"1eGg6","../utils/warn-once.mjs":"JIiQV","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fxDTo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SubscriptionManager", ()=>SubscriptionManager);
+var _arrayMjs = require("./array.mjs");
+class SubscriptionManager {
+    constructor(){
+        this.subscriptions = [];
+    }
+    add(handler) {
+        (0, _arrayMjs.addUniqueItem)(this.subscriptions, handler);
+        return ()=>(0, _arrayMjs.removeItem)(this.subscriptions, handler);
+    }
+    notify(a, b, c) {
+        const numSubscriptions = this.subscriptions.length;
+        if (!numSubscriptions) return;
+        if (numSubscriptions === 1) /**
+             * If there's only a single handler we can just call it without invoking a loop.
+             */ this.subscriptions[0](a, b, c);
+        else for(let i = 0; i < numSubscriptions; i++){
+            /**
+                 * Check whether the handler exists before firing as it's possible
+                 * the subscriptions were modified during this loop running.
+                 */ const handler = this.subscriptions[i];
+            handler && handler(a, b, c);
+        }
+    }
+    getSize() {
+        return this.subscriptions.length;
+    }
+    clear() {
+        this.subscriptions.length = 0;
+    }
+}
+
+},{"./array.mjs":"fpJYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fpJYa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addUniqueItem", ()=>addUniqueItem);
+parcelHelpers.export(exports, "moveItem", ()=>moveItem);
+parcelHelpers.export(exports, "removeItem", ()=>removeItem);
+function addUniqueItem(arr, item) {
+    if (arr.indexOf(item) === -1) arr.push(item);
+}
+function removeItem(arr, item) {
+    const index = arr.indexOf(item);
+    if (index > -1) arr.splice(index, 1);
+}
+// Adapted from array-move
+function moveItem([...arr], fromIndex, toIndex) {
+    const startIndex = fromIndex < 0 ? arr.length + fromIndex : fromIndex;
+    if (startIndex >= 0 && startIndex < arr.length) {
+        const endIndex = toIndex < 0 ? arr.length + toIndex : toIndex;
+        const [item] = arr.splice(fromIndex, 1);
+        arr.splice(endIndex, 0, item);
+    }
+    return arr;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"JIiQV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "warnOnce", ()=>warnOnce);
+const warned = new Set();
+function warnOnce(condition, message, element) {
+    if (condition || warned.has(message)) return;
+    console.warn(message);
+    if (element) console.warn(element);
+    warned.add(message);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3gWgl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "findValueType", ()=>findValueType);
+var _indexMjs = require("../../../value/types/color/index.mjs");
+var _indexMjs1 = require("../../../value/types/complex/index.mjs");
+var _dimensionsMjs = require("./dimensions.mjs");
+var _testMjs = require("./test.mjs");
+/**
+ * A list of all ValueTypes
+ */ const valueTypes = [
+    ...(0, _dimensionsMjs.dimensionValueTypes),
+    (0, _indexMjs.color),
+    (0, _indexMjs1.complex)
+];
+/**
+ * Tests a value against the list of ValueTypes
+ */ const findValueType = (v)=>valueTypes.find((0, _testMjs.testValueType)(v));
+
+},{"../../../value/types/color/index.mjs":"1nAma","../../../value/types/complex/index.mjs":"lmoWV","./dimensions.mjs":"3Yt0V","./test.mjs":"kQneZ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3Yt0V":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "dimensionValueTypes", ()=>dimensionValueTypes);
+parcelHelpers.export(exports, "findDimensionValueType", ()=>findDimensionValueType);
+var _indexMjs = require("../../../value/types/numbers/index.mjs");
+var _unitsMjs = require("../../../value/types/numbers/units.mjs");
+var _testMjs = require("./test.mjs");
+var _typeAutoMjs = require("./type-auto.mjs");
+/**
+ * A list of value types commonly used for dimensions
+ */ const dimensionValueTypes = [
+    (0, _indexMjs.number),
+    (0, _unitsMjs.px),
+    (0, _unitsMjs.percent),
+    (0, _unitsMjs.degrees),
+    (0, _unitsMjs.vw),
+    (0, _unitsMjs.vh),
+    (0, _typeAutoMjs.auto)
+];
+/**
+ * Tests a dimensional value against the list of dimension ValueTypes
+ */ const findDimensionValueType = (v)=>dimensionValueTypes.find((0, _testMjs.testValueType)(v));
+
+},{"../../../value/types/numbers/index.mjs":"bI9mf","../../../value/types/numbers/units.mjs":"lGBHA","./test.mjs":"kQneZ","./type-auto.mjs":"fzm2b","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"kQneZ":[function(require,module,exports) {
+/**
+ * Tests a provided value against a ValueType
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "testValueType", ()=>testValueType);
+const testValueType = (v)=>(type)=>type.test(v);
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fzm2b":[function(require,module,exports) {
+/**
+ * ValueType for "auto"
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "auto", ()=>auto);
+const auto = {
+    test: (v)=>v === "auto",
+    parse: (v)=>v
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"80mMV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateVariant", ()=>animateVariant);
+parcelHelpers.export(exports, "sortByTreeOrder", ()=>sortByTreeOrder);
+var _resolveDynamicVariantsMjs = require("../../render/utils/resolve-dynamic-variants.mjs");
+var _visualElementTargetMjs = require("./visual-element-target.mjs");
+function animateVariant(visualElement, variant, options = {}) {
+    const resolved = (0, _resolveDynamicVariantsMjs.resolveVariant)(visualElement, variant, options.custom);
+    let { transition =visualElement.getDefaultTransition() || {}  } = resolved || {};
+    if (options.transitionOverride) transition = options.transitionOverride;
+    /**
+     * If we have a variant, create a callback that runs it as an animation.
+     * Otherwise, we resolve a Promise immediately for a composable no-op.
+     */ const getAnimation = resolved ? ()=>Promise.all((0, _visualElementTargetMjs.animateTarget)(visualElement, resolved, options)) : ()=>Promise.resolve();
+    /**
+     * If we have children, create a callback that runs all their animations.
+     * Otherwise, we resolve a Promise immediately for a composable no-op.
+     */ const getChildAnimations = visualElement.variantChildren && visualElement.variantChildren.size ? (forwardDelay = 0)=>{
+        const { delayChildren =0 , staggerChildren , staggerDirection  } = transition;
+        return animateChildren(visualElement, variant, delayChildren + forwardDelay, staggerChildren, staggerDirection, options);
+    } : ()=>Promise.resolve();
+    /**
+     * If the transition explicitly defines a "when" option, we need to resolve either
+     * this animation or all children animations before playing the other.
+     */ const { when  } = transition;
+    if (when) {
+        const [first, last] = when === "beforeChildren" ? [
+            getAnimation,
+            getChildAnimations
+        ] : [
+            getChildAnimations,
+            getAnimation
+        ];
+        return first().then(()=>last());
+    } else return Promise.all([
+        getAnimation(),
+        getChildAnimations(options.delay)
+    ]);
+}
+function animateChildren(visualElement, variant, delayChildren = 0, staggerChildren = 0, staggerDirection = 1, options) {
+    const animations = [];
+    const maxStaggerDuration = (visualElement.variantChildren.size - 1) * staggerChildren;
+    const generateStaggerDuration = staggerDirection === 1 ? (i = 0)=>i * staggerChildren : (i = 0)=>maxStaggerDuration - i * staggerChildren;
+    Array.from(visualElement.variantChildren).sort(sortByTreeOrder).forEach((child, i)=>{
+        child.notify("AnimationStart", variant);
+        animations.push(animateVariant(child, variant, {
+            ...options,
+            delay: delayChildren + generateStaggerDuration(i)
+        }).then(()=>child.notify("AnimationComplete", variant)));
+    });
+    return Promise.all(animations);
+}
+function sortByTreeOrder(a, b) {
+    return a.sortNodePosition(b);
+}
+
+},{"../../render/utils/resolve-dynamic-variants.mjs":"dSXph","./visual-element-target.mjs":"6SL9E","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"inv8k":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ExitAnimationFeature", ()=>ExitAnimationFeature);
+var _featureMjs = require("../Feature.mjs");
+let id = 0;
+class ExitAnimationFeature extends (0, _featureMjs.Feature) {
+    constructor(){
+        super(...arguments);
+        this.id = id++;
+    }
+    update() {
+        if (!this.node.presenceContext) return;
+        const { isPresent , onExitComplete , custom  } = this.node.presenceContext;
+        const { isPresent: prevIsPresent  } = this.node.prevPresenceContext || {};
+        if (!this.node.animationState || isPresent === prevIsPresent) return;
+        const exitAnimation = this.node.animationState.setActive("exit", !isPresent, {
+            custom: custom !== null && custom !== void 0 ? custom : this.node.getProps().custom
+        });
+        if (onExitComplete && !isPresent) exitAnimation.then(()=>onExitComplete(this.id));
+    }
+    mount() {
+        const { register  } = this.node.presenceContext || {};
+        if (register) this.unmount = register(this.id);
+    }
+    unmount() {}
+}
+
+},{"../Feature.mjs":"lI7Ue","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fBUJ5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "drag", ()=>drag);
+var _indexMjs = require("../../gestures/drag/index.mjs");
+var _indexMjs1 = require("../../gestures/pan/index.mjs");
+var _measureLayoutMjs = require("./layout/MeasureLayout.mjs");
+var _htmlprojectionNodeMjs = require("../../projection/node/HTMLProjectionNode.mjs");
+const drag = {
+    pan: {
+        Feature: (0, _indexMjs1.PanGesture)
+    },
+    drag: {
+        Feature: (0, _indexMjs.DragGesture),
+        ProjectionNode: (0, _htmlprojectionNodeMjs.HTMLProjectionNode),
+        MeasureLayout: (0, _measureLayoutMjs.MeasureLayout)
+    }
+};
+
+},{"../../gestures/drag/index.mjs":"Xa3NE","../../gestures/pan/index.mjs":"8CJyV","./layout/MeasureLayout.mjs":"kA9rP","../../projection/node/HTMLProjectionNode.mjs":"d4eCC","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"Xa3NE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DragGesture", ()=>DragGesture);
+var _featureMjs = require("../../motion/features/Feature.mjs");
+var _noopMjs = require("../../utils/noop.mjs");
+var _visualElementDragControlsMjs = require("./VisualElementDragControls.mjs");
+class DragGesture extends (0, _featureMjs.Feature) {
+    constructor(node){
+        super(node);
+        this.removeGroupControls = (0, _noopMjs.noop);
+        this.removeListeners = (0, _noopMjs.noop);
+        this.controls = new (0, _visualElementDragControlsMjs.VisualElementDragControls)(node);
+    }
+    mount() {
+        // If we've been provided a DragControls for manual control over the drag gesture,
+        // subscribe this component to it on mount.
+        const { dragControls  } = this.node.getProps();
+        if (dragControls) this.removeGroupControls = dragControls.subscribe(this.controls);
+        this.removeListeners = this.controls.addListeners() || (0, _noopMjs.noop);
+    }
+    unmount() {
+        this.removeGroupControls();
+        this.removeListeners();
+    }
+}
+
+},{"../../motion/features/Feature.mjs":"lI7Ue","../../utils/noop.mjs":"67SDH","./VisualElementDragControls.mjs":"cUl58","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cUl58":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "VisualElementDragControls", ()=>VisualElementDragControls);
+parcelHelpers.export(exports, "elementDragControls", ()=>elementDragControls);
+var _errorsMjs = require("../../utils/errors.mjs");
+var _panSessionMjs = require("../pan/PanSession.mjs");
+var _lockMjs = require("./utils/lock.mjs");
+var _isRefObjectMjs = require("../../utils/is-ref-object.mjs");
+var _addPointerEventMjs = require("../../events/add-pointer-event.mjs");
+var _constraintsMjs = require("./utils/constraints.mjs");
+var _modelsMjs = require("../../projection/geometry/models.mjs");
+var _eachAxisMjs = require("../../projection/utils/each-axis.mjs");
+var _measureMjs = require("../../projection/utils/measure.mjs");
+var _eventInfoMjs = require("../../events/event-info.mjs");
+var _conversionMjs = require("../../projection/geometry/conversion.mjs");
+var _addDomEventMjs = require("../../events/add-dom-event.mjs");
+var _deltaCalcMjs = require("../../projection/geometry/delta-calc.mjs");
+var _mixMjs = require("../../utils/mix.mjs");
+var _unitsMjs = require("../../value/types/numbers/units.mjs");
+var _motionValueMjs = require("../../animation/interfaces/motion-value.mjs");
+var _indexMjs = require("../../frameloop/index.mjs");
+const elementDragControls = new WeakMap();
+/**
+ *
+ */ // let latestPointerEvent: PointerEvent
+class VisualElementDragControls {
+    constructor(visualElement){
+        // This is a reference to the global drag gesture lock, ensuring only one component
+        // can "capture" the drag of one or both axes.
+        // TODO: Look into moving this into pansession?
+        this.openGlobalLock = null;
+        this.isDragging = false;
+        this.currentDirection = null;
+        this.originPoint = {
+            x: 0,
+            y: 0
+        };
+        /**
+         * The permitted boundaries of travel, in pixels.
+         */ this.constraints = false;
+        this.hasMutatedConstraints = false;
+        /**
+         * The per-axis resolved elastic values.
+         */ this.elastic = (0, _modelsMjs.createBox)();
+        this.visualElement = visualElement;
+    }
+    start(originEvent, { snapToCursor =false  } = {}) {
+        /**
+         * Don't start dragging if this component is exiting
+         */ const { presenceContext  } = this.visualElement;
+        if (presenceContext && presenceContext.isPresent === false) return;
+        const onSessionStart = (event)=>{
+            // Stop any animations on both axis values immediately. This allows the user to throw and catch
+            // the component.
+            this.stopAnimation();
+            if (snapToCursor) this.snapToCursor((0, _eventInfoMjs.extractEventInfo)(event, "page").point);
+        };
+        const onStart = (event, info)=>{
+            // Attempt to grab the global drag gesture lock - maybe make this part of PanSession
+            const { drag , dragPropagation , onDragStart  } = this.getProps();
+            if (drag && !dragPropagation) {
+                if (this.openGlobalLock) this.openGlobalLock();
+                this.openGlobalLock = (0, _lockMjs.getGlobalLock)(drag);
+                // If we don 't have the lock, don't start dragging
+                if (!this.openGlobalLock) return;
+            }
+            this.isDragging = true;
+            this.currentDirection = null;
+            this.resolveConstraints();
+            if (this.visualElement.projection) {
+                this.visualElement.projection.isAnimationBlocked = true;
+                this.visualElement.projection.target = undefined;
+            }
+            /**
+             * Record gesture origin
+             */ (0, _eachAxisMjs.eachAxis)((axis)=>{
+                let current = this.getAxisMotionValue(axis).get() || 0;
+                /**
+                 * If the MotionValue is a percentage value convert to px
+                 */ if ((0, _unitsMjs.percent).test(current)) {
+                    const { projection  } = this.visualElement;
+                    if (projection && projection.layout) {
+                        const measuredAxis = projection.layout.layoutBox[axis];
+                        if (measuredAxis) {
+                            const length = (0, _deltaCalcMjs.calcLength)(measuredAxis);
+                            current = length * (parseFloat(current) / 100);
+                        }
+                    }
+                }
+                this.originPoint[axis] = current;
+            });
+            // Fire onDragStart event
+            if (onDragStart) (0, _indexMjs.frame).update(()=>onDragStart(event, info), false, true);
+            const { animationState  } = this.visualElement;
+            animationState && animationState.setActive("whileDrag", true);
+        };
+        const onMove = (event, info)=>{
+            // latestPointerEvent = event
+            const { dragPropagation , dragDirectionLock , onDirectionLock , onDrag  } = this.getProps();
+            // If we didn't successfully receive the gesture lock, early return.
+            if (!dragPropagation && !this.openGlobalLock) return;
+            const { offset  } = info;
+            // Attempt to detect drag direction if directionLock is true
+            if (dragDirectionLock && this.currentDirection === null) {
+                this.currentDirection = getCurrentDirection(offset);
+                // If we've successfully set a direction, notify listener
+                if (this.currentDirection !== null) onDirectionLock && onDirectionLock(this.currentDirection);
+                return;
+            }
+            // Update each point with the latest position
+            this.updateAxis("x", info.point, offset);
+            this.updateAxis("y", info.point, offset);
+            /**
+             * Ideally we would leave the renderer to fire naturally at the end of
+             * this frame but if the element is about to change layout as the result
+             * of a re-render we want to ensure the browser can read the latest
+             * bounding box to ensure the pointer and element don't fall out of sync.
+             */ this.visualElement.render();
+            /**
+             * This must fire after the render call as it might trigger a state
+             * change which itself might trigger a layout update.
+             */ onDrag && onDrag(event, info);
+        };
+        const onSessionEnd = (event, info)=>this.stop(event, info);
+        this.panSession = new (0, _panSessionMjs.PanSession)(originEvent, {
+            onSessionStart,
+            onStart,
+            onMove,
+            onSessionEnd
+        }, {
+            transformPagePoint: this.visualElement.getTransformPagePoint()
+        });
+    }
+    stop(event, info) {
+        const isDragging = this.isDragging;
+        this.cancel();
+        if (!isDragging) return;
+        const { velocity  } = info;
+        this.startAnimation(velocity);
+        const { onDragEnd  } = this.getProps();
+        if (onDragEnd) (0, _indexMjs.frame).update(()=>onDragEnd(event, info));
+    }
+    cancel() {
+        this.isDragging = false;
+        const { projection , animationState  } = this.visualElement;
+        if (projection) projection.isAnimationBlocked = false;
+        this.panSession && this.panSession.end();
+        this.panSession = undefined;
+        const { dragPropagation  } = this.getProps();
+        if (!dragPropagation && this.openGlobalLock) {
+            this.openGlobalLock();
+            this.openGlobalLock = null;
+        }
+        animationState && animationState.setActive("whileDrag", false);
+    }
+    updateAxis(axis, _point, offset) {
+        const { drag  } = this.getProps();
+        // If we're not dragging this axis, do an early return.
+        if (!offset || !shouldDrag(axis, drag, this.currentDirection)) return;
+        const axisValue = this.getAxisMotionValue(axis);
+        let next = this.originPoint[axis] + offset[axis];
+        // Apply constraints
+        if (this.constraints && this.constraints[axis]) next = (0, _constraintsMjs.applyConstraints)(next, this.constraints[axis], this.elastic[axis]);
+        axisValue.set(next);
+    }
+    resolveConstraints() {
+        const { dragConstraints , dragElastic  } = this.getProps();
+        const { layout  } = this.visualElement.projection || {};
+        const prevConstraints = this.constraints;
+        if (dragConstraints && (0, _isRefObjectMjs.isRefObject)(dragConstraints)) {
+            if (!this.constraints) this.constraints = this.resolveRefConstraints();
+        } else if (dragConstraints && layout) this.constraints = (0, _constraintsMjs.calcRelativeConstraints)(layout.layoutBox, dragConstraints);
+        else this.constraints = false;
+        this.elastic = (0, _constraintsMjs.resolveDragElastic)(dragElastic);
+        /**
+         * If we're outputting to external MotionValues, we want to rebase the measured constraints
+         * from viewport-relative to component-relative.
+         */ if (prevConstraints !== this.constraints && layout && this.constraints && !this.hasMutatedConstraints) (0, _eachAxisMjs.eachAxis)((axis)=>{
+            if (this.getAxisMotionValue(axis)) this.constraints[axis] = (0, _constraintsMjs.rebaseAxisConstraints)(layout.layoutBox[axis], this.constraints[axis]);
+        });
+    }
+    resolveRefConstraints() {
+        const { dragConstraints: constraints , onMeasureDragConstraints  } = this.getProps();
+        if (!constraints || !(0, _isRefObjectMjs.isRefObject)(constraints)) return false;
+        const constraintsElement = constraints.current;
+        (0, _errorsMjs.invariant)(constraintsElement !== null, "If `dragConstraints` is set as a React ref, that ref must be passed to another component's `ref` prop.");
+        const { projection  } = this.visualElement;
+        // TODO
+        if (!projection || !projection.layout) return false;
+        const constraintsBox = (0, _measureMjs.measurePageBox)(constraintsElement, projection.root, this.visualElement.getTransformPagePoint());
+        let measuredConstraints = (0, _constraintsMjs.calcViewportConstraints)(projection.layout.layoutBox, constraintsBox);
+        /**
+         * If there's an onMeasureDragConstraints listener we call it and
+         * if different constraints are returned, set constraints to that
+         */ if (onMeasureDragConstraints) {
+            const userConstraints = onMeasureDragConstraints((0, _conversionMjs.convertBoxToBoundingBox)(measuredConstraints));
+            this.hasMutatedConstraints = !!userConstraints;
+            if (userConstraints) measuredConstraints = (0, _conversionMjs.convertBoundingBoxToBox)(userConstraints);
+        }
+        return measuredConstraints;
+    }
+    startAnimation(velocity) {
+        const { drag , dragMomentum , dragElastic , dragTransition , dragSnapToOrigin , onDragTransitionEnd  } = this.getProps();
+        const constraints = this.constraints || {};
+        const momentumAnimations = (0, _eachAxisMjs.eachAxis)((axis)=>{
+            if (!shouldDrag(axis, drag, this.currentDirection)) return;
+            let transition = constraints && constraints[axis] || {};
+            if (dragSnapToOrigin) transition = {
+                min: 0,
+                max: 0
+            };
+            /**
+             * Overdamp the boundary spring if `dragElastic` is disabled. There's still a frame
+             * of spring animations so we should look into adding a disable spring option to `inertia`.
+             * We could do something here where we affect the `bounceStiffness` and `bounceDamping`
+             * using the value of `dragElastic`.
+             */ const bounceStiffness = dragElastic ? 200 : 1000000;
+            const bounceDamping = dragElastic ? 40 : 10000000;
+            const inertia = {
+                type: "inertia",
+                velocity: dragMomentum ? velocity[axis] : 0,
+                bounceStiffness,
+                bounceDamping,
+                timeConstant: 750,
+                restDelta: 1,
+                restSpeed: 10,
+                ...dragTransition,
+                ...transition
+            };
+            // If we're not animating on an externally-provided `MotionValue` we can use the
+            // component's animation controls which will handle interactions with whileHover (etc),
+            // otherwise we just have to animate the `MotionValue` itself.
+            return this.startAxisValueAnimation(axis, inertia);
+        });
+        // Run all animations and then resolve the new drag constraints.
+        return Promise.all(momentumAnimations).then(onDragTransitionEnd);
+    }
+    startAxisValueAnimation(axis, transition) {
+        const axisValue = this.getAxisMotionValue(axis);
+        return axisValue.start((0, _motionValueMjs.animateMotionValue)(axis, axisValue, 0, transition));
+    }
+    stopAnimation() {
+        (0, _eachAxisMjs.eachAxis)((axis)=>this.getAxisMotionValue(axis).stop());
+    }
+    /**
+     * Drag works differently depending on which props are provided.
+     *
+     * - If _dragX and _dragY are provided, we output the gesture delta directly to those motion values.
+     * - Otherwise, we apply the delta to the x/y motion values.
+     */ getAxisMotionValue(axis) {
+        const dragKey = "_drag" + axis.toUpperCase();
+        const props = this.visualElement.getProps();
+        const externalMotionValue = props[dragKey];
+        return externalMotionValue ? externalMotionValue : this.visualElement.getValue(axis, (props.initial ? props.initial[axis] : undefined) || 0);
+    }
+    snapToCursor(point) {
+        (0, _eachAxisMjs.eachAxis)((axis)=>{
+            const { drag  } = this.getProps();
+            // If we're not dragging this axis, do an early return.
+            if (!shouldDrag(axis, drag, this.currentDirection)) return;
+            const { projection  } = this.visualElement;
+            const axisValue = this.getAxisMotionValue(axis);
+            if (projection && projection.layout) {
+                const { min , max  } = projection.layout.layoutBox[axis];
+                axisValue.set(point[axis] - (0, _mixMjs.mix)(min, max, 0.5));
+            }
+        });
+    }
+    /**
+     * When the viewport resizes we want to check if the measured constraints
+     * have changed and, if so, reposition the element within those new constraints
+     * relative to where it was before the resize.
+     */ scalePositionWithinConstraints() {
+        if (!this.visualElement.current) return;
+        const { drag , dragConstraints  } = this.getProps();
+        const { projection  } = this.visualElement;
+        if (!(0, _isRefObjectMjs.isRefObject)(dragConstraints) || !projection || !this.constraints) return;
+        /**
+         * Stop current animations as there can be visual glitching if we try to do
+         * this mid-animation
+         */ this.stopAnimation();
+        /**
+         * Record the relative position of the dragged element relative to the
+         * constraints box and save as a progress value.
+         */ const boxProgress = {
+            x: 0,
+            y: 0
+        };
+        (0, _eachAxisMjs.eachAxis)((axis)=>{
+            const axisValue = this.getAxisMotionValue(axis);
+            if (axisValue) {
+                const latest = axisValue.get();
+                boxProgress[axis] = (0, _constraintsMjs.calcOrigin)({
+                    min: latest,
+                    max: latest
+                }, this.constraints[axis]);
+            }
+        });
+        /**
+         * Update the layout of this element and resolve the latest drag constraints
+         */ const { transformTemplate  } = this.visualElement.getProps();
+        this.visualElement.current.style.transform = transformTemplate ? transformTemplate({}, "") : "none";
+        projection.root && projection.root.updateScroll();
+        projection.updateLayout();
+        this.resolveConstraints();
+        /**
+         * For each axis, calculate the current progress of the layout axis
+         * within the new constraints.
+         */ (0, _eachAxisMjs.eachAxis)((axis)=>{
+            if (!shouldDrag(axis, drag, null)) return;
+            /**
+             * Calculate a new transform based on the previous box progress
+             */ const axisValue = this.getAxisMotionValue(axis);
+            const { min , max  } = this.constraints[axis];
+            axisValue.set((0, _mixMjs.mix)(min, max, boxProgress[axis]));
+        });
+    }
+    addListeners() {
+        if (!this.visualElement.current) return;
+        elementDragControls.set(this.visualElement, this);
+        const element = this.visualElement.current;
+        /**
+         * Attach a pointerdown event listener on this DOM element to initiate drag tracking.
+         */ const stopPointerListener = (0, _addPointerEventMjs.addPointerEvent)(element, "pointerdown", (event)=>{
+            const { drag , dragListener =true  } = this.getProps();
+            drag && dragListener && this.start(event);
+        });
+        const measureDragConstraints = ()=>{
+            const { dragConstraints  } = this.getProps();
+            if ((0, _isRefObjectMjs.isRefObject)(dragConstraints)) this.constraints = this.resolveRefConstraints();
+        };
+        const { projection  } = this.visualElement;
+        const stopMeasureLayoutListener = projection.addEventListener("measure", measureDragConstraints);
+        if (projection && !projection.layout) {
+            projection.root && projection.root.updateScroll();
+            projection.updateLayout();
+        }
+        measureDragConstraints();
+        /**
+         * Attach a window resize listener to scale the draggable target within its defined
+         * constraints as the window resizes.
+         */ const stopResizeListener = (0, _addDomEventMjs.addDomEvent)(window, "resize", ()=>this.scalePositionWithinConstraints());
+        /**
+         * If the element's layout changes, calculate the delta and apply that to
+         * the drag gesture's origin point.
+         */ const stopLayoutUpdateListener = projection.addEventListener("didUpdate", ({ delta , hasLayoutChanged  })=>{
+            if (this.isDragging && hasLayoutChanged) {
+                (0, _eachAxisMjs.eachAxis)((axis)=>{
+                    const motionValue = this.getAxisMotionValue(axis);
+                    if (!motionValue) return;
+                    this.originPoint[axis] += delta[axis].translate;
+                    motionValue.set(motionValue.get() + delta[axis].translate);
+                });
+                this.visualElement.render();
+            }
+        });
+        return ()=>{
+            stopResizeListener();
+            stopPointerListener();
+            stopMeasureLayoutListener();
+            stopLayoutUpdateListener && stopLayoutUpdateListener();
+        };
+    }
+    getProps() {
+        const props = this.visualElement.getProps();
+        const { drag =false , dragDirectionLock =false , dragPropagation =false , dragConstraints =false , dragElastic =(0, _constraintsMjs.defaultElastic) , dragMomentum =true  } = props;
+        return {
+            ...props,
+            drag,
+            dragDirectionLock,
+            dragPropagation,
+            dragConstraints,
+            dragElastic,
+            dragMomentum
+        };
+    }
+}
+function shouldDrag(direction, drag, currentDirection) {
+    return (drag === true || drag === direction) && (currentDirection === null || currentDirection === direction);
+}
+/**
+ * Based on an x/y offset determine the current drag direction. If both axis' offsets are lower
+ * than the provided threshold, return `null`.
+ *
+ * @param offset - The x/y offset from origin.
+ * @param lockThreshold - (Optional) - the minimum absolute offset before we can determine a drag direction.
+ */ function getCurrentDirection(offset, lockThreshold = 10) {
+    let direction = null;
+    if (Math.abs(offset.y) > lockThreshold) direction = "y";
+    else if (Math.abs(offset.x) > lockThreshold) direction = "x";
+    return direction;
+}
+
+},{"../../utils/errors.mjs":"drRZ6","../pan/PanSession.mjs":"9FpwA","./utils/lock.mjs":"81Jq8","../../utils/is-ref-object.mjs":"hA3DA","../../events/add-pointer-event.mjs":"80iJi","./utils/constraints.mjs":"aLORA","../../projection/geometry/models.mjs":"8tocy","../../projection/utils/each-axis.mjs":"iO8nE","../../projection/utils/measure.mjs":"dfpR2","../../events/event-info.mjs":"4Spbd","../../projection/geometry/conversion.mjs":"hRulW","../../events/add-dom-event.mjs":"jAgCf","../../projection/geometry/delta-calc.mjs":"7r3CU","../../utils/mix.mjs":"jx86W","../../value/types/numbers/units.mjs":"lGBHA","../../animation/interfaces/motion-value.mjs":"gQYlj","../../frameloop/index.mjs":"3Dz3U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9FpwA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "PanSession", ()=>PanSession);
+var _eventInfoMjs = require("../../events/event-info.mjs");
+var _indexMjs = require("../../frameloop/index.mjs");
+var _timeConversionMjs = require("../../utils/time-conversion.mjs");
+var _addPointerEventMjs = require("../../events/add-pointer-event.mjs");
+var _pipeMjs = require("../../utils/pipe.mjs");
+var _distanceMjs = require("../../utils/distance.mjs");
+var _dataMjs = require("../../frameloop/data.mjs");
+var _isPrimaryPointerMjs = require("../../events/utils/is-primary-pointer.mjs");
+/**
+ * @internal
+ */ class PanSession {
+    constructor(event, handlers, { transformPagePoint  } = {}){
+        /**
+         * @internal
+         */ this.startEvent = null;
+        /**
+         * @internal
+         */ this.lastMoveEvent = null;
+        /**
+         * @internal
+         */ this.lastMoveEventInfo = null;
+        /**
+         * @internal
+         */ this.handlers = {};
+        this.updatePoint = ()=>{
+            if (!(this.lastMoveEvent && this.lastMoveEventInfo)) return;
+            const info = getPanInfo(this.lastMoveEventInfo, this.history);
+            const isPanStarted = this.startEvent !== null;
+            // Only start panning if the offset is larger than 3 pixels. If we make it
+            // any larger than this we'll want to reset the pointer history
+            // on the first update to avoid visual snapping to the cursoe.
+            const isDistancePastThreshold = (0, _distanceMjs.distance2D)(info.offset, {
+                x: 0,
+                y: 0
+            }) >= 3;
+            if (!isPanStarted && !isDistancePastThreshold) return;
+            const { point  } = info;
+            const { timestamp  } = (0, _dataMjs.frameData);
+            this.history.push({
+                ...point,
+                timestamp
+            });
+            const { onStart , onMove  } = this.handlers;
+            if (!isPanStarted) {
+                onStart && onStart(this.lastMoveEvent, info);
+                this.startEvent = this.lastMoveEvent;
+            }
+            onMove && onMove(this.lastMoveEvent, info);
+        };
+        this.handlePointerMove = (event, info)=>{
+            this.lastMoveEvent = event;
+            this.lastMoveEventInfo = transformPoint(info, this.transformPagePoint);
+            // Throttle mouse move event to once per frame
+            (0, _indexMjs.frame).update(this.updatePoint, true);
+        };
+        this.handlePointerUp = (event, info)=>{
+            this.end();
+            if (!(this.lastMoveEvent && this.lastMoveEventInfo)) return;
+            const { onEnd , onSessionEnd  } = this.handlers;
+            const panInfo = getPanInfo(event.type === "pointercancel" ? this.lastMoveEventInfo : transformPoint(info, this.transformPagePoint), this.history);
+            if (this.startEvent && onEnd) onEnd(event, panInfo);
+            onSessionEnd && onSessionEnd(event, panInfo);
+        };
+        // If we have more than one touch, don't start detecting this gesture
+        if (!(0, _isPrimaryPointerMjs.isPrimaryPointer)(event)) return;
+        this.handlers = handlers;
+        this.transformPagePoint = transformPagePoint;
+        const info = (0, _eventInfoMjs.extractEventInfo)(event);
+        const initialInfo = transformPoint(info, this.transformPagePoint);
+        const { point  } = initialInfo;
+        const { timestamp  } = (0, _dataMjs.frameData);
+        this.history = [
+            {
+                ...point,
+                timestamp
+            }
+        ];
+        const { onSessionStart  } = handlers;
+        onSessionStart && onSessionStart(event, getPanInfo(initialInfo, this.history));
+        this.removeListeners = (0, _pipeMjs.pipe)((0, _addPointerEventMjs.addPointerEvent)(window, "pointermove", this.handlePointerMove), (0, _addPointerEventMjs.addPointerEvent)(window, "pointerup", this.handlePointerUp), (0, _addPointerEventMjs.addPointerEvent)(window, "pointercancel", this.handlePointerUp));
+    }
+    updateHandlers(handlers) {
+        this.handlers = handlers;
+    }
+    end() {
+        this.removeListeners && this.removeListeners();
+        (0, _indexMjs.cancelFrame)(this.updatePoint);
+    }
+}
+function transformPoint(info, transformPagePoint) {
+    return transformPagePoint ? {
+        point: transformPagePoint(info.point)
+    } : info;
+}
+function subtractPoint(a, b) {
+    return {
+        x: a.x - b.x,
+        y: a.y - b.y
+    };
+}
+function getPanInfo({ point  }, history) {
+    return {
+        point,
+        delta: subtractPoint(point, lastDevicePoint(history)),
+        offset: subtractPoint(point, startDevicePoint(history)),
+        velocity: getVelocity(history, 0.1)
+    };
+}
+function startDevicePoint(history) {
+    return history[0];
+}
+function lastDevicePoint(history) {
+    return history[history.length - 1];
+}
+function getVelocity(history, timeDelta) {
+    if (history.length < 2) return {
+        x: 0,
+        y: 0
+    };
+    let i = history.length - 1;
+    let timestampedPoint = null;
+    const lastPoint = lastDevicePoint(history);
+    while(i >= 0){
+        timestampedPoint = history[i];
+        if (lastPoint.timestamp - timestampedPoint.timestamp > (0, _timeConversionMjs.secondsToMilliseconds)(timeDelta)) break;
+        i--;
+    }
+    if (!timestampedPoint) return {
+        x: 0,
+        y: 0
+    };
+    const time = (0, _timeConversionMjs.millisecondsToSeconds)(lastPoint.timestamp - timestampedPoint.timestamp);
+    if (time === 0) return {
+        x: 0,
+        y: 0
+    };
+    const currentVelocity = {
+        x: (lastPoint.x - timestampedPoint.x) / time,
+        y: (lastPoint.y - timestampedPoint.y) / time
+    };
+    if (currentVelocity.x === Infinity) currentVelocity.x = 0;
+    if (currentVelocity.y === Infinity) currentVelocity.y = 0;
+    return currentVelocity;
+}
+
+},{"../../events/event-info.mjs":"4Spbd","../../frameloop/index.mjs":"3Dz3U","../../utils/time-conversion.mjs":"gdr8V","../../events/add-pointer-event.mjs":"80iJi","../../utils/pipe.mjs":"jGo2b","../../utils/distance.mjs":"adpzX","../../frameloop/data.mjs":"gzDj4","../../events/utils/is-primary-pointer.mjs":"lSBSo","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"adpzX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "distance", ()=>distance);
+parcelHelpers.export(exports, "distance2D", ()=>distance2D);
+const distance = (a, b)=>Math.abs(a - b);
+function distance2D(a, b) {
+    // Multi-dimensional
+    const xDelta = distance(a.x, b.x);
+    const yDelta = distance(a.y, b.y);
+    return Math.sqrt(xDelta ** 2 + yDelta ** 2);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aLORA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "applyConstraints", ()=>applyConstraints);
+parcelHelpers.export(exports, "calcOrigin", ()=>calcOrigin);
+parcelHelpers.export(exports, "calcRelativeAxisConstraints", ()=>calcRelativeAxisConstraints);
+parcelHelpers.export(exports, "calcRelativeConstraints", ()=>calcRelativeConstraints);
+parcelHelpers.export(exports, "calcViewportAxisConstraints", ()=>calcViewportAxisConstraints);
+parcelHelpers.export(exports, "calcViewportConstraints", ()=>calcViewportConstraints);
+parcelHelpers.export(exports, "defaultElastic", ()=>defaultElastic);
+parcelHelpers.export(exports, "rebaseAxisConstraints", ()=>rebaseAxisConstraints);
+parcelHelpers.export(exports, "resolveAxisElastic", ()=>resolveAxisElastic);
+parcelHelpers.export(exports, "resolveDragElastic", ()=>resolveDragElastic);
+parcelHelpers.export(exports, "resolvePointElastic", ()=>resolvePointElastic);
+var _progressMjs = require("../../../utils/progress.mjs");
+var _deltaCalcMjs = require("../../../projection/geometry/delta-calc.mjs");
+var _clampMjs = require("../../../utils/clamp.mjs");
+var _mixMjs = require("../../../utils/mix.mjs");
+/**
+ * Apply constraints to a point. These constraints are both physical along an
+ * axis, and an elastic factor that determines how much to constrain the point
+ * by if it does lie outside the defined parameters.
+ */ function applyConstraints(point, { min , max  }, elastic) {
+    if (min !== undefined && point < min) // If we have a min point defined, and this is outside of that, constrain
+    point = elastic ? (0, _mixMjs.mix)(min, point, elastic.min) : Math.max(point, min);
+    else if (max !== undefined && point > max) // If we have a max point defined, and this is outside of that, constrain
+    point = elastic ? (0, _mixMjs.mix)(max, point, elastic.max) : Math.min(point, max);
+    return point;
+}
+/**
+ * Calculate constraints in terms of the viewport when defined relatively to the
+ * measured axis. This is measured from the nearest edge, so a max constraint of 200
+ * on an axis with a max value of 300 would return a constraint of 500 - axis length
+ */ function calcRelativeAxisConstraints(axis, min, max) {
+    return {
+        min: min !== undefined ? axis.min + min : undefined,
+        max: max !== undefined ? axis.max + max - (axis.max - axis.min) : undefined
+    };
+}
+/**
+ * Calculate constraints in terms of the viewport when
+ * defined relatively to the measured bounding box.
+ */ function calcRelativeConstraints(layoutBox, { top , left , bottom , right  }) {
+    return {
+        x: calcRelativeAxisConstraints(layoutBox.x, left, right),
+        y: calcRelativeAxisConstraints(layoutBox.y, top, bottom)
+    };
+}
+/**
+ * Calculate viewport constraints when defined as another viewport-relative axis
+ */ function calcViewportAxisConstraints(layoutAxis, constraintsAxis) {
+    let min = constraintsAxis.min - layoutAxis.min;
+    let max = constraintsAxis.max - layoutAxis.max;
+    // If the constraints axis is actually smaller than the layout axis then we can
+    // flip the constraints
+    if (constraintsAxis.max - constraintsAxis.min < layoutAxis.max - layoutAxis.min) [min, max] = [
+        max,
+        min
+    ];
+    return {
+        min,
+        max
+    };
+}
+/**
+ * Calculate viewport constraints when defined as another viewport-relative box
+ */ function calcViewportConstraints(layoutBox, constraintsBox) {
+    return {
+        x: calcViewportAxisConstraints(layoutBox.x, constraintsBox.x),
+        y: calcViewportAxisConstraints(layoutBox.y, constraintsBox.y)
+    };
+}
+/**
+ * Calculate a transform origin relative to the source axis, between 0-1, that results
+ * in an asthetically pleasing scale/transform needed to project from source to target.
+ */ function calcOrigin(source, target) {
+    let origin = 0.5;
+    const sourceLength = (0, _deltaCalcMjs.calcLength)(source);
+    const targetLength = (0, _deltaCalcMjs.calcLength)(target);
+    if (targetLength > sourceLength) origin = (0, _progressMjs.progress)(target.min, target.max - sourceLength, source.min);
+    else if (sourceLength > targetLength) origin = (0, _progressMjs.progress)(source.min, source.max - targetLength, target.min);
+    return (0, _clampMjs.clamp)(0, 1, origin);
+}
+/**
+ * Rebase the calculated viewport constraints relative to the layout.min point.
+ */ function rebaseAxisConstraints(layout, constraints) {
+    const relativeConstraints = {};
+    if (constraints.min !== undefined) relativeConstraints.min = constraints.min - layout.min;
+    if (constraints.max !== undefined) relativeConstraints.max = constraints.max - layout.min;
+    return relativeConstraints;
+}
+const defaultElastic = 0.35;
+/**
+ * Accepts a dragElastic prop and returns resolved elastic values for each axis.
+ */ function resolveDragElastic(dragElastic = defaultElastic) {
+    if (dragElastic === false) dragElastic = 0;
+    else if (dragElastic === true) dragElastic = defaultElastic;
+    return {
+        x: resolveAxisElastic(dragElastic, "left", "right"),
+        y: resolveAxisElastic(dragElastic, "top", "bottom")
+    };
+}
+function resolveAxisElastic(dragElastic, minLabel, maxLabel) {
+    return {
+        min: resolvePointElastic(dragElastic, minLabel),
+        max: resolvePointElastic(dragElastic, maxLabel)
+    };
+}
+function resolvePointElastic(dragElastic, label) {
+    return typeof dragElastic === "number" ? dragElastic : dragElastic[label] || 0;
+}
+
+},{"../../../utils/progress.mjs":"3vvIn","../../../projection/geometry/delta-calc.mjs":"7r3CU","../../../utils/clamp.mjs":"aZOh4","../../../utils/mix.mjs":"jx86W","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7r3CU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcAxisDelta", ()=>calcAxisDelta);
+parcelHelpers.export(exports, "calcBoxDelta", ()=>calcBoxDelta);
+parcelHelpers.export(exports, "calcLength", ()=>calcLength);
+parcelHelpers.export(exports, "calcRelativeAxis", ()=>calcRelativeAxis);
+parcelHelpers.export(exports, "calcRelativeAxisPosition", ()=>calcRelativeAxisPosition);
+parcelHelpers.export(exports, "calcRelativeBox", ()=>calcRelativeBox);
+parcelHelpers.export(exports, "calcRelativePosition", ()=>calcRelativePosition);
+parcelHelpers.export(exports, "isNear", ()=>isNear);
+var _mixMjs = require("../../utils/mix.mjs");
+function calcLength(axis) {
+    return axis.max - axis.min;
+}
+function isNear(value, target = 0, maxDistance = 0.01) {
+    return Math.abs(value - target) <= maxDistance;
+}
+function calcAxisDelta(delta, source, target, origin = 0.5) {
+    delta.origin = origin;
+    delta.originPoint = (0, _mixMjs.mix)(source.min, source.max, delta.origin);
+    delta.scale = calcLength(target) / calcLength(source);
+    if (isNear(delta.scale, 1, 0.0001) || isNaN(delta.scale)) delta.scale = 1;
+    delta.translate = (0, _mixMjs.mix)(target.min, target.max, delta.origin) - delta.originPoint;
+    if (isNear(delta.translate) || isNaN(delta.translate)) delta.translate = 0;
+}
+function calcBoxDelta(delta, source, target, origin) {
+    calcAxisDelta(delta.x, source.x, target.x, origin ? origin.originX : undefined);
+    calcAxisDelta(delta.y, source.y, target.y, origin ? origin.originY : undefined);
+}
+function calcRelativeAxis(target, relative, parent) {
+    target.min = parent.min + relative.min;
+    target.max = target.min + calcLength(relative);
+}
+function calcRelativeBox(target, relative, parent) {
+    calcRelativeAxis(target.x, relative.x, parent.x);
+    calcRelativeAxis(target.y, relative.y, parent.y);
+}
+function calcRelativeAxisPosition(target, layout, parent) {
+    target.min = layout.min - parent.min;
+    target.max = target.min + calcLength(layout);
+}
+function calcRelativePosition(target, layout, parent) {
+    calcRelativeAxisPosition(target.x, layout.x, parent.x);
+    calcRelativeAxisPosition(target.y, layout.y, parent.y);
+}
+
+},{"../../utils/mix.mjs":"jx86W","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8tocy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createAxis", ()=>createAxis);
+parcelHelpers.export(exports, "createAxisDelta", ()=>createAxisDelta);
+parcelHelpers.export(exports, "createBox", ()=>createBox);
+parcelHelpers.export(exports, "createDelta", ()=>createDelta);
+const createAxisDelta = ()=>({
+        translate: 0,
+        scale: 1,
+        origin: 0,
+        originPoint: 0
+    });
+const createDelta = ()=>({
+        x: createAxisDelta(),
+        y: createAxisDelta()
+    });
+const createAxis = ()=>({
+        min: 0,
+        max: 0
+    });
+const createBox = ()=>({
+        x: createAxis(),
+        y: createAxis()
+    });
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iO8nE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "eachAxis", ()=>eachAxis);
+function eachAxis(callback) {
+    return [
+        callback("x"),
+        callback("y")
+    ];
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dfpR2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "measurePageBox", ()=>measurePageBox);
+parcelHelpers.export(exports, "measureViewportBox", ()=>measureViewportBox);
+var _conversionMjs = require("../geometry/conversion.mjs");
+var _deltaApplyMjs = require("../geometry/delta-apply.mjs");
+function measureViewportBox(instance, transformPoint) {
+    return (0, _conversionMjs.convertBoundingBoxToBox)((0, _conversionMjs.transformBoxPoints)(instance.getBoundingClientRect(), transformPoint));
+}
+function measurePageBox(element, rootProjectionNode, transformPagePoint) {
+    const viewportBox = measureViewportBox(element, transformPagePoint);
+    const { scroll  } = rootProjectionNode;
+    if (scroll) {
+        (0, _deltaApplyMjs.translateAxis)(viewportBox.x, scroll.offset.x);
+        (0, _deltaApplyMjs.translateAxis)(viewportBox.y, scroll.offset.y);
+    }
+    return viewportBox;
+}
+
+},{"../geometry/conversion.mjs":"hRulW","../geometry/delta-apply.mjs":"4QsuN","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hRulW":[function(require,module,exports) {
+/**
+ * Bounding boxes tend to be defined as top, left, right, bottom. For various operations
+ * it's easier to consider each axis individually. This function returns a bounding box
+ * as a map of single-axis min/max values.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "convertBoundingBoxToBox", ()=>convertBoundingBoxToBox);
+parcelHelpers.export(exports, "convertBoxToBoundingBox", ()=>convertBoxToBoundingBox);
+parcelHelpers.export(exports, "transformBoxPoints", ()=>transformBoxPoints);
+function convertBoundingBoxToBox({ top , left , right , bottom  }) {
+    return {
+        x: {
+            min: left,
+            max: right
+        },
+        y: {
+            min: top,
+            max: bottom
+        }
+    };
+}
+function convertBoxToBoundingBox({ x , y  }) {
+    return {
+        top: y.min,
+        right: x.max,
+        bottom: y.max,
+        left: x.min
+    };
+}
+/**
+ * Applies a TransformPoint function to a bounding box. TransformPoint is usually a function
+ * provided by Framer to allow measured points to be corrected for device scaling. This is used
+ * when measuring DOM elements and DOM event points.
+ */ function transformBoxPoints(point, transformPoint) {
+    if (!transformPoint) return point;
+    const topLeft = transformPoint({
+        x: point.left,
+        y: point.top
+    });
+    const bottomRight = transformPoint({
+        x: point.right,
+        y: point.bottom
+    });
+    return {
+        top: topLeft.y,
+        left: topLeft.x,
+        bottom: bottomRight.y,
+        right: bottomRight.x
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4QsuN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "applyAxisDelta", ()=>applyAxisDelta);
+parcelHelpers.export(exports, "applyBoxDelta", ()=>applyBoxDelta);
+parcelHelpers.export(exports, "applyPointDelta", ()=>applyPointDelta);
+parcelHelpers.export(exports, "applyTreeDeltas", ()=>applyTreeDeltas);
+parcelHelpers.export(exports, "scalePoint", ()=>scalePoint);
+parcelHelpers.export(exports, "transformAxis", ()=>transformAxis);
+parcelHelpers.export(exports, "transformBox", ()=>transformBox);
+parcelHelpers.export(exports, "translateAxis", ()=>translateAxis);
+var _mixMjs = require("../../utils/mix.mjs");
+var _hasTransformMjs = require("../utils/has-transform.mjs");
+/**
+ * Scales a point based on a factor and an originPoint
+ */ function scalePoint(point, scale, originPoint) {
+    const distanceFromOrigin = point - originPoint;
+    const scaled = scale * distanceFromOrigin;
+    return originPoint + scaled;
+}
+/**
+ * Applies a translate/scale delta to a point
+ */ function applyPointDelta(point, translate, scale, originPoint, boxScale) {
+    if (boxScale !== undefined) point = scalePoint(point, boxScale, originPoint);
+    return scalePoint(point, scale, originPoint) + translate;
+}
+/**
+ * Applies a translate/scale delta to an axis
+ */ function applyAxisDelta(axis, translate = 0, scale = 1, originPoint, boxScale) {
+    axis.min = applyPointDelta(axis.min, translate, scale, originPoint, boxScale);
+    axis.max = applyPointDelta(axis.max, translate, scale, originPoint, boxScale);
+}
+/**
+ * Applies a translate/scale delta to a box
+ */ function applyBoxDelta(box, { x , y  }) {
+    applyAxisDelta(box.x, x.translate, x.scale, x.originPoint);
+    applyAxisDelta(box.y, y.translate, y.scale, y.originPoint);
+}
+/**
+ * Apply a tree of deltas to a box. We do this to calculate the effect of all the transforms
+ * in a tree upon our box before then calculating how to project it into our desired viewport-relative box
+ *
+ * This is the final nested loop within updateLayoutDelta for future refactoring
+ */ function applyTreeDeltas(box, treeScale, treePath, isSharedTransition = false) {
+    const treeLength = treePath.length;
+    if (!treeLength) return;
+    // Reset the treeScale
+    treeScale.x = treeScale.y = 1;
+    let node;
+    let delta;
+    for(let i = 0; i < treeLength; i++){
+        node = treePath[i];
+        delta = node.projectionDelta;
+        /**
+         * TODO: Prefer to remove this, but currently we have motion components with
+         * display: contents in Framer.
+         */ const instance = node.instance;
+        if (instance && instance.style && instance.style.display === "contents") continue;
+        if (isSharedTransition && node.options.layoutScroll && node.scroll && node !== node.root) transformBox(box, {
+            x: -node.scroll.offset.x,
+            y: -node.scroll.offset.y
+        });
+        if (delta) {
+            // Incoporate each ancestor's scale into a culmulative treeScale for this component
+            treeScale.x *= delta.x.scale;
+            treeScale.y *= delta.y.scale;
+            // Apply each ancestor's calculated delta into this component's recorded layout box
+            applyBoxDelta(box, delta);
+        }
+        if (isSharedTransition && (0, _hasTransformMjs.hasTransform)(node.latestValues)) transformBox(box, node.latestValues);
+    }
+    /**
+     * Snap tree scale back to 1 if it's within a non-perceivable threshold.
+     * This will help reduce useless scales getting rendered.
+     */ treeScale.x = snapToDefault(treeScale.x);
+    treeScale.y = snapToDefault(treeScale.y);
+}
+function snapToDefault(scale) {
+    if (Number.isInteger(scale)) return scale;
+    return scale > 1.0000000000001 || scale < 0.999999999999 ? scale : 1;
+}
+function translateAxis(axis, distance) {
+    axis.min = axis.min + distance;
+    axis.max = axis.max + distance;
+}
+/**
+ * Apply a transform to an axis from the latest resolved motion values.
+ * This function basically acts as a bridge between a flat motion value map
+ * and applyAxisDelta
+ */ function transformAxis(axis, transforms, [key, scaleKey, originKey]) {
+    const axisOrigin = transforms[originKey] !== undefined ? transforms[originKey] : 0.5;
+    const originPoint = (0, _mixMjs.mix)(axis.min, axis.max, axisOrigin);
+    // Apply the axis delta to the final axis
+    applyAxisDelta(axis, transforms[key], transforms[scaleKey], originPoint, transforms.scale);
+}
+/**
+ * The names of the motion values we want to apply as translation, scale and origin.
+ */ const xKeys = [
+    "x",
+    "scaleX",
+    "originX"
+];
+const yKeys = [
+    "y",
+    "scaleY",
+    "originY"
+];
+/**
+ * Apply a transform to a box from the latest resolved motion values.
+ */ function transformBox(box, transform) {
+    transformAxis(box.x, transform, xKeys);
+    transformAxis(box.y, transform, yKeys);
+}
+
+},{"../../utils/mix.mjs":"jx86W","../utils/has-transform.mjs":"ihgFW","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"ihgFW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "has2DTranslate", ()=>has2DTranslate);
+parcelHelpers.export(exports, "hasScale", ()=>hasScale);
+parcelHelpers.export(exports, "hasTransform", ()=>hasTransform);
+function isIdentityScale(scale) {
+    return scale === undefined || scale === 1;
+}
+function hasScale({ scale , scaleX , scaleY  }) {
+    return !isIdentityScale(scale) || !isIdentityScale(scaleX) || !isIdentityScale(scaleY);
+}
+function hasTransform(values) {
+    return hasScale(values) || has2DTranslate(values) || values.z || values.rotate || values.rotateX || values.rotateY;
+}
+function has2DTranslate(values) {
+    return is2DTranslate(values.x) || is2DTranslate(values.y);
+}
+function is2DTranslate(value) {
+    return value && value !== "0%";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8CJyV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "PanGesture", ()=>PanGesture);
+var _panSessionMjs = require("./PanSession.mjs");
+var _addPointerEventMjs = require("../../events/add-pointer-event.mjs");
+var _featureMjs = require("../../motion/features/Feature.mjs");
+var _noopMjs = require("../../utils/noop.mjs");
+var _indexMjs = require("../../frameloop/index.mjs");
+const asyncHandler = (handler)=>(event, info)=>{
+        if (handler) (0, _indexMjs.frame).update(()=>handler(event, info));
+    };
+class PanGesture extends (0, _featureMjs.Feature) {
+    constructor(){
+        super(...arguments);
+        this.removePointerDownListener = (0, _noopMjs.noop);
+    }
+    onPointerDown(pointerDownEvent) {
+        this.session = new (0, _panSessionMjs.PanSession)(pointerDownEvent, this.createPanHandlers(), {
+            transformPagePoint: this.node.getTransformPagePoint()
+        });
+    }
+    createPanHandlers() {
+        const { onPanSessionStart , onPanStart , onPan , onPanEnd  } = this.node.getProps();
+        return {
+            onSessionStart: asyncHandler(onPanSessionStart),
+            onStart: asyncHandler(onPanStart),
+            onMove: onPan,
+            onEnd: (event, info)=>{
+                delete this.session;
+                if (onPanEnd) (0, _indexMjs.frame).update(()=>onPanEnd(event, info));
+            }
+        };
+    }
+    mount() {
+        this.removePointerDownListener = (0, _addPointerEventMjs.addPointerEvent)(this.node.current, "pointerdown", (event)=>this.onPointerDown(event));
+    }
+    update() {
+        this.session && this.session.updateHandlers(this.createPanHandlers());
+    }
+    unmount() {
+        this.removePointerDownListener();
+        this.session && this.session.end();
+    }
+}
+
+},{"./PanSession.mjs":"9FpwA","../../events/add-pointer-event.mjs":"80iJi","../../motion/features/Feature.mjs":"lI7Ue","../../utils/noop.mjs":"67SDH","../../frameloop/index.mjs":"3Dz3U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"kA9rP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MeasureLayout", ()=>MeasureLayout);
+var _indexMjs = require("../../../frameloop/index.mjs");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _usePresenceMjs = require("../../../components/AnimatePresence/use-presence.mjs");
+var _layoutGroupContextMjs = require("../../../context/LayoutGroupContext.mjs");
+var _switchLayoutGroupContextMjs = require("../../../context/SwitchLayoutGroupContext.mjs");
+var _stateMjs = require("../../../projection/node/state.mjs");
+var _scaleBorderRadiusMjs = require("../../../projection/styles/scale-border-radius.mjs");
+var _scaleBoxShadowMjs = require("../../../projection/styles/scale-box-shadow.mjs");
+var _scaleCorrectionMjs = require("../../../projection/styles/scale-correction.mjs");
+class MeasureLayoutWithContext extends (0, _reactDefault.default).Component {
+    /**
+     * This only mounts projection nodes for components that
+     * need measuring, we might want to do it for all components
+     * in order to incorporate transforms
+     */ componentDidMount() {
+        const { visualElement , layoutGroup , switchLayoutGroup , layoutId  } = this.props;
+        const { projection  } = visualElement;
+        (0, _scaleCorrectionMjs.addScaleCorrector)(defaultScaleCorrectors);
+        if (projection) {
+            if (layoutGroup.group) layoutGroup.group.add(projection);
+            if (switchLayoutGroup && switchLayoutGroup.register && layoutId) switchLayoutGroup.register(projection);
+            projection.root.didUpdate();
+            projection.addEventListener("animationComplete", ()=>{
+                this.safeToRemove();
+            });
+            projection.setOptions({
+                ...projection.options,
+                onExitComplete: ()=>this.safeToRemove()
+            });
+        }
+        (0, _stateMjs.globalProjectionState).hasEverUpdated = true;
+    }
+    getSnapshotBeforeUpdate(prevProps) {
+        const { layoutDependency , visualElement , drag , isPresent  } = this.props;
+        const projection = visualElement.projection;
+        if (!projection) return null;
+        /**
+         * TODO: We use this data in relegate to determine whether to
+         * promote a previous element. There's no guarantee its presence data
+         * will have updated by this point - if a bug like this arises it will
+         * have to be that we markForRelegation and then find a new lead some other way,
+         * perhaps in didUpdate
+         */ projection.isPresent = isPresent;
+        if (drag || prevProps.layoutDependency !== layoutDependency || layoutDependency === undefined) projection.willUpdate();
+        else this.safeToRemove();
+        if (prevProps.isPresent !== isPresent) {
+            if (isPresent) projection.promote();
+            else if (!projection.relegate()) /**
+                 * If there's another stack member taking over from this one,
+                 * it's in charge of the exit animation and therefore should
+                 * be in charge of the safe to remove. Otherwise we call it here.
+                 */ (0, _indexMjs.frame).postRender(()=>{
+                const stack = projection.getStack();
+                if (!stack || !stack.members.length) this.safeToRemove();
+            });
+        }
+        return null;
+    }
+    componentDidUpdate() {
+        const { projection  } = this.props.visualElement;
+        if (projection) {
+            projection.root.didUpdate();
+            if (!projection.currentAnimation && projection.isLead()) this.safeToRemove();
+        }
+    }
+    componentWillUnmount() {
+        const { visualElement , layoutGroup , switchLayoutGroup: promoteContext  } = this.props;
+        const { projection  } = visualElement;
+        if (projection) {
+            projection.scheduleCheckAfterUnmount();
+            if (layoutGroup && layoutGroup.group) layoutGroup.group.remove(projection);
+            if (promoteContext && promoteContext.deregister) promoteContext.deregister(projection);
+        }
+    }
+    safeToRemove() {
+        const { safeToRemove  } = this.props;
+        safeToRemove && safeToRemove();
+    }
+    render() {
+        return null;
+    }
+}
+function MeasureLayout(props) {
+    const [isPresent, safeToRemove] = (0, _usePresenceMjs.usePresence)();
+    const layoutGroup = (0, _react.useContext)((0, _layoutGroupContextMjs.LayoutGroupContext));
+    return (0, _reactDefault.default).createElement(MeasureLayoutWithContext, {
+        ...props,
+        layoutGroup: layoutGroup,
+        switchLayoutGroup: (0, _react.useContext)((0, _switchLayoutGroupContextMjs.SwitchLayoutGroupContext)),
+        isPresent: isPresent,
+        safeToRemove: safeToRemove
+    });
+}
+const defaultScaleCorrectors = {
+    borderRadius: {
+        ...(0, _scaleBorderRadiusMjs.correctBorderRadius),
+        applyTo: [
+            "borderTopLeftRadius",
+            "borderTopRightRadius",
+            "borderBottomLeftRadius",
+            "borderBottomRightRadius"
+        ]
+    },
+    borderTopLeftRadius: (0, _scaleBorderRadiusMjs.correctBorderRadius),
+    borderTopRightRadius: (0, _scaleBorderRadiusMjs.correctBorderRadius),
+    borderBottomLeftRadius: (0, _scaleBorderRadiusMjs.correctBorderRadius),
+    borderBottomRightRadius: (0, _scaleBorderRadiusMjs.correctBorderRadius),
+    boxShadow: (0, _scaleBoxShadowMjs.correctBoxShadow)
+};
+
+},{"../../../frameloop/index.mjs":"3Dz3U","react":"21dqq","../../../components/AnimatePresence/use-presence.mjs":"5CDO8","../../../context/LayoutGroupContext.mjs":"dEA1W","../../../context/SwitchLayoutGroupContext.mjs":"7GP4u","../../../projection/node/state.mjs":"bSdze","../../../projection/styles/scale-border-radius.mjs":"jq5xT","../../../projection/styles/scale-box-shadow.mjs":"ib5vk","../../../projection/styles/scale-correction.mjs":"4Bydu","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5CDO8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isPresent", ()=>isPresent);
+parcelHelpers.export(exports, "useIsPresent", ()=>useIsPresent);
+parcelHelpers.export(exports, "usePresence", ()=>usePresence);
+var _react = require("react");
+var _presenceContextMjs = require("../../context/PresenceContext.mjs");
+/**
+ * When a component is the child of `AnimatePresence`, it can use `usePresence`
+ * to access information about whether it's still present in the React tree.
+ *
+ * ```jsx
+ * import { usePresence } from "framer-motion"
+ *
+ * export const Component = () => {
+ *   const [isPresent, safeToRemove] = usePresence()
+ *
+ *   useEffect(() => {
+ *     !isPresent && setTimeout(safeToRemove, 1000)
+ *   }, [isPresent])
+ *
+ *   return <div />
+ * }
+ * ```
+ *
+ * If `isPresent` is `false`, it means that a component has been removed the tree, but
+ * `AnimatePresence` won't really remove it until `safeToRemove` has been called.
+ *
+ * @public
+ */ function usePresence() {
+    const context = (0, _react.useContext)((0, _presenceContextMjs.PresenceContext));
+    if (context === null) return [
+        true,
+        null
+    ];
+    const { isPresent , onExitComplete , register  } = context;
+    // It's safe to call the following hooks conditionally (after an early return) because the context will always
+    // either be null or non-null for the lifespan of the component.
+    const id = (0, _react.useId)();
+    (0, _react.useEffect)(()=>register(id), []);
+    const safeToRemove = ()=>onExitComplete && onExitComplete(id);
+    return !isPresent && onExitComplete ? [
+        false,
+        safeToRemove
+    ] : [
+        true
+    ];
+}
+/**
+ * Similar to `usePresence`, except `useIsPresent` simply returns whether or not the component is present.
+ * There is no `safeToRemove` function.
+ *
+ * ```jsx
+ * import { useIsPresent } from "framer-motion"
+ *
+ * export const Component = () => {
+ *   const isPresent = useIsPresent()
+ *
+ *   useEffect(() => {
+ *     !isPresent && console.log("I've been removed!")
+ *   }, [isPresent])
+ *
+ *   return <div />
+ * }
+ * ```
+ *
+ * @public
+ */ function useIsPresent() {
+    return isPresent((0, _react.useContext)((0, _presenceContextMjs.PresenceContext)));
+}
+function isPresent(context) {
+    return context === null ? true : context.isPresent;
+}
+
+},{"react":"21dqq","../../context/PresenceContext.mjs":"7DzvZ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jq5xT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "correctBorderRadius", ()=>correctBorderRadius);
+parcelHelpers.export(exports, "pixelsToPercent", ()=>pixelsToPercent);
+var _unitsMjs = require("../../value/types/numbers/units.mjs");
+function pixelsToPercent(pixels, axis) {
+    if (axis.max === axis.min) return 0;
+    return pixels / (axis.max - axis.min) * 100;
+}
+/**
+ * We always correct borderRadius as a percentage rather than pixels to reduce paints.
+ * For example, if you are projecting a box that is 100px wide with a 10px borderRadius
+ * into a box that is 200px wide with a 20px borderRadius, that is actually a 10%
+ * borderRadius in both states. If we animate between the two in pixels that will trigger
+ * a paint each time. If we animate between the two in percentage we'll avoid a paint.
+ */ const correctBorderRadius = {
+    correct: (latest, node)=>{
+        if (!node.target) return latest;
+        /**
+         * If latest is a string, if it's a percentage we can return immediately as it's
+         * going to be stretched appropriately. Otherwise, if it's a pixel, convert it to a number.
+         */ if (typeof latest === "string") {
+            if ((0, _unitsMjs.px).test(latest)) latest = parseFloat(latest);
+            else return latest;
+        }
+        /**
+         * If latest is a number, it's a pixel value. We use the current viewportBox to calculate that
+         * pixel value as a percentage of each axis
+         */ const x = pixelsToPercent(latest, node.target.x);
+        const y = pixelsToPercent(latest, node.target.y);
+        return `${x}% ${y}%`;
+    }
+};
+
+},{"../../value/types/numbers/units.mjs":"lGBHA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"ib5vk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "correctBoxShadow", ()=>correctBoxShadow);
+var _mixMjs = require("../../utils/mix.mjs");
+var _indexMjs = require("../../value/types/complex/index.mjs");
+const correctBoxShadow = {
+    correct: (latest, { treeScale , projectionDelta  })=>{
+        const original = latest;
+        const shadow = (0, _indexMjs.complex).parse(latest);
+        // TODO: Doesn't support multiple shadows
+        if (shadow.length > 5) return original;
+        const template = (0, _indexMjs.complex).createTransformer(latest);
+        const offset = typeof shadow[0] !== "number" ? 1 : 0;
+        // Calculate the overall context scale
+        const xScale = projectionDelta.x.scale * treeScale.x;
+        const yScale = projectionDelta.y.scale * treeScale.y;
+        shadow[0 + offset] /= xScale;
+        shadow[1 + offset] /= yScale;
+        /**
+         * Ideally we'd correct x and y scales individually, but because blur and
+         * spread apply to both we have to take a scale average and apply that instead.
+         * We could potentially improve the outcome of this by incorporating the ratio between
+         * the two scales.
+         */ const averageScale = (0, _mixMjs.mix)(xScale, yScale, 0.5);
+        // Blur
+        if (typeof shadow[2 + offset] === "number") shadow[2 + offset] /= averageScale;
+        // Spread
+        if (typeof shadow[3 + offset] === "number") shadow[3 + offset] /= averageScale;
+        return template(shadow);
+    }
+};
+
+},{"../../utils/mix.mjs":"jx86W","../../value/types/complex/index.mjs":"lmoWV","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"d4eCC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HTMLProjectionNode", ()=>HTMLProjectionNode);
+parcelHelpers.export(exports, "rootProjectionNode", ()=>rootProjectionNode);
+var _createProjectionNodeMjs = require("./create-projection-node.mjs");
+var _documentProjectionNodeMjs = require("./DocumentProjectionNode.mjs");
+const rootProjectionNode = {
+    current: undefined
+};
+const HTMLProjectionNode = (0, _createProjectionNodeMjs.createProjectionNode)({
+    measureScroll: (instance)=>({
+            x: instance.scrollLeft,
+            y: instance.scrollTop
+        }),
+    defaultParent: ()=>{
+        if (!rootProjectionNode.current) {
+            const documentNode = new (0, _documentProjectionNodeMjs.DocumentProjectionNode)(0, {});
+            documentNode.mount(window);
+            documentNode.setOptions({
+                layoutScroll: true
+            });
+            rootProjectionNode.current = documentNode;
+        }
+        return rootProjectionNode.current;
+    },
+    resetTransform: (instance, value)=>{
+        instance.style.transform = value !== undefined ? value : "none";
+    },
+    checkIsScrollRoot: (instance)=>Boolean(window.getComputedStyle(instance).position === "fixed")
+});
+
+},{"./create-projection-node.mjs":"dvkZl","./DocumentProjectionNode.mjs":"hOjWn","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dvkZl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cleanDirtyNodes", ()=>cleanDirtyNodes);
+parcelHelpers.export(exports, "createProjectionNode", ()=>createProjectionNode);
+parcelHelpers.export(exports, "mixAxis", ()=>mixAxis);
+parcelHelpers.export(exports, "mixAxisDelta", ()=>mixAxisDelta);
+parcelHelpers.export(exports, "mixBox", ()=>mixBox);
+parcelHelpers.export(exports, "propagateDirtyNodes", ()=>propagateDirtyNodes);
+var _indexMjs = require("../../frameloop/index.mjs");
+var _subscriptionManagerMjs = require("../../utils/subscription-manager.mjs");
+var _mixValuesMjs = require("../animation/mix-values.mjs");
+var _copyMjs = require("../geometry/copy.mjs");
+var _deltaApplyMjs = require("../geometry/delta-apply.mjs");
+var _deltaCalcMjs = require("../geometry/delta-calc.mjs");
+var _deltaRemoveMjs = require("../geometry/delta-remove.mjs");
+var _modelsMjs = require("../geometry/models.mjs");
+var _transitionsMjs = require("../../animation/utils/transitions.mjs");
+var _utilsMjs = require("../geometry/utils.mjs");
+var _stackMjs = require("../shared/stack.mjs");
+var _scaleCorrectionMjs = require("../styles/scale-correction.mjs");
+var _transformMjs = require("../styles/transform.mjs");
+var _eachAxisMjs = require("../utils/each-axis.mjs");
+var _hasTransformMjs = require("../utils/has-transform.mjs");
+var _flatTreeMjs = require("../../render/utils/flat-tree.mjs");
+var _resolveMotionValueMjs = require("../../value/utils/resolve-motion-value.mjs");
+var _stateMjs = require("./state.mjs");
+var _delayMjs = require("../../utils/delay.mjs");
+var _mixMjs = require("../../utils/mix.mjs");
+var _recordMjs = require("../../debug/record.mjs");
+var _isSvgElementMjs = require("../../render/dom/utils/is-svg-element.mjs");
+var _singleValueMjs = require("../../animation/interfaces/single-value.mjs");
+var _dataMjs = require("../../frameloop/data.mjs");
+const transformAxes = [
+    "",
+    "X",
+    "Y",
+    "Z"
+];
+/**
+ * We use 1000 as the animation target as 0-1000 maps better to pixels than 0-1
+ * which has a noticeable difference in spring animations
+ */ const animationTarget = 1000;
+let id = 0;
+/**
+ * Use a mutable data object for debug data so as to not create a new
+ * object every frame.
+ */ const projectionFrameData = {
+    type: "projectionFrame",
+    totalNodes: 0,
+    resolvedTargetDeltas: 0,
+    recalculatedProjection: 0
+};
+function createProjectionNode({ attachResizeListener , defaultParent , measureScroll , checkIsScrollRoot , resetTransform  }) {
+    return class ProjectionNode {
+        constructor(elementId, latestValues = {}, parent = defaultParent === null || defaultParent === void 0 ? void 0 : defaultParent()){
+            /**
+             * A unique ID generated for every projection node.
+             */ this.id = id++;
+            /**
+             * An id that represents a unique session instigated by startUpdate.
+             */ this.animationId = 0;
+            /**
+             * A Set containing all this component's children. This is used to iterate
+             * through the children.
+             *
+             * TODO: This could be faster to iterate as a flat array stored on the root node.
+             */ this.children = new Set();
+            /**
+             * Options for the node. We use this to configure what kind of layout animations
+             * we should perform (if any).
+             */ this.options = {};
+            /**
+             * We use this to detect when its safe to shut down part of a projection tree.
+             * We have to keep projecting children for scale correction and relative projection
+             * until all their parents stop performing layout animations.
+             */ this.isTreeAnimating = false;
+            this.isAnimationBlocked = false;
+            /**
+             * Flag to true if we think this layout has been changed. We can't always know this,
+             * currently we set it to true every time a component renders, or if it has a layoutDependency
+             * if that has changed between renders. Additionally, components can be grouped by LayoutGroup
+             * and if one node is dirtied, they all are.
+             */ this.isLayoutDirty = false;
+            /**
+             * Flag to true if we think the projection calculations for this node needs
+             * recalculating as a result of an updated transform or layout animation.
+             */ this.isProjectionDirty = false;
+            /**
+             * Flag to true if the layout *or* transform has changed. This then gets propagated
+             * throughout the projection tree, forcing any element below to recalculate on the next frame.
+             */ this.isSharedProjectionDirty = false;
+            /**
+             * Flag transform dirty. This gets propagated throughout the whole tree but is only
+             * respected by shared nodes.
+             */ this.isTransformDirty = false;
+            /**
+             * Block layout updates for instant layout transitions throughout the tree.
+             */ this.updateManuallyBlocked = false;
+            this.updateBlockedByResize = false;
+            /**
+             * Set to true between the start of the first `willUpdate` call and the end of the `didUpdate`
+             * call.
+             */ this.isUpdating = false;
+            /**
+             * If this is an SVG element we currently disable projection transforms
+             */ this.isSVG = false;
+            /**
+             * Flag to true (during promotion) if a node doing an instant layout transition needs to reset
+             * its projection styles.
+             */ this.needsReset = false;
+            /**
+             * Flags whether this node should have its transform reset prior to measuring.
+             */ this.shouldResetTransform = false;
+            /**
+             * An object representing the calculated contextual/accumulated/tree scale.
+             * This will be used to scale calculcated projection transforms, as these are
+             * calculated in screen-space but need to be scaled for elements to layoutly
+             * make it to their calculated destinations.
+             *
+             * TODO: Lazy-init
+             */ this.treeScale = {
+                x: 1,
+                y: 1
+            };
+            /**
+             *
+             */ this.eventHandlers = new Map();
+            // Note: Currently only running on root node
+            this.potentialNodes = new Map();
+            this.checkUpdateFailed = ()=>{
+                if (this.isUpdating) {
+                    this.isUpdating = false;
+                    this.clearAllSnapshots();
+                }
+            };
+            /**
+             * This is a multi-step process as shared nodes might be of different depths. Nodes
+             * are sorted by depth order, so we need to resolve the entire tree before moving to
+             * the next step.
+             */ this.updateProjection = ()=>{
+                /**
+                 * Reset debug counts. Manually resetting rather than creating a new
+                 * object each frame.
+                 */ projectionFrameData.totalNodes = projectionFrameData.resolvedTargetDeltas = projectionFrameData.recalculatedProjection = 0;
+                this.nodes.forEach(propagateDirtyNodes);
+                this.nodes.forEach(resolveTargetDelta);
+                this.nodes.forEach(calcProjection);
+                this.nodes.forEach(cleanDirtyNodes);
+                (0, _recordMjs.record)(projectionFrameData);
+            };
+            this.hasProjected = false;
+            this.isVisible = true;
+            this.animationProgress = 0;
+            /**
+             * Shared layout
+             */ // TODO Only running on root node
+            this.sharedNodes = new Map();
+            this.elementId = elementId;
+            this.latestValues = latestValues;
+            this.root = parent ? parent.root || parent : this;
+            this.path = parent ? [
+                ...parent.path,
+                parent
+            ] : [];
+            this.parent = parent;
+            this.depth = parent ? parent.depth + 1 : 0;
+            elementId && this.root.registerPotentialNode(elementId, this);
+            for(let i = 0; i < this.path.length; i++)this.path[i].shouldResetTransform = true;
+            if (this.root === this) this.nodes = new (0, _flatTreeMjs.FlatTree)();
+        }
+        addEventListener(name, handler) {
+            if (!this.eventHandlers.has(name)) this.eventHandlers.set(name, new (0, _subscriptionManagerMjs.SubscriptionManager)());
+            return this.eventHandlers.get(name).add(handler);
+        }
+        notifyListeners(name, ...args) {
+            const subscriptionManager = this.eventHandlers.get(name);
+            subscriptionManager && subscriptionManager.notify(...args);
+        }
+        hasListeners(name) {
+            return this.eventHandlers.has(name);
+        }
+        registerPotentialNode(elementId, node) {
+            this.potentialNodes.set(elementId, node);
+        }
+        /**
+         * Lifecycles
+         */ mount(instance, isLayoutDirty = false) {
+            if (this.instance) return;
+            this.isSVG = (0, _isSvgElementMjs.isSVGElement)(instance);
+            this.instance = instance;
+            const { layoutId , layout , visualElement  } = this.options;
+            if (visualElement && !visualElement.current) visualElement.mount(instance);
+            this.root.nodes.add(this);
+            this.parent && this.parent.children.add(this);
+            this.elementId && this.root.potentialNodes.delete(this.elementId);
+            if (isLayoutDirty && (layout || layoutId)) this.isLayoutDirty = true;
+            if (attachResizeListener) {
+                let cancelDelay;
+                const resizeUnblockUpdate = ()=>this.root.updateBlockedByResize = false;
+                attachResizeListener(instance, ()=>{
+                    this.root.updateBlockedByResize = true;
+                    cancelDelay && cancelDelay();
+                    cancelDelay = (0, _delayMjs.delay)(resizeUnblockUpdate, 250);
+                    if ((0, _stateMjs.globalProjectionState).hasAnimatedSinceResize) {
+                        (0, _stateMjs.globalProjectionState).hasAnimatedSinceResize = false;
+                        this.nodes.forEach(finishAnimation);
+                    }
+                });
+            }
+            if (layoutId) this.root.registerSharedNode(layoutId, this);
+            // Only register the handler if it requires layout animation
+            if (this.options.animate !== false && visualElement && (layoutId || layout)) this.addEventListener("didUpdate", ({ delta , hasLayoutChanged , hasRelativeTargetChanged , layout: newLayout  })=>{
+                if (this.isTreeAnimationBlocked()) {
+                    this.target = undefined;
+                    this.relativeTarget = undefined;
+                    return;
+                }
+                // TODO: Check here if an animation exists
+                const layoutTransition = this.options.transition || visualElement.getDefaultTransition() || defaultLayoutTransition;
+                const { onLayoutAnimationStart , onLayoutAnimationComplete  } = visualElement.getProps();
+                /**
+                     * The target layout of the element might stay the same,
+                     * but its position relative to its parent has changed.
+                     */ const targetChanged = !this.targetLayout || !(0, _utilsMjs.boxEquals)(this.targetLayout, newLayout) || hasRelativeTargetChanged;
+                /**
+                     * If the layout hasn't seemed to have changed, it might be that the
+                     * element is visually in the same place in the document but its position
+                     * relative to its parent has indeed changed. So here we check for that.
+                     */ const hasOnlyRelativeTargetChanged = !hasLayoutChanged && hasRelativeTargetChanged;
+                if (this.options.layoutRoot || this.resumeFrom && this.resumeFrom.instance || hasOnlyRelativeTargetChanged || hasLayoutChanged && (targetChanged || !this.currentAnimation)) {
+                    if (this.resumeFrom) {
+                        this.resumingFrom = this.resumeFrom;
+                        this.resumingFrom.resumingFrom = undefined;
+                    }
+                    this.setAnimationOrigin(delta, hasOnlyRelativeTargetChanged);
+                    const animationOptions = {
+                        ...(0, _transitionsMjs.getValueTransition)(layoutTransition, "layout"),
+                        onPlay: onLayoutAnimationStart,
+                        onComplete: onLayoutAnimationComplete
+                    };
+                    if (visualElement.shouldReduceMotion || this.options.layoutRoot) {
+                        animationOptions.delay = 0;
+                        animationOptions.type = false;
+                    }
+                    this.startAnimation(animationOptions);
+                } else {
+                    /**
+                         * If the layout hasn't changed and we have an animation that hasn't started yet,
+                         * finish it immediately. Otherwise it will be animating from a location
+                         * that was probably never commited to screen and look like a jumpy box.
+                         */ if (!hasLayoutChanged && this.animationProgress === 0) finishAnimation(this);
+                    if (this.isLead() && this.options.onExitComplete) this.options.onExitComplete();
+                }
+                this.targetLayout = newLayout;
+            });
+        }
+        unmount() {
+            this.options.layoutId && this.willUpdate();
+            this.root.nodes.remove(this);
+            const stack = this.getStack();
+            stack && stack.remove(this);
+            this.parent && this.parent.children.delete(this);
+            this.instance = undefined;
+            (0, _indexMjs.cancelFrame)(this.updateProjection);
+        }
+        // only on the root
+        blockUpdate() {
+            this.updateManuallyBlocked = true;
+        }
+        unblockUpdate() {
+            this.updateManuallyBlocked = false;
+        }
+        isUpdateBlocked() {
+            return this.updateManuallyBlocked || this.updateBlockedByResize;
+        }
+        isTreeAnimationBlocked() {
+            return this.isAnimationBlocked || this.parent && this.parent.isTreeAnimationBlocked() || false;
+        }
+        // Note: currently only running on root node
+        startUpdate() {
+            if (this.isUpdateBlocked()) return;
+            this.isUpdating = true;
+            this.nodes && this.nodes.forEach(resetRotation);
+            this.animationId++;
+        }
+        getTransformTemplate() {
+            const { visualElement  } = this.options;
+            return visualElement && visualElement.getProps().transformTemplate;
+        }
+        willUpdate(shouldNotifyListeners = true) {
+            if (this.root.isUpdateBlocked()) {
+                this.options.onExitComplete && this.options.onExitComplete();
+                return;
+            }
+            !this.root.isUpdating && this.root.startUpdate();
+            if (this.isLayoutDirty) return;
+            this.isLayoutDirty = true;
+            for(let i = 0; i < this.path.length; i++){
+                const node = this.path[i];
+                node.shouldResetTransform = true;
+                node.updateScroll("snapshot");
+                if (node.options.layoutRoot) node.willUpdate(false);
+            }
+            const { layoutId , layout  } = this.options;
+            if (layoutId === undefined && !layout) return;
+            const transformTemplate = this.getTransformTemplate();
+            this.prevTransformTemplateValue = transformTemplate ? transformTemplate(this.latestValues, "") : undefined;
+            this.updateSnapshot();
+            shouldNotifyListeners && this.notifyListeners("willUpdate");
+        }
+        // Note: Currently only running on root node
+        didUpdate() {
+            const updateWasBlocked = this.isUpdateBlocked();
+            // When doing an instant transition, we skip the layout update,
+            // but should still clean up the measurements so that the next
+            // snapshot could be taken correctly.
+            if (updateWasBlocked) {
+                this.unblockUpdate();
+                this.clearAllSnapshots();
+                this.nodes.forEach(clearMeasurements);
+                return;
+            }
+            if (!this.isUpdating) return;
+            this.isUpdating = false;
+            /**
+             * Search for and mount newly-added projection elements.
+             *
+             * TODO: Every time a new component is rendered we could search up the tree for
+             * the closest mounted node and query from there rather than document.
+             */ if (this.potentialNodes.size) {
+                this.potentialNodes.forEach(mountNodeEarly);
+                this.potentialNodes.clear();
+            }
+            /**
+             * Write
+             */ this.nodes.forEach(resetTransformStyle);
+            /**
+             * Read ==================
+             */ // Update layout measurements of updated children
+            this.nodes.forEach(updateLayout);
+            /**
+             * Write
+             */ // Notify listeners that the layout is updated
+            this.nodes.forEach(notifyLayoutUpdate);
+            this.clearAllSnapshots();
+            // Flush any scheduled updates
+            (0, _indexMjs.steps).update.process((0, _dataMjs.frameData));
+            (0, _indexMjs.steps).preRender.process((0, _dataMjs.frameData));
+            (0, _indexMjs.steps).render.process((0, _dataMjs.frameData));
+        }
+        clearAllSnapshots() {
+            this.nodes.forEach(clearSnapshot);
+            this.sharedNodes.forEach(removeLeadSnapshots);
+        }
+        scheduleUpdateProjection() {
+            (0, _indexMjs.frame).preRender(this.updateProjection, false, true);
+        }
+        scheduleCheckAfterUnmount() {
+            /**
+             * If the unmounting node is in a layoutGroup and did trigger a willUpdate,
+             * we manually call didUpdate to give a chance to the siblings to animate.
+             * Otherwise, cleanup all snapshots to prevents future nodes from reusing them.
+             */ (0, _indexMjs.frame).postRender(()=>{
+                if (this.isLayoutDirty) this.root.didUpdate();
+                else this.root.checkUpdateFailed();
+            });
+        }
+        /**
+         * Update measurements
+         */ updateSnapshot() {
+            if (this.snapshot || !this.instance) return;
+            this.snapshot = this.measure();
+        }
+        updateLayout() {
+            if (!this.instance) return;
+            // TODO: Incorporate into a forwarded scroll offset
+            this.updateScroll();
+            if (!(this.options.alwaysMeasureLayout && this.isLead()) && !this.isLayoutDirty) return;
+            /**
+             * When a node is mounted, it simply resumes from the prevLead's
+             * snapshot instead of taking a new one, but the ancestors scroll
+             * might have updated while the prevLead is unmounted. We need to
+             * update the scroll again to make sure the layout we measure is
+             * up to date.
+             */ if (this.resumeFrom && !this.resumeFrom.instance) for(let i = 0; i < this.path.length; i++){
+                const node = this.path[i];
+                node.updateScroll();
+            }
+            const prevLayout = this.layout;
+            this.layout = this.measure(false);
+            this.layoutCorrected = (0, _modelsMjs.createBox)();
+            this.isLayoutDirty = false;
+            this.projectionDelta = undefined;
+            this.notifyListeners("measure", this.layout.layoutBox);
+            const { visualElement  } = this.options;
+            visualElement && visualElement.notify("LayoutMeasure", this.layout.layoutBox, prevLayout ? prevLayout.layoutBox : undefined);
+        }
+        updateScroll(phase = "measure") {
+            let needsMeasurement = Boolean(this.options.layoutScroll && this.instance);
+            if (this.scroll && this.scroll.animationId === this.root.animationId && this.scroll.phase === phase) needsMeasurement = false;
+            if (needsMeasurement) this.scroll = {
+                animationId: this.root.animationId,
+                phase,
+                isRoot: checkIsScrollRoot(this.instance),
+                offset: measureScroll(this.instance)
+            };
+        }
+        resetTransform() {
+            if (!resetTransform) return;
+            const isResetRequested = this.isLayoutDirty || this.shouldResetTransform;
+            const hasProjection = this.projectionDelta && !(0, _utilsMjs.isDeltaZero)(this.projectionDelta);
+            const transformTemplate = this.getTransformTemplate();
+            const transformTemplateValue = transformTemplate ? transformTemplate(this.latestValues, "") : undefined;
+            const transformTemplateHasChanged = transformTemplateValue !== this.prevTransformTemplateValue;
+            if (isResetRequested && (hasProjection || (0, _hasTransformMjs.hasTransform)(this.latestValues) || transformTemplateHasChanged)) {
+                resetTransform(this.instance, transformTemplateValue);
+                this.shouldResetTransform = false;
+                this.scheduleRender();
+            }
+        }
+        measure(removeTransform = true) {
+            const pageBox = this.measurePageBox();
+            let layoutBox = this.removeElementScroll(pageBox);
+            /**
+             * Measurements taken during the pre-render stage
+             * still have transforms applied so we remove them
+             * via calculation.
+             */ if (removeTransform) layoutBox = this.removeTransform(layoutBox);
+            roundBox(layoutBox);
+            return {
+                animationId: this.root.animationId,
+                measuredBox: pageBox,
+                layoutBox,
+                latestValues: {},
+                source: this.id
+            };
+        }
+        measurePageBox() {
+            const { visualElement  } = this.options;
+            if (!visualElement) return (0, _modelsMjs.createBox)();
+            const box = visualElement.measureViewportBox();
+            // Remove viewport scroll to give page-relative coordinates
+            const { scroll  } = this.root;
+            if (scroll) {
+                (0, _deltaApplyMjs.translateAxis)(box.x, scroll.offset.x);
+                (0, _deltaApplyMjs.translateAxis)(box.y, scroll.offset.y);
+            }
+            return box;
+        }
+        removeElementScroll(box) {
+            const boxWithoutScroll = (0, _modelsMjs.createBox)();
+            (0, _copyMjs.copyBoxInto)(boxWithoutScroll, box);
+            /**
+             * Performance TODO: Keep a cumulative scroll offset down the tree
+             * rather than loop back up the path.
+             */ for(let i = 0; i < this.path.length; i++){
+                const node = this.path[i];
+                const { scroll , options  } = node;
+                if (node !== this.root && scroll && options.layoutScroll) {
+                    /**
+                     * If this is a new scroll root, we want to remove all previous scrolls
+                     * from the viewport box.
+                     */ if (scroll.isRoot) {
+                        (0, _copyMjs.copyBoxInto)(boxWithoutScroll, box);
+                        const { scroll: rootScroll  } = this.root;
+                        /**
+                         * Undo the application of page scroll that was originally added
+                         * to the measured bounding box.
+                         */ if (rootScroll) {
+                            (0, _deltaApplyMjs.translateAxis)(boxWithoutScroll.x, -rootScroll.offset.x);
+                            (0, _deltaApplyMjs.translateAxis)(boxWithoutScroll.y, -rootScroll.offset.y);
+                        }
+                    }
+                    (0, _deltaApplyMjs.translateAxis)(boxWithoutScroll.x, scroll.offset.x);
+                    (0, _deltaApplyMjs.translateAxis)(boxWithoutScroll.y, scroll.offset.y);
+                }
+            }
+            return boxWithoutScroll;
+        }
+        applyTransform(box, transformOnly = false) {
+            const withTransforms = (0, _modelsMjs.createBox)();
+            (0, _copyMjs.copyBoxInto)(withTransforms, box);
+            for(let i = 0; i < this.path.length; i++){
+                const node = this.path[i];
+                if (!transformOnly && node.options.layoutScroll && node.scroll && node !== node.root) (0, _deltaApplyMjs.transformBox)(withTransforms, {
+                    x: -node.scroll.offset.x,
+                    y: -node.scroll.offset.y
+                });
+                if (!(0, _hasTransformMjs.hasTransform)(node.latestValues)) continue;
+                (0, _deltaApplyMjs.transformBox)(withTransforms, node.latestValues);
+            }
+            if ((0, _hasTransformMjs.hasTransform)(this.latestValues)) (0, _deltaApplyMjs.transformBox)(withTransforms, this.latestValues);
+            return withTransforms;
+        }
+        removeTransform(box) {
+            const boxWithoutTransform = (0, _modelsMjs.createBox)();
+            (0, _copyMjs.copyBoxInto)(boxWithoutTransform, box);
+            for(let i = 0; i < this.path.length; i++){
+                const node = this.path[i];
+                if (!node.instance) continue;
+                if (!(0, _hasTransformMjs.hasTransform)(node.latestValues)) continue;
+                (0, _hasTransformMjs.hasScale)(node.latestValues) && node.updateSnapshot();
+                const sourceBox = (0, _modelsMjs.createBox)();
+                const nodeBox = node.measurePageBox();
+                (0, _copyMjs.copyBoxInto)(sourceBox, nodeBox);
+                (0, _deltaRemoveMjs.removeBoxTransforms)(boxWithoutTransform, node.latestValues, node.snapshot ? node.snapshot.layoutBox : undefined, sourceBox);
+            }
+            if ((0, _hasTransformMjs.hasTransform)(this.latestValues)) (0, _deltaRemoveMjs.removeBoxTransforms)(boxWithoutTransform, this.latestValues);
+            return boxWithoutTransform;
+        }
+        setTargetDelta(delta) {
+            this.targetDelta = delta;
+            this.root.scheduleUpdateProjection();
+            this.isProjectionDirty = true;
+        }
+        setOptions(options) {
+            this.options = {
+                ...this.options,
+                ...options,
+                crossfade: options.crossfade !== undefined ? options.crossfade : true
+            };
+        }
+        clearMeasurements() {
+            this.scroll = undefined;
+            this.layout = undefined;
+            this.snapshot = undefined;
+            this.prevTransformTemplateValue = undefined;
+            this.targetDelta = undefined;
+            this.target = undefined;
+            this.isLayoutDirty = false;
+        }
+        forceRelativeParentToResolveTarget() {
+            if (!this.relativeParent) return;
+            /**
+             * If the parent target isn't up-to-date, force it to update.
+             * This is an unfortunate de-optimisation as it means any updating relative
+             * projection will cause all the relative parents to recalculate back
+             * up the tree.
+             */ if (this.relativeParent.resolvedRelativeTargetAt !== (0, _dataMjs.frameData).timestamp) this.relativeParent.resolveTargetDelta(true);
+        }
+        resolveTargetDelta(forceRecalculation = false) {
+            var _a;
+            /**
+             * Once the dirty status of nodes has been spread through the tree, we also
+             * need to check if we have a shared node of a different depth that has itself
+             * been dirtied.
+             */ const lead = this.getLead();
+            this.isProjectionDirty || (this.isProjectionDirty = lead.isProjectionDirty);
+            this.isTransformDirty || (this.isTransformDirty = lead.isTransformDirty);
+            this.isSharedProjectionDirty || (this.isSharedProjectionDirty = lead.isSharedProjectionDirty);
+            const isShared = Boolean(this.resumingFrom) || this !== lead;
+            /**
+             * We don't use transform for this step of processing so we don't
+             * need to check whether any nodes have changed transform.
+             */ const canSkip = !(forceRecalculation || isShared && this.isSharedProjectionDirty || this.isProjectionDirty || ((_a = this.parent) === null || _a === void 0 ? void 0 : _a.isProjectionDirty) || this.attemptToResolveRelativeTarget);
+            if (canSkip) return;
+            const { layout , layoutId  } = this.options;
+            /**
+             * If we have no layout, we can't perform projection, so early return
+             */ if (!this.layout || !(layout || layoutId)) return;
+            this.resolvedRelativeTargetAt = (0, _dataMjs.frameData).timestamp;
+            /**
+             * If we don't have a targetDelta but do have a layout, we can attempt to resolve
+             * a relativeParent. This will allow a component to perform scale correction
+             * even if no animation has started.
+             */ // TODO If this is unsuccessful this currently happens every frame
+            if (!this.targetDelta && !this.relativeTarget) {
+                // TODO: This is a semi-repetition of further down this function, make DRY
+                const relativeParent = this.getClosestProjectingParent();
+                if (relativeParent && relativeParent.layout) {
+                    this.relativeParent = relativeParent;
+                    this.forceRelativeParentToResolveTarget();
+                    this.relativeTarget = (0, _modelsMjs.createBox)();
+                    this.relativeTargetOrigin = (0, _modelsMjs.createBox)();
+                    (0, _deltaCalcMjs.calcRelativePosition)(this.relativeTargetOrigin, this.layout.layoutBox, relativeParent.layout.layoutBox);
+                    (0, _copyMjs.copyBoxInto)(this.relativeTarget, this.relativeTargetOrigin);
+                } else this.relativeParent = this.relativeTarget = undefined;
+            }
+            /**
+             * If we have no relative target or no target delta our target isn't valid
+             * for this frame.
+             */ if (!this.relativeTarget && !this.targetDelta) return;
+            /**
+             * Lazy-init target data structure
+             */ if (!this.target) {
+                this.target = (0, _modelsMjs.createBox)();
+                this.targetWithTransforms = (0, _modelsMjs.createBox)();
+            }
+            /**
+             * If we've got a relative box for this component, resolve it into a target relative to the parent.
+             */ if (this.relativeTarget && this.relativeTargetOrigin && this.relativeParent && this.relativeParent.target) {
+                this.forceRelativeParentToResolveTarget();
+                (0, _deltaCalcMjs.calcRelativeBox)(this.target, this.relativeTarget, this.relativeParent.target);
+            /**
+                 * If we've only got a targetDelta, resolve it into a target
+                 */ } else if (this.targetDelta) {
+                if (Boolean(this.resumingFrom)) // TODO: This is creating a new object every frame
+                this.target = this.applyTransform(this.layout.layoutBox);
+                else (0, _copyMjs.copyBoxInto)(this.target, this.layout.layoutBox);
+                (0, _deltaApplyMjs.applyBoxDelta)(this.target, this.targetDelta);
+            } else /**
+                 * If no target, use own layout as target
+                 */ (0, _copyMjs.copyBoxInto)(this.target, this.layout.layoutBox);
+            /**
+             * If we've been told to attempt to resolve a relative target, do so.
+             */ if (this.attemptToResolveRelativeTarget) {
+                this.attemptToResolveRelativeTarget = false;
+                const relativeParent = this.getClosestProjectingParent();
+                if (relativeParent && Boolean(relativeParent.resumingFrom) === Boolean(this.resumingFrom) && !relativeParent.options.layoutScroll && relativeParent.target) {
+                    this.relativeParent = relativeParent;
+                    this.forceRelativeParentToResolveTarget();
+                    this.relativeTarget = (0, _modelsMjs.createBox)();
+                    this.relativeTargetOrigin = (0, _modelsMjs.createBox)();
+                    (0, _deltaCalcMjs.calcRelativePosition)(this.relativeTargetOrigin, this.target, relativeParent.target);
+                    (0, _copyMjs.copyBoxInto)(this.relativeTarget, this.relativeTargetOrigin);
+                } else this.relativeParent = this.relativeTarget = undefined;
+            }
+            /**
+             * Increase debug counter for resolved target deltas
+             */ projectionFrameData.resolvedTargetDeltas++;
+        }
+        getClosestProjectingParent() {
+            if (!this.parent || (0, _hasTransformMjs.hasScale)(this.parent.latestValues) || (0, _hasTransformMjs.has2DTranslate)(this.parent.latestValues)) return undefined;
+            if (this.parent.isProjecting()) return this.parent;
+            else return this.parent.getClosestProjectingParent();
+        }
+        isProjecting() {
+            return Boolean((this.relativeTarget || this.targetDelta || this.options.layoutRoot) && this.layout);
+        }
+        calcProjection() {
+            var _a;
+            const lead = this.getLead();
+            const isShared = Boolean(this.resumingFrom) || this !== lead;
+            let canSkip = true;
+            /**
+             * If this is a normal layout animation and neither this node nor its nearest projecting
+             * is dirty then we can't skip.
+             */ if (this.isProjectionDirty || ((_a = this.parent) === null || _a === void 0 ? void 0 : _a.isProjectionDirty)) canSkip = false;
+            /**
+             * If this is a shared layout animation and this node's shared projection is dirty then
+             * we can't skip.
+             */ if (isShared && (this.isSharedProjectionDirty || this.isTransformDirty)) canSkip = false;
+            /**
+             * If we have resolved the target this frame we must recalculate the
+             * projection to ensure it visually represents the internal calculations.
+             */ if (this.resolvedRelativeTargetAt === (0, _dataMjs.frameData).timestamp) canSkip = false;
+            if (canSkip) return;
+            const { layout , layoutId  } = this.options;
+            /**
+             * If this section of the tree isn't animating we can
+             * delete our target sources for the following frame.
+             */ this.isTreeAnimating = Boolean(this.parent && this.parent.isTreeAnimating || this.currentAnimation || this.pendingAnimation);
+            if (!this.isTreeAnimating) this.targetDelta = this.relativeTarget = undefined;
+            if (!this.layout || !(layout || layoutId)) return;
+            /**
+             * Reset the corrected box with the latest values from box, as we're then going
+             * to perform mutative operations on it.
+             */ (0, _copyMjs.copyBoxInto)(this.layoutCorrected, this.layout.layoutBox);
+            /**
+             * Apply all the parent deltas to this box to produce the corrected box. This
+             * is the layout box, as it will appear on screen as a result of the transforms of its parents.
+             */ (0, _deltaApplyMjs.applyTreeDeltas)(this.layoutCorrected, this.treeScale, this.path, isShared);
+            const { target  } = lead;
+            if (!target) return;
+            if (!this.projectionDelta) {
+                this.projectionDelta = (0, _modelsMjs.createDelta)();
+                this.projectionDeltaWithTransform = (0, _modelsMjs.createDelta)();
+            }
+            const prevTreeScaleX = this.treeScale.x;
+            const prevTreeScaleY = this.treeScale.y;
+            const prevProjectionTransform = this.projectionTransform;
+            /**
+             * Update the delta between the corrected box and the target box before user-set transforms were applied.
+             * This will allow us to calculate the corrected borderRadius and boxShadow to compensate
+             * for our layout reprojection, but still allow them to be scaled correctly by the user.
+             * It might be that to simplify this we may want to accept that user-set scale is also corrected
+             * and we wouldn't have to keep and calc both deltas, OR we could support a user setting
+             * to allow people to choose whether these styles are corrected based on just the
+             * layout reprojection or the final bounding box.
+             */ (0, _deltaCalcMjs.calcBoxDelta)(this.projectionDelta, this.layoutCorrected, target, this.latestValues);
+            this.projectionTransform = (0, _transformMjs.buildProjectionTransform)(this.projectionDelta, this.treeScale);
+            if (this.projectionTransform !== prevProjectionTransform || this.treeScale.x !== prevTreeScaleX || this.treeScale.y !== prevTreeScaleY) {
+                this.hasProjected = true;
+                this.scheduleRender();
+                this.notifyListeners("projectionUpdate", target);
+            }
+            /**
+             * Increase debug counter for recalculated projections
+             */ projectionFrameData.recalculatedProjection++;
+        }
+        hide() {
+            this.isVisible = false;
+        // TODO: Schedule render
+        }
+        show() {
+            this.isVisible = true;
+        // TODO: Schedule render
+        }
+        scheduleRender(notifyAll = true) {
+            this.options.scheduleRender && this.options.scheduleRender();
+            if (notifyAll) {
+                const stack = this.getStack();
+                stack && stack.scheduleRender();
+            }
+            if (this.resumingFrom && !this.resumingFrom.instance) this.resumingFrom = undefined;
+        }
+        setAnimationOrigin(delta, hasOnlyRelativeTargetChanged = false) {
+            const snapshot = this.snapshot;
+            const snapshotLatestValues = snapshot ? snapshot.latestValues : {};
+            const mixedValues = {
+                ...this.latestValues
+            };
+            const targetDelta = (0, _modelsMjs.createDelta)();
+            if (!this.relativeParent || !this.relativeParent.options.layoutRoot) this.relativeTarget = this.relativeTargetOrigin = undefined;
+            this.attemptToResolveRelativeTarget = !hasOnlyRelativeTargetChanged;
+            const relativeLayout = (0, _modelsMjs.createBox)();
+            const snapshotSource = snapshot ? snapshot.source : undefined;
+            const layoutSource = this.layout ? this.layout.source : undefined;
+            const isSharedLayoutAnimation = snapshotSource !== layoutSource;
+            const stack = this.getStack();
+            const isOnlyMember = !stack || stack.members.length <= 1;
+            const shouldCrossfadeOpacity = Boolean(isSharedLayoutAnimation && !isOnlyMember && this.options.crossfade === true && !this.path.some(hasOpacityCrossfade));
+            this.animationProgress = 0;
+            let prevRelativeTarget;
+            this.mixTargetDelta = (latest)=>{
+                const progress = latest / 1000;
+                mixAxisDelta(targetDelta.x, delta.x, progress);
+                mixAxisDelta(targetDelta.y, delta.y, progress);
+                this.setTargetDelta(targetDelta);
+                if (this.relativeTarget && this.relativeTargetOrigin && this.layout && this.relativeParent && this.relativeParent.layout) {
+                    (0, _deltaCalcMjs.calcRelativePosition)(relativeLayout, this.layout.layoutBox, this.relativeParent.layout.layoutBox);
+                    mixBox(this.relativeTarget, this.relativeTargetOrigin, relativeLayout, progress);
+                    /**
+                     * If this is an unchanged relative target we can consider the
+                     * projection not dirty.
+                     */ if (prevRelativeTarget && (0, _utilsMjs.boxEquals)(this.relativeTarget, prevRelativeTarget)) this.isProjectionDirty = false;
+                    if (!prevRelativeTarget) prevRelativeTarget = (0, _modelsMjs.createBox)();
+                    (0, _copyMjs.copyBoxInto)(prevRelativeTarget, this.relativeTarget);
+                }
+                if (isSharedLayoutAnimation) {
+                    this.animationValues = mixedValues;
+                    (0, _mixValuesMjs.mixValues)(mixedValues, snapshotLatestValues, this.latestValues, progress, shouldCrossfadeOpacity, isOnlyMember);
+                }
+                this.root.scheduleUpdateProjection();
+                this.scheduleRender();
+                this.animationProgress = progress;
+            };
+            this.mixTargetDelta(this.options.layoutRoot ? 1000 : 0);
+        }
+        startAnimation(options) {
+            this.notifyListeners("animationStart");
+            this.currentAnimation && this.currentAnimation.stop();
+            if (this.resumingFrom && this.resumingFrom.currentAnimation) this.resumingFrom.currentAnimation.stop();
+            if (this.pendingAnimation) {
+                (0, _indexMjs.cancelFrame)(this.pendingAnimation);
+                this.pendingAnimation = undefined;
+            }
+            /**
+             * Start the animation in the next frame to have a frame with progress 0,
+             * where the target is the same as when the animation started, so we can
+             * calculate the relative positions correctly for instant transitions.
+             */ this.pendingAnimation = (0, _indexMjs.frame).update(()=>{
+                (0, _stateMjs.globalProjectionState).hasAnimatedSinceResize = true;
+                this.currentAnimation = (0, _singleValueMjs.animateSingleValue)(0, animationTarget, {
+                    ...options,
+                    onUpdate: (latest)=>{
+                        this.mixTargetDelta(latest);
+                        options.onUpdate && options.onUpdate(latest);
+                    },
+                    onComplete: ()=>{
+                        options.onComplete && options.onComplete();
+                        this.completeAnimation();
+                    }
+                });
+                if (this.resumingFrom) this.resumingFrom.currentAnimation = this.currentAnimation;
+                this.pendingAnimation = undefined;
+            });
+        }
+        completeAnimation() {
+            if (this.resumingFrom) {
+                this.resumingFrom.currentAnimation = undefined;
+                this.resumingFrom.preserveOpacity = undefined;
+            }
+            const stack = this.getStack();
+            stack && stack.exitAnimationComplete();
+            this.resumingFrom = this.currentAnimation = this.animationValues = undefined;
+            this.notifyListeners("animationComplete");
+        }
+        finishAnimation() {
+            if (this.currentAnimation) {
+                this.mixTargetDelta && this.mixTargetDelta(animationTarget);
+                this.currentAnimation.stop();
+            }
+            this.completeAnimation();
+        }
+        applyTransformsToTarget() {
+            const lead = this.getLead();
+            let { targetWithTransforms , target , layout , latestValues  } = lead;
+            if (!targetWithTransforms || !target || !layout) return;
+            /**
+             * If we're only animating position, and this element isn't the lead element,
+             * then instead of projecting into the lead box we instead want to calculate
+             * a new target that aligns the two boxes but maintains the layout shape.
+             */ if (this !== lead && this.layout && layout && shouldAnimatePositionOnly(this.options.animationType, this.layout.layoutBox, layout.layoutBox)) {
+                target = this.target || (0, _modelsMjs.createBox)();
+                const xLength = (0, _deltaCalcMjs.calcLength)(this.layout.layoutBox.x);
+                target.x.min = lead.target.x.min;
+                target.x.max = target.x.min + xLength;
+                const yLength = (0, _deltaCalcMjs.calcLength)(this.layout.layoutBox.y);
+                target.y.min = lead.target.y.min;
+                target.y.max = target.y.min + yLength;
+            }
+            (0, _copyMjs.copyBoxInto)(targetWithTransforms, target);
+            /**
+             * Apply the latest user-set transforms to the targetBox to produce the targetBoxFinal.
+             * This is the final box that we will then project into by calculating a transform delta and
+             * applying it to the corrected box.
+             */ (0, _deltaApplyMjs.transformBox)(targetWithTransforms, latestValues);
+            /**
+             * Update the delta between the corrected box and the final target box, after
+             * user-set transforms are applied to it. This will be used by the renderer to
+             * create a transform style that will reproject the element from its layout layout
+             * into the desired bounding box.
+             */ (0, _deltaCalcMjs.calcBoxDelta)(this.projectionDeltaWithTransform, this.layoutCorrected, targetWithTransforms, latestValues);
+        }
+        registerSharedNode(layoutId, node) {
+            if (!this.sharedNodes.has(layoutId)) this.sharedNodes.set(layoutId, new (0, _stackMjs.NodeStack)());
+            const stack = this.sharedNodes.get(layoutId);
+            stack.add(node);
+            const config = node.options.initialPromotionConfig;
+            node.promote({
+                transition: config ? config.transition : undefined,
+                preserveFollowOpacity: config && config.shouldPreserveFollowOpacity ? config.shouldPreserveFollowOpacity(node) : undefined
+            });
+        }
+        isLead() {
+            const stack = this.getStack();
+            return stack ? stack.lead === this : true;
+        }
+        getLead() {
+            var _a;
+            const { layoutId  } = this.options;
+            return layoutId ? ((_a = this.getStack()) === null || _a === void 0 ? void 0 : _a.lead) || this : this;
+        }
+        getPrevLead() {
+            var _a;
+            const { layoutId  } = this.options;
+            return layoutId ? (_a = this.getStack()) === null || _a === void 0 ? void 0 : _a.prevLead : undefined;
+        }
+        getStack() {
+            const { layoutId  } = this.options;
+            if (layoutId) return this.root.sharedNodes.get(layoutId);
+        }
+        promote({ needsReset , transition , preserveFollowOpacity  } = {}) {
+            const stack = this.getStack();
+            if (stack) stack.promote(this, preserveFollowOpacity);
+            if (needsReset) {
+                this.projectionDelta = undefined;
+                this.needsReset = true;
+            }
+            if (transition) this.setOptions({
+                transition
+            });
+        }
+        relegate() {
+            const stack = this.getStack();
+            if (stack) return stack.relegate(this);
+            else return false;
+        }
+        resetRotation() {
+            const { visualElement  } = this.options;
+            if (!visualElement) return;
+            // If there's no detected rotation values, we can early return without a forced render.
+            let hasRotate = false;
+            /**
+             * An unrolled check for rotation values. Most elements don't have any rotation and
+             * skipping the nested loop and new object creation is 50% faster.
+             */ const { latestValues  } = visualElement;
+            if (latestValues.rotate || latestValues.rotateX || latestValues.rotateY || latestValues.rotateZ) hasRotate = true;
+            // If there's no rotation values, we don't need to do any more.
+            if (!hasRotate) return;
+            const resetValues = {};
+            // Check the rotate value of all axes and reset to 0
+            for(let i = 0; i < transformAxes.length; i++){
+                const key = "rotate" + transformAxes[i];
+                // Record the rotation and then temporarily set it to 0
+                if (latestValues[key]) {
+                    resetValues[key] = latestValues[key];
+                    visualElement.setStaticValue(key, 0);
+                }
+            }
+            // Force a render of this element to apply the transform with all rotations
+            // set to 0.
+            visualElement.render();
+            // Put back all the values we reset
+            for(const key in resetValues)visualElement.setStaticValue(key, resetValues[key]);
+            // Schedule a render for the next frame. This ensures we won't visually
+            // see the element with the reset rotate value applied.
+            visualElement.scheduleRender();
+        }
+        getProjectionStyles(styleProp = {}) {
+            var _a, _b;
+            // TODO: Return lifecycle-persistent object
+            const styles = {};
+            if (!this.instance || this.isSVG) return styles;
+            if (!this.isVisible) return {
+                visibility: "hidden"
+            };
+            else styles.visibility = "";
+            const transformTemplate = this.getTransformTemplate();
+            if (this.needsReset) {
+                this.needsReset = false;
+                styles.opacity = "";
+                styles.pointerEvents = (0, _resolveMotionValueMjs.resolveMotionValue)(styleProp.pointerEvents) || "";
+                styles.transform = transformTemplate ? transformTemplate(this.latestValues, "") : "none";
+                return styles;
+            }
+            const lead = this.getLead();
+            if (!this.projectionDelta || !this.layout || !lead.target) {
+                const emptyStyles = {};
+                if (this.options.layoutId) {
+                    emptyStyles.opacity = this.latestValues.opacity !== undefined ? this.latestValues.opacity : 1;
+                    emptyStyles.pointerEvents = (0, _resolveMotionValueMjs.resolveMotionValue)(styleProp.pointerEvents) || "";
+                }
+                if (this.hasProjected && !(0, _hasTransformMjs.hasTransform)(this.latestValues)) {
+                    emptyStyles.transform = transformTemplate ? transformTemplate({}, "") : "none";
+                    this.hasProjected = false;
+                }
+                return emptyStyles;
+            }
+            const valuesToRender = lead.animationValues || lead.latestValues;
+            this.applyTransformsToTarget();
+            styles.transform = (0, _transformMjs.buildProjectionTransform)(this.projectionDeltaWithTransform, this.treeScale, valuesToRender);
+            if (transformTemplate) styles.transform = transformTemplate(valuesToRender, styles.transform);
+            const { x , y  } = this.projectionDelta;
+            styles.transformOrigin = `${x.origin * 100}% ${y.origin * 100}% 0`;
+            if (lead.animationValues) /**
+                 * If the lead component is animating, assign this either the entering/leaving
+                 * opacity
+                 */ styles.opacity = lead === this ? (_b = (_a = valuesToRender.opacity) !== null && _a !== void 0 ? _a : this.latestValues.opacity) !== null && _b !== void 0 ? _b : 1 : this.preserveOpacity ? this.latestValues.opacity : valuesToRender.opacityExit;
+            else /**
+                 * Or we're not animating at all, set the lead component to its layout
+                 * opacity and other components to hidden.
+                 */ styles.opacity = lead === this ? valuesToRender.opacity !== undefined ? valuesToRender.opacity : "" : valuesToRender.opacityExit !== undefined ? valuesToRender.opacityExit : 0;
+            /**
+             * Apply scale correction
+             */ for(const key in 0, _scaleCorrectionMjs.scaleCorrectors){
+                if (valuesToRender[key] === undefined) continue;
+                const { correct , applyTo  } = (0, _scaleCorrectionMjs.scaleCorrectors)[key];
+                /**
+                 * Only apply scale correction to the value if we have an
+                 * active projection transform. Otherwise these values become
+                 * vulnerable to distortion if the element changes size without
+                 * a corresponding layout animation.
+                 */ const corrected = styles.transform === "none" ? valuesToRender[key] : correct(valuesToRender[key], lead);
+                if (applyTo) {
+                    const num = applyTo.length;
+                    for(let i = 0; i < num; i++)styles[applyTo[i]] = corrected;
+                } else styles[key] = corrected;
+            }
+            /**
+             * Disable pointer events on follow components. This is to ensure
+             * that if a follow component covers a lead component it doesn't block
+             * pointer events on the lead.
+             */ if (this.options.layoutId) styles.pointerEvents = lead === this ? (0, _resolveMotionValueMjs.resolveMotionValue)(styleProp.pointerEvents) || "" : "none";
+            return styles;
+        }
+        clearSnapshot() {
+            this.resumeFrom = this.snapshot = undefined;
+        }
+        // Only run on root
+        resetTree() {
+            this.root.nodes.forEach((node)=>{
+                var _a;
+                return (_a = node.currentAnimation) === null || _a === void 0 ? void 0 : _a.stop();
+            });
+            this.root.nodes.forEach(clearMeasurements);
+            this.root.sharedNodes.clear();
+        }
+    };
+}
+function updateLayout(node) {
+    node.updateLayout();
+}
+function notifyLayoutUpdate(node) {
+    var _a;
+    const snapshot = ((_a = node.resumeFrom) === null || _a === void 0 ? void 0 : _a.snapshot) || node.snapshot;
+    if (node.isLead() && node.layout && snapshot && node.hasListeners("didUpdate")) {
+        const { layoutBox: layout , measuredBox: measuredLayout  } = node.layout;
+        const { animationType  } = node.options;
+        const isShared = snapshot.source !== node.layout.source;
+        // TODO Maybe we want to also resize the layout snapshot so we don't trigger
+        // animations for instance if layout="size" and an element has only changed position
+        if (animationType === "size") (0, _eachAxisMjs.eachAxis)((axis)=>{
+            const axisSnapshot = isShared ? snapshot.measuredBox[axis] : snapshot.layoutBox[axis];
+            const length = (0, _deltaCalcMjs.calcLength)(axisSnapshot);
+            axisSnapshot.min = layout[axis].min;
+            axisSnapshot.max = axisSnapshot.min + length;
+        });
+        else if (shouldAnimatePositionOnly(animationType, snapshot.layoutBox, layout)) (0, _eachAxisMjs.eachAxis)((axis)=>{
+            const axisSnapshot = isShared ? snapshot.measuredBox[axis] : snapshot.layoutBox[axis];
+            const length = (0, _deltaCalcMjs.calcLength)(layout[axis]);
+            axisSnapshot.max = axisSnapshot.min + length;
+            /**
+                 * Ensure relative target gets resized and rerendererd
+                 */ if (node.relativeTarget && !node.currentAnimation) {
+                node.isProjectionDirty = true;
+                node.relativeTarget[axis].max = node.relativeTarget[axis].min + length;
+            }
+        });
+        const layoutDelta = (0, _modelsMjs.createDelta)();
+        (0, _deltaCalcMjs.calcBoxDelta)(layoutDelta, layout, snapshot.layoutBox);
+        const visualDelta = (0, _modelsMjs.createDelta)();
+        if (isShared) (0, _deltaCalcMjs.calcBoxDelta)(visualDelta, node.applyTransform(measuredLayout, true), snapshot.measuredBox);
+        else (0, _deltaCalcMjs.calcBoxDelta)(visualDelta, layout, snapshot.layoutBox);
+        const hasLayoutChanged = !(0, _utilsMjs.isDeltaZero)(layoutDelta);
+        let hasRelativeTargetChanged = false;
+        if (!node.resumeFrom) {
+            const relativeParent = node.getClosestProjectingParent();
+            /**
+             * If the relativeParent is itself resuming from a different element then
+             * the relative snapshot is not relavent
+             */ if (relativeParent && !relativeParent.resumeFrom) {
+                const { snapshot: parentSnapshot , layout: parentLayout  } = relativeParent;
+                if (parentSnapshot && parentLayout) {
+                    const relativeSnapshot = (0, _modelsMjs.createBox)();
+                    (0, _deltaCalcMjs.calcRelativePosition)(relativeSnapshot, snapshot.layoutBox, parentSnapshot.layoutBox);
+                    const relativeLayout = (0, _modelsMjs.createBox)();
+                    (0, _deltaCalcMjs.calcRelativePosition)(relativeLayout, layout, parentLayout.layoutBox);
+                    if (!(0, _utilsMjs.boxEquals)(relativeSnapshot, relativeLayout)) hasRelativeTargetChanged = true;
+                    if (relativeParent.options.layoutRoot) {
+                        node.relativeTarget = relativeLayout;
+                        node.relativeTargetOrigin = relativeSnapshot;
+                        node.relativeParent = relativeParent;
+                    }
+                }
+            }
+        }
+        node.notifyListeners("didUpdate", {
+            layout,
+            snapshot,
+            delta: visualDelta,
+            layoutDelta,
+            hasLayoutChanged,
+            hasRelativeTargetChanged
+        });
+    } else if (node.isLead()) {
+        const { onExitComplete  } = node.options;
+        onExitComplete && onExitComplete();
+    }
+    /**
+     * Clearing transition
+     * TODO: Investigate why this transition is being passed in as {type: false } from Framer
+     * and why we need it at all
+     */ node.options.transition = undefined;
+}
+function propagateDirtyNodes(node) {
+    /**
+     * Increase debug counter for nodes encountered this frame
+     */ projectionFrameData.totalNodes++;
+    if (!node.parent) return;
+    /**
+     * If this node isn't projecting, propagate isProjectionDirty. It will have
+     * no performance impact but it will allow the next child that *is* projecting
+     * but *isn't* dirty to just check its parent to see if *any* ancestor needs
+     * correcting.
+     */ if (!node.isProjecting()) node.isProjectionDirty = node.parent.isProjectionDirty;
+    /**
+     * Propagate isSharedProjectionDirty and isTransformDirty
+     * throughout the whole tree. A future revision can take another look at
+     * this but for safety we still recalcualte shared nodes.
+     */ node.isSharedProjectionDirty || (node.isSharedProjectionDirty = Boolean(node.isProjectionDirty || node.parent.isProjectionDirty || node.parent.isSharedProjectionDirty));
+    node.isTransformDirty || (node.isTransformDirty = node.parent.isTransformDirty);
+}
+function cleanDirtyNodes(node) {
+    node.isProjectionDirty = node.isSharedProjectionDirty = node.isTransformDirty = false;
+}
+function clearSnapshot(node) {
+    node.clearSnapshot();
+}
+function clearMeasurements(node) {
+    node.clearMeasurements();
+}
+function resetTransformStyle(node) {
+    const { visualElement  } = node.options;
+    if (visualElement && visualElement.getProps().onBeforeLayoutMeasure) visualElement.notify("BeforeLayoutMeasure");
+    node.resetTransform();
+}
+function finishAnimation(node) {
+    node.finishAnimation();
+    node.targetDelta = node.relativeTarget = node.target = undefined;
+}
+function resolveTargetDelta(node) {
+    node.resolveTargetDelta();
+}
+function calcProjection(node) {
+    node.calcProjection();
+}
+function resetRotation(node) {
+    node.resetRotation();
+}
+function removeLeadSnapshots(stack) {
+    stack.removeLeadSnapshot();
+}
+function mixAxisDelta(output, delta, p) {
+    output.translate = (0, _mixMjs.mix)(delta.translate, 0, p);
+    output.scale = (0, _mixMjs.mix)(delta.scale, 1, p);
+    output.origin = delta.origin;
+    output.originPoint = delta.originPoint;
+}
+function mixAxis(output, from, to, p) {
+    output.min = (0, _mixMjs.mix)(from.min, to.min, p);
+    output.max = (0, _mixMjs.mix)(from.max, to.max, p);
+}
+function mixBox(output, from, to, p) {
+    mixAxis(output.x, from.x, to.x, p);
+    mixAxis(output.y, from.y, to.y, p);
+}
+function hasOpacityCrossfade(node) {
+    return node.animationValues && node.animationValues.opacityExit !== undefined;
+}
+const defaultLayoutTransition = {
+    duration: 0.45,
+    ease: [
+        0.4,
+        0,
+        0.1,
+        1
+    ]
+};
+function mountNodeEarly(node, elementId) {
+    /**
+     * Rather than searching the DOM from document we can search the
+     * path for the deepest mounted ancestor and search from there
+     */ let searchNode = node.root;
+    for(let i = node.path.length - 1; i >= 0; i--)if (Boolean(node.path[i].instance)) {
+        searchNode = node.path[i];
+        break;
+    }
+    const searchElement = searchNode && searchNode !== node.root ? searchNode.instance : document;
+    const element = searchElement.querySelector(`[data-projection-id="${elementId}"]`);
+    if (element) node.mount(element, true);
+}
+function roundAxis(axis) {
+    axis.min = Math.round(axis.min);
+    axis.max = Math.round(axis.max);
+}
+function roundBox(box) {
+    roundAxis(box.x);
+    roundAxis(box.y);
+}
+function shouldAnimatePositionOnly(animationType, snapshot, layout) {
+    return animationType === "position" || animationType === "preserve-aspect" && !(0, _deltaCalcMjs.isNear)((0, _utilsMjs.aspectRatio)(snapshot), (0, _utilsMjs.aspectRatio)(layout), 0.2);
+}
+
+},{"../../frameloop/index.mjs":"3Dz3U","../../utils/subscription-manager.mjs":"fxDTo","../animation/mix-values.mjs":"6AWvl","../geometry/copy.mjs":"f206V","../geometry/delta-apply.mjs":"4QsuN","../geometry/delta-calc.mjs":"7r3CU","../geometry/delta-remove.mjs":"dXKkI","../geometry/models.mjs":"8tocy","../../animation/utils/transitions.mjs":"bsOYk","../geometry/utils.mjs":"8NduD","../shared/stack.mjs":"gegN0","../styles/scale-correction.mjs":"4Bydu","../styles/transform.mjs":"g4dqh","../utils/each-axis.mjs":"iO8nE","../utils/has-transform.mjs":"ihgFW","../../render/utils/flat-tree.mjs":"cinYO","../../value/utils/resolve-motion-value.mjs":"2waBq","./state.mjs":"bSdze","../../utils/delay.mjs":"bbpYv","../../utils/mix.mjs":"jx86W","../../debug/record.mjs":"i9CPM","../../render/dom/utils/is-svg-element.mjs":"4r61T","../../animation/interfaces/single-value.mjs":"BcqjY","../../frameloop/data.mjs":"gzDj4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6AWvl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "mixValues", ()=>mixValues);
+var _circMjs = require("../../easing/circ.mjs");
+var _progressMjs = require("../../utils/progress.mjs");
+var _mixMjs = require("../../utils/mix.mjs");
+var _noopMjs = require("../../utils/noop.mjs");
+var _unitsMjs = require("../../value/types/numbers/units.mjs");
+const borders = [
+    "TopLeft",
+    "TopRight",
+    "BottomLeft",
+    "BottomRight"
+];
+const numBorders = borders.length;
+const asNumber = (value)=>typeof value === "string" ? parseFloat(value) : value;
+const isPx = (value)=>typeof value === "number" || (0, _unitsMjs.px).test(value);
+function mixValues(target, follow, lead, progress, shouldCrossfadeOpacity, isOnlyMember) {
+    if (shouldCrossfadeOpacity) {
+        target.opacity = (0, _mixMjs.mix)(0, // TODO Reinstate this if only child
+        lead.opacity !== undefined ? lead.opacity : 1, easeCrossfadeIn(progress));
+        target.opacityExit = (0, _mixMjs.mix)(follow.opacity !== undefined ? follow.opacity : 1, 0, easeCrossfadeOut(progress));
+    } else if (isOnlyMember) target.opacity = (0, _mixMjs.mix)(follow.opacity !== undefined ? follow.opacity : 1, lead.opacity !== undefined ? lead.opacity : 1, progress);
+    /**
+     * Mix border radius
+     */ for(let i = 0; i < numBorders; i++){
+        const borderLabel = `border${borders[i]}Radius`;
+        let followRadius = getRadius(follow, borderLabel);
+        let leadRadius = getRadius(lead, borderLabel);
+        if (followRadius === undefined && leadRadius === undefined) continue;
+        followRadius || (followRadius = 0);
+        leadRadius || (leadRadius = 0);
+        const canMix = followRadius === 0 || leadRadius === 0 || isPx(followRadius) === isPx(leadRadius);
+        if (canMix) {
+            target[borderLabel] = Math.max((0, _mixMjs.mix)(asNumber(followRadius), asNumber(leadRadius), progress), 0);
+            if ((0, _unitsMjs.percent).test(leadRadius) || (0, _unitsMjs.percent).test(followRadius)) target[borderLabel] += "%";
+        } else target[borderLabel] = leadRadius;
+    }
+    /**
+     * Mix rotation
+     */ if (follow.rotate || lead.rotate) target.rotate = (0, _mixMjs.mix)(follow.rotate || 0, lead.rotate || 0, progress);
+}
+function getRadius(values, radiusName) {
+    return values[radiusName] !== undefined ? values[radiusName] : values.borderRadius;
+}
+// /**
+//  * We only want to mix the background color if there's a follow element
+//  * that we're not crossfading opacity between. For instance with switch
+//  * AnimateSharedLayout animations, this helps the illusion of a continuous
+//  * element being animated but also cuts down on the number of paints triggered
+//  * for elements where opacity is doing that work for us.
+//  */
+// if (
+//     !hasFollowElement &&
+//     latestLeadValues.backgroundColor &&
+//     latestFollowValues.backgroundColor
+// ) {
+//     /**
+//      * This isn't ideal performance-wise as mixColor is creating a new function every frame.
+//      * We could probably create a mixer that runs at the start of the animation but
+//      * the idea behind the crossfader is that it runs dynamically between two potentially
+//      * changing targets (ie opacity or borderRadius may be animating independently via variants)
+//      */
+//     leadState.backgroundColor = followState.backgroundColor = mixColor(
+//         latestFollowValues.backgroundColor as string,
+//         latestLeadValues.backgroundColor as string
+//     )(p)
+// }
+const easeCrossfadeIn = compress(0, 0.5, (0, _circMjs.circOut));
+const easeCrossfadeOut = compress(0.5, 0.95, (0, _noopMjs.noop));
+function compress(min, max, easing) {
+    return (p)=>{
+        // Could replace ifs with clamp
+        if (p < min) return 0;
+        if (p > max) return 1;
+        return easing((0, _progressMjs.progress)(min, max, p));
+    };
+}
+
+},{"../../easing/circ.mjs":"LdSua","../../utils/progress.mjs":"3vvIn","../../utils/mix.mjs":"jx86W","../../utils/noop.mjs":"67SDH","../../value/types/numbers/units.mjs":"lGBHA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"f206V":[function(require,module,exports) {
+/**
+ * Reset an axis to the provided origin box.
+ *
+ * This is a mutative operation.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "copyAxisInto", ()=>copyAxisInto);
+parcelHelpers.export(exports, "copyBoxInto", ()=>copyBoxInto);
+function copyAxisInto(axis, originAxis) {
+    axis.min = originAxis.min;
+    axis.max = originAxis.max;
+}
+/**
+ * Reset a box to the provided origin box.
+ *
+ * This is a mutative operation.
+ */ function copyBoxInto(box, originBox) {
+    copyAxisInto(box.x, originBox.x);
+    copyAxisInto(box.y, originBox.y);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dXKkI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "removeAxisDelta", ()=>removeAxisDelta);
+parcelHelpers.export(exports, "removeAxisTransforms", ()=>removeAxisTransforms);
+parcelHelpers.export(exports, "removeBoxTransforms", ()=>removeBoxTransforms);
+parcelHelpers.export(exports, "removePointDelta", ()=>removePointDelta);
+var _mixMjs = require("../../utils/mix.mjs");
+var _unitsMjs = require("../../value/types/numbers/units.mjs");
+var _deltaApplyMjs = require("./delta-apply.mjs");
+/**
+ * Remove a delta from a point. This is essentially the steps of applyPointDelta in reverse
+ */ function removePointDelta(point, translate, scale, originPoint, boxScale) {
+    point -= translate;
+    point = (0, _deltaApplyMjs.scalePoint)(point, 1 / scale, originPoint);
+    if (boxScale !== undefined) point = (0, _deltaApplyMjs.scalePoint)(point, 1 / boxScale, originPoint);
+    return point;
+}
+/**
+ * Remove a delta from an axis. This is essentially the steps of applyAxisDelta in reverse
+ */ function removeAxisDelta(axis, translate = 0, scale = 1, origin = 0.5, boxScale, originAxis = axis, sourceAxis = axis) {
+    if ((0, _unitsMjs.percent).test(translate)) {
+        translate = parseFloat(translate);
+        const relativeProgress = (0, _mixMjs.mix)(sourceAxis.min, sourceAxis.max, translate / 100);
+        translate = relativeProgress - sourceAxis.min;
+    }
+    if (typeof translate !== "number") return;
+    let originPoint = (0, _mixMjs.mix)(originAxis.min, originAxis.max, origin);
+    if (axis === originAxis) originPoint -= translate;
+    axis.min = removePointDelta(axis.min, translate, scale, originPoint, boxScale);
+    axis.max = removePointDelta(axis.max, translate, scale, originPoint, boxScale);
+}
+/**
+ * Remove a transforms from an axis. This is essentially the steps of applyAxisTransforms in reverse
+ * and acts as a bridge between motion values and removeAxisDelta
+ */ function removeAxisTransforms(axis, transforms, [key, scaleKey, originKey], origin, sourceAxis) {
+    removeAxisDelta(axis, transforms[key], transforms[scaleKey], transforms[originKey], transforms.scale, origin, sourceAxis);
+}
+/**
+ * The names of the motion values we want to apply as translation, scale and origin.
+ */ const xKeys = [
+    "x",
+    "scaleX",
+    "originX"
+];
+const yKeys = [
+    "y",
+    "scaleY",
+    "originY"
+];
+/**
+ * Remove a transforms from an box. This is essentially the steps of applyAxisBox in reverse
+ * and acts as a bridge between motion values and removeAxisDelta
+ */ function removeBoxTransforms(box, transforms, originBox, sourceBox) {
+    removeAxisTransforms(box.x, transforms, xKeys, originBox ? originBox.x : undefined, sourceBox ? sourceBox.x : undefined);
+    removeAxisTransforms(box.y, transforms, yKeys, originBox ? originBox.y : undefined, sourceBox ? sourceBox.y : undefined);
+}
+
+},{"../../utils/mix.mjs":"jx86W","../../value/types/numbers/units.mjs":"lGBHA","./delta-apply.mjs":"4QsuN","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8NduD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "aspectRatio", ()=>aspectRatio);
+parcelHelpers.export(exports, "boxEquals", ()=>boxEquals);
+parcelHelpers.export(exports, "isDeltaZero", ()=>isDeltaZero);
+var _deltaCalcMjs = require("./delta-calc.mjs");
+function isAxisDeltaZero(delta) {
+    return delta.translate === 0 && delta.scale === 1;
+}
+function isDeltaZero(delta) {
+    return isAxisDeltaZero(delta.x) && isAxisDeltaZero(delta.y);
+}
+function boxEquals(a, b) {
+    return a.x.min === b.x.min && a.x.max === b.x.max && a.y.min === b.y.min && a.y.max === b.y.max;
+}
+function aspectRatio(box) {
+    return (0, _deltaCalcMjs.calcLength)(box.x) / (0, _deltaCalcMjs.calcLength)(box.y);
+}
+
+},{"./delta-calc.mjs":"7r3CU","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gegN0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NodeStack", ()=>NodeStack);
+var _arrayMjs = require("../../utils/array.mjs");
+class NodeStack {
+    constructor(){
+        this.members = [];
+    }
+    add(node) {
+        (0, _arrayMjs.addUniqueItem)(this.members, node);
+        node.scheduleRender();
+    }
+    remove(node) {
+        (0, _arrayMjs.removeItem)(this.members, node);
+        if (node === this.prevLead) this.prevLead = undefined;
+        if (node === this.lead) {
+            const prevLead = this.members[this.members.length - 1];
+            if (prevLead) this.promote(prevLead);
+        }
+    }
+    relegate(node) {
+        const indexOfNode = this.members.findIndex((member)=>node === member);
+        if (indexOfNode === 0) return false;
+        /**
+         * Find the next projection node that is present
+         */ let prevLead;
+        for(let i = indexOfNode; i >= 0; i--){
+            const member = this.members[i];
+            if (member.isPresent !== false) {
+                prevLead = member;
+                break;
+            }
+        }
+        if (prevLead) {
+            this.promote(prevLead);
+            return true;
+        } else return false;
+    }
+    promote(node, preserveFollowOpacity) {
+        const prevLead = this.lead;
+        if (node === prevLead) return;
+        this.prevLead = prevLead;
+        this.lead = node;
+        node.show();
+        if (prevLead) {
+            prevLead.instance && prevLead.scheduleRender();
+            node.scheduleRender();
+            node.resumeFrom = prevLead;
+            if (preserveFollowOpacity) node.resumeFrom.preserveOpacity = true;
+            if (prevLead.snapshot) {
+                node.snapshot = prevLead.snapshot;
+                node.snapshot.latestValues = prevLead.animationValues || prevLead.latestValues;
+            }
+            if (node.root && node.root.isUpdating) node.isLayoutDirty = true;
+            const { crossfade  } = node.options;
+            if (crossfade === false) prevLead.hide();
+        /**
+             * TODO:
+             *   - Test border radius when previous node was deleted
+             *   - boxShadow mixing
+             *   - Shared between element A in scrolled container and element B (scroll stays the same or changes)
+             *   - Shared between element A in transformed container and element B (transform stays the same or changes)
+             *   - Shared between element A in scrolled page and element B (scroll stays the same or changes)
+             * ---
+             *   - Crossfade opacity of root nodes
+             *   - layoutId changes after animation
+             *   - layoutId changes mid animation
+             */ }
+    }
+    exitAnimationComplete() {
+        this.members.forEach((node)=>{
+            const { options , resumingFrom  } = node;
+            options.onExitComplete && options.onExitComplete();
+            if (resumingFrom) resumingFrom.options.onExitComplete && resumingFrom.options.onExitComplete();
+        });
+    }
+    scheduleRender() {
+        this.members.forEach((node)=>{
+            node.instance && node.scheduleRender(false);
+        });
+    }
+    /**
+     * Clear any leads that have been removed this render to prevent them from being
+     * used in future animations and to prevent memory leaks
+     */ removeLeadSnapshot() {
+        if (this.lead && this.lead.snapshot) this.lead.snapshot = undefined;
+    }
+}
+
+},{"../../utils/array.mjs":"fpJYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"g4dqh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "buildProjectionTransform", ()=>buildProjectionTransform);
+function buildProjectionTransform(delta, treeScale, latestTransform) {
+    let transform = "";
+    /**
+     * The translations we use to calculate are always relative to the viewport coordinate space.
+     * But when we apply scales, we also scale the coordinate space of an element and its children.
+     * For instance if we have a treeScale (the culmination of all parent scales) of 0.5 and we need
+     * to move an element 100 pixels, we actually need to move it 200 in within that scaled space.
+     */ const xTranslate = delta.x.translate / treeScale.x;
+    const yTranslate = delta.y.translate / treeScale.y;
+    if (xTranslate || yTranslate) transform = `translate3d(${xTranslate}px, ${yTranslate}px, 0) `;
+    /**
+     * Apply scale correction for the tree transform.
+     * This will apply scale to the screen-orientated axes.
+     */ if (treeScale.x !== 1 || treeScale.y !== 1) transform += `scale(${1 / treeScale.x}, ${1 / treeScale.y}) `;
+    if (latestTransform) {
+        const { rotate , rotateX , rotateY  } = latestTransform;
+        if (rotate) transform += `rotate(${rotate}deg) `;
+        if (rotateX) transform += `rotateX(${rotateX}deg) `;
+        if (rotateY) transform += `rotateY(${rotateY}deg) `;
+    }
+    /**
+     * Apply scale to match the size of the element to the size we want it.
+     * This will apply scale to the element-orientated axes.
+     */ const elementScaleX = delta.x.scale * treeScale.x;
+    const elementScaleY = delta.y.scale * treeScale.y;
+    if (elementScaleX !== 1 || elementScaleY !== 1) transform += `scale(${elementScaleX}, ${elementScaleY})`;
+    return transform || "none";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cinYO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FlatTree", ()=>FlatTree);
+var _arrayMjs = require("../../utils/array.mjs");
+var _compareByDepthMjs = require("./compare-by-depth.mjs");
+class FlatTree {
+    constructor(){
+        this.children = [];
+        this.isDirty = false;
+    }
+    add(child) {
+        (0, _arrayMjs.addUniqueItem)(this.children, child);
+        this.isDirty = true;
+    }
+    remove(child) {
+        (0, _arrayMjs.removeItem)(this.children, child);
+        this.isDirty = true;
+    }
+    forEach(callback) {
+        this.isDirty && this.children.sort((0, _compareByDepthMjs.compareByDepth));
+        this.isDirty = false;
+        this.children.forEach(callback);
+    }
+}
+
+},{"../../utils/array.mjs":"fpJYa","./compare-by-depth.mjs":"ju6Jl","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"ju6Jl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "compareByDepth", ()=>compareByDepth);
+const compareByDepth = (a, b)=>a.depth - b.depth;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bbpYv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "delay", ()=>delay);
+var _indexMjs = require("../frameloop/index.mjs");
+/**
+ * Timeout defined in ms
+ */ function delay(callback, timeout) {
+    const start = performance.now();
+    const checkElapsed = ({ timestamp  })=>{
+        const elapsed = timestamp - start;
+        if (elapsed >= timeout) {
+            (0, _indexMjs.cancelFrame)(checkElapsed);
+            callback(elapsed - timeout);
+        }
+    };
+    (0, _indexMjs.frame).read(checkElapsed, true);
+    return ()=>(0, _indexMjs.cancelFrame)(checkElapsed);
+}
+
+},{"../frameloop/index.mjs":"3Dz3U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"i9CPM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "record", ()=>record);
+function record(data) {
+    if (window.MotionDebug) window.MotionDebug.record(data);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4r61T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isSVGElement", ()=>isSVGElement);
+function isSVGElement(element) {
+    return element instanceof SVGElement && element.tagName !== "svg";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"BcqjY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateSingleValue", ()=>animateSingleValue);
+var _motionValueMjs = require("./motion-value.mjs");
+var _indexMjs = require("../../value/index.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+function animateSingleValue(value, keyframes, options) {
+    const motionValue$1 = (0, _isMotionValueMjs.isMotionValue)(value) ? value : (0, _indexMjs.motionValue)(value);
+    motionValue$1.start((0, _motionValueMjs.animateMotionValue)("", motionValue$1, keyframes, options));
+    return motionValue$1.animation;
+}
+
+},{"./motion-value.mjs":"gQYlj","../../value/index.mjs":"he8bY","../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hOjWn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DocumentProjectionNode", ()=>DocumentProjectionNode);
+var _createProjectionNodeMjs = require("./create-projection-node.mjs");
+var _addDomEventMjs = require("../../events/add-dom-event.mjs");
+const DocumentProjectionNode = (0, _createProjectionNodeMjs.createProjectionNode)({
+    attachResizeListener: (ref, notify)=>(0, _addDomEventMjs.addDomEvent)(ref, "resize", notify),
+    measureScroll: ()=>({
+            x: document.documentElement.scrollLeft || document.body.scrollLeft,
+            y: document.documentElement.scrollTop || document.body.scrollTop
+        }),
+    checkIsScrollRoot: ()=>true
+});
+
+},{"./create-projection-node.mjs":"dvkZl","../../events/add-dom-event.mjs":"jAgCf","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"WHCBp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createDomVisualElement", ()=>createDomVisualElement);
+var _htmlvisualElementMjs = require("../html/HTMLVisualElement.mjs");
+var _svgvisualElementMjs = require("../svg/SVGVisualElement.mjs");
+var _isSvgComponentMjs = require("./utils/is-svg-component.mjs");
+const createDomVisualElement = (Component, options)=>{
+    return (0, _isSvgComponentMjs.isSVGComponent)(Component) ? new (0, _svgvisualElementMjs.SVGVisualElement)(options, {
+        enableHardwareAcceleration: false
+    }) : new (0, _htmlvisualElementMjs.HTMLVisualElement)(options, {
+        enableHardwareAcceleration: true
+    });
+};
+
+},{"../html/HTMLVisualElement.mjs":"3a21f","../svg/SVGVisualElement.mjs":"7bI6y","./utils/is-svg-component.mjs":"hnK2P","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3a21f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HTMLVisualElement", ()=>HTMLVisualElement);
+parcelHelpers.export(exports, "getComputedStyle", ()=>getComputedStyle);
+var _buildStylesMjs = require("./utils/build-styles.mjs");
+var _isCssVariableMjs = require("../dom/utils/is-css-variable.mjs");
+var _transformMjs = require("./utils/transform.mjs");
+var _scrapeMotionValuesMjs = require("./utils/scrape-motion-values.mjs");
+var _renderMjs = require("./utils/render.mjs");
+var _defaultsMjs = require("../dom/value-types/defaults.mjs");
+var _measureMjs = require("../../projection/utils/measure.mjs");
+var _domvisualElementMjs = require("../dom/DOMVisualElement.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+function getComputedStyle(element) {
+    return window.getComputedStyle(element);
+}
+class HTMLVisualElement extends (0, _domvisualElementMjs.DOMVisualElement) {
+    readValueFromInstance(instance, key) {
+        if ((0, _transformMjs.transformProps).has(key)) {
+            const defaultType = (0, _defaultsMjs.getDefaultValueType)(key);
+            return defaultType ? defaultType.default || 0 : 0;
+        } else {
+            const computedStyle = getComputedStyle(instance);
+            const value = ((0, _isCssVariableMjs.isCSSVariableName)(key) ? computedStyle.getPropertyValue(key) : computedStyle[key]) || 0;
+            return typeof value === "string" ? value.trim() : value;
+        }
+    }
+    measureInstanceViewportBox(instance, { transformPagePoint  }) {
+        return (0, _measureMjs.measureViewportBox)(instance, transformPagePoint);
+    }
+    build(renderState, latestValues, options, props) {
+        (0, _buildStylesMjs.buildHTMLStyles)(renderState, latestValues, options, props.transformTemplate);
+    }
+    scrapeMotionValuesFromProps(props, prevProps) {
+        return (0, _scrapeMotionValuesMjs.scrapeMotionValuesFromProps)(props, prevProps);
+    }
+    handleChildMotionValue() {
+        if (this.childSubscription) {
+            this.childSubscription();
+            delete this.childSubscription;
+        }
+        const { children  } = this.props;
+        if ((0, _isMotionValueMjs.isMotionValue)(children)) this.childSubscription = children.on("change", (latest)=>{
+            if (this.current) this.current.textContent = `${latest}`;
+        });
+    }
+    renderInstance(instance, renderState, styleProp, projection) {
+        (0, _renderMjs.renderHTML)(instance, renderState, styleProp, projection);
+    }
+}
+
+},{"./utils/build-styles.mjs":"2ABzU","../dom/utils/is-css-variable.mjs":"8qZz5","./utils/transform.mjs":"iSy8E","./utils/scrape-motion-values.mjs":"fCzyn","./utils/render.mjs":"jRfU5","../dom/value-types/defaults.mjs":"1Ajoh","../../projection/utils/measure.mjs":"dfpR2","../dom/DOMVisualElement.mjs":"lT6ej","../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lT6ej":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DOMVisualElement", ()=>DOMVisualElement);
+var _settersMjs = require("../utils/setters.mjs");
+var _parseDomVariantMjs = require("./utils/parse-dom-variant.mjs");
+var _visualElementMjs = require("../VisualElement.mjs");
+class DOMVisualElement extends (0, _visualElementMjs.VisualElement) {
+    sortInstanceNodePosition(a, b) {
+        /**
+         * compareDocumentPosition returns a bitmask, by using the bitwise &
+         * we're returning true if 2 in that bitmask is set to true. 2 is set
+         * to true if b preceeds a.
+         */ return a.compareDocumentPosition(b) & 2 ? 1 : -1;
+    }
+    getBaseTargetFromProps(props, key) {
+        return props.style ? props.style[key] : undefined;
+    }
+    removeValueFromRenderState(key, { vars , style  }) {
+        delete vars[key];
+        delete style[key];
+    }
+    makeTargetAnimatableFromInstance({ transition , transitionEnd , ...target }, { transformValues  }, isMounted) {
+        let origin = (0, _settersMjs.getOrigin)(target, transition || {}, this);
+        /**
+         * If Framer has provided a function to convert `Color` etc value types, convert them
+         */ if (transformValues) {
+            if (transitionEnd) transitionEnd = transformValues(transitionEnd);
+            if (target) target = transformValues(target);
+            if (origin) origin = transformValues(origin);
+        }
+        if (isMounted) {
+            (0, _settersMjs.checkTargetForNewValues)(this, target, origin);
+            const parsed = (0, _parseDomVariantMjs.parseDomVariant)(this, target, origin, transitionEnd);
+            transitionEnd = parsed.transitionEnd;
+            target = parsed.target;
+        }
+        return {
+            transition,
+            transitionEnd,
+            ...target
+        };
+    }
+}
+
+},{"../utils/setters.mjs":"5AEB8","./utils/parse-dom-variant.mjs":"baBt4","../VisualElement.mjs":"3YJr4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"baBt4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "parseDomVariant", ()=>parseDomVariant);
+var _cssVariablesConversionMjs = require("./css-variables-conversion.mjs");
+var _unitConversionMjs = require("./unit-conversion.mjs");
+/**
+ * Parse a DOM variant to make it animatable. This involves resolving CSS variables
+ * and ensuring animations like "20%" => "calc(50vw)" are performed in pixels.
+ */ const parseDomVariant = (visualElement, target, origin, transitionEnd)=>{
+    const resolved = (0, _cssVariablesConversionMjs.resolveCSSVariables)(visualElement, target, transitionEnd);
+    target = resolved.target;
+    transitionEnd = resolved.transitionEnd;
+    return (0, _unitConversionMjs.unitConversion)(visualElement, target, origin, transitionEnd);
+};
+
+},{"./css-variables-conversion.mjs":"d2XUy","./unit-conversion.mjs":"fhnP2","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"d2XUy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "parseCSSVariable", ()=>parseCSSVariable);
+parcelHelpers.export(exports, "resolveCSSVariables", ()=>resolveCSSVariables);
+var _errorsMjs = require("../../../utils/errors.mjs");
+var _isCssVariableMjs = require("./is-css-variable.mjs");
+/**
+ * Parse Framer's special CSS variable format into a CSS token and a fallback.
+ *
+ * ```
+ * `var(--foo, #fff)` => [`--foo`, '#fff']
+ * ```
+ *
+ * @param current
+ */ const splitCSSVariableRegex = /var\((--[a-zA-Z0-9-_]+),? ?([a-zA-Z0-9 ()%#.,-]+)?\)/;
+function parseCSSVariable(current) {
+    const match = splitCSSVariableRegex.exec(current);
+    if (!match) return [
+        , 
+    ];
+    const [, token, fallback] = match;
+    return [
+        token,
+        fallback
+    ];
+}
+const maxDepth = 4;
+function getVariableValue(current, element, depth = 1) {
+    (0, _errorsMjs.invariant)(depth <= maxDepth, `Max CSS variable fallback depth detected in property "${current}". This may indicate a circular fallback dependency.`);
+    const [token, fallback] = parseCSSVariable(current);
+    // No CSS variable detected
+    if (!token) return;
+    // Attempt to read this CSS variable off the element
+    const resolved = window.getComputedStyle(element).getPropertyValue(token);
+    if (resolved) return resolved.trim();
+    else if ((0, _isCssVariableMjs.isCSSVariableToken)(fallback)) // The fallback might itself be a CSS variable, in which case we attempt to resolve it too.
+    return getVariableValue(fallback, element, depth + 1);
+    else return fallback;
+}
+/**
+ * Resolve CSS variables from
+ *
+ * @internal
+ */ function resolveCSSVariables(visualElement, { ...target }, transitionEnd) {
+    const element = visualElement.current;
+    if (!(element instanceof Element)) return {
+        target,
+        transitionEnd
+    };
+    // If `transitionEnd` isn't `undefined`, clone it. We could clone `target` and `transitionEnd`
+    // only if they change but I think this reads clearer and this isn't a performance-critical path.
+    if (transitionEnd) transitionEnd = {
+        ...transitionEnd
+    };
+    // Go through existing `MotionValue`s and ensure any existing CSS variables are resolved
+    visualElement.values.forEach((value)=>{
+        const current = value.get();
+        if (!(0, _isCssVariableMjs.isCSSVariableToken)(current)) return;
+        const resolved = getVariableValue(current, element);
+        if (resolved) value.set(resolved);
+    });
+    // Cycle through every target property and resolve CSS variables. Currently
+    // we only read single-var properties like `var(--foo)`, not `calc(var(--foo) + 20px)`
+    for(const key in target){
+        const current = target[key];
+        if (!(0, _isCssVariableMjs.isCSSVariableToken)(current)) continue;
+        const resolved = getVariableValue(current, element);
+        if (!resolved) continue;
+        // Clone target if it hasn't already been
+        target[key] = resolved;
+        if (!transitionEnd) transitionEnd = {};
+        // If the user hasn't already set this key on `transitionEnd`, set it to the unresolved
+        // CSS variable. This will ensure that after the animation the component will reflect
+        // changes in the value of the CSS variable.
+        if (transitionEnd[key] === undefined) transitionEnd[key] = current;
+    }
+    return {
+        target,
+        transitionEnd
+    };
+}
+
+},{"../../../utils/errors.mjs":"drRZ6","./is-css-variable.mjs":"8qZz5","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fhnP2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "positionalValues", ()=>positionalValues);
+parcelHelpers.export(exports, "unitConversion", ()=>unitConversion);
+var _isKeyframesTargetMjs = require("../../../animation/utils/is-keyframes-target.mjs");
+var _errorsMjs = require("../../../utils/errors.mjs");
+var _transformMjs = require("../../html/utils/transform.mjs");
+var _dimensionsMjs = require("../value-types/dimensions.mjs");
+var _isBrowserMjs = require("../../../utils/is-browser.mjs");
+var _indexMjs = require("../../../value/types/numbers/index.mjs");
+var _unitsMjs = require("../../../value/types/numbers/units.mjs");
+const positionalKeys = new Set([
+    "width",
+    "height",
+    "top",
+    "left",
+    "right",
+    "bottom",
+    "x",
+    "y"
+]);
+const isPositionalKey = (key)=>positionalKeys.has(key);
+const hasPositionalKey = (target)=>{
+    return Object.keys(target).some(isPositionalKey);
+};
+const isNumOrPxType = (v)=>v === (0, _indexMjs.number) || v === (0, _unitsMjs.px);
+const getPosFromMatrix = (matrix, pos)=>parseFloat(matrix.split(", ")[pos]);
+const getTranslateFromMatrix = (pos2, pos3)=>(_bbox, { transform  })=>{
+        if (transform === "none" || !transform) return 0;
+        const matrix3d = transform.match(/^matrix3d\((.+)\)$/);
+        if (matrix3d) return getPosFromMatrix(matrix3d[1], pos3);
+        else {
+            const matrix = transform.match(/^matrix\((.+)\)$/);
+            if (matrix) return getPosFromMatrix(matrix[1], pos2);
+            else return 0;
+        }
+    };
+const transformKeys = new Set([
+    "x",
+    "y",
+    "z"
+]);
+const nonTranslationalTransformKeys = (0, _transformMjs.transformPropOrder).filter((key)=>!transformKeys.has(key));
+function removeNonTranslationalTransform(visualElement) {
+    const removedTransforms = [];
+    nonTranslationalTransformKeys.forEach((key)=>{
+        const value = visualElement.getValue(key);
+        if (value !== undefined) {
+            removedTransforms.push([
+                key,
+                value.get()
+            ]);
+            value.set(key.startsWith("scale") ? 1 : 0);
+        }
+    });
+    // Apply changes to element before measurement
+    if (removedTransforms.length) visualElement.render();
+    return removedTransforms;
+}
+const positionalValues = {
+    // Dimensions
+    width: ({ x  }, { paddingLeft ="0" , paddingRight ="0"  })=>x.max - x.min - parseFloat(paddingLeft) - parseFloat(paddingRight),
+    height: ({ y  }, { paddingTop ="0" , paddingBottom ="0"  })=>y.max - y.min - parseFloat(paddingTop) - parseFloat(paddingBottom),
+    top: (_bbox, { top  })=>parseFloat(top),
+    left: (_bbox, { left  })=>parseFloat(left),
+    bottom: ({ y  }, { top  })=>parseFloat(top) + (y.max - y.min),
+    right: ({ x  }, { left  })=>parseFloat(left) + (x.max - x.min),
+    // Transform
+    x: getTranslateFromMatrix(4, 13),
+    y: getTranslateFromMatrix(5, 14)
+};
+const convertChangedValueTypes = (target, visualElement, changedKeys)=>{
+    const originBbox = visualElement.measureViewportBox();
+    const element = visualElement.current;
+    const elementComputedStyle = getComputedStyle(element);
+    const { display  } = elementComputedStyle;
+    const origin = {};
+    // If the element is currently set to display: "none", make it visible before
+    // measuring the target bounding box
+    if (display === "none") visualElement.setStaticValue("display", target.display || "block");
+    /**
+     * Record origins before we render and update styles
+     */ changedKeys.forEach((key)=>{
+        origin[key] = positionalValues[key](originBbox, elementComputedStyle);
+    });
+    // Apply the latest values (as set in checkAndConvertChangedValueTypes)
+    visualElement.render();
+    const targetBbox = visualElement.measureViewportBox();
+    changedKeys.forEach((key)=>{
+        // Restore styles to their **calculated computed style**, not their actual
+        // originally set style. This allows us to animate between equivalent pixel units.
+        const value = visualElement.getValue(key);
+        value && value.jump(origin[key]);
+        target[key] = positionalValues[key](targetBbox, elementComputedStyle);
+    });
+    return target;
+};
+const checkAndConvertChangedValueTypes = (visualElement, target, origin = {}, transitionEnd = {})=>{
+    target = {
+        ...target
+    };
+    transitionEnd = {
+        ...transitionEnd
+    };
+    const targetPositionalKeys = Object.keys(target).filter(isPositionalKey);
+    // We want to remove any transform values that could affect the element's bounding box before
+    // it's measured. We'll reapply these later.
+    let removedTransformValues = [];
+    let hasAttemptedToRemoveTransformValues = false;
+    const changedValueTypeKeys = [];
+    targetPositionalKeys.forEach((key)=>{
+        const value = visualElement.getValue(key);
+        if (!visualElement.hasValue(key)) return;
+        let from = origin[key];
+        let fromType = (0, _dimensionsMjs.findDimensionValueType)(from);
+        const to = target[key];
+        let toType;
+        // TODO: The current implementation of this basically throws an error
+        // if you try and do value conversion via keyframes. There's probably
+        // a way of doing this but the performance implications would need greater scrutiny,
+        // as it'd be doing multiple resize-remeasure operations.
+        if ((0, _isKeyframesTargetMjs.isKeyframesTarget)(to)) {
+            const numKeyframes = to.length;
+            const fromIndex = to[0] === null ? 1 : 0;
+            from = to[fromIndex];
+            fromType = (0, _dimensionsMjs.findDimensionValueType)(from);
+            for(let i = fromIndex; i < numKeyframes; i++){
+                /**
+                 * Don't allow wildcard keyframes to be used to detect
+                 * a difference in value types.
+                 */ if (to[i] === null) break;
+                if (!toType) {
+                    toType = (0, _dimensionsMjs.findDimensionValueType)(to[i]);
+                    (0, _errorsMjs.invariant)(toType === fromType || isNumOrPxType(fromType) && isNumOrPxType(toType), "Keyframes must be of the same dimension as the current value");
+                } else (0, _errorsMjs.invariant)((0, _dimensionsMjs.findDimensionValueType)(to[i]) === toType, "All keyframes must be of the same type");
+            }
+        } else toType = (0, _dimensionsMjs.findDimensionValueType)(to);
+        if (fromType !== toType) {
+            // If they're both just number or px, convert them both to numbers rather than
+            // relying on resize/remeasure to convert (which is wasteful in this situation)
+            if (isNumOrPxType(fromType) && isNumOrPxType(toType)) {
+                const current = value.get();
+                if (typeof current === "string") value.set(parseFloat(current));
+                if (typeof to === "string") target[key] = parseFloat(to);
+                else if (Array.isArray(to) && toType === (0, _unitsMjs.px)) target[key] = to.map(parseFloat);
+            } else if ((fromType === null || fromType === void 0 ? void 0 : fromType.transform) && (toType === null || toType === void 0 ? void 0 : toType.transform) && (from === 0 || to === 0)) {
+                // If one or the other value is 0, it's safe to coerce it to the
+                // type of the other without measurement
+                if (from === 0) value.set(toType.transform(from));
+                else target[key] = fromType.transform(to);
+            } else {
+                // If we're going to do value conversion via DOM measurements, we first
+                // need to remove non-positional transform values that could affect the bbox measurements.
+                if (!hasAttemptedToRemoveTransformValues) {
+                    removedTransformValues = removeNonTranslationalTransform(visualElement);
+                    hasAttemptedToRemoveTransformValues = true;
+                }
+                changedValueTypeKeys.push(key);
+                transitionEnd[key] = transitionEnd[key] !== undefined ? transitionEnd[key] : target[key];
+                value.jump(to);
+            }
+        }
+    });
+    if (changedValueTypeKeys.length) {
+        const scrollY = changedValueTypeKeys.indexOf("height") >= 0 ? window.pageYOffset : null;
+        const convertedTarget = convertChangedValueTypes(target, visualElement, changedValueTypeKeys);
+        // If we removed transform values, reapply them before the next render
+        if (removedTransformValues.length) removedTransformValues.forEach(([key, value])=>{
+            visualElement.getValue(key).set(value);
+        });
+        // Reapply original values
+        visualElement.render();
+        // Restore scroll position
+        if ((0, _isBrowserMjs.isBrowser) && scrollY !== null) window.scrollTo({
+            top: scrollY
+        });
+        return {
+            target: convertedTarget,
+            transitionEnd
+        };
+    } else return {
+        target,
+        transitionEnd
+    };
+};
+/**
+ * Convert value types for x/y/width/height/top/left/bottom/right
+ *
+ * Allows animation between `'auto'` -> `'100%'` or `0` -> `'calc(50% - 10vw)'`
+ *
+ * @internal
+ */ function unitConversion(visualElement, target, origin, transitionEnd) {
+    return hasPositionalKey(target) ? checkAndConvertChangedValueTypes(visualElement, target, origin, transitionEnd) : {
+        target,
+        transitionEnd
+    };
+}
+
+},{"../../../animation/utils/is-keyframes-target.mjs":"sPTPk","../../../utils/errors.mjs":"drRZ6","../../html/utils/transform.mjs":"iSy8E","../value-types/dimensions.mjs":"3Yt0V","../../../utils/is-browser.mjs":"1XAMO","../../../value/types/numbers/index.mjs":"bI9mf","../../../value/types/numbers/units.mjs":"lGBHA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3YJr4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "VisualElement", ()=>VisualElement);
+var _indexMjs = require("../frameloop/index.mjs");
+var _errorsMjs = require("../utils/errors.mjs");
+var _modelsMjs = require("../projection/geometry/models.mjs");
+var _isRefObjectMjs = require("../utils/is-ref-object.mjs");
+var _indexMjs1 = require("../utils/reduced-motion/index.mjs");
+var _stateMjs = require("../utils/reduced-motion/state.mjs");
+var _subscriptionManagerMjs = require("../utils/subscription-manager.mjs");
+var _indexMjs2 = require("../value/index.mjs");
+var _isMjs = require("../value/use-will-change/is.mjs");
+var _isMotionValueMjs = require("../value/utils/is-motion-value.mjs");
+var _transformMjs = require("./html/utils/transform.mjs");
+var _isControllingVariantsMjs = require("./utils/is-controlling-variants.mjs");
+var _isVariantLabelMjs = require("./utils/is-variant-label.mjs");
+var _motionValuesMjs = require("./utils/motion-values.mjs");
+var _resolveVariantsMjs = require("./utils/resolve-variants.mjs");
+var _warnOnceMjs = require("../utils/warn-once.mjs");
+var _definitionsMjs = require("../motion/features/definitions.mjs");
+var _variantPropsMjs = require("./utils/variant-props.mjs");
+var _storeMjs = require("./store.mjs");
+const featureNames = Object.keys((0, _definitionsMjs.featureDefinitions));
+const numFeatures = featureNames.length;
+const propEventHandlers = [
+    "AnimationStart",
+    "AnimationComplete",
+    "Update",
+    "BeforeLayoutMeasure",
+    "LayoutMeasure",
+    "LayoutAnimationStart",
+    "LayoutAnimationComplete"
+];
+const numVariantProps = (0, _variantPropsMjs.variantProps).length;
+/**
+ * A VisualElement is an imperative abstraction around UI elements such as
+ * HTMLElement, SVGElement, Three.Object3D etc.
+ */ class VisualElement {
+    constructor({ parent , props , presenceContext , reducedMotionConfig , visualState  }, options = {}){
+        /**
+         * A reference to the current underlying Instance, e.g. a HTMLElement
+         * or Three.Mesh etc.
+         */ this.current = null;
+        /**
+         * A set containing references to this VisualElement's children.
+         */ this.children = new Set();
+        /**
+         * Determine what role this visual element should take in the variant tree.
+         */ this.isVariantNode = false;
+        this.isControllingVariants = false;
+        /**
+         * Decides whether this VisualElement should animate in reduced motion
+         * mode.
+         *
+         * TODO: This is currently set on every individual VisualElement but feels
+         * like it could be set globally.
+         */ this.shouldReduceMotion = null;
+        /**
+         * A map of all motion values attached to this visual element. Motion
+         * values are source of truth for any given animated value. A motion
+         * value might be provided externally by the component via props.
+         */ this.values = new Map();
+        /**
+         * Cleanup functions for active features (hover/tap/exit etc)
+         */ this.features = {};
+        /**
+         * A map of every subscription that binds the provided or generated
+         * motion values onChange listeners to this visual element.
+         */ this.valueSubscriptions = new Map();
+        /**
+         * A reference to the previously-provided motion values as returned
+         * from scrapeMotionValuesFromProps. We use the keys in here to determine
+         * if any motion values need to be removed after props are updated.
+         */ this.prevMotionValues = {};
+        /**
+         * An object containing a SubscriptionManager for each active event.
+         */ this.events = {};
+        /**
+         * An object containing an unsubscribe function for each prop event subscription.
+         * For example, every "Update" event can have multiple subscribers via
+         * VisualElement.on(), but only one of those can be defined via the onUpdate prop.
+         */ this.propEventSubscriptions = {};
+        this.notifyUpdate = ()=>this.notify("Update", this.latestValues);
+        this.render = ()=>{
+            if (!this.current) return;
+            this.triggerBuild();
+            this.renderInstance(this.current, this.renderState, this.props.style, this.projection);
+        };
+        this.scheduleRender = ()=>(0, _indexMjs.frame).render(this.render, false, true);
+        const { latestValues , renderState  } = visualState;
+        this.latestValues = latestValues;
+        this.baseTarget = {
+            ...latestValues
+        };
+        this.initialValues = props.initial ? {
+            ...latestValues
+        } : {};
+        this.renderState = renderState;
+        this.parent = parent;
+        this.props = props;
+        this.presenceContext = presenceContext;
+        this.depth = parent ? parent.depth + 1 : 0;
+        this.reducedMotionConfig = reducedMotionConfig;
+        this.options = options;
+        this.isControllingVariants = (0, _isControllingVariantsMjs.isControllingVariants)(props);
+        this.isVariantNode = (0, _isControllingVariantsMjs.isVariantNode)(props);
+        if (this.isVariantNode) this.variantChildren = new Set();
+        this.manuallyAnimateOnMount = Boolean(parent && parent.current);
+        /**
+         * Any motion values that are provided to the element when created
+         * aren't yet bound to the element, as this would technically be impure.
+         * However, we iterate through the motion values and set them to the
+         * initial values for this component.
+         *
+         * TODO: This is impure and we should look at changing this to run on mount.
+         * Doing so will break some tests but this isn't neccessarily a breaking change,
+         * more a reflection of the test.
+         */ const { willChange , ...initialMotionValues } = this.scrapeMotionValuesFromProps(props, {});
+        for(const key in initialMotionValues){
+            const value = initialMotionValues[key];
+            if (latestValues[key] !== undefined && (0, _isMotionValueMjs.isMotionValue)(value)) {
+                value.set(latestValues[key], false);
+                if ((0, _isMjs.isWillChangeMotionValue)(willChange)) willChange.add(key);
+            }
+        }
+    }
+    /**
+     * This method takes React props and returns found MotionValues. For example, HTML
+     * MotionValues will be found within the style prop, whereas for Three.js within attribute arrays.
+     *
+     * This isn't an abstract method as it needs calling in the constructor, but it is
+     * intended to be one.
+     */ scrapeMotionValuesFromProps(_props, _prevProps) {
+        return {};
+    }
+    mount(instance) {
+        this.current = instance;
+        (0, _storeMjs.visualElementStore).set(instance, this);
+        if (this.projection) this.projection.mount(instance);
+        if (this.parent && this.isVariantNode && !this.isControllingVariants) this.removeFromVariantTree = this.parent.addVariantChild(this);
+        this.values.forEach((value, key)=>this.bindToMotionValue(key, value));
+        if (!(0, _stateMjs.hasReducedMotionListener).current) (0, _indexMjs1.initPrefersReducedMotion)();
+        this.shouldReduceMotion = this.reducedMotionConfig === "never" ? false : this.reducedMotionConfig === "always" ? true : (0, _stateMjs.prefersReducedMotion).current;
+        (0, _warnOnceMjs.warnOnce)(this.shouldReduceMotion !== true, "You have Reduced Motion enabled on your device. Animations may not appear as expected.");
+        if (this.parent) this.parent.children.add(this);
+        this.update(this.props, this.presenceContext);
+    }
+    unmount() {
+        (0, _storeMjs.visualElementStore).delete(this.current);
+        this.projection && this.projection.unmount();
+        (0, _indexMjs.cancelFrame)(this.notifyUpdate);
+        (0, _indexMjs.cancelFrame)(this.render);
+        this.valueSubscriptions.forEach((remove)=>remove());
+        this.removeFromVariantTree && this.removeFromVariantTree();
+        this.parent && this.parent.children.delete(this);
+        for(const key in this.events)this.events[key].clear();
+        for(const key in this.features)this.features[key].unmount();
+        this.current = null;
+    }
+    bindToMotionValue(key, value) {
+        const valueIsTransform = (0, _transformMjs.transformProps).has(key);
+        const removeOnChange = value.on("change", (latestValue)=>{
+            this.latestValues[key] = latestValue;
+            this.props.onUpdate && (0, _indexMjs.frame).update(this.notifyUpdate, false, true);
+            if (valueIsTransform && this.projection) this.projection.isTransformDirty = true;
+        });
+        const removeOnRenderRequest = value.on("renderRequest", this.scheduleRender);
+        this.valueSubscriptions.set(key, ()=>{
+            removeOnChange();
+            removeOnRenderRequest();
+        });
+    }
+    sortNodePosition(other) {
+        /**
+         * If these nodes aren't even of the same type we can't compare their depth.
+         */ if (!this.current || !this.sortInstanceNodePosition || this.type !== other.type) return 0;
+        return this.sortInstanceNodePosition(this.current, other.current);
+    }
+    loadFeatures({ children , ...renderedProps }, isStrict, preloadedFeatures, projectionId, initialLayoutGroupConfig) {
+        let ProjectionNodeConstructor;
+        let MeasureLayout;
+        /**
+         * If we're in development mode, check to make sure we're not rendering a motion component
+         * as a child of LazyMotion, as this will break the file-size benefits of using it.
+         */ if (preloadedFeatures && isStrict) {
+            const strictMessage = "You have rendered a `motion` component within a `LazyMotion` component. This will break tree shaking. Import and render a `m` component instead.";
+            renderedProps.ignoreStrict ? (0, _errorsMjs.warning)(false, strictMessage) : (0, _errorsMjs.invariant)(false, strictMessage);
+        }
+        for(let i = 0; i < numFeatures; i++){
+            const name = featureNames[i];
+            const { isEnabled , Feature: FeatureConstructor , ProjectionNode , MeasureLayout: MeasureLayoutComponent  } = (0, _definitionsMjs.featureDefinitions)[name];
+            if (ProjectionNode) ProjectionNodeConstructor = ProjectionNode;
+            if (isEnabled(renderedProps)) {
+                if (!this.features[name] && FeatureConstructor) this.features[name] = new FeatureConstructor(this);
+                if (MeasureLayoutComponent) MeasureLayout = MeasureLayoutComponent;
+            }
+        }
+        if (!this.projection && ProjectionNodeConstructor) {
+            this.projection = new ProjectionNodeConstructor(projectionId, this.latestValues, this.parent && this.parent.projection);
+            const { layoutId , layout , drag , dragConstraints , layoutScroll , layoutRoot  } = renderedProps;
+            this.projection.setOptions({
+                layoutId,
+                layout,
+                alwaysMeasureLayout: Boolean(drag) || dragConstraints && (0, _isRefObjectMjs.isRefObject)(dragConstraints),
+                visualElement: this,
+                scheduleRender: ()=>this.scheduleRender(),
+                /**
+                 * TODO: Update options in an effect. This could be tricky as it'll be too late
+                 * to update by the time layout animations run.
+                 * We also need to fix this safeToRemove by linking it up to the one returned by usePresence,
+                 * ensuring it gets called if there's no potential layout animations.
+                 *
+                 */ animationType: typeof layout === "string" ? layout : "both",
+                initialPromotionConfig: initialLayoutGroupConfig,
+                layoutScroll,
+                layoutRoot
+            });
+        }
+        return MeasureLayout;
+    }
+    updateFeatures() {
+        for(const key in this.features){
+            const feature = this.features[key];
+            if (feature.isMounted) feature.update(this.props, this.prevProps);
+            else {
+                feature.mount();
+                feature.isMounted = true;
+            }
+        }
+    }
+    triggerBuild() {
+        this.build(this.renderState, this.latestValues, this.options, this.props);
+    }
+    /**
+     * Measure the current viewport box with or without transforms.
+     * Only measures axis-aligned boxes, rotate and skew must be manually
+     * removed with a re-render to work.
+     */ measureViewportBox() {
+        return this.current ? this.measureInstanceViewportBox(this.current, this.props) : (0, _modelsMjs.createBox)();
+    }
+    getStaticValue(key) {
+        return this.latestValues[key];
+    }
+    setStaticValue(key, value) {
+        this.latestValues[key] = value;
+    }
+    /**
+     * Make a target animatable by Popmotion. For instance, if we're
+     * trying to animate width from 100px to 100vw we need to measure 100vw
+     * in pixels to determine what we really need to animate to. This is also
+     * pluggable to support Framer's custom value types like Color,
+     * and CSS variables.
+     */ makeTargetAnimatable(target, canMutate = true) {
+        return this.makeTargetAnimatableFromInstance(target, this.props, canMutate);
+    }
+    /**
+     * Update the provided props. Ensure any newly-added motion values are
+     * added to our map, old ones removed, and listeners updated.
+     */ update(props, presenceContext) {
+        if (props.transformTemplate || this.props.transformTemplate) this.scheduleRender();
+        this.prevProps = this.props;
+        this.props = props;
+        this.prevPresenceContext = this.presenceContext;
+        this.presenceContext = presenceContext;
+        /**
+         * Update prop event handlers ie onAnimationStart, onAnimationComplete
+         */ for(let i = 0; i < propEventHandlers.length; i++){
+            const key = propEventHandlers[i];
+            if (this.propEventSubscriptions[key]) {
+                this.propEventSubscriptions[key]();
+                delete this.propEventSubscriptions[key];
+            }
+            const listener = props["on" + key];
+            if (listener) this.propEventSubscriptions[key] = this.on(key, listener);
+        }
+        this.prevMotionValues = (0, _motionValuesMjs.updateMotionValuesFromProps)(this, this.scrapeMotionValuesFromProps(props, this.prevProps), this.prevMotionValues);
+        if (this.handleChildMotionValue) this.handleChildMotionValue();
+    }
+    getProps() {
+        return this.props;
+    }
+    /**
+     * Returns the variant definition with a given name.
+     */ getVariant(name) {
+        return this.props.variants ? this.props.variants[name] : undefined;
+    }
+    /**
+     * Returns the defined default transition on this component.
+     */ getDefaultTransition() {
+        return this.props.transition;
+    }
+    getTransformPagePoint() {
+        return this.props.transformPagePoint;
+    }
+    getClosestVariantNode() {
+        return this.isVariantNode ? this : this.parent ? this.parent.getClosestVariantNode() : undefined;
+    }
+    getVariantContext(startAtParent = false) {
+        if (startAtParent) return this.parent ? this.parent.getVariantContext() : undefined;
+        if (!this.isControllingVariants) {
+            const context = this.parent ? this.parent.getVariantContext() || {} : {};
+            if (this.props.initial !== undefined) context.initial = this.props.initial;
+            return context;
+        }
+        const context = {};
+        for(let i = 0; i < numVariantProps; i++){
+            const name = (0, _variantPropsMjs.variantProps)[i];
+            const prop = this.props[name];
+            if ((0, _isVariantLabelMjs.isVariantLabel)(prop) || prop === false) context[name] = prop;
+        }
+        return context;
+    }
+    /**
+     * Add a child visual element to our set of children.
+     */ addVariantChild(child) {
+        const closestVariantNode = this.getClosestVariantNode();
+        if (closestVariantNode) {
+            closestVariantNode.variantChildren && closestVariantNode.variantChildren.add(child);
+            return ()=>closestVariantNode.variantChildren.delete(child);
+        }
+    }
+    /**
+     * Add a motion value and bind it to this visual element.
+     */ addValue(key, value) {
+        // Remove existing value if it exists
+        if (value !== this.values.get(key)) {
+            this.removeValue(key);
+            this.bindToMotionValue(key, value);
+        }
+        this.values.set(key, value);
+        this.latestValues[key] = value.get();
+    }
+    /**
+     * Remove a motion value and unbind any active subscriptions.
+     */ removeValue(key) {
+        this.values.delete(key);
+        const unsubscribe = this.valueSubscriptions.get(key);
+        if (unsubscribe) {
+            unsubscribe();
+            this.valueSubscriptions.delete(key);
+        }
+        delete this.latestValues[key];
+        this.removeValueFromRenderState(key, this.renderState);
+    }
+    /**
+     * Check whether we have a motion value for this key
+     */ hasValue(key) {
+        return this.values.has(key);
+    }
+    getValue(key, defaultValue) {
+        if (this.props.values && this.props.values[key]) return this.props.values[key];
+        let value = this.values.get(key);
+        if (value === undefined && defaultValue !== undefined) {
+            value = (0, _indexMjs2.motionValue)(defaultValue, {
+                owner: this
+            });
+            this.addValue(key, value);
+        }
+        return value;
+    }
+    /**
+     * If we're trying to animate to a previously unencountered value,
+     * we need to check for it in our state and as a last resort read it
+     * directly from the instance (which might have performance implications).
+     */ readValue(key) {
+        return this.latestValues[key] !== undefined || !this.current ? this.latestValues[key] : this.readValueFromInstance(this.current, key, this.options);
+    }
+    /**
+     * Set the base target to later animate back to. This is currently
+     * only hydrated on creation and when we first read a value.
+     */ setBaseTarget(key, value) {
+        this.baseTarget[key] = value;
+    }
+    /**
+     * Find the base target for a value thats been removed from all animation
+     * props.
+     */ getBaseTarget(key) {
+        var _a;
+        const { initial  } = this.props;
+        const valueFromInitial = typeof initial === "string" || typeof initial === "object" ? (_a = (0, _resolveVariantsMjs.resolveVariantFromProps)(this.props, initial)) === null || _a === void 0 ? void 0 : _a[key] : undefined;
+        /**
+         * If this value still exists in the current initial variant, read that.
+         */ if (initial && valueFromInitial !== undefined) return valueFromInitial;
+        /**
+         * Alternatively, if this VisualElement config has defined a getBaseTarget
+         * so we can read the value from an alternative source, try that.
+         */ const target = this.getBaseTargetFromProps(this.props, key);
+        if (target !== undefined && !(0, _isMotionValueMjs.isMotionValue)(target)) return target;
+        /**
+         * If the value was initially defined on initial, but it doesn't any more,
+         * return undefined. Otherwise return the value as initially read from the DOM.
+         */ return this.initialValues[key] !== undefined && valueFromInitial === undefined ? undefined : this.baseTarget[key];
+    }
+    on(eventName, callback) {
+        if (!this.events[eventName]) this.events[eventName] = new (0, _subscriptionManagerMjs.SubscriptionManager)();
+        return this.events[eventName].add(callback);
+    }
+    notify(eventName, ...args) {
+        if (this.events[eventName]) this.events[eventName].notify(...args);
+    }
+}
+
+},{"../frameloop/index.mjs":"3Dz3U","../utils/errors.mjs":"drRZ6","../projection/geometry/models.mjs":"8tocy","../utils/is-ref-object.mjs":"hA3DA","../utils/reduced-motion/index.mjs":"6cOfX","../utils/reduced-motion/state.mjs":"bxW6Y","../utils/subscription-manager.mjs":"fxDTo","../value/index.mjs":"he8bY","../value/use-will-change/is.mjs":"6vOmr","../value/utils/is-motion-value.mjs":"94AYa","./html/utils/transform.mjs":"iSy8E","./utils/is-controlling-variants.mjs":"i9jG9","./utils/is-variant-label.mjs":"erxli","./utils/motion-values.mjs":"kyRQN","./utils/resolve-variants.mjs":"8MzkH","../utils/warn-once.mjs":"JIiQV","../motion/features/definitions.mjs":"2lmsj","./utils/variant-props.mjs":"huf2R","./store.mjs":"aGZeB","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6cOfX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initPrefersReducedMotion", ()=>initPrefersReducedMotion);
+var _isBrowserMjs = require("../is-browser.mjs");
+var _stateMjs = require("./state.mjs");
+function initPrefersReducedMotion() {
+    (0, _stateMjs.hasReducedMotionListener).current = true;
+    if (!(0, _isBrowserMjs.isBrowser)) return;
+    if (window.matchMedia) {
+        const motionMediaQuery = window.matchMedia("(prefers-reduced-motion)");
+        const setReducedMotionPreferences = ()=>(0, _stateMjs.prefersReducedMotion).current = motionMediaQuery.matches;
+        motionMediaQuery.addListener(setReducedMotionPreferences);
+        setReducedMotionPreferences();
+    } else (0, _stateMjs.prefersReducedMotion).current = false;
+}
+
+},{"../is-browser.mjs":"1XAMO","./state.mjs":"bxW6Y","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bxW6Y":[function(require,module,exports) {
+// Does this device prefer reduced motion? Returns `null` server-side.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hasReducedMotionListener", ()=>hasReducedMotionListener);
+parcelHelpers.export(exports, "prefersReducedMotion", ()=>prefersReducedMotion);
+const prefersReducedMotion = {
+    current: null
+};
+const hasReducedMotionListener = {
+    current: false
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"kyRQN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "updateMotionValuesFromProps", ()=>updateMotionValuesFromProps);
+var _isMjs = require("../../value/use-will-change/is.mjs");
+var _warnOnceMjs = require("../../utils/warn-once.mjs");
+var _indexMjs = require("../../value/index.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+function updateMotionValuesFromProps(element, next, prev) {
+    const { willChange  } = next;
+    for(const key in next){
+        const nextValue = next[key];
+        const prevValue = prev[key];
+        if ((0, _isMotionValueMjs.isMotionValue)(nextValue)) {
+            /**
+             * If this is a motion value found in props or style, we want to add it
+             * to our visual element's motion value map.
+             */ element.addValue(key, nextValue);
+            if ((0, _isMjs.isWillChangeMotionValue)(willChange)) willChange.add(key);
+            (0, _warnOnceMjs.warnOnce)(nextValue.version === "10.12.4", `Attempting to mix Framer Motion versions ${nextValue.version} with 10.12.4 may not work as expected.`);
+        } else if ((0, _isMotionValueMjs.isMotionValue)(prevValue)) {
+            /**
+             * If we're swapping from a motion value to a static value,
+             * create a new motion value from that
+             */ element.addValue(key, (0, _indexMjs.motionValue)(nextValue, {
+                owner: element
+            }));
+            if ((0, _isMjs.isWillChangeMotionValue)(willChange)) willChange.remove(key);
+        } else if (prevValue !== nextValue) {
+            /**
+             * If this is a flat value that has changed, update the motion value
+             * or create one if it doesn't exist. We only want to do this if we're
+             * not handling the value with our animation state.
+             */ if (element.hasValue(key)) {
+                const existingValue = element.getValue(key);
+                // TODO: Only update values that aren't being animated or even looked at
+                !existingValue.hasAnimated && existingValue.set(nextValue);
+            } else {
+                const latestValue = element.getStaticValue(key);
+                element.addValue(key, (0, _indexMjs.motionValue)(latestValue !== undefined ? latestValue : nextValue, {
+                    owner: element
+                }));
+            }
+        }
+    }
+    // Handle removed values
+    for(const key in prev)if (next[key] === undefined) element.removeValue(key);
+    return next;
+}
+
+},{"../../value/use-will-change/is.mjs":"6vOmr","../../utils/warn-once.mjs":"JIiQV","../../value/index.mjs":"he8bY","../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aGZeB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "visualElementStore", ()=>visualElementStore);
+const visualElementStore = new WeakMap();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7bI6y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SVGVisualElement", ()=>SVGVisualElement);
+var _scrapeMotionValuesMjs = require("./utils/scrape-motion-values.mjs");
+var _domvisualElementMjs = require("../dom/DOMVisualElement.mjs");
+var _buildAttrsMjs = require("./utils/build-attrs.mjs");
+var _camelToDashMjs = require("../dom/utils/camel-to-dash.mjs");
+var _camelCaseAttrsMjs = require("./utils/camel-case-attrs.mjs");
+var _transformMjs = require("../html/utils/transform.mjs");
+var _renderMjs = require("./utils/render.mjs");
+var _defaultsMjs = require("../dom/value-types/defaults.mjs");
+var _modelsMjs = require("../../projection/geometry/models.mjs");
+var _isSvgTagMjs = require("./utils/is-svg-tag.mjs");
+class SVGVisualElement extends (0, _domvisualElementMjs.DOMVisualElement) {
+    constructor(){
+        super(...arguments);
+        this.isSVGTag = false;
+    }
+    getBaseTargetFromProps(props, key) {
+        return props[key];
+    }
+    readValueFromInstance(instance, key) {
+        if ((0, _transformMjs.transformProps).has(key)) {
+            const defaultType = (0, _defaultsMjs.getDefaultValueType)(key);
+            return defaultType ? defaultType.default || 0 : 0;
+        }
+        key = !(0, _camelCaseAttrsMjs.camelCaseAttributes).has(key) ? (0, _camelToDashMjs.camelToDash)(key) : key;
+        return instance.getAttribute(key);
+    }
+    measureInstanceViewportBox() {
+        return (0, _modelsMjs.createBox)();
+    }
+    scrapeMotionValuesFromProps(props, prevProps) {
+        return (0, _scrapeMotionValuesMjs.scrapeMotionValuesFromProps)(props, prevProps);
+    }
+    build(renderState, latestValues, options, props) {
+        (0, _buildAttrsMjs.buildSVGAttrs)(renderState, latestValues, options, this.isSVGTag, props.transformTemplate);
+    }
+    renderInstance(instance, renderState, styleProp, projection) {
+        (0, _renderMjs.renderSVG)(instance, renderState, styleProp, projection);
+    }
+    mount(instance) {
+        this.isSVGTag = (0, _isSvgTagMjs.isSVGTag)(instance.tagName);
+        super.mount(instance);
+    }
+}
+
+},{"./utils/scrape-motion-values.mjs":"bGUYu","../dom/DOMVisualElement.mjs":"lT6ej","./utils/build-attrs.mjs":"lDaMj","../dom/utils/camel-to-dash.mjs":"eUOx7","./utils/camel-case-attrs.mjs":"aH7Xw","../html/utils/transform.mjs":"iSy8E","./utils/render.mjs":"iuDSF","../dom/value-types/defaults.mjs":"1Ajoh","../../projection/geometry/models.mjs":"8tocy","./utils/is-svg-tag.mjs":"iLrl0","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6XGhA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "layout", ()=>layout);
+var _htmlprojectionNodeMjs = require("../../projection/node/HTMLProjectionNode.mjs");
+var _measureLayoutMjs = require("./layout/MeasureLayout.mjs");
+const layout = {
+    layout: {
+        ProjectionNode: (0, _htmlprojectionNodeMjs.HTMLProjectionNode),
+        MeasureLayout: (0, _measureLayoutMjs.MeasureLayout)
+    }
+};
+
+},{"../../projection/node/HTMLProjectionNode.mjs":"d4eCC","./layout/MeasureLayout.mjs":"kA9rP","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dti0O":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "m", ()=>m);
+var _motionProxyMjs = require("./motion-proxy.mjs");
+var _createConfigMjs = require("./utils/create-config.mjs");
+/**
+ * @public
+ */ const m = (0, _motionProxyMjs.createMotionProxy)((0, _createConfigMjs.createDomMotionConfig));
+
+},{"./motion-proxy.mjs":"3j9Za","./utils/create-config.mjs":"6TbpJ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fBuY4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AnimatePresence", ()=>AnimatePresence);
+var _react = require("react");
+var _useForceUpdateMjs = require("../../utils/use-force-update.mjs");
+var _useIsMountedMjs = require("../../utils/use-is-mounted.mjs");
+var _presenceChildMjs = require("./PresenceChild.mjs");
+var _layoutGroupContextMjs = require("../../context/LayoutGroupContext.mjs");
+var _useIsomorphicEffectMjs = require("../../utils/use-isomorphic-effect.mjs");
+var _useUnmountEffectMjs = require("../../utils/use-unmount-effect.mjs");
+var _errorsMjs = require("../../utils/errors.mjs");
+const getChildKey = (child)=>child.key || "";
+function updateChildLookup(children, allChildren) {
+    children.forEach((child)=>{
+        const key = getChildKey(child);
+        allChildren.set(key, child);
+    });
+}
+function onlyElements(children) {
+    const filtered = [];
+    // We use forEach here instead of map as map mutates the component key by preprending `.$`
+    (0, _react.Children).forEach(children, (child)=>{
+        if ((0, _react.isValidElement)(child)) filtered.push(child);
+    });
+    return filtered;
+}
+/**
+ * `AnimatePresence` enables the animation of components that have been removed from the tree.
+ *
+ * When adding/removing more than a single child, every child **must** be given a unique `key` prop.
+ *
+ * Any `motion` components that have an `exit` property defined will animate out when removed from
+ * the tree.
+ *
+ * ```jsx
+ * import { motion, AnimatePresence } from 'framer-motion'
+ *
+ * export const Items = ({ items }) => (
+ *   <AnimatePresence>
+ *     {items.map(item => (
+ *       <motion.div
+ *         key={item.id}
+ *         initial={{ opacity: 0 }}
+ *         animate={{ opacity: 1 }}
+ *         exit={{ opacity: 0 }}
+ *       />
+ *     ))}
+ *   </AnimatePresence>
+ * )
+ * ```
+ *
+ * You can sequence exit animations throughout a tree using variants.
+ *
+ * If a child contains multiple `motion` components with `exit` props, it will only unmount the child
+ * once all `motion` components have finished animating out. Likewise, any components using
+ * `usePresence` all need to call `safeToRemove`.
+ *
+ * @public
+ */ const AnimatePresence = ({ children , custom , initial =true , onExitComplete , exitBeforeEnter , presenceAffectsLayout =true , mode ="sync"  })=>{
+    (0, _errorsMjs.invariant)(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'");
+    // We want to force a re-render once all exiting animations have finished. We
+    // either use a local forceRender function, or one from a parent context if it exists.
+    let [forceRender] = (0, _useForceUpdateMjs.useForceUpdate)();
+    const forceRenderLayoutGroup = (0, _react.useContext)((0, _layoutGroupContextMjs.LayoutGroupContext)).forceRender;
+    if (forceRenderLayoutGroup) forceRender = forceRenderLayoutGroup;
+    const isMounted = (0, _useIsMountedMjs.useIsMounted)();
+    // Filter out any children that aren't ReactElements. We can only track ReactElements with a props.key
+    const filteredChildren = onlyElements(children);
+    let childrenToRender = filteredChildren;
+    const exiting = new Set();
+    // Keep a living record of the children we're actually rendering so we
+    // can diff to figure out which are entering and exiting
+    const presentChildren = (0, _react.useRef)(childrenToRender);
+    // A lookup table to quickly reference components by key
+    const allChildren = (0, _react.useRef)(new Map()).current;
+    // If this is the initial component render, just deal with logic surrounding whether
+    // we play onMount animations or not.
+    const isInitialRender = (0, _react.useRef)(true);
+    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
+        isInitialRender.current = false;
+        updateChildLookup(filteredChildren, allChildren);
+        presentChildren.current = childrenToRender;
+    });
+    (0, _useUnmountEffectMjs.useUnmountEffect)(()=>{
+        isInitialRender.current = true;
+        allChildren.clear();
+        exiting.clear();
+    });
+    if (isInitialRender.current) return _react.createElement(_react.Fragment, null, childrenToRender.map((child)=>_react.createElement((0, _presenceChildMjs.PresenceChild), {
+            key: getChildKey(child),
+            isPresent: true,
+            initial: initial ? undefined : false,
+            presenceAffectsLayout: presenceAffectsLayout,
+            mode: mode
+        }, child)));
+    // If this is a subsequent render, deal with entering and exiting children
+    childrenToRender = [
+        ...childrenToRender
+    ];
+    // Diff the keys of the currently-present and target children to update our
+    // exiting list.
+    const presentKeys = presentChildren.current.map(getChildKey);
+    const targetKeys = filteredChildren.map(getChildKey);
+    // Diff the present children with our target children and mark those that are exiting
+    const numPresent = presentKeys.length;
+    for(let i = 0; i < numPresent; i++){
+        const key = presentKeys[i];
+        if (targetKeys.indexOf(key) === -1) exiting.add(key);
+    }
+    // If we currently have exiting children, and we're deferring rendering incoming children
+    // until after all current children have exiting, empty the childrenToRender array
+    if (mode === "wait" && exiting.size) childrenToRender = [];
+    // Loop through all currently exiting components and clone them to overwrite `animate`
+    // with any `exit` prop they might have defined.
+    exiting.forEach((key)=>{
+        // If this component is actually entering again, early return
+        if (targetKeys.indexOf(key) !== -1) return;
+        const child = allChildren.get(key);
+        if (!child) return;
+        const insertionIndex = presentKeys.indexOf(key);
+        const onExit = ()=>{
+            allChildren.delete(key);
+            exiting.delete(key);
+            // Remove this child from the present children
+            const removeIndex = presentChildren.current.findIndex((presentChild)=>presentChild.key === key);
+            presentChildren.current.splice(removeIndex, 1);
+            // Defer re-rendering until all exiting children have indeed left
+            if (!exiting.size) {
+                presentChildren.current = filteredChildren;
+                if (isMounted.current === false) return;
+                forceRender();
+                onExitComplete && onExitComplete();
+            }
+        };
+        childrenToRender.splice(insertionIndex, 0, _react.createElement((0, _presenceChildMjs.PresenceChild), {
+            key: getChildKey(child),
+            isPresent: false,
+            onExitComplete: onExit,
+            custom: custom,
+            presenceAffectsLayout: presenceAffectsLayout,
+            mode: mode
+        }, child));
+    });
+    // Add `MotionContext` even to children that don't need it to ensure we're rendering
+    // the same tree between renders
+    childrenToRender = childrenToRender.map((child)=>{
+        const key = child.key;
+        return exiting.has(key) ? child : _react.createElement((0, _presenceChildMjs.PresenceChild), {
+            key: getChildKey(child),
+            isPresent: true,
+            presenceAffectsLayout: presenceAffectsLayout,
+            mode: mode
+        }, child);
+    });
+    if (mode === "wait" && childrenToRender.length > 1) console.warn(`You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.`);
+    return _react.createElement(_react.Fragment, null, exiting.size ? childrenToRender : childrenToRender.map((child)=>(0, _react.cloneElement)(child)));
+};
+
+},{"react":"21dqq","../../utils/use-force-update.mjs":"58SRa","../../utils/use-is-mounted.mjs":"6UT6v","./PresenceChild.mjs":"giuAL","../../context/LayoutGroupContext.mjs":"dEA1W","../../utils/use-isomorphic-effect.mjs":"5Yog2","../../utils/use-unmount-effect.mjs":"gNrSX","../../utils/errors.mjs":"drRZ6","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"58SRa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useForceUpdate", ()=>useForceUpdate);
+var _indexMjs = require("../frameloop/index.mjs");
+var _react = require("react");
+var _useIsMountedMjs = require("./use-is-mounted.mjs");
+function useForceUpdate() {
+    const isMounted = (0, _useIsMountedMjs.useIsMounted)();
+    const [forcedRenderCount, setForcedRenderCount] = (0, _react.useState)(0);
+    const forceRender = (0, _react.useCallback)(()=>{
+        isMounted.current && setForcedRenderCount(forcedRenderCount + 1);
+    }, [
+        forcedRenderCount
+    ]);
+    /**
+     * Defer this to the end of the next animation frame in case there are multiple
+     * synchronous calls.
+     */ const deferredForceRender = (0, _react.useCallback)(()=>(0, _indexMjs.frame).postRender(forceRender), [
+        forceRender
+    ]);
+    return [
+        deferredForceRender,
+        forcedRenderCount
+    ];
+}
+
+},{"../frameloop/index.mjs":"3Dz3U","react":"21dqq","./use-is-mounted.mjs":"6UT6v","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6UT6v":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsMounted", ()=>useIsMounted);
+var _react = require("react");
+var _useIsomorphicEffectMjs = require("./use-isomorphic-effect.mjs");
+function useIsMounted() {
+    const isMounted = (0, _react.useRef)(false);
+    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
+        isMounted.current = true;
+        return ()=>{
+            isMounted.current = false;
+        };
+    }, []);
+    return isMounted;
+}
+
+},{"react":"21dqq","./use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"giuAL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "PresenceChild", ()=>PresenceChild);
+var _react = require("react");
+var _presenceContextMjs = require("../../context/PresenceContext.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _popChildMjs = require("./PopChild.mjs");
+const PresenceChild = ({ children , initial , isPresent , onExitComplete , custom , presenceAffectsLayout , mode  })=>{
+    const presenceChildren = (0, _useConstantMjs.useConstant)(newChildrenMap);
+    const id = (0, _react.useId)();
+    const context = (0, _react.useMemo)(()=>({
+            id,
+            initial,
+            isPresent,
+            custom,
+            onExitComplete: (childId)=>{
+                presenceChildren.set(childId, true);
+                for (const isComplete of presenceChildren.values()){
+                    if (!isComplete) return; // can stop searching when any is incomplete
+                }
+                onExitComplete && onExitComplete();
+            },
+            register: (childId)=>{
+                presenceChildren.set(childId, false);
+                return ()=>presenceChildren.delete(childId);
+            }
+        }), /**
+     * If the presence of a child affects the layout of the components around it,
+     * we want to make a new context value to ensure they get re-rendered
+     * so they can detect that layout change.
+     */ presenceAffectsLayout ? undefined : [
+        isPresent
+    ]);
+    (0, _react.useMemo)(()=>{
+        presenceChildren.forEach((_, key)=>presenceChildren.set(key, false));
+    }, [
+        isPresent
+    ]);
+    /**
+     * If there's no `motion` components to fire exit animations, we want to remove this
+     * component immediately.
+     */ _react.useEffect(()=>{
+        !isPresent && !presenceChildren.size && onExitComplete && onExitComplete();
+    }, [
+        isPresent
+    ]);
+    if (mode === "popLayout") children = _react.createElement((0, _popChildMjs.PopChild), {
+        isPresent: isPresent
+    }, children);
+    return _react.createElement((0, _presenceContextMjs.PresenceContext).Provider, {
+        value: context
+    }, children);
+};
+function newChildrenMap() {
+    return new Map();
+}
+
+},{"react":"21dqq","../../context/PresenceContext.mjs":"7DzvZ","../../utils/use-constant.mjs":"gAAJI","./PopChild.mjs":"6MlqJ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6MlqJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "PopChild", ()=>PopChild);
+var _react = require("react");
+/**
+ * Measurement functionality has to be within a separate component
+ * to leverage snapshot lifecycle.
+ */ class PopChildMeasure extends _react.Component {
+    getSnapshotBeforeUpdate(prevProps) {
+        const element = this.props.childRef.current;
+        if (element && prevProps.isPresent && !this.props.isPresent) {
+            const size = this.props.sizeRef.current;
+            size.height = element.offsetHeight || 0;
+            size.width = element.offsetWidth || 0;
+            size.top = element.offsetTop;
+            size.left = element.offsetLeft;
+        }
+        return null;
+    }
+    /**
+     * Required with getSnapshotBeforeUpdate to stop React complaining.
+     */ componentDidUpdate() {}
+    render() {
+        return this.props.children;
+    }
+}
+function PopChild({ children , isPresent  }) {
+    const id = (0, _react.useId)();
+    const ref = (0, _react.useRef)(null);
+    const size = (0, _react.useRef)({
+        width: 0,
+        height: 0,
+        top: 0,
+        left: 0
+    });
+    /**
+     * We create and inject a style block so we can apply this explicit
+     * sizing in a non-destructive manner by just deleting the style block.
+     *
+     * We can't apply size via render as the measurement happens
+     * in getSnapshotBeforeUpdate (post-render), likewise if we apply the
+     * styles directly on the DOM node, we might be overwriting
+     * styles set via the style prop.
+     */ (0, _react.useInsertionEffect)(()=>{
+        const { width , height , top , left  } = size.current;
+        if (isPresent || !ref.current || !width || !height) return;
+        ref.current.dataset.motionPopId = id;
+        const style = document.createElement("style");
+        document.head.appendChild(style);
+        if (style.sheet) style.sheet.insertRule(`
+          [data-motion-pop-id="${id}"] {
+            position: absolute !important;
+            width: ${width}px !important;
+            height: ${height}px !important;
+            top: ${top}px !important;
+            left: ${left}px !important;
+          }
+        `);
+        return ()=>{
+            document.head.removeChild(style);
+        };
+    }, [
+        isPresent
+    ]);
+    return _react.createElement(PopChildMeasure, {
+        isPresent: isPresent,
+        childRef: ref,
+        sizeRef: size
+    }, _react.cloneElement(children, {
+        ref
+    }));
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gNrSX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useUnmountEffect", ()=>useUnmountEffect);
+var _react = require("react");
+function useUnmountEffect(callback) {
+    return (0, _react.useEffect)(()=>()=>callback(), []);
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4Dtw3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MotionConfig", ()=>MotionConfig);
+var _react = require("react");
+var _motionConfigContextMjs = require("../../context/MotionConfigContext.mjs");
+var _filterPropsMjs = require("../../render/dom/utils/filter-props.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+/**
+ * `MotionConfig` is used to set configuration options for all children `motion` components.
+ *
+ * ```jsx
+ * import { motion, MotionConfig } from "framer-motion"
+ *
+ * export function App() {
+ *   return (
+ *     <MotionConfig transition={{ type: "spring" }}>
+ *       <motion.div animate={{ x: 100 }} />
+ *     </MotionConfig>
+ *   )
+ * }
+ * ```
+ *
+ * @public
+ */ function MotionConfig({ children , isValidProp , ...config }) {
+    isValidProp && (0, _filterPropsMjs.loadExternalIsValidProp)(isValidProp);
+    /**
+     * Inherit props from any parent MotionConfig components
+     */ config = {
+        ...(0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext)),
+        ...config
+    };
+    /**
+     * Don't allow isStatic to change between renders as it affects how many hooks
+     * motion components fire.
+     */ config.isStatic = (0, _useConstantMjs.useConstant)(()=>config.isStatic);
+    /**
+     * Creating a new config context object will re-render every `motion` component
+     * every time it renders. So we only want to create a new one sparingly.
+     */ const context = (0, _react.useMemo)(()=>config, [
+        JSON.stringify(config.transition),
+        config.transformPagePoint,
+        config.reducedMotion
+    ]);
+    return _react.createElement((0, _motionConfigContextMjs.MotionConfigContext).Provider, {
+        value: context
+    }, children);
+}
+
+},{"react":"21dqq","../../context/MotionConfigContext.mjs":"8MLRw","../../render/dom/utils/filter-props.mjs":"juMO1","../../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gir8X":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LazyMotion", ()=>LazyMotion);
+var _react = require("react");
+var _lazyContextMjs = require("../../context/LazyContext.mjs");
+var _loadFeaturesMjs = require("../../motion/features/load-features.mjs");
+/**
+ * Used in conjunction with the `m` component to reduce bundle size.
+ *
+ * `m` is a version of the `motion` component that only loads functionality
+ * critical for the initial render.
+ *
+ * `LazyMotion` can then be used to either synchronously or asynchronously
+ * load animation and gesture support.
+ *
+ * ```jsx
+ * // Synchronous loading
+ * import { LazyMotion, m, domAnimation } from "framer-motion"
+ *
+ * function App() {
+ *   return (
+ *     <LazyMotion features={domAnimation}>
+ *       <m.div animate={{ scale: 2 }} />
+ *     </LazyMotion>
+ *   )
+ * }
+ *
+ * // Asynchronous loading
+ * import { LazyMotion, m } from "framer-motion"
+ *
+ * function App() {
+ *   return (
+ *     <LazyMotion features={() => import('./path/to/domAnimation')}>
+ *       <m.div animate={{ scale: 2 }} />
+ *     </LazyMotion>
+ *   )
+ * }
+ * ```
+ *
+ * @public
+ */ function LazyMotion({ children , features , strict =false  }) {
+    const [, setIsLoaded] = (0, _react.useState)(!isLazyBundle(features));
+    const loadedRenderer = (0, _react.useRef)(undefined);
+    /**
+     * If this is a synchronous load, load features immediately
+     */ if (!isLazyBundle(features)) {
+        const { renderer , ...loadedFeatures } = features;
+        loadedRenderer.current = renderer;
+        (0, _loadFeaturesMjs.loadFeatures)(loadedFeatures);
+    }
+    (0, _react.useEffect)(()=>{
+        if (isLazyBundle(features)) features().then(({ renderer , ...loadedFeatures })=>{
+            (0, _loadFeaturesMjs.loadFeatures)(loadedFeatures);
+            loadedRenderer.current = renderer;
+            setIsLoaded(true);
+        });
+    }, []);
+    return _react.createElement((0, _lazyContextMjs.LazyContext).Provider, {
+        value: {
+            renderer: loadedRenderer.current,
+            strict
+        }
+    }, children);
+}
+function isLazyBundle(features) {
+    return typeof features === "function";
+}
+
+},{"react":"21dqq","../../context/LazyContext.mjs":"3dClU","../../motion/features/load-features.mjs":"5V8E4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"b9GPH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LayoutGroup", ()=>LayoutGroup);
+var _react = require("react");
+var _layoutGroupContextMjs = require("../../context/LayoutGroupContext.mjs");
+var _deprecatedLayoutGroupContextMjs = require("../../context/DeprecatedLayoutGroupContext.mjs");
+var _useForceUpdateMjs = require("../../utils/use-force-update.mjs");
+var _groupMjs = require("../../projection/node/group.mjs");
+const shouldInheritGroup = (inherit)=>inherit === true;
+const shouldInheritId = (inherit)=>shouldInheritGroup(inherit === true) || inherit === "id";
+const LayoutGroup = ({ children , id , inherit =true  })=>{
+    const layoutGroupContext = (0, _react.useContext)((0, _layoutGroupContextMjs.LayoutGroupContext));
+    const deprecatedLayoutGroupContext = (0, _react.useContext)((0, _deprecatedLayoutGroupContextMjs.DeprecatedLayoutGroupContext));
+    const [forceRender, key] = (0, _useForceUpdateMjs.useForceUpdate)();
+    const context = (0, _react.useRef)(null);
+    const upstreamId = layoutGroupContext.id || deprecatedLayoutGroupContext;
+    if (context.current === null) {
+        if (shouldInheritId(inherit) && upstreamId) id = id ? upstreamId + "-" + id : upstreamId;
+        context.current = {
+            id,
+            group: shouldInheritGroup(inherit) ? layoutGroupContext.group || (0, _groupMjs.nodeGroup)() : (0, _groupMjs.nodeGroup)()
+        };
+    }
+    const memoizedContext = (0, _react.useMemo)(()=>({
+            ...context.current,
+            forceRender
+        }), [
+        key
+    ]);
+    return _react.createElement((0, _layoutGroupContextMjs.LayoutGroupContext).Provider, {
+        value: memoizedContext
+    }, children);
+};
+
+},{"react":"21dqq","../../context/LayoutGroupContext.mjs":"dEA1W","../../context/DeprecatedLayoutGroupContext.mjs":"6NZsP","../../utils/use-force-update.mjs":"58SRa","../../projection/node/group.mjs":"4741X","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6NZsP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DeprecatedLayoutGroupContext", ()=>DeprecatedLayoutGroupContext);
+var _react = require("react");
+/**
+ * Note: Still used by components generated by old versions of Framer
+ *
+ * @deprecated
+ */ const DeprecatedLayoutGroupContext = (0, _react.createContext)(null);
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4741X":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "nodeGroup", ()=>nodeGroup);
+const notify = (node)=>!node.isLayoutDirty && node.willUpdate(false);
+function nodeGroup() {
+    const nodes = new Set();
+    const subscriptions = new WeakMap();
+    const dirtyAll = ()=>nodes.forEach(notify);
+    return {
+        add: (node)=>{
+            nodes.add(node);
+            subscriptions.set(node, node.addEventListener("willUpdate", dirtyAll));
+        },
+        remove: (node)=>{
+            nodes.delete(node);
+            const unsubscribe = subscriptions.get(node);
+            if (unsubscribe) {
+                unsubscribe();
+                subscriptions.delete(node);
+            }
+            dirtyAll();
+        },
+        dirty: dirtyAll
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9SwgC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Reorder", ()=>Reorder);
+var _groupMjs = require("./Group.mjs");
+var _itemMjs = require("./Item.mjs");
+const Reorder = {
+    Group: (0, _groupMjs.Group),
+    Item: (0, _itemMjs.Item)
+};
+
+},{"./Group.mjs":"55l9J","./Item.mjs":"16oLN","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"55l9J":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Group", ()=>Group);
+parcelHelpers.export(exports, "ReorderGroup", ()=>ReorderGroup);
+var _errorsMjs = require("../../utils/errors.mjs");
+var _react = require("react");
+var _reorderContextMjs = require("../../context/ReorderContext.mjs");
+var _motionMjs = require("../../render/dom/motion.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _checkReorderMjs = require("./utils/check-reorder.mjs");
+function ReorderGroup({ children , as ="ul" , axis ="y" , onReorder , values , ...props }, externalRef) {
+    const Component = (0, _useConstantMjs.useConstant)(()=>(0, _motionMjs.motion)(as));
+    const order = [];
+    const isReordering = (0, _react.useRef)(false);
+    (0, _errorsMjs.invariant)(Boolean(values), "Reorder.Group must be provided a values prop");
+    const context = {
+        axis,
+        registerItem: (value, layout)=>{
+            /**
+             * Ensure entries can't add themselves more than once
+             */ if (layout && order.findIndex((entry)=>value === entry.value) === -1) {
+                order.push({
+                    value,
+                    layout: layout[axis]
+                });
+                order.sort(compareMin);
+            }
+        },
+        updateOrder: (id, offset, velocity)=>{
+            if (isReordering.current) return;
+            const newOrder = (0, _checkReorderMjs.checkReorder)(order, id, offset, velocity);
+            if (order !== newOrder) {
+                isReordering.current = true;
+                onReorder(newOrder.map(getValue).filter((value)=>values.indexOf(value) !== -1));
+            }
+        }
+    };
+    (0, _react.useEffect)(()=>{
+        isReordering.current = false;
+    });
+    return _react.createElement(Component, {
+        ...props,
+        ref: externalRef,
+        ignoreStrict: true
+    }, _react.createElement((0, _reorderContextMjs.ReorderContext).Provider, {
+        value: context
+    }, children));
+}
+const Group = (0, _react.forwardRef)(ReorderGroup);
+function getValue(item) {
+    return item.value;
+}
+function compareMin(a, b) {
+    return a.layout.min - b.layout.min;
+}
+
+},{"../../utils/errors.mjs":"drRZ6","react":"21dqq","../../context/ReorderContext.mjs":"dIz8S","../../render/dom/motion.mjs":"9Tsxv","../../utils/use-constant.mjs":"gAAJI","./utils/check-reorder.mjs":"j38VC","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dIz8S":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ReorderContext", ()=>ReorderContext);
+var _react = require("react");
+const ReorderContext = (0, _react.createContext)(null);
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"j38VC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkReorder", ()=>checkReorder);
+var _arrayMjs = require("../../../utils/array.mjs");
+var _mixMjs = require("../../../utils/mix.mjs");
+function checkReorder(order, value, offset, velocity) {
+    if (!velocity) return order;
+    const index = order.findIndex((item)=>item.value === value);
+    if (index === -1) return order;
+    const nextOffset = velocity > 0 ? 1 : -1;
+    const nextItem = order[index + nextOffset];
+    if (!nextItem) return order;
+    const item = order[index];
+    const nextLayout = nextItem.layout;
+    const nextItemCenter = (0, _mixMjs.mix)(nextLayout.min, nextLayout.max, 0.5);
+    if (nextOffset === 1 && item.layout.max + offset > nextItemCenter || nextOffset === -1 && item.layout.min + offset < nextItemCenter) return (0, _arrayMjs.moveItem)(order, index, index + nextOffset);
+    return order;
+}
+
+},{"../../../utils/array.mjs":"fpJYa","../../../utils/mix.mjs":"jx86W","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"16oLN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Item", ()=>Item);
+parcelHelpers.export(exports, "ReorderItem", ()=>ReorderItem);
+var _errorsMjs = require("../../utils/errors.mjs");
+var _react = require("react");
+var _reorderContextMjs = require("../../context/ReorderContext.mjs");
+var _motionMjs = require("../../render/dom/motion.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _useMotionValueMjs = require("../../value/use-motion-value.mjs");
+var _useTransformMjs = require("../../value/use-transform.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+function useDefaultMotionValue(value, defaultValue = 0) {
+    return (0, _isMotionValueMjs.isMotionValue)(value) ? value : (0, _useMotionValueMjs.useMotionValue)(defaultValue);
+}
+function ReorderItem({ children , style ={} , value , as ="li" , onDrag , layout =true , ...props }, externalRef) {
+    const Component = (0, _useConstantMjs.useConstant)(()=>(0, _motionMjs.motion)(as));
+    const context = (0, _react.useContext)((0, _reorderContextMjs.ReorderContext));
+    const point = {
+        x: useDefaultMotionValue(style.x),
+        y: useDefaultMotionValue(style.y)
+    };
+    const zIndex = (0, _useTransformMjs.useTransform)([
+        point.x,
+        point.y
+    ], ([latestX, latestY])=>latestX || latestY ? 1 : "unset");
+    const measuredLayout = (0, _react.useRef)(null);
+    (0, _errorsMjs.invariant)(Boolean(context), "Reorder.Item must be a child of Reorder.Group");
+    const { axis , registerItem , updateOrder  } = context;
+    (0, _react.useEffect)(()=>{
+        registerItem(value, measuredLayout.current);
+    }, [
+        context
+    ]);
+    return _react.createElement(Component, {
+        drag: axis,
+        ...props,
+        dragSnapToOrigin: true,
+        style: {
+            ...style,
+            x: point.x,
+            y: point.y,
+            zIndex
+        },
+        layout: layout,
+        onDrag: (event, gesturePoint)=>{
+            const { velocity  } = gesturePoint;
+            velocity[axis] && updateOrder(value, point[axis].get(), velocity[axis]);
+            onDrag && onDrag(event, gesturePoint);
+        },
+        onLayoutMeasure: (measured)=>{
+            measuredLayout.current = measured;
+        },
+        ref: externalRef,
+        ignoreStrict: true
+    }, children);
+}
+const Item = (0, _react.forwardRef)(ReorderItem);
+
+},{"../../utils/errors.mjs":"drRZ6","react":"21dqq","../../context/ReorderContext.mjs":"dIz8S","../../render/dom/motion.mjs":"9Tsxv","../../utils/use-constant.mjs":"gAAJI","../../value/use-motion-value.mjs":"rszYa","../../value/use-transform.mjs":"gAMIr","../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"rszYa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMotionValue", ()=>useMotionValue);
+var _react = require("react");
+var _indexMjs = require("./index.mjs");
+var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
+var _useConstantMjs = require("../utils/use-constant.mjs");
+/**
+ * Creates a `MotionValue` to track the state and velocity of a value.
+ *
+ * Usually, these are created automatically. For advanced use-cases, like use with `useTransform`, you can create `MotionValue`s externally and pass them into the animated component via the `style` prop.
+ *
+ * ```jsx
+ * export const MyComponent = () => {
+ *   const scale = useMotionValue(1)
+ *
+ *   return <motion.div style={{ scale }} />
+ * }
+ * ```
+ *
+ * @param initial - The initial state.
+ *
+ * @public
+ */ function useMotionValue(initial) {
+    const value = (0, _useConstantMjs.useConstant)(()=>(0, _indexMjs.motionValue)(initial));
+    /**
+     * If this motion value is being used in static mode, like on
+     * the Framer canvas, force components to rerender when the motion
+     * value is updated.
+     */ const { isStatic  } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
+    if (isStatic) {
+        const [, setLatest] = (0, _react.useState)(initial);
+        (0, _react.useEffect)(()=>value.on("change", setLatest), []);
+    }
+    return value;
+}
+
+},{"react":"21dqq","./index.mjs":"he8bY","../context/MotionConfigContext.mjs":"8MLRw","../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gAMIr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useTransform", ()=>useTransform);
+var _transformMjs = require("../utils/transform.mjs");
+var _useCombineValuesMjs = require("./use-combine-values.mjs");
+var _useConstantMjs = require("../utils/use-constant.mjs");
+function useTransform(input, inputRangeOrTransformer, outputRange, options) {
+    const transformer = typeof inputRangeOrTransformer === "function" ? inputRangeOrTransformer : (0, _transformMjs.transform)(inputRangeOrTransformer, outputRange, options);
+    return Array.isArray(input) ? useListTransform(input, transformer) : useListTransform([
+        input
+    ], ([latest])=>transformer(latest));
+}
+function useListTransform(values, transformer) {
+    const latest = (0, _useConstantMjs.useConstant)(()=>[]);
+    return (0, _useCombineValuesMjs.useCombineMotionValues)(values, ()=>{
+        latest.length = 0;
+        const numValues = values.length;
+        for(let i = 0; i < numValues; i++)latest[i] = values[i].get();
+        return transformer(latest);
+    });
+}
+
+},{"../utils/transform.mjs":"a4wqO","./use-combine-values.mjs":"jGAaZ","../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"a4wqO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "transform", ()=>transform);
+var _interpolateMjs = require("./interpolate.mjs");
+const isCustomValueType = (v)=>{
+    return typeof v === "object" && v.mix;
+};
+const getMixer = (v)=>isCustomValueType(v) ? v.mix : undefined;
+function transform(...args) {
+    const useImmediate = !Array.isArray(args[0]);
+    const argOffset = useImmediate ? 0 : -1;
+    const inputValue = args[0 + argOffset];
+    const inputRange = args[1 + argOffset];
+    const outputRange = args[2 + argOffset];
+    const options = args[3 + argOffset];
+    const interpolator = (0, _interpolateMjs.interpolate)(inputRange, outputRange, {
+        mixer: getMixer(outputRange[0]),
+        ...options
+    });
+    return useImmediate ? interpolator(inputValue) : interpolator;
+}
+
+},{"./interpolate.mjs":"d7x9H","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jGAaZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCombineMotionValues", ()=>useCombineMotionValues);
+var _useMotionValueMjs = require("./use-motion-value.mjs");
+var _indexMjs = require("../frameloop/index.mjs");
+var _useIsomorphicEffectMjs = require("../utils/use-isomorphic-effect.mjs");
+function useCombineMotionValues(values, combineValues) {
+    /**
+     * Initialise the returned motion value. This remains the same between renders.
+     */ const value = (0, _useMotionValueMjs.useMotionValue)(combineValues());
+    /**
+     * Create a function that will update the template motion value with the latest values.
+     * This is pre-bound so whenever a motion value updates it can schedule its
+     * execution in Framesync. If it's already been scheduled it won't be fired twice
+     * in a single frame.
+     */ const updateValue = ()=>value.set(combineValues());
+    /**
+     * Synchronously update the motion value with the latest values during the render.
+     * This ensures that within a React render, the styles applied to the DOM are up-to-date.
+     */ updateValue();
+    /**
+     * Subscribe to all motion values found within the template. Whenever any of them change,
+     * schedule an update.
+     */ (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
+        const scheduleUpdate = ()=>(0, _indexMjs.frame).update(updateValue, false, true);
+        const subscriptions = values.map((v)=>v.on("change", scheduleUpdate));
+        return ()=>{
+            subscriptions.forEach((unsubscribe)=>unsubscribe());
+            (0, _indexMjs.cancelFrame)(updateValue);
+        };
+    });
+    return value;
+}
+
+},{"./use-motion-value.mjs":"rszYa","../frameloop/index.mjs":"3Dz3U","../utils/use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"JCL26":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "domAnimation", ()=>domAnimation);
+var _animationsMjs = require("../../motion/features/animations.mjs");
+var _gesturesMjs = require("../../motion/features/gestures.mjs");
+var _createVisualElementMjs = require("./create-visual-element.mjs");
+/**
+ * @public
+ */ const domAnimation = {
+    renderer: (0, _createVisualElementMjs.createDomVisualElement),
+    ...(0, _animationsMjs.animations),
+    ...(0, _gesturesMjs.gestureAnimations)
+};
+
+},{"../../motion/features/animations.mjs":"c1lwU","../../motion/features/gestures.mjs":"h2ALs","./create-visual-element.mjs":"WHCBp","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4i5ex":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "domMax", ()=>domMax);
+var _dragMjs = require("../../motion/features/drag.mjs");
+var _layoutMjs = require("../../motion/features/layout.mjs");
+var _featuresAnimationMjs = require("./features-animation.mjs");
+/**
+ * @public
+ */ const domMax = {
+    ...(0, _featuresAnimationMjs.domAnimation),
+    ...(0, _dragMjs.drag),
+    ...(0, _layoutMjs.layout)
+};
+
+},{"../../motion/features/drag.mjs":"fBUJ5","../../motion/features/layout.mjs":"6XGhA","./features-animation.mjs":"JCL26","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cjUvi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMotionTemplate", ()=>useMotionTemplate);
+var _useCombineValuesMjs = require("./use-combine-values.mjs");
+var _isMotionValueMjs = require("./utils/is-motion-value.mjs");
+/**
+ * Combine multiple motion values into a new one using a string template literal.
+ *
+ * ```jsx
+ * import {
+ *   motion,
+ *   useSpring,
+ *   useMotionValue,
+ *   useMotionTemplate
+ * } from "framer-motion"
+ *
+ * function Component() {
+ *   const shadowX = useSpring(0)
+ *   const shadowY = useMotionValue(0)
+ *   const shadow = useMotionTemplate`drop-shadow(${shadowX}px ${shadowY}px 20px rgba(0,0,0,0.3))`
+ *
+ *   return <motion.div style={{ filter: shadow }} />
+ * }
+ * ```
+ *
+ * @public
+ */ function useMotionTemplate(fragments, ...values) {
+    /**
+     * Create a function that will build a string from the latest motion values.
+     */ const numFragments = fragments.length;
+    function buildValue() {
+        let output = ``;
+        for(let i = 0; i < numFragments; i++){
+            output += fragments[i];
+            const value = values[i];
+            if (value) output += (0, _isMotionValueMjs.isMotionValue)(value) ? value.get() : value;
+        }
+        return output;
+    }
+    return (0, _useCombineValuesMjs.useCombineMotionValues)(values.filter((0, _isMotionValueMjs.isMotionValue)), buildValue);
+}
+
+},{"./use-combine-values.mjs":"jGAaZ","./utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"2gasM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useSpring", ()=>useSpring);
+var _react = require("react");
+var _isMotionValueMjs = require("./utils/is-motion-value.mjs");
+var _useMotionValueMjs = require("./use-motion-value.mjs");
+var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
+var _useIsomorphicEffectMjs = require("../utils/use-isomorphic-effect.mjs");
+var _indexMjs = require("../animation/animators/js/index.mjs");
+var _dataMjs = require("../frameloop/data.mjs");
+var _timeConversionMjs = require("../utils/time-conversion.mjs");
+/**
+ * Creates a `MotionValue` that, when `set`, will use a spring animation to animate to its new state.
+ *
+ * It can either work as a stand-alone `MotionValue` by initialising it with a value, or as a subscriber
+ * to another `MotionValue`.
+ *
+ * @remarks
+ *
+ * ```jsx
+ * const x = useSpring(0, { stiffness: 300 })
+ * const y = useSpring(x, { damping: 10 })
+ * ```
+ *
+ * @param inputValue - `MotionValue` or number. If provided a `MotionValue`, when the input `MotionValue` changes, the created `MotionValue` will spring towards that value.
+ * @param springConfig - Configuration options for the spring.
+ * @returns `MotionValue`
+ *
+ * @public
+ */ function useSpring(source, config = {}) {
+    const { isStatic  } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
+    const activeSpringAnimation = (0, _react.useRef)(null);
+    const value = (0, _useMotionValueMjs.useMotionValue)((0, _isMotionValueMjs.isMotionValue)(source) ? source.get() : source);
+    const stopAnimation = ()=>{
+        if (activeSpringAnimation.current) activeSpringAnimation.current.stop();
+    };
+    (0, _react.useInsertionEffect)(()=>{
+        return value.attach((v, set)=>{
+            /**
+             * A more hollistic approach to this might be to use isStatic to fix VisualElement animations
+             * at that level, but this will work for now
+             */ if (isStatic) return set(v);
+            stopAnimation();
+            activeSpringAnimation.current = (0, _indexMjs.animateValue)({
+                keyframes: [
+                    value.get(),
+                    v
+                ],
+                velocity: value.getVelocity(),
+                type: "spring",
+                restDelta: 0.001,
+                restSpeed: 0.01,
+                ...config,
+                onUpdate: set
+            });
+            /**
+             * If we're between frames, resync the animation to the frameloop.
+             */ if (!(0, _dataMjs.frameData).isProcessing) {
+                const delta = performance.now() - (0, _dataMjs.frameData).timestamp;
+                if (delta < 30) activeSpringAnimation.current.time = (0, _timeConversionMjs.millisecondsToSeconds)(delta);
+            }
+            return value.get();
+        }, stopAnimation);
+    }, [
+        JSON.stringify(config)
+    ]);
+    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
+        if ((0, _isMotionValueMjs.isMotionValue)(source)) return source.on("change", (v)=>value.set(parseFloat(v)));
+    }, [
+        value
+    ]);
+    return value;
+}
+
+},{"react":"21dqq","./utils/is-motion-value.mjs":"94AYa","./use-motion-value.mjs":"rszYa","../context/MotionConfigContext.mjs":"8MLRw","../utils/use-isomorphic-effect.mjs":"5Yog2","../animation/animators/js/index.mjs":"5PB20","../frameloop/data.mjs":"gzDj4","../utils/time-conversion.mjs":"gdr8V","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cl4th":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useVelocity", ()=>useVelocity);
+var _useMotionValueEventMjs = require("../utils/use-motion-value-event.mjs");
+var _useMotionValueMjs = require("./use-motion-value.mjs");
+/**
+ * Creates a `MotionValue` that updates when the velocity of the provided `MotionValue` changes.
+ *
+ * ```javascript
+ * const x = useMotionValue(0)
+ * const xVelocity = useVelocity(x)
+ * const xAcceleration = useVelocity(xVelocity)
+ * ```
+ *
+ * @public
+ */ function useVelocity(value) {
+    const velocity = (0, _useMotionValueMjs.useMotionValue)(value.getVelocity());
+    (0, _useMotionValueEventMjs.useMotionValueEvent)(value, "velocityChange", (newVelocity)=>{
+        velocity.set(newVelocity);
+    });
+    return velocity;
+}
+
+},{"../utils/use-motion-value-event.mjs":"l3eTb","./use-motion-value.mjs":"rszYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"l3eTb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMotionValueEvent", ()=>useMotionValueEvent);
+var _react = require("react");
+function useMotionValueEvent(value, event, callback) {
+    /**
+     * useInsertionEffect will create subscriptions before any other
+     * effects will run. Effects run upwards through the tree so it
+     * can be that binding a useLayoutEffect higher up the tree can
+     * miss changes from lower down the tree.
+     */ (0, _react.useInsertionEffect)(()=>value.on(event, callback), [
+        value,
+        event,
+        callback
+    ]);
+}
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8vYLG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useScroll", ()=>useScroll);
+var _indexMjs = require("./index.mjs");
+var _useConstantMjs = require("../utils/use-constant.mjs");
+var _react = require("react");
+var _errorsMjs = require("../utils/errors.mjs");
+var _indexMjs1 = require("../render/dom/scroll/index.mjs");
+var _useIsomorphicEffectMjs = require("../utils/use-isomorphic-effect.mjs");
+function refWarning(name, ref) {
+    (0, _errorsMjs.warning)(Boolean(!ref || ref.current), `You have defined a ${name} options but the provided ref is not yet hydrated, probably because it's defined higher up the tree. Try calling useScroll() in the same component as the ref, or setting its \`layoutEffect: false\` option.`);
+}
+const createScrollMotionValues = ()=>({
+        scrollX: (0, _indexMjs.motionValue)(0),
+        scrollY: (0, _indexMjs.motionValue)(0),
+        scrollXProgress: (0, _indexMjs.motionValue)(0),
+        scrollYProgress: (0, _indexMjs.motionValue)(0)
+    });
+function useScroll({ container , target , layoutEffect =true , ...options } = {}) {
+    const values = (0, _useConstantMjs.useConstant)(createScrollMotionValues);
+    const useLifecycleEffect = layoutEffect ? (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect) : (0, _react.useEffect);
+    useLifecycleEffect(()=>{
+        refWarning("target", target);
+        refWarning("container", container);
+        return (0, _indexMjs1.scroll)(({ x , y  })=>{
+            values.scrollX.set(x.current);
+            values.scrollXProgress.set(x.progress);
+            values.scrollY.set(y.current);
+            values.scrollYProgress.set(y.progress);
+        }, {
+            ...options,
+            container: (container === null || container === void 0 ? void 0 : container.current) || undefined,
+            target: (target === null || target === void 0 ? void 0 : target.current) || undefined
+        });
+    }, []);
+    return values;
+}
+
+},{"./index.mjs":"he8bY","../utils/use-constant.mjs":"gAAJI","react":"21dqq","../utils/errors.mjs":"drRZ6","../render/dom/scroll/index.mjs":"WMW6Q","../utils/use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"WMW6Q":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "scroll", ()=>scroll);
+var _indexMjs = require("../../../frameloop/index.mjs");
+var _dataMjs = require("../../../frameloop/data.mjs");
+var _indexMjs1 = require("../resize/index.mjs");
+var _infoMjs = require("./info.mjs");
+var _onScrollHandlerMjs = require("./on-scroll-handler.mjs");
+const scrollListeners = new WeakMap();
+const resizeListeners = new WeakMap();
+const onScrollHandlers = new WeakMap();
+const getEventTarget = (element)=>element === document.documentElement ? window : element;
+function scroll(onScroll, { container =document.documentElement , ...options } = {}) {
+    let containerHandlers = onScrollHandlers.get(container);
+    /**
+     * Get the onScroll handlers for this container.
+     * If one isn't found, create a new one.
+     */ if (!containerHandlers) {
+        containerHandlers = new Set();
+        onScrollHandlers.set(container, containerHandlers);
+    }
+    /**
+     * Create a new onScroll handler for the provided callback.
+     */ const info = (0, _infoMjs.createScrollInfo)();
+    const containerHandler = (0, _onScrollHandlerMjs.createOnScrollHandler)(container, onScroll, info, options);
+    containerHandlers.add(containerHandler);
+    /**
+     * Check if there's a scroll event listener for this container.
+     * If not, create one.
+     */ if (!scrollListeners.has(container)) {
+        const measureAll = ()=>{
+            for (const handler of containerHandlers)handler.measure();
+        };
+        const updateAll = ()=>{
+            for (const handler of containerHandlers)handler.update((0, _dataMjs.frameData).timestamp);
+        };
+        const notifyAll = ()=>{
+            for (const handler of containerHandlers)handler.notify();
+        };
+        const listener = ()=>{
+            (0, _indexMjs.frame).read(measureAll, false, true);
+            (0, _indexMjs.frame).update(updateAll, false, true);
+            (0, _indexMjs.frame).update(notifyAll, false, true);
+        };
+        scrollListeners.set(container, listener);
+        const target = getEventTarget(container);
+        window.addEventListener("resize", listener, {
+            passive: true
+        });
+        if (container !== document.documentElement) resizeListeners.set(container, (0, _indexMjs1.resize)(container, listener));
+        target.addEventListener("scroll", listener, {
+            passive: true
+        });
+    }
+    const listener = scrollListeners.get(container);
+    (0, _indexMjs.frame).read(listener, false, true);
+    return ()=>{
+        var _a;
+        (0, _indexMjs.cancelFrame)(listener);
+        /**
+         * Check if we even have any handlers for this container.
+         */ const currentHandlers = onScrollHandlers.get(container);
+        if (!currentHandlers) return;
+        currentHandlers.delete(containerHandler);
+        if (currentHandlers.size) return;
+        /**
+         * If no more handlers, remove the scroll listener too.
+         */ const scrollListener = scrollListeners.get(container);
+        scrollListeners.delete(container);
+        if (scrollListener) {
+            getEventTarget(container).removeEventListener("scroll", scrollListener);
+            (_a = resizeListeners.get(container)) === null || _a === void 0 || _a();
+            window.removeEventListener("resize", scrollListener);
+        }
+    };
+}
+
+},{"../../../frameloop/index.mjs":"3Dz3U","../../../frameloop/data.mjs":"gzDj4","../resize/index.mjs":"gbNqq","./info.mjs":"bucvA","./on-scroll-handler.mjs":"hrhV7","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gbNqq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resize", ()=>resize);
+var _handleElementMjs = require("./handle-element.mjs");
+var _handleWindowMjs = require("./handle-window.mjs");
+function resize(a, b) {
+    return typeof a === "function" ? (0, _handleWindowMjs.resizeWindow)(a) : (0, _handleElementMjs.resizeElement)(a, b);
+}
+
+},{"./handle-element.mjs":"aukti","./handle-window.mjs":"h6aqH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aukti":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resizeElement", ()=>resizeElement);
+var _resolveElementMjs = require("../utils/resolve-element.mjs");
+const resizeHandlers = new WeakMap();
+let observer;
+function getElementSize(target, borderBoxSize) {
+    if (borderBoxSize) {
+        const { inlineSize , blockSize  } = borderBoxSize[0];
+        return {
+            width: inlineSize,
+            height: blockSize
+        };
+    } else if (target instanceof SVGElement && "getBBox" in target) return target.getBBox();
+    else return {
+        width: target.offsetWidth,
+        height: target.offsetHeight
+    };
+}
+function notifyTarget({ target , contentRect , borderBoxSize  }) {
+    var _a;
+    (_a = resizeHandlers.get(target)) === null || _a === void 0 || _a.forEach((handler)=>{
+        handler({
+            target,
+            contentSize: contentRect,
+            get size () {
+                return getElementSize(target, borderBoxSize);
+            }
+        });
+    });
+}
+function notifyAll(entries) {
+    entries.forEach(notifyTarget);
+}
+function createResizeObserver() {
+    if (typeof ResizeObserver === "undefined") return;
+    observer = new ResizeObserver(notifyAll);
+}
+function resizeElement(target, handler) {
+    if (!observer) createResizeObserver();
+    const elements = (0, _resolveElementMjs.resolveElements)(target);
+    elements.forEach((element)=>{
+        let elementHandlers = resizeHandlers.get(element);
+        if (!elementHandlers) {
+            elementHandlers = new Set();
+            resizeHandlers.set(element, elementHandlers);
+        }
+        elementHandlers.add(handler);
+        observer === null || observer === void 0 || observer.observe(element);
+    });
+    return ()=>{
+        elements.forEach((element)=>{
+            const elementHandlers = resizeHandlers.get(element);
+            elementHandlers === null || elementHandlers === void 0 || elementHandlers.delete(handler);
+            if (!(elementHandlers === null || elementHandlers === void 0 ? void 0 : elementHandlers.size)) observer === null || observer === void 0 || observer.unobserve(element);
+        });
+    };
+}
+
+},{"../utils/resolve-element.mjs":"9MT4j","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9MT4j":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resolveElements", ()=>resolveElements);
+var _errorsMjs = require("../../../utils/errors.mjs");
+function resolveElements(elements, scope, selectorCache) {
+    var _a;
+    if (typeof elements === "string") {
+        let root = document;
+        if (scope) {
+            (0, _errorsMjs.invariant)(Boolean(scope.current), "Scope provided, but no element detected.");
+            root = scope.current;
+        }
+        if (selectorCache) {
+            (_a = selectorCache[elements]) !== null && _a !== void 0 ? _a : selectorCache[elements] = root.querySelectorAll(elements);
+            elements = selectorCache[elements];
+        } else elements = root.querySelectorAll(elements);
+    } else if (elements instanceof Element) elements = [
+        elements
+    ];
+    /**
+     * Return an empty array
+     */ return Array.from(elements || []);
+}
+
+},{"../../../utils/errors.mjs":"drRZ6","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"h6aqH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resizeWindow", ()=>resizeWindow);
+const windowCallbacks = new Set();
+let windowResizeHandler;
+function createWindowResizeHandler() {
+    windowResizeHandler = ()=>{
+        const size = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+        const info = {
+            target: window,
+            size,
+            contentSize: size
+        };
+        windowCallbacks.forEach((callback)=>callback(info));
+    };
+    window.addEventListener("resize", windowResizeHandler);
+}
+function resizeWindow(callback) {
+    windowCallbacks.add(callback);
+    if (!windowResizeHandler) createWindowResizeHandler();
+    return ()=>{
+        windowCallbacks.delete(callback);
+        if (!windowCallbacks.size && windowResizeHandler) windowResizeHandler = undefined;
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bucvA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createScrollInfo", ()=>createScrollInfo);
+parcelHelpers.export(exports, "updateScrollInfo", ()=>updateScrollInfo);
+var _progressMjs = require("../../../utils/progress.mjs");
+var _velocityPerSecondMjs = require("../../../utils/velocity-per-second.mjs");
+/**
+ * A time in milliseconds, beyond which we consider the scroll velocity to be 0.
+ */ const maxElapsed = 50;
+const createAxisInfo = ()=>({
+        current: 0,
+        offset: [],
+        progress: 0,
+        scrollLength: 0,
+        targetOffset: 0,
+        targetLength: 0,
+        containerLength: 0,
+        velocity: 0
+    });
+const createScrollInfo = ()=>({
+        time: 0,
+        x: createAxisInfo(),
+        y: createAxisInfo()
+    });
+const keys = {
+    x: {
+        length: "Width",
+        position: "Left"
+    },
+    y: {
+        length: "Height",
+        position: "Top"
+    }
+};
+function updateAxisInfo(element, axisName, info, time) {
+    const axis = info[axisName];
+    const { length , position  } = keys[axisName];
+    const prev = axis.current;
+    const prevTime = info.time;
+    axis.current = element["scroll" + position];
+    axis.scrollLength = element["scroll" + length] - element["client" + length];
+    axis.offset.length = 0;
+    axis.offset[0] = 0;
+    axis.offset[1] = axis.scrollLength;
+    axis.progress = (0, _progressMjs.progress)(0, axis.scrollLength, axis.current);
+    const elapsed = time - prevTime;
+    axis.velocity = elapsed > maxElapsed ? 0 : (0, _velocityPerSecondMjs.velocityPerSecond)(axis.current - prev, elapsed);
+}
+function updateScrollInfo(element, info, time) {
+    updateAxisInfo(element, "x", info, time);
+    updateAxisInfo(element, "y", info, time);
+    info.time = time;
+}
+
+},{"../../../utils/progress.mjs":"3vvIn","../../../utils/velocity-per-second.mjs":"1eGg6","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"hrhV7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createOnScrollHandler", ()=>createOnScrollHandler);
+var _infoMjs = require("./info.mjs");
+var _indexMjs = require("./offsets/index.mjs");
+function measure(container, target = container, info) {
+    /**
+     * Find inset of target within scrollable container
+     */ info.x.targetOffset = 0;
+    info.y.targetOffset = 0;
+    if (target !== container) {
+        let node = target;
+        while(node && node !== container){
+            info.x.targetOffset += node.offsetLeft;
+            info.y.targetOffset += node.offsetTop;
+            node = node.offsetParent;
+        }
+    }
+    info.x.targetLength = target === container ? target.scrollWidth : target.clientWidth;
+    info.y.targetLength = target === container ? target.scrollHeight : target.clientHeight;
+    info.x.containerLength = container.clientWidth;
+    info.y.containerLength = container.clientHeight;
+}
+function createOnScrollHandler(element, onScroll, info, options = {}) {
+    return {
+        measure: ()=>measure(element, options.target, info),
+        update: (time)=>{
+            (0, _infoMjs.updateScrollInfo)(element, info, time);
+            if (options.offset || options.target) (0, _indexMjs.resolveOffsets)(element, info, options);
+        },
+        notify: ()=>onScroll(info)
+    };
+}
+
+},{"./info.mjs":"bucvA","./offsets/index.mjs":"3Feto","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3Feto":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resolveOffsets", ()=>resolveOffsets);
+var _insetMjs = require("./inset.mjs");
+var _presetsMjs = require("./presets.mjs");
+var _offsetMjs = require("./offset.mjs");
+var _interpolateMjs = require("../../../../utils/interpolate.mjs");
+var _defaultMjs = require("../../../../utils/offsets/default.mjs");
+const point = {
+    x: 0,
+    y: 0
+};
+function resolveOffsets(container, info, options) {
+    let { offset: offsetDefinition = (0, _presetsMjs.ScrollOffset).All  } = options;
+    const { target =container , axis ="y"  } = options;
+    const lengthLabel = axis === "y" ? "height" : "width";
+    const inset = target !== container ? (0, _insetMjs.calcInset)(target, container) : point;
+    /**
+     * Measure the target and container. If they're the same thing then we
+     * use the container's scrollWidth/Height as the target, from there
+     * all other calculations can remain the same.
+     */ const targetSize = target === container ? {
+        width: container.scrollWidth,
+        height: container.scrollHeight
+    } : {
+        width: target.clientWidth,
+        height: target.clientHeight
+    };
+    const containerSize = {
+        width: container.clientWidth,
+        height: container.clientHeight
+    };
+    /**
+     * Reset the length of the resolved offset array rather than creating a new one.
+     * TODO: More reusable data structures for targetSize/containerSize would also be good.
+     */ info[axis].offset.length = 0;
+    /**
+     * Populate the offset array by resolving the user's offset definition into
+     * a list of pixel scroll offets.
+     */ let hasChanged = !info[axis].interpolate;
+    const numOffsets = offsetDefinition.length;
+    for(let i = 0; i < numOffsets; i++){
+        const offset = (0, _offsetMjs.resolveOffset)(offsetDefinition[i], containerSize[lengthLabel], targetSize[lengthLabel], inset[axis]);
+        if (!hasChanged && offset !== info[axis].interpolatorOffsets[i]) hasChanged = true;
+        info[axis].offset[i] = offset;
+    }
+    /**
+     * If the pixel scroll offsets have changed, create a new interpolator function
+     * to map scroll value into a progress.
+     */ if (hasChanged) {
+        info[axis].interpolate = (0, _interpolateMjs.interpolate)(info[axis].offset, (0, _defaultMjs.defaultOffset)(offsetDefinition));
+        info[axis].interpolatorOffsets = [
+            ...info[axis].offset
+        ];
+    }
+    info[axis].progress = info[axis].interpolate(info[axis].current);
+}
+
+},{"./inset.mjs":"cxHkE","./presets.mjs":"dj3i3","./offset.mjs":"aSFe8","../../../../utils/interpolate.mjs":"d7x9H","../../../../utils/offsets/default.mjs":"7Njqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"cxHkE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcInset", ()=>calcInset);
+function calcInset(element, container) {
+    let inset = {
+        x: 0,
+        y: 0
+    };
+    let current = element;
+    while(current && current !== container){
+        if (current instanceof HTMLElement) {
+            inset.x += current.offsetLeft;
+            inset.y += current.offsetTop;
+            current = current.offsetParent;
+        } else if (current instanceof SVGGraphicsElement && "getBBox" in current) {
+            const { top , left  } = current.getBBox();
+            inset.x += left;
+            inset.y += top;
+            /**
+             * Assign the next parent element as the <svg /> tag.
+             */ while(current && current.tagName !== "svg")current = current.parentNode;
+        }
+    }
+    return inset;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dj3i3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ScrollOffset", ()=>ScrollOffset);
+const ScrollOffset = {
+    Enter: [
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            1
+        ]
+    ],
+    Exit: [
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            0
+        ]
+    ],
+    Any: [
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ]
+    ],
+    All: [
+        [
+            0,
+            0
+        ],
+        [
+            1,
+            1
+        ]
+    ]
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aSFe8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "resolveOffset", ()=>resolveOffset);
+var _edgeMjs = require("./edge.mjs");
+const defaultOffset = [
+    0,
+    0
+];
+function resolveOffset(offset, containerLength, targetLength, targetInset) {
+    let offsetDefinition = Array.isArray(offset) ? offset : defaultOffset;
+    let targetPoint = 0;
+    let containerPoint = 0;
+    if (typeof offset === "number") /**
+         * If we're provided offset: [0, 0.5, 1] then each number x should become
+         * [x, x], so we default to the behaviour of mapping 0 => 0 of both target
+         * and container etc.
+         */ offsetDefinition = [
+        offset,
+        offset
+    ];
+    else if (typeof offset === "string") {
+        offset = offset.trim();
+        if (offset.includes(" ")) offsetDefinition = offset.split(" ");
+        else /**
+             * If we're provided a definition like "100px" then we want to apply
+             * that only to the top of the target point, leaving the container at 0.
+             * Whereas a named offset like "end" should be applied to both.
+             */ offsetDefinition = [
+            offset,
+            (0, _edgeMjs.namedEdges)[offset] ? offset : `0`
+        ];
+    }
+    targetPoint = (0, _edgeMjs.resolveEdge)(offsetDefinition[0], targetLength, targetInset);
+    containerPoint = (0, _edgeMjs.resolveEdge)(offsetDefinition[1], containerLength);
+    return targetPoint - containerPoint;
+}
+
+},{"./edge.mjs":"1TwYO","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1TwYO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "namedEdges", ()=>namedEdges);
+parcelHelpers.export(exports, "resolveEdge", ()=>resolveEdge);
+const namedEdges = {
+    start: 0,
+    center: 0.5,
+    end: 1
+};
+function resolveEdge(edge, length, inset = 0) {
+    let delta = 0;
+    /**
+     * If we have this edge defined as a preset, replace the definition
+     * with the numerical value.
+     */ if (namedEdges[edge] !== undefined) edge = namedEdges[edge];
+    /**
+     * Handle unit values
+     */ if (typeof edge === "string") {
+        const asNumber = parseFloat(edge);
+        if (edge.endsWith("px")) delta = asNumber;
+        else if (edge.endsWith("%")) edge = asNumber / 100;
+        else if (edge.endsWith("vw")) delta = asNumber / 100 * document.documentElement.clientWidth;
+        else if (edge.endsWith("vh")) delta = asNumber / 100 * document.documentElement.clientHeight;
+        else edge = asNumber;
+    }
+    /**
+     * If the edge is defined as a number, handle as a progress value.
+     */ if (typeof edge === "number") delta = length * edge;
+    return inset + delta;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"aZTUZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useElementScroll", ()=>useElementScroll);
+var _warnOnceMjs = require("../../utils/warn-once.mjs");
+var _useScrollMjs = require("../use-scroll.mjs");
+/**
+ * @deprecated useElementScroll is deprecated. Convert to useScroll({ container: ref })
+ */ function useElementScroll(ref) {
+    (0, _warnOnceMjs.warnOnce)(false, "useElementScroll is deprecated. Convert to useScroll({ container: ref }).");
+    return (0, _useScrollMjs.useScroll)({
+        container: ref
+    });
+}
+
+},{"../../utils/warn-once.mjs":"JIiQV","../use-scroll.mjs":"8vYLG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"dr5jF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useViewportScroll", ()=>useViewportScroll);
+var _warnOnceMjs = require("../../utils/warn-once.mjs");
+var _useScrollMjs = require("../use-scroll.mjs");
+/**
+ * @deprecated useViewportScroll is deprecated. Convert to useScroll()
+ */ function useViewportScroll() {
+    (0, _warnOnceMjs.warnOnce)(false, "useViewportScroll is deprecated. Convert to useScroll().");
+    return (0, _useScrollMjs.useScroll)();
+}
+
+},{"../../utils/warn-once.mjs":"JIiQV","../use-scroll.mjs":"8vYLG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"o2prt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useTime", ()=>useTime);
+var _useAnimationFrameMjs = require("../utils/use-animation-frame.mjs");
+var _useMotionValueMjs = require("./use-motion-value.mjs");
+function useTime() {
+    const time = (0, _useMotionValueMjs.useMotionValue)(0);
+    (0, _useAnimationFrameMjs.useAnimationFrame)((t)=>time.set(t));
+    return time;
+}
+
+},{"../utils/use-animation-frame.mjs":"jPG8M","./use-motion-value.mjs":"rszYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"jPG8M":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAnimationFrame", ()=>useAnimationFrame);
+var _indexMjs = require("../frameloop/index.mjs");
+var _react = require("react");
+var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
+function useAnimationFrame(callback) {
+    const initialTimestamp = (0, _react.useRef)(0);
+    const { isStatic  } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
+    (0, _react.useEffect)(()=>{
+        if (isStatic) return;
+        const provideTimeSinceStart = ({ timestamp , delta  })=>{
+            if (!initialTimestamp.current) initialTimestamp.current = timestamp;
+            callback(timestamp - initialTimestamp.current, delta);
+        };
+        (0, _indexMjs.frame).update(provideTimeSinceStart, true);
+        return ()=>(0, _indexMjs.cancelFrame)(provideTimeSinceStart);
+    }, [
+        callback
+    ]);
+}
+
+},{"../frameloop/index.mjs":"3Dz3U","react":"21dqq","../context/MotionConfigContext.mjs":"8MLRw","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"9VGCG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WillChangeMotionValue", ()=>WillChangeMotionValue);
+parcelHelpers.export(exports, "useWillChange", ()=>useWillChange);
+var _isCssVariableMjs = require("../../render/dom/utils/is-css-variable.mjs");
+var _transformMjs = require("../../render/html/utils/transform.mjs");
+var _arrayMjs = require("../../utils/array.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _indexMjs = require("../index.mjs");
+var _camelToDashMjs = require("../../render/dom/utils/camel-to-dash.mjs");
+class WillChangeMotionValue extends (0, _indexMjs.MotionValue) {
+    constructor(){
+        super(...arguments);
+        this.members = [];
+        this.transforms = new Set();
+    }
+    add(name) {
+        let memberName;
+        if ((0, _transformMjs.transformProps).has(name)) {
+            this.transforms.add(name);
+            memberName = "transform";
+        } else if (!name.startsWith("origin") && !(0, _isCssVariableMjs.isCSSVariableName)(name) && name !== "willChange") memberName = (0, _camelToDashMjs.camelToDash)(name);
+        if (memberName) {
+            (0, _arrayMjs.addUniqueItem)(this.members, memberName);
+            this.update();
+        }
+    }
+    remove(name) {
+        if ((0, _transformMjs.transformProps).has(name)) {
+            this.transforms.delete(name);
+            if (!this.transforms.size) (0, _arrayMjs.removeItem)(this.members, "transform");
+        } else (0, _arrayMjs.removeItem)(this.members, (0, _camelToDashMjs.camelToDash)(name));
+        this.update();
+    }
+    update() {
+        this.set(this.members.length ? this.members.join(", ") : "auto");
+    }
+}
+function useWillChange() {
+    return (0, _useConstantMjs.useConstant)(()=>new WillChangeMotionValue("auto"));
+}
+
+},{"../../render/dom/utils/is-css-variable.mjs":"8qZz5","../../render/html/utils/transform.mjs":"iSy8E","../../utils/array.mjs":"fpJYa","../../utils/use-constant.mjs":"gAAJI","../index.mjs":"he8bY","../../render/dom/utils/camel-to-dash.mjs":"eUOx7","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"8WCy4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useReducedMotion", ()=>useReducedMotion);
+var _react = require("react");
+var _indexMjs = require("./index.mjs");
+var _warnOnceMjs = require("../warn-once.mjs");
+var _stateMjs = require("./state.mjs");
+/**
+ * A hook that returns `true` if we should be using reduced motion based on the current device's Reduced Motion setting.
+ *
+ * This can be used to implement changes to your UI based on Reduced Motion. For instance, replacing motion-sickness inducing
+ * `x`/`y` animations with `opacity`, disabling the autoplay of background videos, or turning off parallax motion.
+ *
+ * It will actively respond to changes and re-render your components with the latest setting.
+ *
+ * ```jsx
+ * export function Sidebar({ isOpen }) {
+ *   const shouldReduceMotion = useReducedMotion()
+ *   const closedX = shouldReduceMotion ? 0 : "-100%"
+ *
+ *   return (
+ *     <motion.div animate={{
+ *       opacity: isOpen ? 1 : 0,
+ *       x: isOpen ? 0 : closedX
+ *     }} />
+ *   )
+ * }
+ * ```
+ *
+ * @return boolean
+ *
+ * @public
+ */ function useReducedMotion() {
+    /**
+     * Lazy initialisation of prefersReducedMotion
+     */ !(0, _stateMjs.hasReducedMotionListener).current && (0, _indexMjs.initPrefersReducedMotion)();
+    const [shouldReduceMotion] = (0, _react.useState)((0, _stateMjs.prefersReducedMotion).current);
+    (0, _warnOnceMjs.warnOnce)(shouldReduceMotion !== true, "You have Reduced Motion enabled on your device. Animations may not appear as expected.");
+    /**
+     * TODO See if people miss automatically updating shouldReduceMotion setting
+     */ return shouldReduceMotion;
+}
+
+},{"react":"21dqq","./index.mjs":"6cOfX","../warn-once.mjs":"JIiQV","./state.mjs":"bxW6Y","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1tbj3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useReducedMotionConfig", ()=>useReducedMotionConfig);
+var _react = require("react");
+var _motionConfigContextMjs = require("../../context/MotionConfigContext.mjs");
+var _useReducedMotionMjs = require("./use-reduced-motion.mjs");
+function useReducedMotionConfig() {
+    const reducedMotionPreference = (0, _useReducedMotionMjs.useReducedMotion)();
+    const { reducedMotion  } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
+    if (reducedMotion === "never") return false;
+    else if (reducedMotion === "always") return true;
+    else return reducedMotionPreference;
+}
+
+},{"react":"21dqq","../../context/MotionConfigContext.mjs":"8MLRw","./use-reduced-motion.mjs":"8WCy4","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"b0jPR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animationControls", ()=>animationControls);
+var _errorsMjs = require("../../utils/errors.mjs");
+var _settersMjs = require("../../render/utils/setters.mjs");
+var _visualElementMjs = require("../interfaces/visual-element.mjs");
+function stopAnimation(visualElement) {
+    visualElement.values.forEach((value)=>value.stop());
+}
+/**
+ * @public
+ */ function animationControls() {
+    /**
+     * Track whether the host component has mounted.
+     */ let hasMounted = false;
+    /**
+     * A collection of linked component animation controls.
+     */ const subscribers = new Set();
+    const controls = {
+        subscribe (visualElement) {
+            subscribers.add(visualElement);
+            return ()=>void subscribers.delete(visualElement);
+        },
+        start (definition, transitionOverride) {
+            (0, _errorsMjs.invariant)(hasMounted, "controls.start() should only be called after a component has mounted. Consider calling within a useEffect hook.");
+            const animations = [];
+            subscribers.forEach((visualElement)=>{
+                animations.push((0, _visualElementMjs.animateVisualElement)(visualElement, definition, {
+                    transitionOverride
+                }));
+            });
+            return Promise.all(animations);
+        },
+        set (definition) {
+            (0, _errorsMjs.invariant)(hasMounted, "controls.set() should only be called after a component has mounted. Consider calling within a useEffect hook.");
+            return subscribers.forEach((visualElement)=>{
+                (0, _settersMjs.setValues)(visualElement, definition);
+            });
+        },
+        stop () {
+            subscribers.forEach((visualElement)=>{
+                stopAnimation(visualElement);
+            });
+        },
+        mount () {
+            hasMounted = true;
+            return ()=>{
+                hasMounted = false;
+                controls.stop();
+            };
+        }
+    };
+    return controls;
+}
+
+},{"../../utils/errors.mjs":"drRZ6","../../render/utils/setters.mjs":"5AEB8","../interfaces/visual-element.mjs":"e0aFv","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"bAyXK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAnimate", ()=>useAnimate);
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _useUnmountEffectMjs = require("../../utils/use-unmount-effect.mjs");
+var _animateMjs = require("../animate.mjs");
+function useAnimate() {
+    const scope = (0, _useConstantMjs.useConstant)(()=>({
+            current: null,
+            animations: []
+        }));
+    const animate = (0, _useConstantMjs.useConstant)(()=>(0, _animateMjs.createScopedAnimate)(scope));
+    (0, _useUnmountEffectMjs.useUnmountEffect)(()=>{
+        scope.animations.forEach((animation)=>animation.stop());
+    });
+    return [
+        scope,
+        animate
+    ];
+}
+
+},{"../../utils/use-constant.mjs":"gAAJI","../../utils/use-unmount-effect.mjs":"gNrSX","../animate.mjs":"kfwt5","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"kfwt5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animate", ()=>animate);
+parcelHelpers.export(exports, "createScopedAnimate", ()=>createScopedAnimate);
+var _resolveElementMjs = require("../render/dom/utils/resolve-element.mjs");
+var _storeMjs = require("../render/store.mjs");
+var _errorsMjs = require("../utils/errors.mjs");
+var _groupPlaybackControlsMjs = require("./GroupPlaybackControls.mjs");
+var _isDomKeyframesMjs = require("./utils/is-dom-keyframes.mjs");
+var _visualElementTargetMjs = require("./interfaces/visual-element-target.mjs");
+var _createVisualElementMjs = require("./utils/create-visual-element.mjs");
+var _singleValueMjs = require("./interfaces/single-value.mjs");
+var _createMjs = require("./sequence/create.mjs");
+var _isMotionValueMjs = require("../value/utils/is-motion-value.mjs");
+function animateElements(elementOrSelector, keyframes, options, scope) {
+    const elements = (0, _resolveElementMjs.resolveElements)(elementOrSelector, scope);
+    const numElements = elements.length;
+    (0, _errorsMjs.invariant)(Boolean(numElements), "No valid element provided.");
+    const animations = [];
+    for(let i = 0; i < numElements; i++){
+        const element = elements[i];
+        /**
+         * Check each element for an associated VisualElement. If none exists,
+         * we need to create one.
+         */ if (!(0, _storeMjs.visualElementStore).has(element)) /**
+             * TODO: We only need render-specific parts of the VisualElement.
+             * With some additional work the size of the animate() function
+             * could be reduced significantly.
+             */ (0, _createVisualElementMjs.createVisualElement)(element);
+        const visualElement = (0, _storeMjs.visualElementStore).get(element);
+        const transition = {
+            ...options
+        };
+        /**
+         * Resolve stagger function if provided.
+         */ if (typeof transition.delay === "function") transition.delay = transition.delay(i, numElements);
+        animations.push(...(0, _visualElementTargetMjs.animateTarget)(visualElement, {
+            ...keyframes,
+            transition
+        }, {}));
+    }
+    return new (0, _groupPlaybackControlsMjs.GroupPlaybackControls)(animations);
+}
+const isSequence = (value)=>Array.isArray(value) && Array.isArray(value[0]);
+function animateSequence(sequence, options, scope) {
+    const animations = [];
+    const animationDefinitions = (0, _createMjs.createAnimationsFromSequence)(sequence, options, scope);
+    animationDefinitions.forEach(({ keyframes , transition  }, subject)=>{
+        let animation;
+        if ((0, _isMotionValueMjs.isMotionValue)(subject)) animation = (0, _singleValueMjs.animateSingleValue)(subject, keyframes.default, transition.default);
+        else animation = animateElements(subject, keyframes, transition);
+        animations.push(animation);
+    });
+    return new (0, _groupPlaybackControlsMjs.GroupPlaybackControls)(animations);
+}
+const createScopedAnimate = (scope)=>{
+    /**
+     * Implementation
+     */ function scopedAnimate(valueOrElementOrSequence, keyframes, options) {
+        let animation;
+        if (isSequence(valueOrElementOrSequence)) animation = animateSequence(valueOrElementOrSequence, keyframes, scope);
+        else if ((0, _isDomKeyframesMjs.isDOMKeyframes)(keyframes)) animation = animateElements(valueOrElementOrSequence, keyframes, options, scope);
+        else animation = (0, _singleValueMjs.animateSingleValue)(valueOrElementOrSequence, keyframes, options);
+        if (scope) scope.animations.push(animation);
+        return animation;
+    }
+    return scopedAnimate;
+};
+const animate = createScopedAnimate();
+
+},{"../render/dom/utils/resolve-element.mjs":"9MT4j","../render/store.mjs":"aGZeB","../utils/errors.mjs":"drRZ6","./GroupPlaybackControls.mjs":"fGvAY","./utils/is-dom-keyframes.mjs":"k3wr8","./interfaces/visual-element-target.mjs":"6SL9E","./utils/create-visual-element.mjs":"3YhEX","./interfaces/single-value.mjs":"BcqjY","./sequence/create.mjs":"6B8iV","../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fGvAY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GroupPlaybackControls", ()=>GroupPlaybackControls);
+class GroupPlaybackControls {
+    constructor(animations){
+        this.animations = animations.filter(Boolean);
+    }
+    then(onResolve, onReject) {
+        return Promise.all(this.animations).then(onResolve).catch(onReject);
+    }
+    /**
+     * TODO: Filter out cancelled or stopped animations before returning
+     */ getAll(propName) {
+        return this.animations[0][propName];
+    }
+    setAll(propName, newValue) {
+        for(let i = 0; i < this.animations.length; i++)this.animations[i][propName] = newValue;
+    }
+    get time() {
+        return this.getAll("time");
+    }
+    set time(time) {
+        this.setAll("time", time);
+    }
+    get speed() {
+        return this.getAll("speed");
+    }
+    set speed(speed) {
+        this.setAll("speed", speed);
+    }
+    get duration() {
+        let max = 0;
+        for(let i = 0; i < this.animations.length; i++)max = Math.max(max, this.animations[i].duration);
+        return max;
+    }
+    runAll(methodName) {
+        this.animations.forEach((controls)=>controls[methodName]());
+    }
+    play() {
+        this.runAll("play");
+    }
+    pause() {
+        this.runAll("pause");
+    }
+    stop() {
+        this.runAll("stop");
+    }
+    cancel() {
+        this.runAll("cancel");
+    }
+    complete() {
+        this.runAll("complete");
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"k3wr8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isDOMKeyframes", ()=>isDOMKeyframes);
+function isDOMKeyframes(keyframes) {
+    return typeof keyframes === "object" && !Array.isArray(keyframes);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"3YhEX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createVisualElement", ()=>createVisualElement);
+var _isSvgElementMjs = require("../../render/dom/utils/is-svg-element.mjs");
+var _svgvisualElementMjs = require("../../render/svg/SVGVisualElement.mjs");
+var _htmlvisualElementMjs = require("../../render/html/HTMLVisualElement.mjs");
+var _storeMjs = require("../../render/store.mjs");
+function createVisualElement(element) {
+    const options = {
+        presenceContext: null,
+        props: {},
+        visualState: {
+            renderState: {
+                transform: {},
+                transformOrigin: {},
+                style: {},
+                vars: {},
+                attrs: {}
+            },
+            latestValues: {}
+        }
+    };
+    const node = (0, _isSvgElementMjs.isSVGElement)(element) ? new (0, _svgvisualElementMjs.SVGVisualElement)(options, {
+        enableHardwareAcceleration: false
+    }) : new (0, _htmlvisualElementMjs.HTMLVisualElement)(options, {
+        enableHardwareAcceleration: true
+    });
+    node.mount(element);
+    (0, _storeMjs.visualElementStore).set(element, node);
+}
+
+},{"../../render/dom/utils/is-svg-element.mjs":"4r61T","../../render/svg/SVGVisualElement.mjs":"7bI6y","../../render/html/HTMLVisualElement.mjs":"3a21f","../../render/store.mjs":"aGZeB","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6B8iV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createAnimationsFromSequence", ()=>createAnimationsFromSequence);
+parcelHelpers.export(exports, "getValueTransition", ()=>getValueTransition);
+var _createGeneratorEasingMjs = require("../../easing/utils/create-generator-easing.mjs");
+var _resolveElementMjs = require("../../render/dom/utils/resolve-element.mjs");
+var _defaultMjs = require("../../utils/offsets/default.mjs");
+var _fillMjs = require("../../utils/offsets/fill.mjs");
+var _progressMjs = require("../../utils/progress.mjs");
+var _timeConversionMjs = require("../../utils/time-conversion.mjs");
+var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
+var _calcTimeMjs = require("./utils/calc-time.mjs");
+var _editMjs = require("./utils/edit.mjs");
+var _sortMjs = require("./utils/sort.mjs");
+const defaultSegmentEasing = "easeInOut";
+function createAnimationsFromSequence(sequence, { defaultTransition ={} , ...sequenceTransition } = {}, scope) {
+    const defaultDuration = defaultTransition.duration || 0.3;
+    const animationDefinitions = new Map();
+    const sequences = new Map();
+    const elementCache = {};
+    const timeLabels = new Map();
+    let prevTime = 0;
+    let currentTime = 0;
+    let totalDuration = 0;
+    /**
+     * Build the timeline by mapping over the sequence array and converting
+     * the definitions into keyframes and offsets with absolute time values.
+     * These will later get converted into relative offsets in a second pass.
+     */ for(let i = 0; i < sequence.length; i++){
+        const segment = sequence[i];
+        /**
+         * If this is a timeline label, mark it and skip the rest of this iteration.
+         */ if (typeof segment === "string") {
+            timeLabels.set(segment, currentTime);
+            continue;
+        } else if (!Array.isArray(segment)) {
+            timeLabels.set(segment.name, (0, _calcTimeMjs.calcNextTime)(currentTime, segment.at, prevTime, timeLabels));
+            continue;
+        }
+        let [subject, keyframes, transition = {}] = segment;
+        /**
+         * If a relative or absolute time value has been specified we need to resolve
+         * it in relation to the currentTime.
+         */ if (transition.at !== undefined) currentTime = (0, _calcTimeMjs.calcNextTime)(currentTime, transition.at, prevTime, timeLabels);
+        /**
+         * Keep track of the maximum duration in this definition. This will be
+         * applied to currentTime once the definition has been parsed.
+         */ let maxDuration = 0;
+        const resolveValueSequence = (valueKeyframes, valueTransition, valueSequence, elementIndex = 0, numElements = 0)=>{
+            const valueKeyframesAsList = keyframesAsList(valueKeyframes);
+            const { delay =0 , times =(0, _defaultMjs.defaultOffset)(valueKeyframesAsList) , type ="keyframes" , ...remainingTransition } = valueTransition;
+            let { ease =defaultTransition.ease || "easeOut" , duration  } = valueTransition;
+            /**
+             * Resolve stagger() if defined.
+             */ const calculatedDelay = typeof delay === "function" ? delay(elementIndex, numElements) : delay;
+            /**
+             * If this animation should and can use a spring, generate a spring easing function.
+             */ const numKeyframes = valueKeyframesAsList.length;
+            if (numKeyframes <= 2 && type === "spring") {
+                /**
+                 * As we're creating an easing function from a spring,
+                 * ideally we want to generate it using the real distance
+                 * between the two keyframes. However this isn't always
+                 * possible - in these situations we use 0-100.
+                 */ let absoluteDelta = 100;
+                if (numKeyframes === 2 && isNumberKeyframesArray(valueKeyframesAsList)) {
+                    const delta = valueKeyframesAsList[1] - valueKeyframesAsList[0];
+                    absoluteDelta = Math.abs(delta);
+                }
+                const springTransition = {
+                    ...remainingTransition
+                };
+                if (duration !== undefined) springTransition.duration = (0, _timeConversionMjs.secondsToMilliseconds)(duration);
+                const springEasing = (0, _createGeneratorEasingMjs.createGeneratorEasing)(springTransition, absoluteDelta);
+                ease = springEasing.ease;
+                duration = springEasing.duration;
+            }
+            duration !== null && duration !== void 0 ? duration : duration = defaultDuration;
+            const startTime = currentTime + calculatedDelay;
+            const targetTime = startTime + duration;
+            /**
+             * If there's only one time offset of 0, fill in a second with length 1
+             */ if (times.length === 1 && times[0] === 0) times[1] = 1;
+            /**
+             * Fill out if offset if fewer offsets than keyframes
+             */ const remainder = times.length - valueKeyframesAsList.length;
+            remainder > 0 && (0, _fillMjs.fillOffset)(times, remainder);
+            /**
+             * If only one value has been set, ie [1], push a null to the start of
+             * the keyframe array. This will let us mark a keyframe at this point
+             * that will later be hydrated with the previous value.
+             */ valueKeyframesAsList.length === 1 && valueKeyframesAsList.unshift(null);
+            /**
+             * Add keyframes, mapping offsets to absolute time.
+             */ (0, _editMjs.addKeyframes)(valueSequence, valueKeyframesAsList, ease, times, startTime, targetTime);
+            maxDuration = Math.max(calculatedDelay + duration, maxDuration);
+            totalDuration = Math.max(targetTime, totalDuration);
+        };
+        if ((0, _isMotionValueMjs.isMotionValue)(subject)) {
+            const subjectSequence = getSubjectSequence(subject, sequences);
+            resolveValueSequence(keyframes, transition, getValueSequence("default", subjectSequence));
+        } else {
+            /**
+             * Find all the elements specified in the definition and parse value
+             * keyframes from their timeline definitions.
+             */ const elements = (0, _resolveElementMjs.resolveElements)(subject, scope, elementCache);
+            const numElements = elements.length;
+            /**
+             * For every element in this segment, process the defined values.
+             */ for(let elementIndex = 0; elementIndex < numElements; elementIndex++){
+                keyframes;
+                transition;
+                const element = elements[elementIndex];
+                const subjectSequence = getSubjectSequence(element, sequences);
+                for(const key in keyframes)resolveValueSequence(keyframes[key], getValueTransition(transition, key), getValueSequence(key, subjectSequence), elementIndex, numElements);
+            }
+            prevTime = currentTime;
+            currentTime += maxDuration;
+        }
+    }
+    /**
+     * For every element and value combination create a new animation.
+     */ sequences.forEach((valueSequences, element)=>{
+        for(const key in valueSequences){
+            const valueSequence = valueSequences[key];
+            /**
+             * Arrange all the keyframes in ascending time order.
+             */ valueSequence.sort((0, _sortMjs.compareByTime));
+            const keyframes = [];
+            const valueOffset = [];
+            const valueEasing = [];
+            /**
+             * For each keyframe, translate absolute times into
+             * relative offsets based on the total duration of the timeline.
+             */ for(let i = 0; i < valueSequence.length; i++){
+                const { at , value , easing  } = valueSequence[i];
+                keyframes.push(value);
+                valueOffset.push((0, _progressMjs.progress)(0, totalDuration, at));
+                valueEasing.push(easing || "easeOut");
+            }
+            /**
+             * If the first keyframe doesn't land on offset: 0
+             * provide one by duplicating the initial keyframe. This ensures
+             * it snaps to the first keyframe when the animation starts.
+             */ if (valueOffset[0] !== 0) {
+                valueOffset.unshift(0);
+                keyframes.unshift(keyframes[0]);
+                valueEasing.unshift(defaultSegmentEasing);
+            }
+            /**
+             * If the last keyframe doesn't land on offset: 1
+             * provide one with a null wildcard value. This will ensure it
+             * stays static until the end of the animation.
+             */ if (valueOffset[valueOffset.length - 1] !== 1) {
+                valueOffset.push(1);
+                keyframes.push(null);
+            }
+            if (!animationDefinitions.has(element)) animationDefinitions.set(element, {
+                keyframes: {},
+                transition: {}
+            });
+            const definition = animationDefinitions.get(element);
+            definition.keyframes[key] = keyframes;
+            definition.transition[key] = {
+                ...defaultTransition,
+                duration: totalDuration,
+                ease: valueEasing,
+                times: valueOffset,
+                ...sequenceTransition
+            };
+        }
+    });
+    return animationDefinitions;
+}
+function getSubjectSequence(subject, sequences) {
+    !sequences.has(subject) && sequences.set(subject, {});
+    return sequences.get(subject);
+}
+function getValueSequence(name, sequences) {
+    if (!sequences[name]) sequences[name] = [];
+    return sequences[name];
+}
+function keyframesAsList(keyframes) {
+    return Array.isArray(keyframes) ? keyframes : [
+        keyframes
+    ];
+}
+function getValueTransition(transition, key) {
+    return transition[key] ? {
+        ...transition,
+        ...transition[key]
+    } : {
+        ...transition
+    };
+}
+const isNumber = (keyframe)=>typeof keyframe === "number";
+const isNumberKeyframesArray = (keyframes)=>keyframes.every(isNumber);
+
+},{"../../easing/utils/create-generator-easing.mjs":"1JEgJ","../../render/dom/utils/resolve-element.mjs":"9MT4j","../../utils/offsets/default.mjs":"7Njqq","../../utils/offsets/fill.mjs":"i5hk9","../../utils/progress.mjs":"3vvIn","../../utils/time-conversion.mjs":"gdr8V","../../value/utils/is-motion-value.mjs":"94AYa","./utils/calc-time.mjs":"77G0z","./utils/edit.mjs":"ii4Xv","./utils/sort.mjs":"25DYN","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"1JEgJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createGeneratorEasing", ()=>createGeneratorEasing);
+var _indexMjs = require("../../animation/generators/spring/index.mjs");
+var _calcDurationMjs = require("../../animation/generators/utils/calc-duration.mjs");
+var _timeConversionMjs = require("../../utils/time-conversion.mjs");
+/**
+ * Create a progress => progress easing function from a generator.
+ */ function createGeneratorEasing(options, scale = 100) {
+    const generator = (0, _indexMjs.spring)({
+        keyframes: [
+            0,
+            scale
+        ],
+        ...options
+    });
+    const duration = Math.min((0, _calcDurationMjs.calcGeneratorDuration)(generator), (0, _calcDurationMjs.maxGeneratorDuration));
+    return {
+        type: "keyframes",
+        ease: (progress)=>generator.next(duration * progress).value / scale,
+        duration: (0, _timeConversionMjs.millisecondsToSeconds)(duration)
+    };
+}
+
+},{"../../animation/generators/spring/index.mjs":"aNeOI","../../animation/generators/utils/calc-duration.mjs":"iTe1T","../../utils/time-conversion.mjs":"gdr8V","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"77G0z":[function(require,module,exports) {
+/**
+ * Given a absolute or relative time definition and current/prev time state of the sequence,
+ * calculate an absolute time for the next keyframes.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calcNextTime", ()=>calcNextTime);
+function calcNextTime(current, next, prev, labels) {
+    var _a;
+    if (typeof next === "number") return next;
+    else if (next.startsWith("-") || next.startsWith("+")) return Math.max(0, current + parseFloat(next));
+    else if (next === "<") return prev;
+    else return (_a = labels.get(next)) !== null && _a !== void 0 ? _a : current;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"ii4Xv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addKeyframes", ()=>addKeyframes);
+parcelHelpers.export(exports, "eraseKeyframes", ()=>eraseKeyframes);
+var _getEasingForSegmentMjs = require("../../../easing/utils/get-easing-for-segment.mjs");
+var _arrayMjs = require("../../../utils/array.mjs");
+var _mixMjs = require("../../../utils/mix.mjs");
+function eraseKeyframes(sequence, startTime, endTime) {
+    for(let i = 0; i < sequence.length; i++){
+        const keyframe = sequence[i];
+        if (keyframe.at > startTime && keyframe.at < endTime) {
+            (0, _arrayMjs.removeItem)(sequence, keyframe);
+            // If we remove this item we have to push the pointer back one
+            i--;
+        }
+    }
+}
+function addKeyframes(sequence, keyframes, easing, offset, startTime, endTime) {
+    /**
+     * Erase every existing value between currentTime and targetTime,
+     * this will essentially splice this timeline into any currently
+     * defined ones.
+     */ eraseKeyframes(sequence, startTime, endTime);
+    for(let i = 0; i < keyframes.length; i++)sequence.push({
+        value: keyframes[i],
+        at: (0, _mixMjs.mix)(startTime, endTime, offset[i]),
+        easing: (0, _getEasingForSegmentMjs.getEasingForSegment)(easing, i)
+    });
+}
+
+},{"../../../easing/utils/get-easing-for-segment.mjs":"lI1qH","../../../utils/array.mjs":"fpJYa","../../../utils/mix.mjs":"jx86W","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"lI1qH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getEasingForSegment", ()=>getEasingForSegment);
+var _wrapMjs = require("../../utils/wrap.mjs");
+var _isEasingArrayMjs = require("./is-easing-array.mjs");
+function getEasingForSegment(easing, i) {
+    return (0, _isEasingArrayMjs.isEasingArray)(easing) ? easing[(0, _wrapMjs.wrap)(0, easing.length, i)] : easing;
+}
+
+},{"../../utils/wrap.mjs":"j9YxN","./is-easing-array.mjs":"i3ygY","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"j9YxN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "wrap", ()=>wrap);
+const wrap = (min, max, v)=>{
+    const rangeSize = max - min;
+    return ((v - min) % rangeSize + rangeSize) % rangeSize + min;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"25DYN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "compareByTime", ()=>compareByTime);
+function compareByTime(a, b) {
+    if (a.at === b.at) {
+        if (a.value === null) return 1;
+        if (b.value === null) return -1;
+        return 0;
+    } else return a.at - b.at;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gGFFX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAnimation", ()=>useAnimation);
+parcelHelpers.export(exports, "useAnimationControls", ()=>useAnimationControls);
+var _animationControlsMjs = require("./animation-controls.mjs");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _useIsomorphicEffectMjs = require("../../utils/use-isomorphic-effect.mjs");
+/**
+ * Creates `AnimationControls`, which can be used to manually start, stop
+ * and sequence animations on one or more components.
+ *
+ * The returned `AnimationControls` should be passed to the `animate` property
+ * of the components you want to animate.
+ *
+ * These components can then be animated with the `start` method.
+ *
+ * ```jsx
+ * import * as React from 'react'
+ * import { motion, useAnimation } from 'framer-motion'
+ *
+ * export function MyComponent(props) {
+ *    const controls = useAnimation()
+ *
+ *    controls.start({
+ *        x: 100,
+ *        transition: { duration: 0.5 },
+ *    })
+ *
+ *    return <motion.div animate={controls} />
+ * }
+ * ```
+ *
+ * @returns Animation controller with `start` and `stop` methods
+ *
+ * @public
+ */ function useAnimationControls() {
+    const controls = (0, _useConstantMjs.useConstant)((0, _animationControlsMjs.animationControls));
+    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(controls.mount, []);
+    return controls;
+}
+const useAnimation = useAnimationControls;
+
+},{"./animation-controls.mjs":"b0jPR","../../utils/use-constant.mjs":"gAAJI","../../utils/use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"04q0C":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCycle", ()=>useCycle);
+var _react = require("react");
+var _wrapMjs = require("./wrap.mjs");
+/**
+ * Cycles through a series of visual properties. Can be used to toggle between or cycle through animations. It works similar to `useState` in React. It is provided an initial array of possible states, and returns an array of two arguments.
+ *
+ * An index value can be passed to the returned `cycle` function to cycle to a specific index.
+ *
+ * ```jsx
+ * import * as React from "react"
+ * import { motion, useCycle } from "framer-motion"
+ *
+ * export const MyComponent = () => {
+ *   const [x, cycleX] = useCycle(0, 50, 100)
+ *
+ *   return (
+ *     <motion.div
+ *       animate={{ x: x }}
+ *       onTap={() => cycleX()}
+ *      />
+ *    )
+ * }
+ * ```
+ *
+ * @param items - items to cycle through
+ * @returns [currentState, cycleState]
+ *
+ * @public
+ */ function useCycle(...items) {
+    const index = (0, _react.useRef)(0);
+    const [item, setItem] = (0, _react.useState)(items[index.current]);
+    const runCycle = (0, _react.useCallback)((next)=>{
+        index.current = typeof next !== "number" ? (0, _wrapMjs.wrap)(0, items.length, index.current + 1) : next;
+        setItem(items[index.current]);
+    }, // The array will change on each call, but by putting items.length at
+    // the front of this array, we guarantee the dependency comparison will match up
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+        items.length,
+        ...items
+    ]);
+    return [
+        item,
+        runCycle
+    ];
+}
+
+},{"react":"21dqq","./wrap.mjs":"j9YxN","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"diahp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useInView", ()=>useInView);
+var _react = require("react");
+var _indexMjs = require("../render/dom/viewport/index.mjs");
+function useInView(ref, { root , margin , amount , once =false  } = {}) {
+    const [isInView, setInView] = (0, _react.useState)(false);
+    (0, _react.useEffect)(()=>{
+        if (!ref.current || once && isInView) return;
+        const onEnter = ()=>{
+            setInView(true);
+            return once ? undefined : ()=>setInView(false);
+        };
+        const options = {
+            root: root && root.current || undefined,
+            margin,
+            amount: amount === "some" ? "any" : amount
+        };
+        return (0, _indexMjs.inView)(ref.current, onEnter, options);
+    }, [
+        root,
+        ref,
+        margin,
+        once
+    ]);
+    return isInView;
+}
+
+},{"react":"21dqq","../render/dom/viewport/index.mjs":"flLUA","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"flLUA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "inView", ()=>inView);
+var _resolveElementMjs = require("../utils/resolve-element.mjs");
+const thresholds = {
+    any: 0,
+    all: 1
+};
+function inView(elementOrSelector, onStart, { root , margin: rootMargin , amount ="any"  } = {}) {
+    const elements = (0, _resolveElementMjs.resolveElements)(elementOrSelector);
+    const activeIntersections = new WeakMap();
+    const onIntersectionChange = (entries)=>{
+        entries.forEach((entry)=>{
+            const onEnd = activeIntersections.get(entry.target);
+            /**
+             * If there's no change to the intersection, we don't need to
+             * do anything here.
+             */ if (entry.isIntersecting === Boolean(onEnd)) return;
+            if (entry.isIntersecting) {
+                const newOnEnd = onStart(entry);
+                if (typeof newOnEnd === "function") activeIntersections.set(entry.target, newOnEnd);
+                else observer.unobserve(entry.target);
+            } else if (onEnd) {
+                onEnd(entry);
+                activeIntersections.delete(entry.target);
+            }
+        });
+    };
+    const observer = new IntersectionObserver(onIntersectionChange, {
+        root,
+        rootMargin,
+        threshold: typeof amount === "number" ? amount : thresholds[amount]
+    });
+    elements.forEach((element)=>observer.observe(element));
+    return ()=>observer.disconnect();
+}
+
+},{"../utils/resolve-element.mjs":"9MT4j","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4F1ee":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DragControls", ()=>DragControls);
+parcelHelpers.export(exports, "useDragControls", ()=>useDragControls);
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+/**
+ * Can manually trigger a drag gesture on one or more `drag`-enabled `motion` components.
+ *
+ * ```jsx
+ * const dragControls = useDragControls()
+ *
+ * function startDrag(event) {
+ *   dragControls.start(event, { snapToCursor: true })
+ * }
+ *
+ * return (
+ *   <>
+ *     <div onPointerDown={startDrag} />
+ *     <motion.div drag="x" dragControls={dragControls} />
+ *   </>
+ * )
+ * ```
+ *
+ * @public
+ */ class DragControls {
+    constructor(){
+        this.componentControls = new Set();
+    }
+    /**
+     * Subscribe a component's internal `VisualElementDragControls` to the user-facing API.
+     *
+     * @internal
+     */ subscribe(controls) {
+        this.componentControls.add(controls);
+        return ()=>this.componentControls.delete(controls);
+    }
+    /**
+     * Start a drag gesture on every `motion` component that has this set of drag controls
+     * passed into it via the `dragControls` prop.
+     *
+     * ```jsx
+     * dragControls.start(e, {
+     *   snapToCursor: true
+     * })
+     * ```
+     *
+     * @param event - PointerEvent
+     * @param options - Options
+     *
+     * @public
+     */ start(event, options) {
+        this.componentControls.forEach((controls)=>{
+            controls.start(event.nativeEvent || event, options);
+        });
+    }
+}
+const createDragControls = ()=>new DragControls();
+/**
+ * Usually, dragging is initiated by pressing down on a `motion` component with a `drag` prop
+ * and moving it. For some use-cases, for instance clicking at an arbitrary point on a video scrubber, we
+ * might want to initiate that dragging from a different component than the draggable one.
+ *
+ * By creating a `dragControls` using the `useDragControls` hook, we can pass this into
+ * the draggable component's `dragControls` prop. It exposes a `start` method
+ * that can start dragging from pointer events on other components.
+ *
+ * ```jsx
+ * const dragControls = useDragControls()
+ *
+ * function startDrag(event) {
+ *   dragControls.start(event, { snapToCursor: true })
+ * }
+ *
+ * return (
+ *   <>
+ *     <div onPointerDown={startDrag} />
+ *     <motion.div drag="x" dragControls={dragControls} />
+ *   </>
+ * )
+ * ```
+ *
+ * @public
+ */ function useDragControls() {
+    return (0, _useConstantMjs.useConstant)(createDragControls);
+}
+
+},{"../../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"7UOGF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useDomEvent", ()=>useDomEvent);
+var _react = require("react");
+var _addDomEventMjs = require("./add-dom-event.mjs");
+/**
+ * Attaches an event listener directly to the provided DOM element.
+ *
+ * Bypassing React's event system can be desirable, for instance when attaching non-passive
+ * event handlers.
+ *
+ * ```jsx
+ * const ref = useRef(null)
+ *
+ * useDomEvent(ref, 'wheel', onWheel, { passive: false })
+ *
+ * return <div ref={ref} />
+ * ```
+ *
+ * @param ref - React.RefObject that's been provided to the element you want to bind the listener to.
+ * @param eventName - Name of the event you want listen for.
+ * @param handler - Function to fire when receiving the event.
+ * @param options - Options to pass to `Event.addEventListener`.
+ *
+ * @public
+ */ function useDomEvent(ref, eventName, handler, options) {
+    (0, _react.useEffect)(()=>{
+        const element = ref.current;
+        if (handler && element) return (0, _addDomEventMjs.addDomEvent)(element, eventName, handler, options);
+    }, [
+        ref,
+        eventName,
+        handler,
+        options
+    ]);
+}
+
+},{"react":"21dqq","./add-dom-event.mjs":"jAgCf","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6FqHQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isMotionComponent", ()=>isMotionComponent);
+var _symbolMjs = require("./symbol.mjs");
+/**
+ * Checks if a component is a `motion` component.
+ */ function isMotionComponent(component) {
+    return component !== null && typeof component === "object" && (0, _symbolMjs.motionComponentSymbol) in component;
+}
+
+},{"./symbol.mjs":"11WZZ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5Ip67":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "unwrapMotionComponent", ()=>unwrapMotionComponent);
+var _isMotionComponentMjs = require("./is-motion-component.mjs");
+var _symbolMjs = require("./symbol.mjs");
+/**
+ * Unwraps a `motion` component and returns either a string for `motion.div` or
+ * the React component for `motion(Component)`.
+ *
+ * If the component is not a `motion` component it returns undefined.
+ */ function unwrapMotionComponent(component) {
+    if ((0, _isMotionComponentMjs.isMotionComponent)(component)) return component[0, _symbolMjs.motionComponentSymbol];
+    return undefined;
+}
+
+},{"./is-motion-component.mjs":"6FqHQ","./symbol.mjs":"11WZZ","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"22k6b":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useInstantTransition", ()=>useInstantTransition);
+var _indexMjs = require("../frameloop/index.mjs");
+var _react = require("react");
+var _useInstantLayoutTransitionMjs = require("../projection/use-instant-layout-transition.mjs");
+var _useForceUpdateMjs = require("./use-force-update.mjs");
+var _useInstantTransitionStateMjs = require("./use-instant-transition-state.mjs");
+function useInstantTransition() {
+    const [forceUpdate, forcedRenderCount] = (0, _useForceUpdateMjs.useForceUpdate)();
+    const startInstantLayoutTransition = (0, _useInstantLayoutTransitionMjs.useInstantLayoutTransition)();
+    (0, _react.useEffect)(()=>{
+        /**
+         * Unblock after two animation frames, otherwise this will unblock too soon.
+         */ (0, _indexMjs.frame).postRender(()=>(0, _indexMjs.frame).postRender(()=>(0, _useInstantTransitionStateMjs.instantAnimationState).current = false));
+    }, [
+        forcedRenderCount
+    ]);
+    return (callback)=>{
+        startInstantLayoutTransition(()=>{
+            (0, _useInstantTransitionStateMjs.instantAnimationState).current = true;
+            forceUpdate();
+            callback();
+        });
+    };
+}
+
+},{"../frameloop/index.mjs":"3Dz3U","react":"21dqq","../projection/use-instant-layout-transition.mjs":"4nSHl","./use-force-update.mjs":"58SRa","./use-instant-transition-state.mjs":"acYRG","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4nSHl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useInstantLayoutTransition", ()=>useInstantLayoutTransition);
+var _htmlprojectionNodeMjs = require("./node/HTMLProjectionNode.mjs");
+function useInstantLayoutTransition() {
+    return startTransition;
+}
+function startTransition(callback) {
+    if (!(0, _htmlprojectionNodeMjs.rootProjectionNode).current) return;
+    (0, _htmlprojectionNodeMjs.rootProjectionNode).current.isUpdating = false;
+    (0, _htmlprojectionNodeMjs.rootProjectionNode).current.blockUpdate();
+    callback && callback();
+}
+
+},{"./node/HTMLProjectionNode.mjs":"d4eCC","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4obBa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useResetProjection", ()=>useResetProjection);
+var _react = require("react");
+var _htmlprojectionNodeMjs = require("./node/HTMLProjectionNode.mjs");
+function useResetProjection() {
+    const reset = _react.useCallback(()=>{
+        const root = (0, _htmlprojectionNodeMjs.rootProjectionNode).current;
+        if (!root) return;
+        root.resetTree();
+    }, []);
+    return reset;
+}
+
+},{"react":"21dqq","./node/HTMLProjectionNode.mjs":"d4eCC","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"ex7eY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "startOptimizedAppearAnimation", ()=>startOptimizedAppearAnimation);
+var _storeIdMjs = require("./store-id.mjs");
+var _indexMjs = require("../animators/waapi/index.mjs");
+var _dataIdMjs = require("./data-id.mjs");
+var _handoffMjs = require("./handoff.mjs");
+var _storeMjs = require("./store.mjs");
+var _noopMjs = require("../../utils/noop.mjs");
+function startOptimizedAppearAnimation(element, name, keyframes, options, onReady) {
+    const id = element.dataset[0, _dataIdMjs.optimizedAppearDataId];
+    if (!id) return;
+    window.HandoffAppearAnimations = (0, _handoffMjs.handoffOptimizedAppearAnimation);
+    const storeId = (0, _storeIdMjs.appearStoreId)(id, name);
+    /**
+     * Use a dummy animation to detect when Chrome is ready to start
+     * painting the page and hold off from triggering the real animation
+     * until then.
+     *
+     * https://bugs.chromium.org/p/chromium/issues/detail?id=1406850
+     */ const readyAnimation = (0, _indexMjs.animateStyle)(element, name, [
+        keyframes[0],
+        keyframes[0]
+    ], /**
+     * 10 secs is basically just a super-safe duration to give Chrome
+     * long enough to get the animation ready.
+     */ {
+        duration: 10000,
+        ease: "linear"
+    });
+    (0, _storeMjs.appearAnimationStore).set(storeId, {
+        animation: readyAnimation,
+        startTime: null
+    });
+    const startAnimation = ()=>{
+        readyAnimation.cancel();
+        const appearAnimation = (0, _indexMjs.animateStyle)(element, name, keyframes, options);
+        if (document.timeline) appearAnimation.startTime = document.timeline.currentTime;
+        (0, _storeMjs.appearAnimationStore).set(storeId, {
+            animation: appearAnimation,
+            startTime: performance.now()
+        });
+        if (onReady) onReady(appearAnimation);
+    };
+    if (readyAnimation.ready) readyAnimation.ready.then(startAnimation).catch((0, _noopMjs.noop));
+    else startAnimation();
+}
+
+},{"./store-id.mjs":"iOynl","../animators/waapi/index.mjs":"br5tE","./data-id.mjs":"4rpx1","./handoff.mjs":"gZIXd","./store.mjs":"fEgCy","../../utils/noop.mjs":"67SDH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"iOynl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "appearStoreId", ()=>appearStoreId);
+const appearStoreId = (id, value)=>`${id}: ${value}`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"gZIXd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "handoffOptimizedAppearAnimation", ()=>handoffOptimizedAppearAnimation);
+var _transformMjs = require("../../render/html/utils/transform.mjs");
+var _timeConversionMjs = require("../../utils/time-conversion.mjs");
+var _storeMjs = require("./store.mjs");
+var _storeIdMjs = require("./store-id.mjs");
+function handoffOptimizedAppearAnimation(id, name, value, /**
+ * This function is loaded via window by startOptimisedAnimation.
+ * By accepting `sync` as an argument, rather than using it via
+ * import, it can be kept out of the first-load Framer bundle,
+ * while also allowing this function to not be included in
+ * Framer Motion bundles where it's not needed.
+ */ frame) {
+    const storeId = (0, _storeIdMjs.appearStoreId)(id, (0, _transformMjs.transformProps).has(name) ? "transform" : name);
+    const appearAnimation = (0, _storeMjs.appearAnimationStore).get(storeId);
+    if (!appearAnimation) return 0;
+    const { animation , startTime  } = appearAnimation;
+    const cancelOptimisedAnimation = ()=>{
+        (0, _storeMjs.appearAnimationStore).delete(storeId);
+        /**
+         * Animation.cancel() throws so it needs to be wrapped in a try/catch
+         */ try {
+            animation.cancel();
+        } catch (e) {}
+    };
+    if (startTime !== null) {
+        const sampledTime = performance.now();
+        /**
+         * Resync handoff animation with optimised animation.
+         *
+         * This step would be unnecessary if we triggered animateChanges() in useEffect,
+         * but due to potential hydration errors we currently fire them in useLayoutEffect.
+         *
+         * By the time we're safely ready to cancel the optimised WAAPI animation,
+         * the main thread might have been blocked and desynced the two animations.
+         *
+         * Here, we resync the two animations before the optimised WAAPI animation is cancelled.
+         */ frame.update(()=>{
+            if (value.animation) value.animation.time = (0, _timeConversionMjs.millisecondsToSeconds)(performance.now() - sampledTime);
+        });
+        /**
+         * We allow the animation to persist until the next frame:
+         *   1. So it continues to play until Framer Motion is ready to render
+         *      (avoiding a potential flash of the element's original state)
+         *   2. As all independent transforms share a single transform animation, stopping
+         *      it synchronously would prevent subsequent transforms from handing off.
+         */ frame.render(cancelOptimisedAnimation);
+        /**
+         * We use main thread timings vs those returned by Animation.currentTime as it
+         * can be the case, particularly in Firefox, that currentTime doesn't return
+         * an updated value for several frames, even as the animation plays smoothly via
+         * the GPU.
+         */ return sampledTime - startTime || 0;
+    } else {
+        cancelOptimisedAnimation();
+        return 0;
+    }
+}
+
+},{"../../render/html/utils/transform.mjs":"iSy8E","../../utils/time-conversion.mjs":"gdr8V","./store.mjs":"fEgCy","./store-id.mjs":"iOynl","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"fEgCy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "appearAnimationStore", ()=>appearAnimationStore);
+const appearAnimationStore = new Map();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"6M6nJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAnimatedState", ()=>useAnimatedState);
+var _react = require("react");
+var _useConstantMjs = require("../../utils/use-constant.mjs");
+var _settersMjs = require("../../render/utils/setters.mjs");
+var _useVisualStateMjs = require("../../motion/utils/use-visual-state.mjs");
+var _modelsMjs = require("../../projection/geometry/models.mjs");
+var _visualElementMjs = require("../../render/VisualElement.mjs");
+var _visualElementMjs1 = require("../interfaces/visual-element.mjs");
+const createObject = ()=>({});
+class StateVisualElement extends (0, _visualElementMjs.VisualElement) {
+    build() {}
+    measureInstanceViewportBox() {
+        return (0, _modelsMjs.createBox)();
+    }
+    resetTransform() {}
+    restoreTransform() {}
+    removeValueFromRenderState() {}
+    renderInstance() {}
+    scrapeMotionValuesFromProps() {
+        return createObject();
+    }
+    getBaseTargetFromProps() {
+        return undefined;
+    }
+    readValueFromInstance(_state, key, options) {
+        return options.initialState[key] || 0;
+    }
+    sortInstanceNodePosition() {
+        return 0;
+    }
+    makeTargetAnimatableFromInstance({ transition , transitionEnd , ...target }) {
+        const origin = (0, _settersMjs.getOrigin)(target, transition || {}, this);
+        (0, _settersMjs.checkTargetForNewValues)(this, target, origin);
+        return {
+            transition,
+            transitionEnd,
+            ...target
+        };
+    }
+}
+const useVisualState = (0, _useVisualStateMjs.makeUseVisualState)({
+    scrapeMotionValuesFromProps: createObject,
+    createRenderState: createObject
+});
+/**
+ * This is not an officially supported API and may be removed
+ * on any version.
+ */ function useAnimatedState(initialState) {
+    const [animationState, setAnimationState] = (0, _react.useState)(initialState);
+    const visualState = useVisualState({}, false);
+    const element = (0, _useConstantMjs.useConstant)(()=>{
+        return new StateVisualElement({
+            props: {},
+            visualState,
+            presenceContext: null
+        }, {
+            initialState
+        });
+    });
+    (0, _react.useEffect)(()=>{
+        element.mount({});
+        return ()=>element.unmount();
+    }, [
+        element
+    ]);
+    (0, _react.useEffect)(()=>{
+        element.update({
+            onUpdate: (v)=>{
+                setAnimationState({
+                    ...v
+                });
+            }
+        }, null);
+    }, [
+        setAnimationState,
+        element
+    ]);
+    const startAnimation = (0, _useConstantMjs.useConstant)(()=>(animationDefinition)=>{
+            return (0, _visualElementMjs1.animateVisualElement)(element, animationDefinition);
+        });
+    return [
+        animationState,
+        startAnimation
+    ];
+}
+
+},{"react":"21dqq","../../utils/use-constant.mjs":"gAAJI","../../render/utils/setters.mjs":"5AEB8","../../motion/utils/use-visual-state.mjs":"bYE4p","../../projection/geometry/models.mjs":"8tocy","../../render/VisualElement.mjs":"3YJr4","../interfaces/visual-element.mjs":"e0aFv","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"a81pc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "invertScale", ()=>invertScale);
+parcelHelpers.export(exports, "useInvertedScale", ()=>useInvertedScale);
+var _useTransformMjs = require("./use-transform.mjs");
+var _errorsMjs = require("../utils/errors.mjs");
+var _useMotionValueMjs = require("./use-motion-value.mjs");
+var _indexMjs = require("../context/MotionContext/index.mjs");
+var _react = require("react");
+// Keep things reasonable and avoid scale: Infinity. In practise we might need
+// to add another value, opacity, that could interpolate scaleX/Y [0,0.01] => [0,1]
+// to simply hide content at unreasonable scales.
+const maxScale = 100000;
+const invertScale = (scale)=>scale > 0.001 ? 1 / scale : maxScale;
+let hasWarned = false;
+/**
+ * Returns a `MotionValue` each for `scaleX` and `scaleY` that update with the inverse
+ * of their respective parent scales.
+ *
+ * This is useful for undoing the distortion of content when scaling a parent component.
+ *
+ * By default, `useInvertedScale` will automatically fetch `scaleX` and `scaleY` from the nearest parent.
+ * By passing other `MotionValue`s in as `useInvertedScale({ scaleX, scaleY })`, it will invert the output
+ * of those instead.
+ *
+ * ```jsx
+ * const MyComponent = () => {
+ *   const { scaleX, scaleY } = useInvertedScale()
+ *   return <motion.div style={{ scaleX, scaleY }} />
+ * }
+ * ```
+ *
+ * @deprecated
+ */ function useInvertedScale(scale) {
+    let parentScaleX = (0, _useMotionValueMjs.useMotionValue)(1);
+    let parentScaleY = (0, _useMotionValueMjs.useMotionValue)(1);
+    const { visualElement  } = (0, _react.useContext)((0, _indexMjs.MotionContext));
+    (0, _errorsMjs.invariant)(!!(scale || visualElement), "If no scale values are provided, useInvertedScale must be used within a child of another motion component.");
+    (0, _errorsMjs.warning)(hasWarned, "useInvertedScale is deprecated and will be removed in 3.0. Use the layout prop instead.");
+    hasWarned = true;
+    if (scale) {
+        parentScaleX = scale.scaleX || parentScaleX;
+        parentScaleY = scale.scaleY || parentScaleY;
+    } else if (visualElement) {
+        parentScaleX = visualElement.getValue("scaleX", 1);
+        parentScaleY = visualElement.getValue("scaleY", 1);
+    }
+    const scaleX = (0, _useTransformMjs.useTransform)(parentScaleX, invertScale);
+    const scaleY = (0, _useTransformMjs.useTransform)(parentScaleY, invertScale);
+    return {
+        scaleX,
+        scaleY
+    };
+}
+
+},{"./use-transform.mjs":"gAMIr","../utils/errors.mjs":"drRZ6","./use-motion-value.mjs":"rszYa","../context/MotionContext/index.mjs":"3aBYo","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"5dn5T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AnimateSharedLayout", ()=>AnimateSharedLayout);
+var _errorsMjs = require("../utils/errors.mjs");
+var _react = require("react");
+var _useConstantMjs = require("../utils/use-constant.mjs");
+var _indexMjs = require("./LayoutGroup/index.mjs");
+let id = 0;
+const AnimateSharedLayout = ({ children  })=>{
+    _react.useEffect(()=>{
+        (0, _errorsMjs.invariant)(false, "AnimateSharedLayout is deprecated: https://www.framer.com/docs/guide-upgrade/##shared-layout-animations");
+    }, []);
+    return _react.createElement((0, _indexMjs.LayoutGroup), {
+        id: (0, _useConstantMjs.useConstant)(()=>`asl-${id++}`)
+    }, children);
+};
+
+},{"../utils/errors.mjs":"drRZ6","react":"21dqq","../utils/use-constant.mjs":"gAAJI","./LayoutGroup/index.mjs":"b9GPH","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"l87y1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getOriginIndex", ()=>getOriginIndex);
+parcelHelpers.export(exports, "stagger", ()=>stagger);
+var _mapMjs = require("../../easing/utils/map.mjs");
+function getOriginIndex(from, total) {
+    if (from === "first") return 0;
+    else {
+        const lastIndex = total - 1;
+        return from === "last" ? lastIndex : lastIndex / 2;
+    }
+}
+function stagger(duration = 0.1, { startDelay =0 , from =0 , ease  } = {}) {
+    return (i, total)=>{
+        const fromIndex = typeof from === "number" ? from : getOriginIndex(from, total);
+        const distance = Math.abs(fromIndex - i);
+        let delay = duration * distance;
+        if (ease) {
+            const maxDelay = total * duration;
+            const easingFunction = (0, _mapMjs.easingDefinitionToFunction)(ease);
+            delay = easingFunction(delay / maxDelay) * maxDelay;
+        }
+        return startDelay + delay;
+    };
+}
+
+},{"../../easing/utils/map.mjs":"e97Gy","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"eK1zf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cancelSync", ()=>cancelSync);
+parcelHelpers.export(exports, "sync", ()=>sync);
+var _indexMjs = require("./index.mjs");
+/**
+ * @deprecated
+ *
+ * Import as `frame` instead.
+ */ const sync = (0, _indexMjs.frame);
+/**
+ * @deprecated
+ *
+ * Use cancelFrame(callback) instead.
+ */ const cancelSync = (0, _indexMjs.stepsOrder).reduce((acc, key)=>{
+    acc[key] = (process)=>(0, _indexMjs.cancelFrame)(process);
+    return acc;
+}, {});
+
+},{"./index.mjs":"3Dz3U","@parcel/transformer-js/src/esmodule-helpers.js":"64njc"}],"4OGiN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41304,8 +58864,10 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SignupView", ()=>SignupView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _framerMotion = require("framer-motion");
 var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const showPassword = ()=>{
     var passwordInput = document.getElementById("passwordInput2");
@@ -41339,154 +58901,278 @@ const SignupView = ()=>{
             } else alert("Signup failed! :(");
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
-        onSubmit: handleSubmit,
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+        className: "signup-container",
+        animate: {
+            scale: 1
+        },
+        initial: {
+            scale: 0
+        },
+        transition: {
+            type: "tween",
+            duration: .5
+        },
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                controlId: "setUsername",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "text-center",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                        children: "Username"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "my",
+                                children: "my"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 55,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "flix",
+                                children: "Flix"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 55,
+                                columnNumber: 51
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 49,
-                        columnNumber: 13
+                        lineNumber: 55,
+                        columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value),
-                        required: true,
-                        placeholder: "Username",
-                        minlength: "4"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "my",
+                                children: "Sign"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 56,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "flix",
+                                children: "up"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 56,
+                                columnNumber: 53
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 50,
+                        lineNumber: 56,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 48,
+                lineNumber: 54,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                controlId: "setPassword",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
+                onSubmit: handleSubmit,
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                        children: "Password"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                        controlId: "setUsername",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                children: "Username"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 60,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                type: "text",
+                                value: username,
+                                onChange: (e)=>setUsername(e.target.value),
+                                required: true,
+                                placeholder: "Username",
+                                minlength: "4"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 61,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 60,
-                        columnNumber: 13
+                        lineNumber: 59,
+                        columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value),
-                        id: "passwordInput2",
-                        autocomplete: "new-password",
-                        placeholder: "Password",
-                        required: true,
-                        minlength: "4"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                        controlId: "setPassword",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                children: "Password"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 71,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                type: "password",
+                                value: password,
+                                onChange: (e)=>setPassword(e.target.value),
+                                id: "passwordInput2",
+                                autocomplete: "new-password",
+                                placeholder: "Password",
+                                required: true,
+                                minlength: "4"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 72,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 70,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
+                        type: "switch",
+                        label: "Show Password",
+                        onClick: showPassword
                     }, void 0, false, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 61,
+                        lineNumber: 83,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 86,
+                        columnNumber: 46
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                        controlId: "setEmail",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                children: "Email"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 88,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                type: "email",
+                                value: email,
+                                onChange: (e)=>setEmail(e.target.value),
+                                autocomplete: "email",
+                                placeholder: "Email",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 89,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 87,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                        controlId: "setBirthday",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                                children: "Birthday"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 99,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                type: "date",
+                                value: birthday,
+                                onChange: (e)=>setBirthday(e.target.value),
+                                autocomplete: "bday",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "src/components/signup-view/signup-view.jsx",
+                                lineNumber: 100,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 98,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 107,
+                        columnNumber: 31
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "text-center",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                            variant: "primary",
+                            type: "submit",
+                            children: "Sign Me Up!"
+                        }, void 0, false, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 109,
+                            columnNumber: 21
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 108,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 59,
+                lineNumber: 58,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
-                type: "switch",
-                label: "Show Password",
-                onClick: showPassword
-            }, void 0, false, {
-                fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 72,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 75,
-                columnNumber: 42
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                controlId: "setEmail",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "text-center",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                        children: "Email"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 77,
-                        columnNumber: 13
+                        lineNumber: 112,
+                        columnNumber: 42
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                        type: "email",
-                        value: email,
-                        onChange: (e)=>setEmail(e.target.value),
-                        autocomplete: "email",
-                        placeholder: "Email",
-                        required: true
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 112,
+                        columnNumber: 48
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
+                        children: "Already a member? "
                     }, void 0, false, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 78,
+                        lineNumber: 113,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/login",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                            variant: "primary",
+                            children: "Log in Now!"
+                        }, void 0, false, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 115,
+                            columnNumber: 21
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 114,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 76,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                controlId: "setBirthday",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
-                        children: "Birthday"
-                    }, void 0, false, {
-                        fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 88,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                        type: "date",
-                        value: birthday,
-                        onChange: (e)=>setBirthday(e.target.value),
-                        autocomplete: "bday",
-                        required: true
-                    }, void 0, false, {
-                        fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 89,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 87,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 96,
-                columnNumber: 27
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                variant: "primary",
-                type: "submit",
-                children: "Submit"
-            }, void 0, false, {
-                fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 97,
+                lineNumber: 112,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/signup-view/signup-view.jsx",
-        lineNumber: 47,
+        lineNumber: 50,
         columnNumber: 9
     }, undefined);
 };
@@ -41500,6 +59186,725 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react-bootstrap":"3AD9A"}],"lJZlQ":[function() {},{}],"i5LP7":[function() {},{}]},["XzhXp","cqmf3","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","framer-motion":"5bZBB","react-router-dom":"9xmpe"}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+var _framerMotion = require("framer-motion");
+const MovieCard = ({ movie  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+        className: "h-100 moviecard",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
+                variant: "top",
+                src: movie.ImagePath
+            }, void 0, false, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+                className: "text-center card-body",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
+                        children: movie.Title
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 12,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
+                        children: movie.Director.Name
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 13,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "card-footer",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/movies/${encodeURIComponent(movie._id)}`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                        variant: "primary",
+                        className: "seemore-button",
+                        children: "See More"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 18,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 17,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-card/movie-card.jsx",
+        lineNumber: 9,
+        columnNumber: 9
+    }, undefined);
+};
+_c = MovieCard;
+MovieCard.propTypes = {
+    movie: (0, _propTypesDefault.default).shape({
+        Title: (0, _propTypesDefault.default).string.isRequired,
+        Director: (0, _propTypesDefault.default).string.isRequired,
+        ImagePath: (0, _propTypesDefault.default).string.isRequired,
+        Description: (0, _propTypesDefault.default).string.isRequired,
+        Genre: (0, _propTypesDefault.default).string.isRequired
+    }).isRequired,
+    onMovieClick: (0, _propTypesDefault.default).func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react":"21dqq","react-router-dom":"9xmpe","framer-motion":"5bZBB"}],"bsPVM":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$abf5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$abf5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NavigationBar", ()=>NavigationBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+const NavigationBar = ({ user , onLoggedOut  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
+        bg: "light",
+        variant: "light",
+        expand: "lg",
+        sticky: "top",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Brand, {
+                    as: (0, _reactRouterDom.Link),
+                    to: "/",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "my",
+                            children: "my"
+                        }, void 0, false, {
+                            fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                            lineNumber: 8,
+                            columnNumber: 48
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "flix",
+                            children: "Flix"
+                        }, void 0, false, {
+                            fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                            lineNumber: 8,
+                            columnNumber: 78
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                    lineNumber: 8,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
+                    "aria-controls": "basic-navbar-nav"
+                }, void 0, false, {
+                    fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                    lineNumber: 9,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
+                    id: "basic-navbar-nav",
+                    children: [
+                        !user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
+                                className: "ms-auto",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/signup",
+                                        className: "signup-button",
+                                        children: "Signup"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 14,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/login",
+                                        className: "login-button",
+                                        children: "Login"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 17,
+                                        columnNumber: 33
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                lineNumber: 13,
+                                columnNumber: 29
+                            }, undefined)
+                        }, void 0, false),
+                        user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
+                                    className: "me-auto",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                            as: (0, _reactRouterDom.Link),
+                                            to: "/",
+                                            children: "Home"
+                                        }, void 0, false, {
+                                            fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                            lineNumber: 26,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                            as: (0, _reactRouterDom.Link),
+                                            to: "/profile",
+                                            children: "Profile"
+                                        }, void 0, false, {
+                                            fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                            lineNumber: 29,
+                                            columnNumber: 33
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                    lineNumber: 25,
+                                    columnNumber: 29
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        onClick: onLoggedOut,
+                                        className: "logout-button",
+                                        children: "Logout"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 32,
+                                        columnNumber: 33
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                    lineNumber: 31,
+                                    columnNumber: 29
+                                }, undefined)
+                            ]
+                        }, void 0, true)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                    lineNumber: 10,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/navigation-bar/navigation-bar.jsx",
+            lineNumber: 7,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_c = NavigationBar;
+var _c;
+$RefreshReg$(_c, "NavigationBar");
+
+  $parcel$ReactRefreshHelpers$abf5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"64njc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY"}],"2vVqf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3c12.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactBootstrap = require("react-bootstrap");
+var _dayjs = require("dayjs");
+var _dayjsDefault = parcelHelpers.interopDefault(_dayjs);
+const ProfileView = ({ user  })=>{
+    const birthday = (0, _dayjsDefault.default)(user.Birthday).format("MM/DD/YYYY");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "profile-container",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+            className: "text-center",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "my",
+                            children: "my"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 12,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "flix",
+                            children: "Profile"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 12,
+                            columnNumber: 51
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 12,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "label",
+                    children: "Username"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 13,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "profile-info",
+                    children: user.Username
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 14,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 14,
+                    columnNumber: 70
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "label",
+                    children: "Birthday"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 15,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "profile-info",
+                    children: birthday
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 16,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 16,
+                    columnNumber: 65
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "label",
+                    children: "Email"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 17,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "profile-info",
+                    children: user.Email
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 18,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 18,
+                    columnNumber: 67
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "my",
+                            children: "Favorite"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 19,
+                            columnNumber: 21
+                        }, undefined),
+                        " ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "flix",
+                            children: "Movies"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 19,
+                            columnNumber: 58
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 19,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "favorite-movies"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 20,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/profile-view/profile-view.jsx",
+            lineNumber: 11,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/profile-view/profile-view.jsx",
+        lineNumber: 10,
+        columnNumber: 9
+    }, undefined);
+};
+_c = ProfileView;
+var _c;
+$RefreshReg$(_c, "ProfileView");
+
+  $parcel$ReactRefreshHelpers$3c12.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"64njc","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2b7WY","react-bootstrap":"3AD9A","dayjs":"NJZFB"}],"NJZFB":[function(require,module,exports) {
+!function(t, e) {
+    module.exports = e();
+}(this, function() {
+    "use strict";
+    var t = 1e3, e = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", f = "month", h = "quarter", c = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = {
+        name: "en",
+        weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),
+        months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"),
+        ordinal: function(t) {
+            var e = [
+                "th",
+                "st",
+                "nd",
+                "rd"
+            ], n = t % 100;
+            return "[" + t + (e[(n - 20) % 10] || e[n] || e[0]) + "]";
+        }
+    }, m = function(t, e, n) {
+        var r = String(t);
+        return !r || r.length >= e ? t : "" + Array(e + 1 - r.length).join(n) + t;
+    }, v = {
+        s: m,
+        z: function(t) {
+            var e = -t.utcOffset(), n = Math.abs(e), r = Math.floor(n / 60), i = n % 60;
+            return (e <= 0 ? "+" : "-") + m(r, 2, "0") + ":" + m(i, 2, "0");
+        },
+        m: function t(e, n) {
+            if (e.date() < n.date()) return -t(n, e);
+            var r = 12 * (n.year() - e.year()) + (n.month() - e.month()), i = e.clone().add(r, f), s = n - i < 0, u = e.clone().add(r + (s ? -1 : 1), f);
+            return +(-(r + (n - i) / (s ? i - u : u - i)) || 0);
+        },
+        a: function(t) {
+            return t < 0 ? Math.ceil(t) || 0 : Math.floor(t);
+        },
+        p: function(t) {
+            return ({
+                M: f,
+                y: c,
+                w: o,
+                d: a,
+                D: d,
+                h: u,
+                m: s,
+                s: i,
+                ms: r,
+                Q: h
+            })[t] || String(t || "").toLowerCase().replace(/s$/, "");
+        },
+        u: function(t) {
+            return void 0 === t;
+        }
+    }, g = "en", D = {};
+    D[g] = M;
+    var p = function(t) {
+        return t instanceof _;
+    }, S = function t(e, n, r) {
+        var i;
+        if (!e) return g;
+        if ("string" == typeof e) {
+            var s = e.toLowerCase();
+            D[s] && (i = s), n && (D[s] = n, i = s);
+            var u = e.split("-");
+            if (!i && u.length > 1) return t(u[0]);
+        } else {
+            var a = e.name;
+            D[a] = e, i = a;
+        }
+        return !r && i && (g = i), i || !r && g;
+    }, w = function(t, e) {
+        if (p(t)) return t.clone();
+        var n = "object" == typeof e ? e : {};
+        return n.date = t, n.args = arguments, new _(n);
+    }, O = v;
+    O.l = S, O.i = p, O.w = function(t, e) {
+        return w(t, {
+            locale: e.$L,
+            utc: e.$u,
+            x: e.$x,
+            $offset: e.$offset
+        });
+    };
+    var _ = function() {
+        function M(t) {
+            this.$L = S(t.locale, null, !0), this.parse(t);
+        }
+        var m = M.prototype;
+        return m.parse = function(t) {
+            this.$d = function(t) {
+                var e = t.date, n = t.utc;
+                if (null === e) return new Date(NaN);
+                if (O.u(e)) return new Date;
+                if (e instanceof Date) return new Date(e);
+                if ("string" == typeof e && !/Z$/i.test(e)) {
+                    var r = e.match($);
+                    if (r) {
+                        var i = r[2] - 1 || 0, s = (r[7] || "0").substring(0, 3);
+                        return n ? new Date(Date.UTC(r[1], i, r[3] || 1, r[4] || 0, r[5] || 0, r[6] || 0, s)) : new Date(r[1], i, r[3] || 1, r[4] || 0, r[5] || 0, r[6] || 0, s);
+                    }
+                }
+                return new Date(e);
+            }(t), this.$x = t.x || {}, this.init();
+        }, m.init = function() {
+            var t = this.$d;
+            this.$y = t.getFullYear(), this.$M = t.getMonth(), this.$D = t.getDate(), this.$W = t.getDay(), this.$H = t.getHours(), this.$m = t.getMinutes(), this.$s = t.getSeconds(), this.$ms = t.getMilliseconds();
+        }, m.$utils = function() {
+            return O;
+        }, m.isValid = function() {
+            return !(this.$d.toString() === l);
+        }, m.isSame = function(t, e) {
+            var n = w(t);
+            return this.startOf(e) <= n && n <= this.endOf(e);
+        }, m.isAfter = function(t, e) {
+            return w(t) < this.startOf(e);
+        }, m.isBefore = function(t, e) {
+            return this.endOf(e) < w(t);
+        }, m.$g = function(t, e, n) {
+            return O.u(t) ? this[e] : this.set(n, t);
+        }, m.unix = function() {
+            return Math.floor(this.valueOf() / 1e3);
+        }, m.valueOf = function() {
+            return this.$d.getTime();
+        }, m.startOf = function(t, e) {
+            var n = this, r = !!O.u(e) || e, h = O.p(t), l = function(t, e) {
+                var i = O.w(n.$u ? Date.UTC(n.$y, e, t) : new Date(n.$y, e, t), n);
+                return r ? i : i.endOf(a);
+            }, $ = function(t, e) {
+                return O.w(n.toDate()[t].apply(n.toDate("s"), (r ? [
+                    0,
+                    0,
+                    0,
+                    0
+                ] : [
+                    23,
+                    59,
+                    59,
+                    999
+                ]).slice(e)), n);
+            }, y = this.$W, M = this.$M, m = this.$D, v = "set" + (this.$u ? "UTC" : "");
+            switch(h){
+                case c:
+                    return r ? l(1, 0) : l(31, 11);
+                case f:
+                    return r ? l(1, M) : l(0, M + 1);
+                case o:
+                    var g = this.$locale().weekStart || 0, D = (y < g ? y + 7 : y) - g;
+                    return l(r ? m - D : m + (6 - D), M);
+                case a:
+                case d:
+                    return $(v + "Hours", 0);
+                case u:
+                    return $(v + "Minutes", 1);
+                case s:
+                    return $(v + "Seconds", 2);
+                case i:
+                    return $(v + "Milliseconds", 3);
+                default:
+                    return this.clone();
+            }
+        }, m.endOf = function(t) {
+            return this.startOf(t, !1);
+        }, m.$set = function(t, e) {
+            var n, o = O.p(t), h = "set" + (this.$u ? "UTC" : ""), l = (n = {}, n[a] = h + "Date", n[d] = h + "Date", n[f] = h + "Month", n[c] = h + "FullYear", n[u] = h + "Hours", n[s] = h + "Minutes", n[i] = h + "Seconds", n[r] = h + "Milliseconds", n)[o], $ = o === a ? this.$D + (e - this.$W) : e;
+            if (o === f || o === c) {
+                var y = this.clone().set(d, 1);
+                y.$d[l]($), y.init(), this.$d = y.set(d, Math.min(this.$D, y.daysInMonth())).$d;
+            } else l && this.$d[l]($);
+            return this.init(), this;
+        }, m.set = function(t, e) {
+            return this.clone().$set(t, e);
+        }, m.get = function(t) {
+            return this[O.p(t)]();
+        }, m.add = function(r, h) {
+            var d, l = this;
+            r = Number(r);
+            var $ = O.p(h), y = function(t) {
+                var e = w(l);
+                return O.w(e.date(e.date() + Math.round(t * r)), l);
+            };
+            if ($ === f) return this.set(f, this.$M + r);
+            if ($ === c) return this.set(c, this.$y + r);
+            if ($ === a) return y(1);
+            if ($ === o) return y(7);
+            var M = (d = {}, d[s] = e, d[u] = n, d[i] = t, d)[$] || 1, m = this.$d.getTime() + r * M;
+            return O.w(m, this);
+        }, m.subtract = function(t, e) {
+            return this.add(-1 * t, e);
+        }, m.format = function(t) {
+            var e = this, n = this.$locale();
+            if (!this.isValid()) return n.invalidDate || l;
+            var r = t || "YYYY-MM-DDTHH:mm:ssZ", i = O.z(this), s = this.$H, u = this.$m, a = this.$M, o = n.weekdays, f = n.months, h = function(t, n, i, s) {
+                return t && (t[n] || t(e, r)) || i[n].slice(0, s);
+            }, c = function(t) {
+                return O.s(s % 12 || 12, t, "0");
+            }, d = n.meridiem || function(t, e, n) {
+                var r = t < 12 ? "AM" : "PM";
+                return n ? r.toLowerCase() : r;
+            }, $ = {
+                YY: String(this.$y).slice(-2),
+                YYYY: this.$y,
+                M: a + 1,
+                MM: O.s(a + 1, 2, "0"),
+                MMM: h(n.monthsShort, a, f, 3),
+                MMMM: h(f, a),
+                D: this.$D,
+                DD: O.s(this.$D, 2, "0"),
+                d: String(this.$W),
+                dd: h(n.weekdaysMin, this.$W, o, 2),
+                ddd: h(n.weekdaysShort, this.$W, o, 3),
+                dddd: o[this.$W],
+                H: String(s),
+                HH: O.s(s, 2, "0"),
+                h: c(1),
+                hh: c(2),
+                a: d(s, u, !0),
+                A: d(s, u, !1),
+                m: String(u),
+                mm: O.s(u, 2, "0"),
+                s: String(this.$s),
+                ss: O.s(this.$s, 2, "0"),
+                SSS: O.s(this.$ms, 3, "0"),
+                Z: i
+            };
+            return r.replace(y, function(t, e) {
+                return e || $[t] || i.replace(":", "");
+            });
+        }, m.utcOffset = function() {
+            return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
+        }, m.diff = function(r, d, l) {
+            var $, y = O.p(d), M = w(r), m = (M.utcOffset() - this.utcOffset()) * e, v = this - M, g = O.m(this, M);
+            return g = ($ = {}, $[c] = g / 12, $[f] = g, $[h] = g / 3, $[o] = (v - m) / 6048e5, $[a] = (v - m) / 864e5, $[u] = v / n, $[s] = v / e, $[i] = v / t, $)[y] || v, l ? g : O.a(g);
+        }, m.daysInMonth = function() {
+            return this.endOf(f).$D;
+        }, m.$locale = function() {
+            return D[this.$L];
+        }, m.locale = function(t, e) {
+            if (!t) return this.$L;
+            var n = this.clone(), r = S(t, e, !0);
+            return r && (n.$L = r), n;
+        }, m.clone = function() {
+            return O.w(this.$d, this);
+        }, m.toDate = function() {
+            return new Date(this.valueOf());
+        }, m.toJSON = function() {
+            return this.isValid() ? this.toISOString() : null;
+        }, m.toISOString = function() {
+            return this.$d.toISOString();
+        }, m.toString = function() {
+            return this.$d.toUTCString();
+        }, M;
+    }(), T = _.prototype;
+    return w.prototype = T, [
+        [
+            "$ms",
+            r
+        ],
+        [
+            "$s",
+            i
+        ],
+        [
+            "$m",
+            s
+        ],
+        [
+            "$H",
+            u
+        ],
+        [
+            "$W",
+            a
+        ],
+        [
+            "$M",
+            f
+        ],
+        [
+            "$y",
+            c
+        ],
+        [
+            "$D",
+            d
+        ]
+    ].forEach(function(t) {
+        T[t[1]] = function(e) {
+            return this.$g(e, t[0], t[1]);
+        };
+    }), w.extend = function(t, e) {
+        return t.$i || (t(e, _, w), t.$i = !0), w;
+    }, w.locale = S, w.isDayjs = p, w.unix = function(t) {
+        return w(1e3 * t);
+    }, w.en = D[g], w.Ls = D, w.p = {}, w;
+});
+
+},{}],"lJZlQ":[function() {},{}]},["XzhXp","cqmf3","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
