@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { motion } from "framer-motion";
 
 export const MovieView = ({ movies }) => {
     const { movieId } = useParams();
@@ -30,17 +31,30 @@ export const MovieView = ({ movies }) => {
                         <p className="label">Genre</p>
                         <span className="moviecard-genre">{movie.Genre.Name}</span>
                     </div>
+                    <span className="footer"><motion.button
+                        text-center
+                        className="add-to-favorites-large"
+                        transition={{ duration: .3 }}
+                        whileHover={{ scale: 1.5, rotateZ: 360 }}
+                        whileTap={{ scale: 1 }}>⭐</motion.button></span>
+
                 </Col>
             </Row>
             <Row>
                 <div className="text-center description">
                     <span className="movie-description align-items-center">{movie.Description}</span><br />
                 </div>
-                <div className="text-center">
+                <div className="footer">
                     <Link to={`/`}>
-                        <Button className="back-button">Back</Button>
+                            <motion.div
+                                whileHover={{ scale: 1.3 }}
+                                whileTap={{ scale: 1 }}>
+                                <Button className="back-button">Back</Button>
+                            </motion.div>
                     </Link>
                 </div>
+
+
             </Row>
         </div>
     );
@@ -53,6 +67,5 @@ MovieView.propTypes = {
         ImagePath: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
         Genre: PropTypes.string.isRequired
-    }).isRequired,
-    onBackClick: PropTypes.func.isRequired
+    }).isRequired
 };

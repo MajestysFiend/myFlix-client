@@ -25,7 +25,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
         fetch("https://myflixapplication.herokuapp.com/login", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json"},
             body: JSON.stringify(data)
         }).then((res) => res.json())
             .then((data) => {
@@ -44,7 +44,6 @@ export const LoginView = ({ onLoggedIn }) => {
     };
 
     return (
-        <AnimatePresence>
             <motion.div className="login-container"
                 animate={{ scale: 1 }}
                 initial={{ scale: 0 }}
@@ -82,19 +81,24 @@ export const LoginView = ({ onLoggedIn }) => {
                         type="switch"
                         label="Show Password"
                         onClick={showPassword} /><br />
-                    <div className="text-center">
+                    <motion.div className="text-center"
+                        whileHover={{ scale: 1.3 }}
+                        whileTap={{ scale: 1 }}>
                         <Button variant="outline-primary" type="submit">
                             Login
                         </Button>
-                    </div>
+                    </motion.div>
                 </motion.Form>
                 <div className="text-center"><br /><br />
                     <small>Not already a member? </small>
                     <Link to="/signup">
-                        <Button variant="primary">Sign Up Now!</Button>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 1 }}>
+                            <Button variant="primary">Sign Up Now!</Button>
+                        </motion.div>
                     </Link>
                 </div>
             </motion.div>
-        </AnimatePresence>
     );
 };
