@@ -4,12 +4,13 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import { Button } from "react-bootstrap";
+import { ProfileView } from "../profile-view/profile-view";
+import { UpdateView } from "../update-view/update-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { motion } from "framer-motion";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { ProfileView } from "../profile-view/profile-view";
+
 
 
 export const MainView = () => {
@@ -18,10 +19,9 @@ export const MainView = () => {
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
-    //const [selectedMovie, setSelectedMovie] = useState(null);
 
-    if (user) {
-        let favoriteMovieList = movies.filter(m => user.FavoriteMovies.includes(m._id));
+    const handleSubmit = event => {
+        event.preventDefault();
     }
 
     useEffect(() => {
@@ -137,11 +137,28 @@ export const MainView = () => {
                         element={
                             <>
                                 {!user ? (<Navigate to="/login" replace />) :
-                                    <Row>
+                                    <Col md={5}>
                                         <ProfileView
                                             user={user}
+                                            movies={movies}
                                         />
-                                    </Row>}
+                                    </Col>}
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/profile/update"
+                        element={
+                            <>
+                                {!user ? (<Navigate to="/login" replace />) :
+                                    <Col md={5}>
+                                        <UpdateView
+                                            user={user}
+                                            storedToken={storedToken}
+                                            handleSubmit={handleSubmit}
+                                            setUser={setUser}
+                                        />
+                                    </Col>}
                             </>
                         }
                     />
