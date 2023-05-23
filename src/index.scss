@@ -27,7 +27,8 @@ button:hover {
 
 .login-container,
 .signup-container,
-.movieview-container {
+.movieview-container,
+.update-container {
 
     background-color: whitesmoke;
     border: 4px solid rgb(46, 46, 46, .9);
@@ -78,8 +79,10 @@ button:hover {
     font-weight: 800;
 }
 
-.back-button {
-    margin-top: 4%;
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .seemore-button {
@@ -110,6 +113,7 @@ small {
 
 .card-body {
     font-family: Sigmar, sans-serif;
+    max-height: 100px;
 }
 
 .card-footer {
@@ -123,6 +127,7 @@ small {
     padding: 10px;
     max-width: 75%;
     margin: auto;
+    margin-bottom: 5%;
 }
 
 .picture-reference {
@@ -171,4 +176,35 @@ small {
     border: 4px solid rgb(46, 46, 46);
     border-radius: 15px;
     background-color: whitesmoke;
+}
+
+.favorites-container {
+    display: block;
+    border: 4px solid rgb(46, 46, 46);
+    border-radius: 15px;
+    width: 75%;
+    min-height: 500px;
+    margin: 5% auto;
+}
+
+.add-to-favorites {
+    position: absolute;
+    left: 80%;
+    bottom: 1%;
+    border: none;
+    background-color: transparent;
+    font-size: 40px;
+    padding: 0;
+    
+}
+
+.add-to-favorites-large {
+    margin-top: 25%;
+    border: none;
+    background-color: transparent;
+    font-size: 80px;
+    padding: 0;
+    text-align: center;
+    
+
 }

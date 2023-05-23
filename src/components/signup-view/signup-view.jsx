@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const showPassword = () => {
@@ -38,10 +37,10 @@ export const SignupView = () => {
             }
         }).then((res) => {
             if (res.ok) {
-                alert("Signup successful! :D");
+                alert("Signup successful!");
                 window.location.reload();
             } else {
-                alert("Signup failed! :(");
+                alert("Signup failed");
             }
         });
     };
@@ -105,14 +104,20 @@ export const SignupView = () => {
                         required
                     />
                 </Form.Group ><br />
-                <div className="text-center">
+                <motion.div className="text-center"
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 1 }}>
                     <Button variant="primary" type="submit">Sign Me Up!</Button>
-                </div>
+                </motion.div>
             </Form>
             <div className="text-center"><br /><br />
                 <small>Already a member? </small>
                 <Link to="/login">
-                    <Button variant="primary">Log in Now!</Button>
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 1 }}>
+                        <Button variant="primary">Log in Now!</Button>
+                    </motion.div>
                 </Link>
             </div>
         </motion.div>
