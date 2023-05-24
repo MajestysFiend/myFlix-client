@@ -2,9 +2,28 @@ import dayjs from "dayjs";
 import { Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const ProfileView = ({ user, movies }) => {
+export const ProfileView = ({ user, movies, token }) => {
 
     const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");
+
+    const removeFromFavorites = () => {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
+            method: "DELETE",
+            headers: { Authorization: `Bearer ${token}` },
+            "Content-Type": "application/json"
+        })
+            .then(res => {
+                if (res.ok) {
+                    alert("Movie removed from favorites!")
+                    return (res.json)
+                } else {
+                    alert("Could not remove movie from favorites");
+                }
+            })
+            .catch((e) => {
+                alert("Error: " + e);
+            });
+    }
 
     const favoriteMovies = movies.filter((movie) => {
         if (user.FavoriteMovies.includes(movie._id)) {
@@ -25,14 +44,32 @@ export const ProfileView = ({ user, movies }) => {
                         </Card.Text>
                     </Card.Body>
                     <div class="card-footer">
-                        <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-                            <Button variant="primary" className="seemore-button">See More</Button>
-                        </Link>
+                        <Button variant="danger"
+                            className="seemore-button"
+                        onClick={removeFromFavorites}>Remove</Button>
                     </div>
                 </Card>
             </Col>
         )
-    })
+    });
+
+    const deleteAccount = () => {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}`, {
+            method: "DELETE",
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then(res => {
+                if (res.ok) {
+                    alert("Your account has been deleted. Good Bye!");
+                    onLoggedOut();
+                } else {
+                    alert("Could not delete account");
+                }
+            })
+            .catch(e => {
+                alert(e);
+            });
+    }
 
     return (
         <div className="profile-container">
@@ -47,17 +84,18 @@ export const ProfileView = ({ user, movies }) => {
                 <Link to={"/profile/update"}>
                     <Button>Edit User Info</Button>
                 </Link>
+                <Button onClick={deleteAccount}>Delete Account</Button>
             </Col>
             <Row>
                 <Col xs={12} className="text-center">
                     <h2><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
-                </Col>    
+                </Col>
             </Row>
-                <div className="favorites-container">
-                    <Row>
-                        {displayFavorite}
-                    </Row>
-                </div>
+            <div className="favorites-container">
+                <Row>
+                    {displayFavorite}
+                </Row>
+            </div>
         </div>
     )
 }
