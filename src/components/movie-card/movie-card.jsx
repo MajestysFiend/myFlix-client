@@ -4,10 +4,30 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ user, movie, token}) => {
+
+    const addToFavorites = () => {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}` },
+            "Content-Type": "application/json"
+        })
+            .then((res) => {
+                if (res.ok) {
+                    alert("Movie added to favorites!")
+                    return (res.json);
+                } else {
+                    alert("Could not add to favorites");
+                }
+            })
+            .catch((e) => {
+                alert("Error: " + e);
+            });
+    }
+
     return (
         <Card className="h-100 moviecard">
-            <Card.Img variant="top" src={movie.ImagePath}/>
+            <Card.Img variant="top" src={movie.ImagePath} />
             <Card.Body className="text-center card-body">
                 <Card.Title>{movie.Title}</Card.Title>
                 <Card.Text>{movie.Director.Name}
@@ -28,7 +48,8 @@ export const MovieCard = ({ movie }) => {
                 initial={{ scale: .8, opacity: .8 }}
                 transition={{ duration: .3 }}
                 whileHover={{ scale: 1.2, rotateZ: 360, opacity: 1 }}
-                whileTap={{ scale: .8 }}>⭐</motion.button></span>
+                whileTap={{ scale: .8 }}
+                onClick={addToFavorites}>⭐</motion.button></span>
         </Card>
     );
 };
