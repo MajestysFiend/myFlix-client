@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
 
-    const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");
+    const birthday = dayjs(user.Birthday).format("MMMM D, YYYY");
 
     const removeFromFavorites = (movieId) => {
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {
