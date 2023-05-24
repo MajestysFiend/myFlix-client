@@ -1,16 +1,34 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import "./movie-view.scss"
-import PropTypes from "prop-types";
+import "./movie-view.scss";
 import { Button } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { motion } from "framer-motion";
 
-export const MovieView = ({ movies }) => {
+export const MovieView = ({ user, movies, token }) => {
     const { movieId } = useParams();
 
     const movie = movies.find((m) => m._id === movieId);
+
+    const addToFavorites = () => {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}` },
+            "Content-Type": "application/json"
+        })
+            .then((res) => {
+                if (res.ok) {
+                    alert("Movie added to favorites!")
+                    return (res.json);
+                } else {
+                    alert("Could not add to favorites");
+                }
+            })
+            .catch((e) => {
+                alert("Error: " + e);
+            });
+    }
 
     return (
         <div className="movieview-container">
@@ -36,7 +54,8 @@ export const MovieView = ({ movies }) => {
                         className="add-to-favorites-large"
                         transition={{ duration: .3 }}
                         whileHover={{ scale: 1.5, rotateZ: 360 }}
-                        whileTap={{ scale: 1 }}>⭐</motion.button></span>
+                        whileTap={{ scale: 1 }}
+                        onClick={addToFavorites}>⭐</motion.button></span>
 
                 </Col>
             </Row>
@@ -46,11 +65,11 @@ export const MovieView = ({ movies }) => {
                 </div>
                 <div className="footer">
                     <Link to={`/`}>
-                            <motion.div
-                                whileHover={{ scale: 1.3 }}
-                                whileTap={{ scale: 1 }}>
-                                <Button className="back-button">Back</Button>
-                            </motion.div>
+                        <motion.div
+                            whileHover={{ scale: 1.3 }}
+                            whileTap={{ scale: 1 }}>
+                            <Button className="back-button">Back</Button>
+                        </motion.div>
                     </Link>
                 </div>
 
@@ -58,14 +77,4 @@ export const MovieView = ({ movies }) => {
             </Row>
         </div>
     );
-};
-
-MovieView.propTypes = {
-    movie: PropTypes.shape({
-        Title: PropTypes.string.isRequired,
-        Director: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        Genre: PropTypes.string.isRequired
-    }).isRequired
 };
