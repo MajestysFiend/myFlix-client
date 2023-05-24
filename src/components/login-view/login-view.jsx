@@ -38,8 +38,8 @@ export const LoginView = ({ onLoggedIn }) => {
                     alert("User does not exist");
                 }
             })
-            .catch((e) => {
-                alert("Something went wrong");
+            .catch(() => {
+                alert("User does not exist");
             });
     };
 

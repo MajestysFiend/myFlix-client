@@ -27345,7 +27345,11 @@ const MainView = ()=>{
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
                                         user: user,
                                         token: token,
-                                        movies: movies
+                                        movies: movies,
+                                        onLoggedOut: ()=>{
+                                            setUser(null);
+                                            setToken(null);
+                                        }
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
@@ -27371,7 +27375,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 153,
+                            lineNumber: 157,
                             columnNumber: 21
                         }, undefined)
                     ]
@@ -58691,8 +58695,8 @@ const LoginView = ({ onLoggedIn  })=>{
                 localStorage.setItem("token", data.token);
                 onLoggedIn(data.user, data.token);
             } else alert("User does not exist");
-        }).catch((e)=>{
-            alert("Something went wrong");
+        }).catch(()=>{
+            alert("User does not exist");
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
@@ -59626,7 +59630,7 @@ var _dayjs = require("dayjs");
 var _dayjsDefault = parcelHelpers.interopDefault(_dayjs);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
-const ProfileView = ({ user , movies , token  })=>{
+const ProfileView = ({ user , movies , token , onLoggedOut  })=>{
     const birthday = (0, _dayjsDefault.default)(user.Birthday).format("MM/DD/YYYY");
     const removeFromFavorites = (movieId)=>{
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {

@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const ProfileView = ({ user, movies, token }) => {
+export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
 
     const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");
 

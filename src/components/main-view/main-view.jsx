@@ -145,6 +145,10 @@ export const MainView = () => {
                                             user={user}
                                             token={token}
                                             movies={movies}
+                                            onLoggedOut={() => {
+                                                setUser(null)
+                                                setToken(null)
+                                            }}
                                         />
                                     </Col>}
                             </>
