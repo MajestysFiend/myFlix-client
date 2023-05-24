@@ -163,6 +163,8 @@ export const MainView = () => {
                                         <UpdateView
                                             user={user}
                                             token={token}
+                                            storedToken={storedToken}
+                                            setUser={setUser}
                                             handleSubmit={handleSubmit}
                                         />
                                     </Col>}

@@ -1,13 +1,15 @@
+import {useState} from "react"
 import { Button, Form, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export const UpdateView = (user, token) => {
+export const UpdateView = (user, token, storedToken, setUser) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
+    const [user, setUser] = useState(storedUser ? storedUser : null);
     
 
     const handleSubmit = (event) => {
@@ -23,27 +25,32 @@ export const UpdateView = (user, token) => {
         }
     }
     const data = {
-        username,
-        password,
-        email,
-        birthday
-
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
     };
+
     const updateInfo = () => {
-        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}`, {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.user.Username}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${user.storedToken}`,
                 "Content-Type": "application/json"
             }
         })
             .then(res => {
                 if (res.ok) {
-                    alert("Your information has been updated!");
                     return res.json();
                 } else {
                     alert("Could not update info");
+                }
+            })
+            .then(user => {
+                if (user) {
+                    alert("Successfully changed information");
+                    setUser(user);
                 }
             })
             .catch((e) => {
@@ -103,7 +110,7 @@ export const UpdateView = (user, token) => {
                                 value={birthday}
                                 onChange={(e) => setBirthday(e.target.value)}
                                 id="birthdayInput2"
-                                placeholder={user.Birthday}
+                                placeholder={user.Birthday.value}
                                 required />
                         </Form.Group>
                         <Link to={"/profile"}>

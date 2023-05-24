@@ -27369,6 +27369,8 @@ const MainView = ()=>{
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _updateView.UpdateView), {
                                         user: user,
                                         token: token,
+                                        storedToken: storedToken,
+                                        setUser: setUser,
                                         handleSubmit: handleSubmit
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
@@ -59631,7 +59633,7 @@ var _dayjsDefault = parcelHelpers.interopDefault(_dayjs);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 const ProfileView = ({ user , movies , token , onLoggedOut  })=>{
-    const birthday = (0, _dayjsDefault.default)(user.Birthday).format("MM/DD/YYYY");
+    const birthday = (0, _dayjsDefault.default)(user.Birthday).format("MMMM D, YYYY");
     const removeFromFavorites = (movieId)=>{
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {
             method: "DELETE",
@@ -60233,16 +60235,17 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "UpdateView", ()=>UpdateView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
-var _react = require("react");
 var _s = $RefreshSig$();
-const UpdateView = (user, token)=>{
+const UpdateView = (user, token, storedToken, setUser)=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
+    const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const handleSubmit = (event)=>{
         event.preventDefault();
     };
@@ -60252,24 +60255,27 @@ const UpdateView = (user, token)=>{
         else passwordInput.type = "password";
     };
     const data = {
-        username,
-        password,
-        email,
-        birthday
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
     };
     const updateInfo = ()=>{
-        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}`, {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.user.Username}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${user.storedToken}`,
                 "Content-Type": "application/json"
             }
         }).then((res)=>{
-            if (res.ok) {
-                alert("Your information has been updated!");
-                return res.json();
-            } else alert("Could not update info");
+            if (res.ok) return res.json();
+            else alert("Could not update info");
+        }).then((user)=>{
+            if (user) {
+                alert("Successfully changed information");
+                setUser(user);
+            }
         }).catch((e)=>{
             console.log("Error: " + e);
         });
@@ -60290,7 +60296,7 @@ const UpdateView = (user, token)=>{
                                     children: "Username"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 60,
+                                    lineNumber: 67,
                                     columnNumber: 29
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -60304,13 +60310,13 @@ const UpdateView = (user, token)=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 61,
+                                    lineNumber: 68,
                                     columnNumber: 29
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 59,
+                            lineNumber: 66,
                             columnNumber: 25
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -60319,7 +60325,7 @@ const UpdateView = (user, token)=>{
                                     children: "Password"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 73,
+                                    lineNumber: 80,
                                     columnNumber: 29
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -60332,13 +60338,13 @@ const UpdateView = (user, token)=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 74,
+                                    lineNumber: 81,
                                     columnNumber: 29
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 72,
+                            lineNumber: 79,
                             columnNumber: 25
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Check, {
@@ -60347,7 +60353,7 @@ const UpdateView = (user, token)=>{
                             onClick: showPassword
                         }, void 0, false, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 84,
+                            lineNumber: 91,
                             columnNumber: 25
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -60356,7 +60362,7 @@ const UpdateView = (user, token)=>{
                                     children: "Email"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 89,
+                                    lineNumber: 96,
                                     columnNumber: 29
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -60369,13 +60375,13 @@ const UpdateView = (user, token)=>{
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 90,
+                                    lineNumber: 97,
                                     columnNumber: 29
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 88,
+                            lineNumber: 95,
                             columnNumber: 25
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -60384,7 +60390,7 @@ const UpdateView = (user, token)=>{
                                     children: "Birthday"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 100,
+                                    lineNumber: 107,
                                     columnNumber: 29
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -60392,17 +60398,17 @@ const UpdateView = (user, token)=>{
                                     value: birthday,
                                     onChange: (e)=>setBirthday(e.target.value),
                                     id: "birthdayInput2",
-                                    placeholder: user.Birthday,
+                                    placeholder: user.Birthday.value,
                                     required: true
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 101,
+                                    lineNumber: 108,
                                     columnNumber: 29
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 99,
+                            lineNumber: 106,
                             columnNumber: 25
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -60413,12 +60419,12 @@ const UpdateView = (user, token)=>{
                                 children: "Save Changes"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 110,
+                                lineNumber: 117,
                                 columnNumber: 29
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 109,
+                            lineNumber: 116,
                             columnNumber: 25
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -60427,37 +60433,37 @@ const UpdateView = (user, token)=>{
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 113,
+                                lineNumber: 120,
                                 columnNumber: 29
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 112,
+                            lineNumber: 119,
                             columnNumber: 25
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 58,
+                    lineNumber: 65,
                     columnNumber: 21
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/update-view.jsx",
-                lineNumber: 57,
+                lineNumber: 64,
                 columnNumber: 17
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/profile-view/update-view.jsx",
-            lineNumber: 56,
+            lineNumber: 63,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/profile-view/update-view.jsx",
-        lineNumber: 55,
+        lineNumber: 62,
         columnNumber: 9
     }, undefined);
 };
-_s(UpdateView, "jsOQN3GC2XlBG9ITlzCdpyJOnso=");
+_s(UpdateView, "/Bz51DK/bHhklZEIvHF1KNSGShg=");
 _c = UpdateView;
 var _c;
 $RefreshReg$(_c, "UpdateView");
