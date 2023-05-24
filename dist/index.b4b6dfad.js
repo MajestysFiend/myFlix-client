@@ -59626,10 +59626,10 @@ var _dayjs = require("dayjs");
 var _dayjsDefault = parcelHelpers.interopDefault(_dayjs);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
-const ProfileView = ({ user , movie , movies , token  })=>{
+const ProfileView = ({ user , movies , token  })=>{
     const birthday = (0, _dayjsDefault.default)(user.Birthday).format("MM/DD/YYYY");
-    const removeFromFavorites = ()=>{
-        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
+    const removeFromFavorites = (movieId)=>{
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -59639,7 +59639,7 @@ const ProfileView = ({ user , movie , movies , token  })=>{
             if (res.ok) {
                 alert("Movie removed from favorites!");
                 return res.json;
-            } else alert("Could not remove movie from favorites");
+            } else alert("Could not remove movie");
         }).catch((e)=>{
             alert("Error: " + e);
         });
@@ -59691,7 +59691,9 @@ const ProfileView = ({ user , movie , movies , token  })=>{
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                             variant: "danger",
                             className: "seemore-button",
-                            onClick: removeFromFavorites,
+                            onClick: ()=>{
+                                removeFromFavorites(movie._id);
+                            },
                             children: "Remove"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
@@ -59724,7 +59726,7 @@ const ProfileView = ({ user , movie , movies , token  })=>{
             "Content-Type": "application/json"
         }).then((res)=>{
             if (res.ok) {
-                alert("Your account has been deleted. Good Bye!");
+                alert("Your account has been deleted");
                 onLoggedOut();
             } else alert("Could not delete account");
         }).catch((e)=>{

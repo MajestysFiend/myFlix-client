@@ -2,12 +2,11 @@ import dayjs from "dayjs";
 import { Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const ProfileView = ({ user, movie, movies, token }) => {
-
+export const ProfileView = ({ user, movies, token }) => {
     const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");
 
-    const removeFromFavorites = () => {
-        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
+    const removeFromFavorites = (movieId) => {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` },
             "Content-Type": "application/json"
@@ -17,7 +16,7 @@ export const ProfileView = ({ user, movie, movies, token }) => {
                     alert("Movie removed from favorites!")
                     return (res.json)
                 } else {
-                    alert("Could not remove movie from favorites");
+                    alert("Could not remove movie");
                 }
             })
             .catch((e) => {
@@ -30,6 +29,7 @@ export const ProfileView = ({ user, movie, movies, token }) => {
             return (movie);
         }
     })
+
     const displayFavorite = favoriteMovies.map((movie) => {
         return (
             <Col className="mb-4" key={movie._id} xs={12} md={6}>
@@ -43,7 +43,7 @@ export const ProfileView = ({ user, movie, movies, token }) => {
                     <div class="card-footer">
                         <Button variant="danger"
                             className="seemore-button"
-                        onClick={removeFromFavorites}>Remove</Button>
+                            onClick={() => { removeFromFavorites(movie._id) }}>Remove</Button>
                     </div>
                 </Card>
             </Col>
@@ -58,7 +58,7 @@ export const ProfileView = ({ user, movie, movies, token }) => {
         })
             .then(res => {
                 if (res.ok) {
-                    alert("Your account has been deleted. Good Bye!");
+                    alert("Your account has been deleted");
                     onLoggedOut();
                 } else {
                     alert("Could not delete account");
