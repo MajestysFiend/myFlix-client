@@ -2,7 +2,7 @@ import { Button, Form, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export const UpdateView = (user,token) => {
+export const UpdateView = (user, token) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -41,6 +41,7 @@ export const UpdateView = (user,token) => {
             .then(res => {
                 if (res.ok) {
                     alert("Your information has been updated!");
+                    return res.json();
                 } else {
                     alert("Could not update info");
                 }
@@ -49,8 +50,6 @@ export const UpdateView = (user,token) => {
                 console.log("Error: " + e);
             });
     }
-
-    console.log(user);
 
     return (
         <div className="update-container" >

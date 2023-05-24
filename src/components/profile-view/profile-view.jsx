@@ -3,6 +3,7 @@ import { Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const ProfileView = ({ user, movies, token }) => {
+
     const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");
 
     const removeFromFavorites = (movieId) => {

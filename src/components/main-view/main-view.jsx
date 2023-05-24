@@ -143,6 +143,7 @@ export const MainView = () => {
                                     <Col md={8}>
                                         <ProfileView
                                             user={user}
+                                            token={token}
                                             movies={movies}
                                         />
                                     </Col>}
@@ -157,9 +158,8 @@ export const MainView = () => {
                                     <Col md={5}>
                                         <UpdateView
                                             user={user}
-                                            storedToken={storedToken}
+                                            token={token}
                                             handleSubmit={handleSubmit}
-                                            setUser={setUser}
                                         />
                                     </Col>}
                             </>
