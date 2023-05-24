@@ -1,23 +1,17 @@
 import { Button, Form, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { ProfileView } from "../profile-view/profile-view";
+import { useState } from "react";
 
-export const UpdateView = (user, setUser, storedToken) => {
+export const UpdateView = (user,token) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
-    const [token, setToken] = useState(storedToken ? storedToken : null);
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    }
-
-    const setInfo = () => {
-        setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
     }
 
     const showPassword = () => {
@@ -35,27 +29,26 @@ export const UpdateView = (user, setUser, storedToken) => {
         birthday
 
     };
-    fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json"
-        }
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            console.log("Updated info: ", res);
-            alert("Your info has been updated!");
-        })
-        .then(user => {
-            if (user) {
-                setInfo(user);
+    const updateInfo = () => {
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
             }
         })
-        .catch((e) => {
-            console.log("Error: " + e);
-        });
+            .then(res => {
+                if (res.ok) {
+                    alert("Your information has been updated!");
+                } else {
+                    alert("Could not update info");
+                }
+            })
+            .catch((e) => {
+                console.log("Error: " + e);
+            });
+    }
 
     console.log(user);
 
@@ -63,7 +56,7 @@ export const UpdateView = (user, setUser, storedToken) => {
         <div className="update-container" >
             <Row className="justify-content-center customHeight">
                 <Col md={10} className="my-auto">
-                    <Form onSumbit={handleSubmit}>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>Username</Form.Label>
                             <Form.Control
@@ -115,7 +108,7 @@ export const UpdateView = (user, setUser, storedToken) => {
                                 required />
                         </Form.Group>
                         <Link to={"/profile"}>
-                            <Button type="submit">Save Changes</Button>
+                            <Button type="submit" onClick={updateInfo}>Save Changes</Button>
                         </Link>
                         <Link to={"/profile"}>
                             <Button>Cancel</Button>
