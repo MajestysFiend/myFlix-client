@@ -5,7 +5,7 @@ import { SignupView } from "../signup-view/signup-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { ProfileView } from "../profile-view/profile-view";
-import { UpdateView } from "../update-view/update-view";
+import { UpdateView } from "../profile-view/update-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { motion } from "framer-motion";
@@ -125,7 +125,10 @@ export const MainView = () => {
                                             animate={{ scale: 1 }}
                                             initial={{ scale: 0 }}
                                             transition={{ type: "tween", duration: .5 }}>
-                                            <MovieView movies={movies} />
+                                                    <MovieView
+                                                        movies={movies}
+                                                        user={user}
+                                                        token={token} />
                                         </motion.div>
                                     </Col>
                                 )}
@@ -137,7 +140,7 @@ export const MainView = () => {
                         element={
                             <>
                                 {!user ? (<Navigate to="/login" replace />) :
-                                    <Col md={5}>
+                                    <Col md={8}>
                                         <ProfileView
                                             user={user}
                                             movies={movies}
