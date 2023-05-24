@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const ProfileView = ({ user, movies, token }) => {
+export const ProfileView = ({ user, movie, movies, token }) => {
 
     const birthday = dayjs(user.Birthday).format("MM/DD/YYYY");
 
@@ -27,10 +27,7 @@ export const ProfileView = ({ user, movies, token }) => {
 
     const favoriteMovies = movies.filter((movie) => {
         if (user.FavoriteMovies.includes(movie._id)) {
-            return (
-                movie
-            )
-
+            return (movie);
         }
     })
     const displayFavorite = favoriteMovies.map((movie) => {
@@ -56,7 +53,8 @@ export const ProfileView = ({ user, movies, token }) => {
     const deleteAccount = () => {
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}`, {
             method: "DELETE",
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${token}` },
+            "Content-Type": "application/json"
         })
             .then(res => {
                 if (res.ok) {
