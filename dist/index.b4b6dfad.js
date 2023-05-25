@@ -2941,7 +2941,7 @@ const MyFlixApplication = ()=>{
     }, void 0, false, {
         fileName: "src/index.jsx",
         lineNumber: 8,
-        columnNumber: 9
+        columnNumber: 13
     }, undefined);
 };
 _c = MyFlixApplication;
