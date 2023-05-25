@@ -52,8 +52,9 @@ export const MovieView = ({ user, movies, token }) => {
                     <span className="footer"><motion.button
                         text-center
                         className="add-to-favorites-large"
+                        initial={{opacity: .8}}
                         transition={{ duration: .3 }}
-                        whileHover={{ scale: 1.5, rotateZ: 360 }}
+                        whileHover={{ scale: 1.5, rotateZ: 720, opacity: 1}}
                         whileTap={{ scale: 1 }}
                         onClick={addToFavorites}>⭐</motion.button></span>
 

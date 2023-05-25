@@ -47,7 +47,7 @@ export const MovieCard = ({ user, movie, token}) => {
                 className="add-to-favorites"
                 initial={{ scale: .8, opacity: .8 }}
                 transition={{ duration: .3 }}
-                whileHover={{ scale: 1.2, rotateZ: 360, opacity: 1 }}
+                whileHover={{ scale: 1.2, rotateZ: 720, opacity: 1 }}
                 whileTap={{ scale: .8 }}
                 onClick={addToFavorites}>⭐</motion.button></span>
         </Card>
