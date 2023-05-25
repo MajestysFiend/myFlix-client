@@ -1,15 +1,14 @@
 import {useState} from "react"
 import { Button, Form, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
-export const UpdateView = (user, token, storedToken, setUser) => {
+export const UpdateView = (user, token, storedToken) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
-    const [user, setUser] = useState(storedUser ? storedUser : null);
+  
     
 
     const handleSubmit = (event) => {
@@ -50,7 +49,6 @@ export const UpdateView = (user, token, storedToken, setUser) => {
             .then(user => {
                 if (user) {
                     alert("Successfully changed information");
-                    setUser(user);
                 }
             })
             .catch((e) => {
@@ -110,7 +108,7 @@ export const UpdateView = (user, token, storedToken, setUser) => {
                                 value={birthday}
                                 onChange={(e) => setBirthday(e.target.value)}
                                 id="birthdayInput2"
-                                placeholder={user.Birthday.value}
+                                placeholder={user.Birthday}
                                 required />
                         </Form.Group>
                         <Link to={"/profile"}>
