@@ -57,9 +57,10 @@ export const UpdateView = (user, token, storedToken) => {
     }
 
     return (
-        <div className="update-container" >
             <Row className="justify-content-center customHeight">
                 <Col md={10} className="my-auto">
+                <div className="update-container" >
+                    <h1><span className="my">Update</span><span className="flix">Info</span></h1>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>Username</Form.Label>
@@ -118,8 +119,9 @@ export const UpdateView = (user, token, storedToken) => {
                             <Button>Cancel</Button>
                         </Link>
                     </Form>
+                </div>
                 </Col>
             </Row>
-        </div>
+        
     )
 }

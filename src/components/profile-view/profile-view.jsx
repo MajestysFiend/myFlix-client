@@ -71,30 +71,37 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
     }
 
     return (
-        <div className="profile-container">
-            <Col className="text-center">
-                <h1><span className="my">my</span><span className="flix">Profile</span></h1>
-                <p className="label">Username</p>
-                <span className="profile-info">{user.Username}</span><br />
-                <p className="label">Birthday</p>
-                <span className="profile-info">{birthday}</span><br />
-                <p className="label">Email</p>
-                <span className="profile-info">{user.Email}</span><br />
-                <Link to={"/profile/update"}>
-                    <Button>Edit User Info</Button>
-                </Link>
-                <Button onClick={deleteAccount}>Delete Account</Button>
-            </Col>
-            <Row>
-                <Col xs={12} className="text-center">
-                    <h2><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
-                </Col>
-            </Row>
-            <div className="favorites-container">
+        <>
+            <div className="profile-container">
                 <Row>
-                    {displayFavorite}
+                    <Col className="text-center">
+                        <h1><span className="my">my</span><span className="flix">Profile</span></h1>
+                        <p className="label">Username</p>
+                        <span className="profile-info">{user.Username}</span><br />
+                        <p className="label">Birthday</p>
+                        <span className="profile-info">{birthday}</span><br />
+                        <p className="label">Email</p>
+                        <span className="profile-info">{user.Email}</span><br />
+                        <Link to={"/profile/update"}>
+                            <Button className="edit-info-button">Edit User Info</Button>
+                        </Link>
+                        <Button onClick={deleteAccount} className="delete-account-button">Delete Account</Button>
+                    </Col>
                 </Row>
+
             </div>
-        </div>
+            <div className="profile-container">
+                <Row>
+                    <Col xs={12} className="text-center">
+                        <h2><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
+                    </Col>
+                    <div className="favorites-container">
+                        {displayFavorite}
+                    </div>
+
+                </Row>
+            </div >
+        </>
+
     )
 }

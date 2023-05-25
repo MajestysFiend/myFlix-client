@@ -33,8 +33,12 @@ button:hover {
     padding: 3%;
 }
 
+.update-container {
+    padding: 10%;
+}
+
 .movieview-container {
-    margin-top: 4%;
+    margin-top: 1%;
 }
 
 .my {
@@ -46,7 +50,7 @@ button:hover {
 }
 
 .navbar {
-    margin-top: 2%;
+    
     border-radius: 15px;
     border: 4px solid rgb(46, 46, 46, .9);
 }
@@ -105,7 +109,7 @@ small {
 }
 
 .card {
-    margin-top: 7%;
+    margin-top: 6%;
 }
 
 .card-body {
@@ -173,15 +177,19 @@ small {
     border: 4px solid rgb(46, 46, 46);
     border-radius: 15px;
     background-color: whitesmoke;
+    margin: 5%;
+    padding: 10px;
 }
 
 .favorites-container {
     display: block;
     border: 4px solid rgb(46, 46, 46);
     border-radius: 15px;
-    width: 75%;
+    width: 85%;
     min-height: 500px;
     margin: 5% auto;
+    margin-top: 0;
+    background-color: black;
 }
 
 .add-to-favorites {
@@ -211,6 +219,10 @@ small {
     background-size: 400% 400%;
     animation: gradientBackground 23s ease infinite;
     height: 100vh;
+}
+
+.edit-info-button {
+    margin-right: 10px;
 }
 
 @keyframes gradientBackground {
