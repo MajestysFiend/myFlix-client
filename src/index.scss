@@ -1,5 +1,240 @@
-$color: steelblue;
+//Primary color: rgb(101, 122, 214);
+//Secondary color: rgb(46, 46, 46);
+@import "~bootstrap/scss/bootstrap";
 
-.my-flix {
-    color: $color;
+
+label {
+    color: rgb(46, 46, 46);
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 5%;
+}
+
+button:hover {
+    scale: 1.1;
+}
+
+.moviecard {
+    border:4px solid rgb(46, 46, 46);
+    border-radius: 10px;
+}
+
+.login-container,
+.signup-container,
+.movieview-container,
+.update-container {
+
+    background-color: whitesmoke;
+    border: 4px solid rgb(46, 46, 46, .9);
+    border-radius: 15px;
+    padding: 3%;
+}
+
+.update-container {
+    padding: 10%;
+}
+
+.movieview-container {
+    margin-top: 1%;
+}
+
+.my {
+    color: rgb(101, 122, 214);
+}
+
+.flix {
+    color: rgb(46, 46, 46);
+}
+
+.navbar {
+    
+    border-radius: 15px;
+    border: 4px solid rgb(46, 46, 46, .9);
+}
+
+.navbar-brand {
+    font-family: Sigmar, sans-serif;
+    font-size: 25px;
+}
+
+.navbar-brand:hover {
+    scale: 1.2;
+}
+
+.nav-link {
+    font-family: Sigmar, sans-serif;
+}
+
+.nav-link:hover {
+    color:rgb(101, 122, 214);
+}
+
+.nav-link:hover {
+    scale: 1.2;
+}
+
+.btn {
+    font-weight: 800;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seemore-button {
+    display: block;
+    margin: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logout-button, .login-button, .signup-button  {
+    color:rgb(101, 122, 214);
+    font-size: 20px;
+}
+
+.my,
+.flix,
+label,
+small {
+    font-family: Sigmar, sans-serif;
+}
+
+.customHeight {
+    min-height: 100vh;
+}
+
+.card {
+    margin-top: 6%;
+}
+
+.card-body {
+    font-family: Sigmar, sans-serif;
+    max-height: 100px;
+}
+
+.card-footer {
+    border: none;
+    background-color: inherit;
+}
+
+.description {
+    border: 4px solid rgb(46, 46, 46, .9);
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 75%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.picture-reference {
+    display: block;
+    text-align: center;
+    color: rgb(46, 46, 46);
+    margin-bottom: 5%;
+}
+
+.picture-link {
+    color:rgb(101, 122, 214);
+    text-decoration: none;
+}
+
+.moviecard-title, .profile-info {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-family: Sigmar, sans-serif;
+    margin-bottom: 5%;
+}
+
+.label {
+    display: block;
+    text-align: center;
+    font-family: Sigmar, sans-serif;
+    margin-bottom: 0;
+    color: rgb(101, 122, 214);
+}
+
+.moviecard-director,
+.moviecard-genre {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-family: Sigmar, sans-serif;
+    margin-bottom: 5%;
+}
+
+.movie-description {
+    font-family: Sigmar, sans-serif;
+    font-size: 16px;
+}
+
+.profile-container {
+    border: 4px solid rgb(46, 46, 46);
+    border-radius: 15px;
+    background-color: whitesmoke;
+    margin: 5%;
+    padding: 10px;
+}
+
+.favorites-container {
+    display: block;
+    border: 4px solid rgb(46, 46, 46);
+    border-radius: 15px;
+    width: 85%;
+    min-height: 500px;
+    margin: 5% auto;
+    margin-top: 0;
+    background-color: black;
+}
+
+.add-to-favorites {
+    position: absolute;
+    left: 80%;
+    bottom: 1%;
+    border: none;
+    background-color: transparent;
+    font-size: 40px;
+    padding: 0;
+    
+}
+
+.add-to-favorites-large {
+    margin-top: 25%;
+    border: none;
+    background-color: transparent;
+    font-size: 80px;
+    padding: 0;
+    text-align: center;
+    
+
+}
+
+.animated_gradient {
+    background: linear-gradient(90deg, #0062ff, whitesmoke, #0062ff);
+    background-size: 400% 400%;
+    animation: gradientBackground 23s ease infinite;
+    height: 100vh;
+}
+
+.edit-info-button {
+    margin-right: 10px;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
