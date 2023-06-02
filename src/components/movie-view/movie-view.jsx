@@ -5,13 +5,20 @@ import { Button } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export const MovieView = ({ user, movies, token }) => {
+
+    const [rerender, setRerender] = useState("Yes, please!")
+
     const { movieId } = useParams();
 
     const movie = movies.find((m) => m._id === movieId);
-
+    
+    // Add to favorites function(not working properly)
     const addToFavorites = () => {
+        console.log("Before res.json: " + user.FavoriteMovies)
+
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
@@ -25,11 +32,18 @@ export const MovieView = ({ user, movies, token }) => {
                     alert("Could not add to favorites");
                 }
             })
+            .then(() => {
+                if (rerender === "Yes, please!") {
+                    setRerender("Do it!")
+                } else {
+                    setRerender("Yes, please!")
+                }
+                console.log("After res.json: " + user.FavoriteMovies)
+            })
             .catch((e) => {
                 alert("Error: " + e);
             });
     }
-
     return (
         <div className="movieview-container">
             <Row>
@@ -52,9 +66,9 @@ export const MovieView = ({ user, movies, token }) => {
                     <span className="footer"><motion.button
                         text-center
                         className="add-to-favorites-large"
-                        initial={{opacity: .8}}
+                        initial={{ opacity: .8 }}
                         transition={{ duration: .3 }}
-                        whileHover={{ scale: 1.5, rotateZ: 720, opacity: 1}}
+                        whileHover={{ scale: 1.5, rotateZ: 720, opacity: 1 }}
                         whileTap={{ scale: 1 }}
                         onClick={addToFavorites}>⭐</motion.button></span>
 

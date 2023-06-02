@@ -99,7 +99,7 @@ export const MainView = () => {
                                             {movies.map((movie) => {
                                                 return (
 
-                                                    <Col className="mb-4" key={movie._id} md={3}>
+                                                    <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
                                                         <MovieCard user={user} movie={movie} token={token} />
                                                     </Col>
 
@@ -128,7 +128,8 @@ export const MainView = () => {
                                                     <MovieView
                                                         movies={movies}
                                                         user={user}
-                                                        token={token} />
+                                                        token={token}
+                                                        />
                                         </motion.div>
                                     </Col>
                                 )}
@@ -147,8 +148,7 @@ export const MainView = () => {
                                             movies={movies}
                                             onLoggedOut={() => {
                                                 setUser(null)
-                                                setToken(null)
-                                            }}
+                                            }}                                         
                                         />
                                     </Col>}
                             </>

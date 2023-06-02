@@ -1,24 +1,38 @@
 import dayjs from "dayjs";
-import { Button, Card, Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
 
-    const birthday = dayjs(user.Birthday).format("MMMM D, YYYY");
+    const [rerender, setRerender] = useState("Yes, please!")
 
-    const removeFromFavorites = (movieId) => {
-        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {
+    const birthday = dayjs(user.Birthday).format("MMMM D, YYYY");
+    
+    // Remove from favorites function (not working properly)
+    const removeFromFavorites = (movie) => {
+        console.log("Before res.json: " + user.FavoriteMovies)
+
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` },
             "Content-Type": "application/json"
         })
             .then(res => {
                 if (res.ok) {
-                    alert("Movie removed from favorites!")
-                    return (res.json)
+                    return (res.json);
                 } else {
                     alert("Could not remove movie");
                 }
+            })
+            .then(() => {
+                if (rerender === "Yes, please!") {
+                    setRerender("Do it!")
+                } else {
+                    setRerender("Yes, please!")
+                }
+                console.log("After res.json: " + user.FavoriteMovies)
+
             })
             .catch((e) => {
                 alert("Error: " + e);
@@ -33,7 +47,7 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
 
     const displayFavorite = favoriteMovies.map((movie) => {
         return (
-            <Col className="mb-4" key={movie._id} xs={12} md={6}>
+            <Col className="mb-4" key={movie._id} xs={12} sm={12} md={12} lg={12} xl={6}>
                 <Card className="moviecard">
                     <Card.Img variant="top" src={movie.ImagePath} />
                     <Card.Body className="text-center card-body">
@@ -92,14 +106,17 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
             </div>
             <div className="profile-container">
                 <Row>
-                    <Col xs={12} className="text-center">
+                    <Col className="text-center">
                         <h2><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
                     </Col>
-                    <div className="favorites-container">
-                        {displayFavorite}
-                    </div>
-
                 </Row>
+                <Container>
+                    <Row className="justify-content-center">
+                        <div className="favorites-container">
+                            {displayFavorite}
+                        </div>
+                    </Row>
+                </Container>
             </div >
         </>
 

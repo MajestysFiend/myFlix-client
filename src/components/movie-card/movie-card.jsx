@@ -1,12 +1,17 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react"
 
-export const MovieCard = ({ user, movie, token}) => {
+export const MovieCard = ({ user, movie, token }) => {
 
+    const [rerender, setRerender] = useState("Yes, please!")
+    
+    // Add to favorites function(not workingg properly)
     const addToFavorites = () => {
+        console.log("Before res.json: " + user.FavoriteMovies)
+
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
@@ -20,6 +25,14 @@ export const MovieCard = ({ user, movie, token}) => {
                     alert("Could not add to favorites");
                 }
             })
+            .then(() => {
+                if (rerender === "Yes, please!") {
+                    setRerender("Do it!")
+                } else {
+                    setRerender("Yes, please!")
+                }
+                console.log("After res.json: " + user.FavoriteMovies)
+            })
             .catch((e) => {
                 alert("Error: " + e);
             });
@@ -27,18 +40,17 @@ export const MovieCard = ({ user, movie, token}) => {
 
     return (
         <Card className="h-100 moviecard">
-            <Card.Img variant="top" src={movie.ImagePath} />
+            <Card.Img variant="top" src={movie.ImagePath} w-100 />
             <Card.Body className="text-center card-body">
                 <Card.Title>{movie.Title}</Card.Title>
-                <Card.Text>{movie.Director.Name}
-                </Card.Text>
+
             </Card.Body>
-            <div class="card-footer">
+            <div class="card-footer justify-content-center">
                 <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
                     <motion.div
                         whileHover={{ scale: 1.3 }}
                         whileTap={{ scale: 1 }}>
-                        <Button variant="primary" className="seemore-button">See More</Button>
+                        <Button variant="primary" className="seemore-button ">See More</Button>
                     </motion.div>
                 </Link>
             </div>
@@ -52,14 +64,4 @@ export const MovieCard = ({ user, movie, token}) => {
                 onClick={addToFavorites}>⭐</motion.button></span>
         </Card>
     );
-};
-
-MovieCard.propTypes = {
-    movie: PropTypes.shape({
-        Title: PropTypes.string.isRequired,
-        Director: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        Genre: PropTypes.string.isRequired
-    })
 };
