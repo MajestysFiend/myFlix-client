@@ -242,3 +242,14 @@ small {
         background-position: 0% 50%;
     }
 }
+
+@media (max-width: 900px) {
+    .signup-container, .login-container {
+        min-width: 376px;
+        overflow: hidden;
+    }
+
+    body {
+        overflow: hidden;
+    }
+}

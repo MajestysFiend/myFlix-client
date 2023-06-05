@@ -12233,4 +12233,15 @@ button:hover {
   }
 }
 
+@media (width <= 900px) {
+  .signup-container, .login-container {
+    min-width: 376px;
+    overflow: hidden;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
 /*# sourceMappingURL=index.5f1df611.css.map */
