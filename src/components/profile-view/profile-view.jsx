@@ -1,26 +1,25 @@
 import dayjs from "dayjs";
-import { useState } from "react";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
 
     const [rerender, setRerender] = useState("Yes, please!")
 
     const birthday = dayjs(user.Birthday).format("MMMM D, YYYY");
-    
-    // Remove from favorites function (not working properly)
-    const removeFromFavorites = (movie) => {
-        console.log("Before res.json: " + user.FavoriteMovies)
 
-        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
+    // Remove from favorites function (not working properly)
+    const removeFromFavorites = (movieId) => {
+
+        fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movieId)}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` },
             "Content-Type": "application/json"
         })
             .then(res => {
                 if (res.ok) {
-                    return (res.json);
+                    return res.json;
                 } else {
                     alert("Could not remove movie");
                 }
@@ -31,7 +30,6 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
                 } else {
                     setRerender("Yes, please!")
                 }
-                console.log("After res.json: " + user.FavoriteMovies)
 
             })
             .catch((e) => {

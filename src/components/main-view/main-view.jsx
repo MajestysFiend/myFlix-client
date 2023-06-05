@@ -43,7 +43,8 @@ export const MainView = () => {
             <NavigationBar
                 user={user}
                 onLoggedOut={() => {
-                    setUser(null);
+                    setUser(null)
+                    setToken(null);
                 }}
             />
             <Row className="justify-content-center customHeight">
@@ -148,6 +149,7 @@ export const MainView = () => {
                                             movies={movies}
                                             onLoggedOut={() => {
                                                 setUser(null)
+                                                setToken(null)
                                             }}                                         
                                         />
                                     </Col>}

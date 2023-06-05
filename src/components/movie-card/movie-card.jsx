@@ -20,7 +20,7 @@ export const MovieCard = ({ user, movie, token }) => {
             .then((res) => {
                 if (res.ok) {
                     alert("Movie added to favorites!")
-                    return (res.json);
+                    return res.json;
                 } else {
                     alert("Could not add to favorites");
                 }
