@@ -1,6 +1,6 @@
 //Primary color: rgb(101, 122, 214);
 //Secondary color: rgb(46, 46, 46);
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 
 label {
@@ -18,7 +18,7 @@ button:hover {
 }
 
 .moviecard {
-    border:4px solid rgb(46, 46, 46);
+    border: 4px solid rgb(46, 46, 46);
     border-radius: 12px;
 }
 
@@ -51,7 +51,7 @@ button:hover {
 }
 
 .navbar {
-    
+
     border-radius: 15px;
     border: 4px solid rgb(46, 46, 46, .9);
 }
@@ -70,7 +70,7 @@ button:hover {
 }
 
 .nav-link:hover {
-    color:rgb(101, 122, 214);
+    color: rgb(101, 122, 214);
 }
 
 .nav-link:hover {
@@ -90,11 +90,13 @@ button:hover {
 .seemore-button {
     display: block;
     margin: auto;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logout-button, .login-button, .signup-button  {
-    color:rgb(101, 122, 214);
+.logout-button,
+.login-button,
+.signup-button {
+    color: rgb(101, 122, 214);
     font-size: 20px;
 }
 
@@ -140,11 +142,12 @@ small {
 }
 
 .picture-link {
-    color:rgb(101, 122, 214);
+    color: rgb(101, 122, 214);
     text-decoration: none;
 }
 
-.moviecard-title, .profile-info {
+.moviecard-title,
+.profile-info {
     display: block;
     text-align: center;
     font-size: 30px;
@@ -201,7 +204,7 @@ small {
     background-color: transparent;
     font-size: 40px;
     padding: 0;
-    
+
 }
 
 .add-to-favorites-large {
@@ -211,7 +214,7 @@ small {
     font-size: 80px;
     padding: 0;
     text-align: center;
-    
+
 
 }
 
