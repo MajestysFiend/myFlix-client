@@ -39,6 +39,7 @@ export const MainView = () => {
     }, [token]);
 
     return (
+
         <BrowserRouter>
             <NavigationBar
                 user={user}
@@ -126,11 +127,11 @@ export const MainView = () => {
                                             animate={{ scale: 1 }}
                                             initial={{ scale: 0 }}
                                             transition={{ type: "tween", duration: .5 }}>
-                                                    <MovieView
-                                                        movies={movies}
-                                                        user={user}
-                                                        token={token}
-                                                        />
+                                            <MovieView
+                                                movies={movies}
+                                                user={user}
+                                                token={token}
+                                            />
                                         </motion.div>
                                     </Col>
                                 )}
@@ -150,7 +151,7 @@ export const MainView = () => {
                                             onLoggedOut={() => {
                                                 setUser(null)
                                                 setToken(null)
-                                            }}                                         
+                                            }}
                                         />
                                     </Col>}
                             </>
@@ -176,7 +177,7 @@ export const MainView = () => {
 
                 </Routes>
             </Row>
-            </BrowserRouter>
+        </BrowserRouter>
 
     );
 }

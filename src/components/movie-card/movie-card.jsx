@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";

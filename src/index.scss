@@ -245,7 +245,7 @@ small {
 
 @media (max-width: 900px) {
     .signup-container, .login-container {
-        min-width: 376px;
+        min-width: 376px !important;
         overflow: hidden;
     }
 

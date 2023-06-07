@@ -12235,8 +12235,8 @@ button:hover {
 
 @media (width <= 900px) {
   .signup-container, .login-container {
-    min-width: 376px;
     overflow: hidden;
+    min-width: 376px !important;
   }
 
   body {

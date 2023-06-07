@@ -19,6 +19,7 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
         })
             .then(res => {
                 if (res.ok) {
+                    alert("Movie removed from favorites")
                     return res.json;
                 } else {
                     alert("Could not remove movie");
@@ -71,6 +72,7 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
         })
             .then(res => {
                 if (res.ok) {
+                    window.confirm("Are you sure you want to delete your account?")
                     alert("Your account has been deleted");
                     onLoggedOut();
                 } else {
