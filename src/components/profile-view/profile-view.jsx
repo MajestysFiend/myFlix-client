@@ -87,7 +87,7 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
             <div className="profile-container">
                 <Row>
                     <Col className="text-center">
-                        <h1><span className="my">my</span><span className="flix">Profile</span></h1>
+                        <h1><span className="my">My</span><span className="flix">Profile</span></h1>
                         <p className="label">Username</p>
                         <span className="profile-info">{user.Username}</span><br />
                         <p className="label">Birthday</p>
