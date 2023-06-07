@@ -12024,10 +12024,6 @@ h1, .h1 {
   font-size: 50px;
 }
 
-img {
-  height: 420px;
-}
-
 .moviecard {
   border: 4px solid #2e2e2e;
   border-radius: 12px;
@@ -12116,9 +12112,16 @@ img {
   min-height: 90vh;
 }
 
-.moviecard-image {
+.card {
   max-width: 300px;
   max-height: 574px;
+  margin: 6% auto auto;
+}
+
+.moviecard-image {
+  max-width: 300px;
+  max-height: 420px;
+  min-height: 420px;
 }
 
 .card-body {

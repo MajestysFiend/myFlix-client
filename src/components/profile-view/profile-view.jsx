@@ -51,8 +51,6 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
                     <Card.Img variant="top" src={movie.ImagePath} />
                     <Card.Body className="text-center card-body">
                         <Card.Title>{movie.Title}</Card.Title>
-                        <Card.Text>{movie.Director.Name}
-                        </Card.Text>
                     </Card.Body>
                     <div class="card-footer">
                         <Button variant="danger"
