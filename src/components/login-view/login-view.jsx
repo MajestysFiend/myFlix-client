@@ -52,7 +52,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 initial={{ scale: 0 }}
                 transition={{ type: "tween", duration: .5 }}>
                 <div className="text-center">
-                    <h1><span className="my">my</span><span className="flix">Flix</span></h1>
+                    <h1><span className="my">My</span><span className="flix">Flix</span></h1>
                     <h2><span className="my">Log</span><span className="flix">in</span></h2>
                 </div>
                 <motion.Form onSubmit={handleSubmit}>

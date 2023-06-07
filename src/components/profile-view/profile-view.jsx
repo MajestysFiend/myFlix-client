@@ -112,7 +112,7 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
                 </Row>
                 <Container>
                     <Row className="justify-content-center">
-                        <div className="favorites-container">
+                        <div className="favorites-container animated_gradient2">
                             {displayFavorite}
                         </div>
                     </Row>

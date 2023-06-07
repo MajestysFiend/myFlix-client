@@ -13,10 +13,6 @@ h1 {
     margin: 5%;
 }
 
-button:hover {
-    scale: 1.1;
-}
-
 .moviecard {
     border: 4px solid rgb(46, 46, 46);
     border-radius: 12px;
@@ -71,11 +67,9 @@ button:hover {
 
 .nav-link:hover {
     color: rgb(101, 122, 214);
-}
-
-.nav-link:hover {
     scale: 1.2;
 }
+
 
 .btn {
     font-weight: 800;
@@ -89,7 +83,9 @@ button:hover {
 
 .seemore-button {
     display: block;
-    margin: auto;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -98,6 +94,12 @@ button:hover {
 .signup-button {
     color: rgb(101, 122, 214);
     font-size: 20px;
+}
+
+.btn:hover,
+.btn-primary:hover {
+    transition: none;
+    animation: none;
 }
 
 .my,
@@ -112,7 +114,15 @@ small {
 }
 
 .card {
+    margin: auto;
     margin-top: 6%;
+    max-width: 300px;
+    max-height: 574px;
+}
+
+.moviecard-image {
+    max-width: 300px;
+    max-height: 574px;
 }
 
 .card-body {
@@ -123,6 +133,7 @@ small {
 .card-footer {
     border: none;
     background-color: inherit;
+    height: 40px;
 }
 
 .description {
@@ -191,9 +202,9 @@ small {
     border-radius: 15px;
     width: 85%;
     min-height: 500px;
-    margin: 5% auto;
+    margin: 6% auto;
     margin-top: 0;
-    background-color: black;
+    background-color: transparent;
 }
 
 .add-to-favorites {
@@ -229,6 +240,12 @@ small {
     height: 100vh;
 }
 
+.animated_gradient2 {
+    background: linear-gradient(90deg, #0062ff, whitesmoke, #0062ff);
+    background-size: 400% 400%;
+    animation: gradientBackground 23s ease infinite;
+}
+
 @keyframes gradientBackground {
     0% {
         background-position: 0% 50%;
@@ -244,7 +261,9 @@ small {
 }
 
 @media (max-width: 900px) {
-    .signup-container, .login-container {
+
+    .signup-container,
+    .login-container {
         min-width: 376px !important;
         overflow: hidden;
     }

@@ -48,7 +48,7 @@ export const MovieView = ({ user, movies, token }) => {
         <div className="movieview-container">
             <Row>
                 <Col>
-                    <img src={movie.ImagePath} alt={movie.Title + " Cover Image"} style={{ width: "100%" }} />
+                    <img src={movie.ImagePath} alt={movie.Title + " Cover Image"} style={{ width: "100%"}} />
                     <div className="text-center"><small className="picture-reference">Cover art provided by <a href={movie.ImagePath} className="picture-link">Wikipedia</a></small></div>
                 </Col>
                 <Col>

@@ -12024,8 +12024,8 @@ h1, .h1 {
   font-size: 50px;
 }
 
-button:hover {
-  scale: 1.1;
+img {
+  height: 420px;
 }
 
 .moviecard {
@@ -12091,14 +12091,21 @@ button:hover {
 }
 
 .seemore-button {
-  margin: auto;
   font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   display: block;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
 }
 
 .logout-button, .login-button, .signup-button {
   color: #657ad6;
   font-size: 20px;
+}
+
+.btn:hover, .btn-primary:hover {
+  transition: none;
+  animation: none;
 }
 
 .my, .flix, label, small, .small {
@@ -12109,8 +12116,9 @@ button:hover {
   min-height: 90vh;
 }
 
-.card {
-  margin-top: 6%;
+.moviecard-image {
+  max-width: 300px;
+  max-height: 574px;
 }
 
 .card-body {
@@ -12120,6 +12128,7 @@ button:hover {
 
 .card-footer {
   background-color: inherit;
+  height: 40px;
   border: none;
 }
 
@@ -12183,10 +12192,10 @@ button:hover {
 .favorites-container {
   width: 85%;
   min-height: 500px;
-  background-color: #000;
+  background-color: #0000;
   border: 4px solid #2e2e2e;
   border-radius: 15px;
-  margin: 0 auto 5%;
+  margin: 0 auto 6%;
   display: block;
 }
 
@@ -12215,6 +12224,11 @@ button:hover {
 
 .animated_gradient {
   height: 100vh;
+  background: linear-gradient(90deg, #0062ff, #f5f5f5, #0062ff) 0 0 / 400% 400%;
+  animation: 23s infinite gradientBackground;
+}
+
+.animated_gradient2 {
   background: linear-gradient(90deg, #0062ff, #f5f5f5, #0062ff) 0 0 / 400% 400%;
   animation: 23s infinite gradientBackground;
 }
