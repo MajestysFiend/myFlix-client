@@ -3,9 +3,8 @@ import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
+export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
 
-    const [rerender, setRerender] = useState("Yes, please!")
 
     const birthday = dayjs(user.Birthday).format("MMMM D, YYYY");
 
@@ -26,11 +25,16 @@ export const ProfileView = ({ user, movies, token, onLoggedOut }) => {
                 }
             })
             .then(() => {
-                if (rerender === "Yes, please!") {
-                    setRerender("Do it!")
-                } else {
-                    setRerender("Yes, please!")
-                }
+                let updatedUser = { ...user }
+                let updatedFavoriteMovies = updatedUser.FavoriteMovies.filter(movie_id => {
+                    if (movie_id != movieId) {
+                        return movie_id;
+                    }
+                
+                })
+                updatedUser.FavoriteMovies = updatedFavoriteMovies;
+                setUser(updatedUser);
+                
 
             })
             .catch((e) => {

@@ -96,6 +96,10 @@ h1 {
     font-size: 20px;
 }
 
+.logout-button {
+    margin-left: 5%;
+}
+
 .btn:hover,
 .btn-primary:hover {
     transition: none;
@@ -242,9 +246,24 @@ small {
 }
 
 .animated_gradient2 {
-    background: linear-gradient(90deg, #0062ff, whitesmoke, #0062ff);
-    background-size: 400% 400%;
+    background: linear-gradient(90deg, #5d9bff, whitesmoke, #5d9bff);
+    background-size: 100% 100%;
     animation: gradientBackground 23s ease infinite;
+}
+
+#searchInput {
+    border: 4px solid rgba(101, 122, 214, .9);
+    font-size: 18px;
+    border-radius: 16px;
+    font-family: Sigmar, sans-serif;
+    color: rgba(46, 46, 46, .9);
+}
+
+#searchInput::placeholder {
+    font-family: Sigmar, sans-serif;
+    font-size: 18px;
+    color:rgba(46, 46, 46, .4);
+    text-align: center;
 }
 
 @keyframes gradientBackground {
@@ -266,10 +285,6 @@ small {
     .signup-container,
     .login-container {
         min-width: 376px !important;
-        overflow: hidden;
-    }
-
-    body {
         overflow: hidden;
     }
 }

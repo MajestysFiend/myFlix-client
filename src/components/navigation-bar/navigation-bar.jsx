@@ -1,4 +1,5 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
@@ -28,6 +29,17 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                                 </Nav.Link>
                                 <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
                             </Nav>
+                            <Form inline>
+                            <Form.Group controlId="forPassword">
+                                <Form.Control
+                                    type="search"                                   
+                                    minlength="4"
+                                    id="searchInput"                                      
+                                    placeholder="Search movies here!"
+                                    required />
+                                </Form.Group>
+                                
+                            </Form>
                             <Nav>
                                 <Nav.Link onClick={onLoggedOut} className="logout-button">Logout</Nav.Link>
                             </Nav>

@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react"
 
-export const MovieCard = ({ user, movie, token }) => {
+export const MovieCard = ({ user, movie, token, setUser }) => {
 
     const [rerender, setRerender] = useState("Yes, please!")
 
     // Add to favorites function(not workingg properly)
     const addToFavorites = () => {
         console.log("Before res.json: " + user.FavoriteMovies)
+
+        console.log(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`)
 
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
             method: "POST",
@@ -26,11 +28,9 @@ export const MovieCard = ({ user, movie, token }) => {
                 }
             })
             .then(() => {
-                if (rerender === "Yes, please!") {
-                    setRerender("Do it!")
-                } else {
-                    setRerender("Yes, please!")
-                }
+                let updatedUser = { ...user }
+                updatedUser.FavoriteMovies.push(movie._id)
+                setUser(updatedUser);
                 console.log("After res.json: " + user.FavoriteMovies)
             })
             .catch((e) => {
@@ -40,7 +40,7 @@ export const MovieCard = ({ user, movie, token }) => {
 
     return (
         <Card className="h-100 moviecard">
-            <Card.Img variant="top" src={movie.ImagePath} className="moviecard-image"w-100 />
+            <Card.Img variant="top" src={movie.ImagePath} className="moviecard-image" w-100 />
             <Card.Body className="text-center card-body">
                 <Card.Title>{movie.Title}</Card.Title>
 

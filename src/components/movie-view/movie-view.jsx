@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const MovieView = ({ user, movies, token }) => {
+export const MovieView = ({ user, movies, token, setUser }) => {
 
     const [rerender, setRerender] = useState("Yes, please!")
 
@@ -19,6 +19,8 @@ export const MovieView = ({ user, movies, token }) => {
     const addToFavorites = () => {
         console.log("Before res.json: " + user.FavoriteMovies)
 
+        console.log(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`)
+
         fetch(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
@@ -27,17 +29,15 @@ export const MovieView = ({ user, movies, token }) => {
             .then((res) => {
                 if (res.ok) {
                     alert("Movie added to favorites!")
-                    return (res.json);
+                    return res.json;
                 } else {
                     alert("Could not add to favorites");
                 }
             })
             .then(() => {
-                if (rerender === "Yes, please!") {
-                    setRerender("Do it!")
-                } else {
-                    setRerender("Yes, please!")
-                }
+                let updatedUser = { ...user }
+                updatedUser.FavoriteMovies.push(movie._id)
+                setUser(updatedUser);
                 console.log("After res.json: " + user.FavoriteMovies)
             })
             .catch((e) => {

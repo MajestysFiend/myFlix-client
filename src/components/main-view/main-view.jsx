@@ -96,7 +96,7 @@ export const MainView = () => {
                                                 return (
 
                                                     <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
-                                                        <MovieCard user={user} movie={movie} token={token} />
+                                                        <MovieCard user={user} setUser={setUser} movie={movie} token={token} />
                                                     </Col>
 
                                                 );
@@ -123,7 +123,8 @@ export const MainView = () => {
                                             transition={{ type: "tween", duration: .5 }}>
                                             <MovieView
                                                 movies={movies}
-                                                user={user}
+                                                        user={user}
+                                                        setUser={setUser}
                                                 token={token}
                                             />
                                         </motion.div>
@@ -140,6 +141,7 @@ export const MainView = () => {
                                     <Col md={8}>
                                         <ProfileView
                                             user={user}
+                                            setUser={setUser}
                                             token={token}
                                             movies={movies}
                                             onLoggedOut={() => {
