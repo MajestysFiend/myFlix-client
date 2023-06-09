@@ -12284,4 +12284,14 @@ h2, .h2 {
   }
 }
 
+@media (width <= 991px) {
+  .nav-link {
+    text-align: center;
+  }
+
+  .logout-button {
+    margin: 0;
+  }
+}
+
 /*# sourceMappingURL=index.5f1df611.css.map */

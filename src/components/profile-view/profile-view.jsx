@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { UpdateView } from "../profile-view/update-view";
 import { useState } from "react";
 
 export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
