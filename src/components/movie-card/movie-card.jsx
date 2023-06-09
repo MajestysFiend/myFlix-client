@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react"
 
-export const MovieCard = ({ user, movie, token, setUser }) => {
+export const MovieCard = ({ user, movie, token, setUser, search, setSearch }) => {
 
     // Add to favorites function(not workingg properly)
     const addToFavorites = () => {

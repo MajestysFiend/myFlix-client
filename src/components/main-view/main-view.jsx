@@ -17,6 +17,7 @@ export const MainView = () => {
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     const [movies, setMovies] = useState([]);
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         if (!token) {
@@ -39,6 +40,8 @@ export const MainView = () => {
                 user={user}
                 setUser={setUser}
                 token={token}
+                search={search}
+                setSearch={setSearch}
                 onLoggedOut={() => {
                     setUser(null)
                     setToken(null);
@@ -94,11 +97,13 @@ export const MainView = () => {
                                 ) : (
                                     <>
                                         <Row className="justify-content-center">
-                                            {movies.map((movie) => {
+                                            {movies.filter((movie) => {
+                                                return search.toLowerCase() === "" ? movie : movie.Title.toLowerCase().includes(search)
+                                            }).map((movie) => {
                                                 return (
-                                                        <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
-                                                            <MovieCard user={user} setUser={setUser} movie={movie} token={token} />
-                                                        </Col>
+                                                    <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
+                                                        <MovieCard user={user} setUser={setUser} movie={movie} token={token} search={search} setSearch={setSearch} />
+                                                    </Col>
                                                 );
                                             })}
                                         </Row>
