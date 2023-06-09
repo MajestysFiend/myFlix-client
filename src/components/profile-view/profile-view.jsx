@@ -30,11 +30,11 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
                     if (movie_id != movieId) {
                         return movie_id;
                     }
-                
+
                 })
                 updatedUser.FavoriteMovies = updatedFavoriteMovies;
                 setUser(updatedUser);
-                
+
 
             })
             .catch((e) => {
@@ -50,17 +50,22 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
 
     const displayFavorite = favoriteMovies.map((movie) => {
         return (
-            <Col className="mb-4" key={movie._id} xs={12} sm={12} md={12} lg={12} xl={6}>
-                <Card className="moviecard">
+            <Col className="mb-4" key={movie._id} xs={12} sm={12} md={12} lg={12} xl={4}>
+                <Card className="h-100 moviecard">
                     <Card.Img variant="top" src={movie.ImagePath} />
                     <Card.Body className="text-center card-body">
                         <Card.Title>{movie.Title}</Card.Title>
                     </Card.Body>
                     <div class="card-footer">
                         <Button variant="danger"
-                            className="seemore-button"
+                            className="remove-button"
                             onClick={() => { removeFromFavorites(movie._id) }}>Remove</Button>
                     </div>
+                    <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+                        <div>
+                            <Button variant="primary" className="seemore-button ">See More</Button>
+                        </div>
+                    </Link>
                 </Card>
             </Col>
         )
@@ -103,23 +108,22 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
                         </Link>
                         <Button onClick={deleteAccount} className="delete-account-button">Delete Account</Button>
                     </Col>
+                    <Row>
+                        <Col className="text-center">
+                            <h2 style={{ margin: 30 }}><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
+                        </Col>
+                    </Row>
+                    <Container>
+                        <Row className="justify-content-center">
+                            {displayFavorite}
+                        </Row>
+                    </Container>
                 </Row>
 
             </div>
-            <div className="profile-container">
-                <Row>
-                    <Col className="text-center">
-                        <h2><span className="my">Favorite</span> <span className="flix">Movies</span></h2>
-                    </Col>
-                </Row>
-                <Container>
-                    <Row className="justify-content-center">
-                        <div className="favorites-container animated_gradient2">
-                            {displayFavorite}
-                        </div>
-                    </Row>
-                </Container>
-            </div >
+
+            
+
         </>
 
     )

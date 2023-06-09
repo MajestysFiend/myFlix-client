@@ -37,6 +37,8 @@ export const MainView = () => {
         <BrowserRouter>
             <NavigationBar
                 user={user}
+                setUser={setUser}
+                token={token}
                 onLoggedOut={() => {
                     setUser(null)
                     setToken(null);

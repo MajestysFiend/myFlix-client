@@ -9,13 +9,11 @@ import { useState } from "react";
 
 export const MovieView = ({ user, movies, token, setUser }) => {
 
-    const [rerender, setRerender] = useState("Yes, please!")
-
     const { movieId } = useParams();
 
     const movie = movies.find((m) => m._id === movieId);
-    
-    // Add to favorites function(not working properly)
+
+
     const addToFavorites = () => {
         console.log("Before res.json: " + user.FavoriteMovies)
 
@@ -48,7 +46,7 @@ export const MovieView = ({ user, movies, token, setUser }) => {
         <div className="movieview-container">
             <Row>
                 <Col>
-                    <img src={movie.ImagePath} alt={movie.Title + " Cover Image"} style={{ width: "100%"}} />
+                    <img src={movie.ImagePath} alt={movie.Title + " Cover Image"} style={{ width: "100%" }} />
                     <div className="text-center"><small className="picture-reference">Cover art provided by <a href={movie.ImagePath} className="picture-link">Wikipedia</a></small></div>
                 </Col>
                 <Col>
@@ -63,14 +61,16 @@ export const MovieView = ({ user, movies, token, setUser }) => {
                         <p className="label">Genre</p>
                         <span className="moviecard-genre">{movie.Genre.Name}</span>
                     </div>
-                    <span className="footer"><motion.button
-                        text-center
-                        className="add-to-favorites-large"
-                        initial={{ opacity: .8 }}
-                        transition={{ duration: .3 }}
-                        whileHover={{ scale: 1.5, rotateZ: 720, opacity: 1 }}
-                        whileTap={{ scale: 1 }}
-                        onClick={addToFavorites}>⭐</motion.button></span>
+                    <div className="footer">
+                        <motion.button
+                            text-center
+                            className="add-to-favorites-large"
+                            initial={{ opacity: .8 }}
+                            transition={{ duration: .3 }}
+                            whileHover={{ scale: 2, opacity: 1 }}
+                            whileTap={{ scale: 1.5 }}
+                            onClick={addToFavorites}>⭐</motion.button>
+                    </div>
 
                 </Col>
             </Row>

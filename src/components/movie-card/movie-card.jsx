@@ -6,8 +6,6 @@ import { useState } from "react"
 
 export const MovieCard = ({ user, movie, token, setUser }) => {
 
-    const [rerender, setRerender] = useState("Yes, please!")
-
     // Add to favorites function(not workingg properly)
     const addToFavorites = () => {
         console.log("Before res.json: " + user.FavoriteMovies)

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { LoginView } from "../login-view/login-view";
 
 const showPassword = () => {
     var passwordInput = document.getElementById("passwordInput2");
