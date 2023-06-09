@@ -96,11 +96,9 @@ export const MainView = () => {
                                         <Row className="justify-content-center">
                                             {movies.map((movie) => {
                                                 return (
-
-                                                    <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
-                                                        <MovieCard user={user} setUser={setUser} movie={movie} token={token} />
-                                                    </Col>
-
+                                                        <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
+                                                            <MovieCard user={user} setUser={setUser} movie={movie} token={token} />
+                                                        </Col>
                                                 );
                                             })}
                                         </Row>
@@ -125,8 +123,8 @@ export const MainView = () => {
                                             transition={{ type: "tween", duration: .5 }}>
                                             <MovieView
                                                 movies={movies}
-                                                        user={user}
-                                                        setUser={setUser}
+                                                user={user}
+                                                setUser={setUser}
                                                 token={token}
                                             />
                                         </motion.div>
@@ -141,16 +139,21 @@ export const MainView = () => {
                             <>
                                 {!user ? (<Navigate to="/login" replace />) :
                                     <Col md={8}>
-                                        <ProfileView
-                                            user={user}
-                                            setUser={setUser}
-                                            token={token}
-                                            movies={movies}
-                                            onLoggedOut={() => {
-                                                setUser(null)
-                                                setToken(null)
-                                            }}
-                                        />
+                                        <motion.div
+                                            animate={{ scale: 1 }}
+                                            initial={{ scale: 0 }}
+                                            transition={{ type: "tween", duration: .5 }}>
+                                            <ProfileView
+                                                user={user}
+                                                setUser={setUser}
+                                                token={token}
+                                                movies={movies}
+                                                onLoggedOut={() => {
+                                                    setUser(null)
+                                                    setToken(null)
+                                                }}
+                                            />
+                                        </motion.div>
                                     </Col>}
                             </>
                         }

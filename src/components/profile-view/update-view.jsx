@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -8,8 +8,8 @@ export const UpdateView = (user, token, storedToken) => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
-  
-    
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -57,8 +57,8 @@ export const UpdateView = (user, token, storedToken) => {
     }
 
     return (
-            <Row className="justify-content-center customHeight">
-                <Col md={10} className="my-auto">
+        <Row className="justify-content-center customHeight">
+            <Col md={10} className="my-auto">
                 <div className="update-container" >
                     <h1><span className="my">Update</span><span className="flix">Info</span></h1>
                     <Form onSubmit={handleSubmit}>
@@ -112,16 +112,18 @@ export const UpdateView = (user, token, storedToken) => {
                                 placeholder={user.Birthday}
                                 required />
                         </Form.Group>
-                        <Link to={"/profile"}>
-                            <Button type="submit" onClick={updateInfo}>Save Changes</Button>
-                        </Link>
-                        <Link to={"/profile"}>
-                            <Button>Cancel</Button>
-                        </Link>
+                        <div className="text-center" style={{ marginTop: 50 }}>
+                            <Link to={"/profile"}>
+                                <Button type="submit" variant="success" onClick={updateInfo} className="edit-info-button">Save Changes</Button>
+                            </Link>
+                            <Link to={"/profile"}>
+                                <Button variant="primary" className="delete-account-button">Cancel</Button>
+                            </Link>
+                        </div>
                     </Form>
                 </div>
-                </Col>
-            </Row>
-        
+            </Col>
+        </Row>
+
     )
 }

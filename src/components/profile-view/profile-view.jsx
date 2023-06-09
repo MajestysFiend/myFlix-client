@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { UpdateView } from "../profile-view/update-view";
 import { useState } from "react";
 
 export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
@@ -106,7 +107,7 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
                         <Link to={"/profile/update"}>
                             <Button className="edit-info-button">Edit User Info</Button>
                         </Link>
-                        <Button onClick={deleteAccount} className="delete-account-button">Delete Account</Button>
+                        <Button variant="danger" onClick={deleteAccount} className="delete-account-button">Delete Account</Button>
                     </Col>
                     <Row>
                         <Col className="text-center">
@@ -122,7 +123,7 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
 
             </div>
 
-            
+
 
         </>
 

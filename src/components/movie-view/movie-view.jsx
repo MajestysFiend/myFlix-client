@@ -13,8 +13,8 @@ export const MovieView = ({ user, movies, token, setUser }) => {
 
     const movie = movies.find((m) => m._id === movieId);
 
-
     const addToFavorites = () => {
+
         console.log("Before res.json: " + user.FavoriteMovies)
 
         console.log(`https://myflixapplication.herokuapp.com/users/${user.Username}/movies/${encodeURIComponent(movie._id)}`)
@@ -69,7 +69,7 @@ export const MovieView = ({ user, movies, token, setUser }) => {
                             transition={{ duration: .3 }}
                             whileHover={{ scale: 2, opacity: 1 }}
                             whileTap={{ scale: 1.5 }}
-                            onClick={addToFavorites}>⭐</motion.button>
+                                onClick={addToFavorites}>⭐</motion.button>
                     </div>
 
                 </Col>
