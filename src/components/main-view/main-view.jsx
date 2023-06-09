@@ -101,7 +101,7 @@ export const MainView = () => {
                                                 return search.toLowerCase() === "" ? movie : movie.Title.toLowerCase().includes(search)
                                             }).map((movie) => {
                                                 return (
-                                                    <Col className="mb-4" key={movie._id} sm={6} md={6} lg={4} xl={3}>
+                                                    <Col className="mb-4" key={movie._id} sm={12} md={6} lg={4} xl={3}>
                                                         <MovieCard user={user} setUser={setUser} movie={movie} token={token} search={search} setSearch={setSearch} />
                                                     </Col>
                                                 );

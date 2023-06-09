@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 
 export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
 
@@ -50,7 +50,7 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
 
     const displayFavorite = favoriteMovies.map((movie) => {
         return (
-            <Col className="mb-4" key={movie._id} xs={12} sm={12} md={12} lg={12} xl={4}>
+            <Col className="mb-4" key={movie._id} xs={12} sm={12} md={12} lg={6} xl={4}>
                 <Card className="h-100 moviecard">
                     <Card.Img variant="top" src={movie.ImagePath} />
                     <Card.Body className="text-center card-body">
@@ -103,10 +103,10 @@ export const ProfileView = ({ user, setUser, movies, token, onLoggedOut }) => {
                         <span className="profile-info">{birthday}</span><br />
                         <p className="label">Email</p>
                         <span className="profile-info">{user.Email}</span><br />
-                        <Link to={"/profile/update"}>
-                            <Button className="edit-info-button">Edit User Info</Button>
-                        </Link>
-                        <Button variant="danger" onClick={deleteAccount} className="delete-account-button">Delete Account</Button>
+                        <Link to={"/profile/update"}>                           
+                                <Button className="edit-info-button">Edit User Info</Button>    
+                        </Link>                   
+                            <Button variant="danger" onClick={deleteAccount} className="delete-account-button">Delete Account</Button>
                     </Col>
                     <Row>
                         <Col className="text-center">
