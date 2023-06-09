@@ -18,12 +18,20 @@ export const NavigationBar = ({ user, movies, setMovies, onLoggedOut, search, se
                     {!user && (
                         <>
                             <Nav className="ms-auto">
-                                <Nav.Link as={Link} to="/signup" className="signup-button">
-                                    Signup
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/login" className="login-button">
-                                    Login
-                                </Nav.Link>
+                                <motion.div
+                                    whileHover={{ scale: 1.2 }}
+                                    whileTap={{ scale: 1 }}>
+                                    <Nav.Link as={Link} to="/signup" className="signup-button">
+                                        Signup
+                                    </Nav.Link>
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.2 }}
+                                    whileTap={{ scale: 1 }}>
+                                    <Nav.Link as={Link} to="/login" className="login-button">
+                                        Login
+                                    </Nav.Link>
+                                </motion.div>
                             </Nav>
                         </>
                     )}
