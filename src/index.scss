@@ -306,3 +306,13 @@ small {
         overflow: hidden;
     }
 }
+
+@media (max-width: 991px) {
+    .nav-link {
+        text-align: center;
+    }
+
+    .logout-button {
+        margin: 0;
+    }
+}
