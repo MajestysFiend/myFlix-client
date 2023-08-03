@@ -1,4 +1,4 @@
-# 🎬myFlix Client-side
+# 🎬MyFlix Client-side
 ![MyFlixScreenshot](https://github.com/MajestysFiend/myFlix-Client-side/assets/94727522/68f284b0-469b-48e3-a774-6b3df0ab6832)
 
 
