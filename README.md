@@ -4,10 +4,10 @@
 
 
 
-<p align="center">Using React alongside [my custom API](https://github.com/MajestysFiend/myFlix-API), this 
+Using React alongside [my custom API](https://github.com/MajestysFiend/myFlix-API), this 
 single-page application will provide users with access to information about different movies, 
 directors, and genres. Users will be able to sign up, update their personal information, and 
-create a list of their favorite movies!</p>
+create a list of their favorite movies!
 
 [Click here](https://myflixreactapp.netlify.app/) to check it out!
 
